@@ -3,6 +3,6 @@
 
 ## Realizado en: 🛠️
 
-* [Apache Netbeans](https://netbeans.apache.org/)
+* [Apache Netbeans IDE 12.5](https://netbeans.apache.org/)
 * [Mysql](https://www.mysql.com/)
 * [Patrón MVC]()
