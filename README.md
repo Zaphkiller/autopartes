@@ -3,7 +3,7 @@
 
 ## Realizado en: 🛠️
 
-* [Dropwizard](https://netbeans.apache.org/) - Java Netbeans
-* [Maven](https://www.mysql.com/) - Mysql
-* [ROME] Patrón MVC
-* [Maven](https://www.youtube.com/c/RojeruSan) - https://www.youtube.com/c/RojeruSanLibrería Rojerusan para interfáz gráfica del sistema
+* [Apache Netbeans](https://netbeans.apache.org/)
+* [Mysql](https://www.mysql.com/)
+* [Patrón MVC]
+* [RojeruSan](https://www.youtube.com/c/RojeruSan) - https://www.youtube.com/c/RojeruSanLibrería Rojerusan para interfáz gráfica del sistema
