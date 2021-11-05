@@ -6,4 +6,4 @@
 * [Apache Netbeans](https://netbeans.apache.org/)
 * [Mysql](https://www.mysql.com/)
 * [Patrón MVC]()
-* [RojeruSan](https://www.youtube.com/c/RojeruSan) - https://www.youtube.com/c/RojeruSanLibrería Rojerusan para interfáz gráfica del sistema
+* [RojeruSan](https://www.youtube.com/c/RojeruSan) - Librería usada para la interfáz gráfica del sistema
