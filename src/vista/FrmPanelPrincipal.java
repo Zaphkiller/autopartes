@@ -24,23 +24,32 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         pnlMenu = new RSMaterialComponent.RSPanelMaterial();
-        rSLabelSombra2 = new rojeru_san.rslabel.RSLabelSombra();
-        pnlSlider = new newscomponents.RSPanelEffect();
-        rSButtonIconI2 = new rojerusan.RSButtonIconI();
-        rSButtonIconI3 = new rojerusan.RSButtonIconI();
-        rSButtonIconI6 = new rojerusan.RSButtonIconI();
-        rSButtonIconI4 = new rojerusan.RSButtonIconI();
-        rSButtonIconI1 = new rojerusan.RSButtonIconI();
-        rSButtonIconI8 = new rojerusan.RSButtonIconI();
-        rSButtonIconI5 = new rojerusan.RSButtonIconI();
-        rSButtonIconI7 = new rojerusan.RSButtonIconI();
-        rSButtonIconI9 = new rojerusan.RSButtonIconI();
+        btnHome = new rojerusan.RSButtonIconI();
+        btnCompras = new rojerusan.RSButtonIconI();
+        btnVentas = new rojerusan.RSButtonIconI();
+        btnProductos = new rojerusan.RSButtonIconI();
+        btnClientes = new rojerusan.RSButtonIconI();
+        btnProveedor = new rojerusan.RSButtonIconI();
+        btnCategorias = new rojerusan.RSButtonIconI();
         rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
+        btnUsuarios = new rojerusan.RSButtonIconI();
+        btnSalir = new rojerusan.RSButtonIconI();
+        btnMarcas = new rojerusan.RSButtonIconI();
         pnlTopBar = new RSMaterialComponent.RSPanelMaterial();
         rSLabelSombra1 = new rojeru_san.rslabel.RSLabelSombra();
         rSLabelImage1 = new rojeru_san.rslabel.RSLabelImage();
-        rSButtonIconOne1 = new RSMaterialComponent.RSButtonIconOne();
-        jPanel2 = new javax.swing.JPanel();
+        btnCerrar = new RSMaterialComponent.RSButtonIconOne();
+        pnlPrincipal = new RSMaterialComponent.RSPanelMaterial();
+        pnlSlider = new newscomponents.RSPanelEffect();
+        pnlHome = new vista.VistaHome();
+        pnlCompras = new vista.VistaCompras();
+        pnlProveedores = new vista.VistaProveedores();
+        pnlUsuarios = new vista.VistaUsuarios();
+        pnlVentas = new vista.VistaVentas();
+        pnlProductos = new vista.VistaProductos();
+        pnlCategorias = new vista.VistaCategorias();
+        pnlMarcas = new vista.VistaMarcas();
+        pnlClientes = new vista.VistaClientes();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -49,85 +58,88 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlMenu.setBackground(new java.awt.Color(255, 255, 255));
-        pnlMenu.setIntensity(10);
+        pnlMenu.setIntensity(5);
         pnlMenu.setShadowBottom(false);
         pnlMenu.setShadowLeft(false);
         pnlMenu.setShadowTop(false);
 
-        rSLabelSombra2.setBackground(new java.awt.Color(255, 255, 255));
-        rSLabelSombra2.setForeground(new java.awt.Color(60, 63, 65));
-        rSLabelSombra2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rSLabelSombra2.setText("Administrador");
-        rSLabelSombra2.setColorDeSombra(new java.awt.Color(255, 255, 255));
-        rSLabelSombra2.setFont(new java.awt.Font("Roboto Cn", 1, 18)); // NOI18N
+        btnHome.setBackground(new java.awt.Color(102, 102, 102));
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-home.png"))); // NOI18N
+        btnHome.setText("Inicio");
+        btnHome.setColorHover(new java.awt.Color(51, 51, 51));
+        btnHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnHome.setSelected(true);
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
 
-        pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
+        btnCompras.setBackground(new java.awt.Color(102, 102, 102));
+        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-sale.png"))); // NOI18N
+        btnCompras.setText("Compras");
+        btnCompras.setColorHover(new java.awt.Color(51, 51, 51));
+        btnCompras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprasActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout pnlSliderLayout = new javax.swing.GroupLayout(pnlSlider);
-        pnlSlider.setLayout(pnlSliderLayout);
-        pnlSliderLayout.setHorizontalGroup(
-            pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1047, Short.MAX_VALUE)
-        );
-        pnlSliderLayout.setVerticalGroup(
-            pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 661, Short.MAX_VALUE)
-        );
+        btnVentas.setBackground(new java.awt.Color(102, 102, 102));
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-venta.png"))); // NOI18N
+        btnVentas.setText("Ventas");
+        btnVentas.setColorHover(new java.awt.Color(51, 51, 51));
+        btnVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentasActionPerformed(evt);
+            }
+        });
 
-        rSButtonIconI2.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-home.png"))); // NOI18N
-        rSButtonIconI2.setText("Home");
-        rSButtonIconI2.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rSButtonIconI2.setSelected(true);
+        btnProductos.setBackground(new java.awt.Color(102, 102, 102));
+        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-product.png"))); // NOI18N
+        btnProductos.setText("Productos");
+        btnProductos.setColorHover(new java.awt.Color(51, 51, 51));
+        btnProductos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProductosActionPerformed(evt);
+            }
+        });
 
-        rSButtonIconI3.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-sale.png"))); // NOI18N
-        rSButtonIconI3.setText("Nueva Compra");
-        rSButtonIconI3.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClientes.setBackground(new java.awt.Color(102, 102, 102));
+        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-cliente.png"))); // NOI18N
+        btnClientes.setText("Clientes");
+        btnClientes.setColorHover(new java.awt.Color(51, 51, 51));
+        btnClientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActionPerformed(evt);
+            }
+        });
 
-        rSButtonIconI6.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-venta.png"))); // NOI18N
-        rSButtonIconI6.setText("Nueva Venta");
-        rSButtonIconI6.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnProveedor.setBackground(new java.awt.Color(102, 102, 102));
+        btnProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-proveedor.png"))); // NOI18N
+        btnProveedor.setText("Proveedor");
+        btnProveedor.setColorHover(new java.awt.Color(51, 51, 51));
+        btnProveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProveedorActionPerformed(evt);
+            }
+        });
 
-        rSButtonIconI4.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-product.png"))); // NOI18N
-        rSButtonIconI4.setText("Productos");
-        rSButtonIconI4.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        rSButtonIconI1.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-cliente.png"))); // NOI18N
-        rSButtonIconI1.setText("Clientes");
-        rSButtonIconI1.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        rSButtonIconI8.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-proveedor.png"))); // NOI18N
-        rSButtonIconI8.setText("Proveedor");
-        rSButtonIconI8.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        rSButtonIconI5.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-user.png"))); // NOI18N
-        rSButtonIconI5.setText("Usuarios");
-        rSButtonIconI5.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        rSButtonIconI7.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
-        rSButtonIconI7.setText("Roles");
-        rSButtonIconI7.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        rSButtonIconI9.setBackground(new java.awt.Color(102, 102, 102));
-        rSButtonIconI9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-exit.png"))); // NOI18N
-        rSButtonIconI9.setText("Salir");
-        rSButtonIconI9.setColorHover(new java.awt.Color(51, 51, 51));
-        rSButtonIconI9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCategorias.setBackground(new java.awt.Color(102, 102, 102));
+        btnCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
+        btnCategorias.setText("Categorías");
+        btnCategorias.setColorHover(new java.awt.Color(51, 51, 51));
+        btnCategorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCategorias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoriasActionPerformed(evt);
+            }
+        });
 
         rSPanelMaterialImage1.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelMaterialImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/images/autopartes-logo.png"))); // NOI18N
@@ -140,12 +152,45 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
         rSPanelMaterialImage1Layout.setHorizontalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
+            .addGap(0, 160, Short.MAX_VALUE)
         );
         rSPanelMaterialImage1Layout.setVerticalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 166, Short.MAX_VALUE)
+            .addGap(0, 154, Short.MAX_VALUE)
         );
+
+        btnUsuarios.setBackground(new java.awt.Color(102, 102, 102));
+        btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-user.png"))); // NOI18N
+        btnUsuarios.setText("Usuarios");
+        btnUsuarios.setColorHover(new java.awt.Color(51, 51, 51));
+        btnUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuariosActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(102, 102, 102));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-exit.png"))); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setColorHover(new java.awt.Color(51, 51, 51));
+        btnSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnMarcas.setBackground(new java.awt.Color(102, 102, 102));
+        btnMarcas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
+        btnMarcas.setText("Marcas");
+        btnMarcas.setColorHover(new java.awt.Color(51, 51, 51));
+        btnMarcas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMarcas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMarcasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
         pnlMenu.setLayout(pnlMenuLayout);
@@ -153,26 +198,23 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuLayout.createSequentialGroup()
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonIconI5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSButtonIconI7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSButtonIconI9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlMenuLayout.createSequentialGroup()
-                        .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlMenuLayout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(rSLabelSombra2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(rSButtonIconI8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                                    .addComponent(rSButtonIconI1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rSButtonIconI4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rSButtonIconI6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rSButtonIconI3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rSButtonIconI2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnProveedor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                            .addComponent(btnClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnProductos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnVentas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCompras, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnHome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnUsuarios, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMarcas, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(pnlMenuLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMenuLayout.setVerticalGroup(
@@ -181,29 +223,26 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSLabelSombra2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSButtonIconI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonIconI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(btnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonIconI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonIconI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonIconI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonIconI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonIconI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonIconI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMarcas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonIconI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addGap(0, 29, Short.MAX_VALUE)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         jPanel1.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, 260, 690));
@@ -220,7 +259,12 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
 
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-sistema.png"))); // NOI18N
 
-        rSButtonIconOne1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXIT_TO_APP);
+        btnCerrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EXIT_TO_APP);
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlTopBarLayout = new javax.swing.GroupLayout(pnlTopBar);
         pnlTopBar.setLayout(pnlTopBarLayout);
@@ -231,8 +275,8 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(rSLabelSombra1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rSButtonIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 631, Short.MAX_VALUE)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
         pnlTopBarLayout.setVerticalGroup(
@@ -242,26 +286,63 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 .addGroup(pnlTopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(rSLabelImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(rSLabelSombra1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonIconOne1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+                    .addComponent(btnCerrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanel1.add(pnlTopBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1281, -1));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPrincipal.setIntensity(5);
+        pnlPrincipal.setRound(10);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1020, Short.MAX_VALUE)
+        pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
+
+        pnlHome.setName("pnlHome"); // NOI18N
+        pnlSlider.add(pnlHome, "card10");
+
+        pnlCompras.setName("pnlCompras"); // NOI18N
+        pnlSlider.add(pnlCompras, "card2");
+
+        pnlProveedores.setName("pnlProveedores"); // NOI18N
+        pnlSlider.add(pnlProveedores, "card3");
+
+        pnlUsuarios.setName("pnlUsuarios"); // NOI18N
+        pnlSlider.add(pnlUsuarios, "card4");
+
+        pnlVentas.setName("pnlVentas"); // NOI18N
+        pnlSlider.add(pnlVentas, "card5");
+
+        pnlProductos.setName("pnlProductos"); // NOI18N
+        pnlSlider.add(pnlProductos, "card6");
+
+        pnlCategorias.setName("pnlCategorias"); // NOI18N
+        pnlSlider.add(pnlCategorias, "card7");
+
+        pnlMarcas.setName("pnlMarcas"); // NOI18N
+        pnlSlider.add(pnlMarcas, "card8");
+
+        pnlClientes.setName("pnlClientes"); // NOI18N
+        pnlSlider.add(pnlClientes, "card9");
+
+        javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
+        pnlPrincipal.setLayout(pnlPrincipalLayout);
+        pnlPrincipalLayout.setHorizontalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 969, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+        pnlPrincipalLayout.setVerticalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 1020, 680));
+        jPanel1.add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 1000, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -276,6 +357,181 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+       if(!this.btnHome.isSelected()){
+            this.btnHome.setSelected(true);
+            this.btnCompras.setSelected(false);
+            this.btnVentas.setSelected(false);
+            this.btnProductos.setSelected(false);
+            this.btnClientes.setSelected(false);
+            this.btnProveedor.setSelected(false);
+            this.btnUsuarios.setSelected(false);
+            this.btnCategorias.setSelected(false);
+            this.btnMarcas.setSelected(false);
+            this.btnSalir.setSelected(false); 
+            
+            this.pnlSlider.setPanelNormal(pnlHome);
+            
+        }
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void btnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprasActionPerformed
+        if(!this.btnCompras.isSelected()){
+            this.btnHome.setSelected(false);
+            this.btnCompras.setSelected(true);
+            this.btnVentas.setSelected(false);
+            this.btnProductos.setSelected(false);
+            this.btnClientes.setSelected(false);
+            this.btnProveedor.setSelected(false);
+            this.btnUsuarios.setSelected(false);
+            this.btnCategorias.setSelected(false);
+            this.btnMarcas.setSelected(false);
+            this.btnSalir.setSelected(false);   
+            
+            this.pnlSlider.setPanelNormal(pnlCompras);
+            
+        }
+    }//GEN-LAST:event_btnComprasActionPerformed
+
+    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
+        if(!this.btnVentas.isSelected()){
+            this.btnHome.setSelected(false);
+            this.btnCompras.setSelected(false);
+            this.btnVentas.setSelected(true);
+            this.btnProductos.setSelected(false);
+            this.btnClientes.setSelected(false);
+            this.btnProveedor.setSelected(false);
+            this.btnUsuarios.setSelected(false);
+            this.btnCategorias.setSelected(false);
+            this.btnMarcas.setSelected(false);
+            this.btnSalir.setSelected(false);
+            
+            this.pnlSlider.setPanelNormal(pnlVentas);
+            
+            
+            
+        }
+    }//GEN-LAST:event_btnVentasActionPerformed
+
+    private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
+       if(!this.btnProductos.isSelected()){
+            this.btnHome.setSelected(false);
+            this.btnCompras.setSelected(false);
+            this.btnVentas.setSelected(false);
+            this.btnProductos.setSelected(true);
+            this.btnClientes.setSelected(false);
+            this.btnProveedor.setSelected(false);
+            this.btnUsuarios.setSelected(false);
+            this.btnCategorias.setSelected(false);
+            this.btnMarcas.setSelected(false);
+            this.btnSalir.setSelected(false); 
+            
+            this.pnlSlider.setPanelNormal(pnlProductos);
+            
+        }
+    }//GEN-LAST:event_btnProductosActionPerformed
+
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        if(!this.btnClientes.isSelected()){
+            this.btnHome.setSelected(false);
+            this.btnCompras.setSelected(false);
+            this.btnVentas.setSelected(false);
+            this.btnProductos.setSelected(false);
+            this.btnClientes.setSelected(true);
+            this.btnProveedor.setSelected(false);
+            this.btnUsuarios.setSelected(false);
+            this.btnCategorias.setSelected(false);
+            this.btnMarcas.setSelected(false);
+            this.btnSalir.setSelected(false);   
+            
+            this.pnlSlider.setPanelNormal(pnlClientes);
+            
+        }
+    }//GEN-LAST:event_btnClientesActionPerformed
+
+    private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
+        if(!this.btnProveedor.isSelected()){
+            this.btnHome.setSelected(false);
+            this.btnCompras.setSelected(false);
+            this.btnVentas.setSelected(false);
+            this.btnProductos.setSelected(false);
+            this.btnClientes.setSelected(false);
+            this.btnProveedor.setSelected(true);
+            this.btnUsuarios.setSelected(false);
+            this.btnCategorias.setSelected(false);
+            this.btnMarcas.setSelected(false);
+            this.btnSalir.setSelected(false); 
+            
+            this.pnlSlider.setPanelNormal(pnlProveedores);
+            
+            
+            
+        }
+    }//GEN-LAST:event_btnProveedorActionPerformed
+
+    private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
+        if(!this.btnUsuarios.isSelected()){
+            this.btnHome.setSelected(false);
+            this.btnCompras.setSelected(false);
+            this.btnVentas.setSelected(false);
+            this.btnProductos.setSelected(false);
+            this.btnClientes.setSelected(false);
+            this.btnProveedor.setSelected(false);
+            this.btnUsuarios.setSelected(true);
+            this.btnCategorias.setSelected(false);
+            this.btnMarcas.setSelected(false);
+            this.btnSalir.setSelected(false);
+            
+            this.pnlSlider.setPanelNormal(pnlUsuarios);
+                      
+            
+        }
+    }//GEN-LAST:event_btnUsuariosActionPerformed
+
+    private void btnCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriasActionPerformed
+        if(!this.btnCategorias.isSelected()){
+            this.btnHome.setSelected(false);
+            this.btnCompras.setSelected(false);
+            this.btnVentas.setSelected(false);
+            this.btnProductos.setSelected(false);
+            this.btnClientes.setSelected(false);
+            this.btnProveedor.setSelected(false);
+            this.btnUsuarios.setSelected(false);
+            this.btnCategorias.setSelected(true);
+            this.btnMarcas.setSelected(false);
+            this.btnSalir.setSelected(false);
+            
+            this.pnlSlider.setPanelNormal(pnlCategorias);
+            
+        }
+    }//GEN-LAST:event_btnCategoriasActionPerformed
+
+    private void btnMarcasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcasActionPerformed
+        if(!this.btnMarcas.isSelected()){
+            this.btnHome.setSelected(false);
+            this.btnCompras.setSelected(false);
+            this.btnVentas.setSelected(false);
+            this.btnProductos.setSelected(false);
+            this.btnClientes.setSelected(false);
+            this.btnProveedor.setSelected(false);
+            this.btnUsuarios.setSelected(false);
+            this.btnCategorias.setSelected(false);
+            this.btnMarcas.setSelected(true);
+            this.btnSalir.setSelected(false);
+            
+            this.pnlSlider.setPanelNormal(pnlMarcas);
+            
+        }
+    }//GEN-LAST:event_btnMarcasActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,24 +569,33 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSButtonIconI btnCategorias;
+    private RSMaterialComponent.RSButtonIconOne btnCerrar;
+    private rojerusan.RSButtonIconI btnClientes;
+    private rojerusan.RSButtonIconI btnCompras;
+    private rojerusan.RSButtonIconI btnHome;
+    private rojerusan.RSButtonIconI btnMarcas;
+    private rojerusan.RSButtonIconI btnProductos;
+    private rojerusan.RSButtonIconI btnProveedor;
+    private rojerusan.RSButtonIconI btnSalir;
+    private rojerusan.RSButtonIconI btnUsuarios;
+    private rojerusan.RSButtonIconI btnVentas;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private vista.VistaCategorias pnlCategorias;
+    private vista.VistaClientes pnlClientes;
+    private vista.VistaCompras pnlCompras;
+    private vista.VistaHome pnlHome;
+    private vista.VistaMarcas pnlMarcas;
     private RSMaterialComponent.RSPanelMaterial pnlMenu;
+    private RSMaterialComponent.RSPanelMaterial pnlPrincipal;
+    private vista.VistaProductos pnlProductos;
+    private vista.VistaProveedores pnlProveedores;
     private newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSPanelMaterial pnlTopBar;
-    private rojerusan.RSButtonIconI rSButtonIconI1;
-    private rojerusan.RSButtonIconI rSButtonIconI2;
-    private rojerusan.RSButtonIconI rSButtonIconI3;
-    private rojerusan.RSButtonIconI rSButtonIconI4;
-    private rojerusan.RSButtonIconI rSButtonIconI5;
-    private rojerusan.RSButtonIconI rSButtonIconI6;
-    private rojerusan.RSButtonIconI rSButtonIconI7;
-    private rojerusan.RSButtonIconI rSButtonIconI8;
-    private rojerusan.RSButtonIconI rSButtonIconI9;
-    private RSMaterialComponent.RSButtonIconOne rSButtonIconOne1;
+    private vista.VistaUsuarios pnlUsuarios;
+    private vista.VistaVentas pnlVentas;
     private rojeru_san.rslabel.RSLabelImage rSLabelImage1;
     private rojeru_san.rslabel.RSLabelSombra rSLabelSombra1;
-    private rojeru_san.rslabel.RSLabelSombra rSLabelSombra2;
     private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
     // End of variables declaration//GEN-END:variables
 }
