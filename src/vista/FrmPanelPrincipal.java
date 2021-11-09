@@ -35,13 +35,13 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         btnUsuarios = new rojerusan.RSButtonIconI();
         btnSalir = new rojerusan.RSButtonIconI();
         btnMarcas = new rojerusan.RSButtonIconI();
+        btnMarcas1 = new rojerusan.RSButtonIconI();
         pnlTopBar = new RSMaterialComponent.RSPanelMaterial();
         rSLabelSombra1 = new rojeru_san.rslabel.RSLabelSombra();
         rSLabelImage1 = new rojeru_san.rslabel.RSLabelImage();
         btnCerrar = new RSMaterialComponent.RSButtonIconOne();
         pnlPrincipal = new RSMaterialComponent.RSPanelMaterial();
         pnlSlider = new newscomponents.RSPanelEffect();
-        pnlHome = new vista.VistaHome();
         pnlCompras = new vista.VistaCompras();
         pnlProveedores = new vista.VistaProveedores();
         pnlUsuarios = new vista.VistaUsuarios();
@@ -50,6 +50,7 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         pnlCategorias = new vista.VistaCategorias();
         pnlMarcas = new vista.VistaMarcas();
         pnlClientes = new vista.VistaClientes();
+        pnlHome = new vista.VistaHome();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -152,11 +153,11 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
         rSPanelMaterialImage1Layout.setHorizontalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 132, Short.MAX_VALUE)
         );
         rSPanelMaterialImage1Layout.setVerticalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 154, Short.MAX_VALUE)
+            .addGap(0, 125, Short.MAX_VALUE)
         );
 
         btnUsuarios.setBackground(new java.awt.Color(102, 102, 102));
@@ -192,6 +193,17 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnMarcas1.setBackground(new java.awt.Color(102, 102, 102));
+        btnMarcas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
+        btnMarcas1.setText("Reportes");
+        btnMarcas1.setColorHover(new java.awt.Color(51, 51, 51));
+        btnMarcas1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMarcas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMarcas1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
         pnlMenu.setLayout(pnlMenuLayout);
         pnlMenuLayout.setHorizontalGroup(
@@ -210,10 +222,11 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMarcas, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
+                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(btnMarcas1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(59, 59, 59)
                 .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -226,7 +239,7 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,14 +251,16 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(btnMarcas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnMarcas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, 260, 690));
+        jPanel1.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, 260, 710));
 
         pnlTopBar.setShadowBottom(false);
         pnlTopBar.setShadowLeft(false);
@@ -298,9 +313,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlHome.setName("pnlHome"); // NOI18N
-        pnlSlider.add(pnlHome, "card10");
-
         pnlCompras.setName("pnlCompras"); // NOI18N
         pnlSlider.add(pnlCompras, "card2");
 
@@ -325,6 +337,9 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         pnlClientes.setName("pnlClientes"); // NOI18N
         pnlSlider.add(pnlClientes, "card9");
 
+        pnlHome.setName("pnlHome"); // NOI18N
+        pnlSlider.add(pnlHome, "card10");
+
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
         pnlPrincipalLayout.setHorizontalGroup(
@@ -339,10 +354,10 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             .addGroup(pnlPrincipalLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 1000, 650));
+        jPanel1.add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 1000, 690));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -352,7 +367,9 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -533,6 +550,10 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnMarcas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMarcas1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -575,6 +596,7 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
     private rojerusan.RSButtonIconI btnCompras;
     private rojerusan.RSButtonIconI btnHome;
     private rojerusan.RSButtonIconI btnMarcas;
+    private rojerusan.RSButtonIconI btnMarcas1;
     private rojerusan.RSButtonIconI btnProductos;
     private rojerusan.RSButtonIconI btnProveedor;
     private rojerusan.RSButtonIconI btnSalir;
