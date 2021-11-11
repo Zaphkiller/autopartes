@@ -10,13 +10,12 @@ import rojerusan.RSAnimation;
 
 public class ModalSeleccionarProductos extends javax.swing.JDialog {
 
-    public ModalSeleccionarProductos(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public ModalSeleccionarProductos() {
         initComponents();
 
         RSAnimation.setBajar(-230, 200, 2, 2, this);
         this.setLocationRelativeTo(this);
-        this.setModal(modal);
+        this.setModal(true);
 
     }
     

@@ -10,7 +10,7 @@ import vista.ModalSeleccionarProductos;
  *
  * @author Natsu98fx
  */
-public class VistaVentas extends javax.swing.JFrame{
+    public class VistaVentas extends javax.swing.JPanel{
 
     /**
      * Creates new form VistaVentas
