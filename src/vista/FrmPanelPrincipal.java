@@ -372,7 +372,10 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        System.exit(0);
+        /*System.exit(0);*/
+        VistaWarningSalir salir = new VistaWarningSalir();
+        salir.titulo.setText("¿ESTAS SEGURO DE SALIR?");
+        salir.setVisible(true);
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed

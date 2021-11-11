@@ -32,17 +32,17 @@ public class VistaProductos extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         pnlSlider = new newscomponents.RSPanelEffect();
         jPanel3 = new javax.swing.JPanel();
-        btnSeleccionaProductos = new newscomponents.RSButtonGradientIcon_new();
-        txtTelefonoProveedor = new RSMaterialComponent.RSTextFieldMaterial();
-        txtNombreProveedor = new RSMaterialComponent.RSTextFieldMaterial();
-        txtCorreoProveedor = new RSMaterialComponent.RSTextFieldMaterial();
-        rSButtonGradientIcon_new4 = new newscomponents.RSButtonGradientIcon_new();
-        rSButtonGradientIcon_new5 = new newscomponents.RSButtonGradientIcon_new();
-        txtNombreProveedor1 = new RSMaterialComponent.RSTextFieldMaterial();
-        rSTextFieldIconOne2 = new RSMaterialComponent.RSTextFieldIconOne();
-        rSComboBoxMaterial1 = new RSMaterialComponent.RSComboBoxMaterial();
-        rSComboBoxMaterial2 = new RSMaterialComponent.RSComboBoxMaterial();
+        txtStockProducto = new RSMaterialComponent.RSTextFieldMaterial();
+        idProducto = new RSMaterialComponent.RSTextFieldMaterial();
+        txtPrecio = new RSMaterialComponent.RSTextFieldMaterial();
+        brnCancelar = new newscomponents.RSButtonGradientIcon_new();
+        btnAgregarProducto = new newscomponents.RSButtonGradientIcon_new();
+        txtProducto = new RSMaterialComponent.RSTextFieldMaterial();
+        txtSearch = new RSMaterialComponent.RSTextFieldIconOne();
+        cboMarcaProducto = new RSMaterialComponent.RSComboBoxMaterial();
+        cboCategoriaProducto = new RSMaterialComponent.RSComboBoxMaterial();
         tabProductos1 = new vista.TabProductos();
+        rSFotoCircle1 = new rojerusan.RSFotoCircle();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -95,84 +95,87 @@ public class VistaProductos extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnSeleccionaProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-add-user.png"))); // NOI18N
-        btnSeleccionaProductos.setText("Agregar Nuevo");
-        btnSeleccionaProductos.setColorSecundarioHover(new java.awt.Color(0, 102, 153));
-        btnSeleccionaProductos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SELECT_ALL);
+        txtStockProducto.setPlaceholder("Stock");
 
-        txtTelefonoProveedor.setPlaceholder("Stock");
+        idProducto.setBackground(new java.awt.Color(204, 204, 204));
+        idProducto.setForeground(new java.awt.Color(0, 0, 0));
+        idProducto.setEnabled(false);
+        idProducto.setPhColor(new java.awt.Color(0, 0, 0));
+        idProducto.setPlaceholder("Id de producto");
 
-        txtNombreProveedor.setPlaceholder("Id de producto");
+        txtPrecio.setPlaceholder("Precio");
 
-        txtCorreoProveedor.setPlaceholder("Precio");
+        brnCancelar.setBackground(new java.awt.Color(0, 255, 51));
+        brnCancelar.setText("Cancelar");
+        brnCancelar.setToolTipText("");
+        brnCancelar.setColorPrimario(new java.awt.Color(255, 102, 102));
+        brnCancelar.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        brnCancelar.setColorSecundario(new java.awt.Color(204, 0, 51));
+        brnCancelar.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        brnCancelar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
 
-        rSButtonGradientIcon_new4.setBackground(new java.awt.Color(0, 255, 51));
-        rSButtonGradientIcon_new4.setText("Cancelar");
-        rSButtonGradientIcon_new4.setToolTipText("");
-        rSButtonGradientIcon_new4.setColorPrimario(new java.awt.Color(255, 102, 102));
-        rSButtonGradientIcon_new4.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
-        rSButtonGradientIcon_new4.setColorSecundario(new java.awt.Color(204, 0, 51));
-        rSButtonGradientIcon_new4.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
-        rSButtonGradientIcon_new4.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
+        btnAgregarProducto.setBackground(new java.awt.Color(0, 255, 51));
+        btnAgregarProducto.setText("Agregar Producto");
+        btnAgregarProducto.setToolTipText("");
+        btnAgregarProducto.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnAgregarProducto.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProducto.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnAgregarProducto.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProducto.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SELECT_ALL);
 
-        rSButtonGradientIcon_new5.setBackground(new java.awt.Color(0, 255, 51));
-        rSButtonGradientIcon_new5.setText("Generar compra");
-        rSButtonGradientIcon_new5.setToolTipText("");
-        rSButtonGradientIcon_new5.setColorPrimario(new java.awt.Color(0, 204, 51));
-        rSButtonGradientIcon_new5.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
-        rSButtonGradientIcon_new5.setColorSecundario(new java.awt.Color(0, 102, 51));
-        rSButtonGradientIcon_new5.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
-        rSButtonGradientIcon_new5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SHOP);
+        txtProducto.setPlaceholder("Nombre del producto");
 
-        txtNombreProveedor1.setPlaceholder("Nombre del producto");
+        txtSearch.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearch.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearch.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearch.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearch.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearch.setPlaceholder("Buscar");
 
-        rSTextFieldIconOne2.setForeground(new java.awt.Color(51, 51, 51));
-        rSTextFieldIconOne2.setBorderColor(new java.awt.Color(204, 204, 204));
-        rSTextFieldIconOne2.setColorIcon(new java.awt.Color(51, 51, 51));
-        rSTextFieldIconOne2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        rSTextFieldIconOne2.setPhColor(new java.awt.Color(102, 102, 102));
-        rSTextFieldIconOne2.setPlaceholder("Buscar");
+        cboMarcaProducto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar Marca", "Bosch", "Champion", "LuberFiner", "Mobil", "Permatex", "Sun Great", "Wynn's" }));
 
-        rSComboBoxMaterial1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar Marca", "Marca 1", "Marca 2", "Marca 3", "Marca 4", " " }));
-
-        rSComboBoxMaterial2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar Categoría", "Repuestos Autos", "Repuestos Motos", "Repuestos General", " " }));
+        cboCategoriaProducto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar Categoría", "Aditivos", "Baterías", "Bujías", "Faros", "Filtros ", "Fluidos", "Cuidado automotriz", "Pegamento/Silicona" }));
 
         tabProductos1.setBackground(new java.awt.Color(255, 255, 255));
+
+        rSFotoCircle1.setImagenDefault(new javax.swing.ImageIcon(getClass().getResource("/images/404.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(23, 492, Short.MAX_VALUE)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(tabProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(242, 242, 242)
+                        .addComponent(btnAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(brnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNombreProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                                    .addComponent(rSComboBoxMaterial2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(idProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                                    .addComponent(cboCategoriaProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(36, 36, 36)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNombreProveedor1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                                    .addComponent(rSComboBoxMaterial1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(txtProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                                    .addComponent(cboMarcaProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(txtCorreoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSTextFieldIconOne2, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSeleccionaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tabProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addComponent(rSButtonGradientIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rSButtonGradientIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtStockProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(166, 166, 166)
+                        .addComponent(rSFotoCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -180,30 +183,28 @@ public class VistaProductos extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(btnSeleccionaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rSTextFieldIconOne2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombreProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSComboBoxMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSComboBoxMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cboCategoriaProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboMarcaProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCorreoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(27, 27, 27)
-                .addComponent(tabProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtStockProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(rSFotoCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tabProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonGradientIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonGradientIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 64, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(brnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
         );
 
         pnlSlider.add(jPanel3, "card2");
@@ -237,7 +238,7 @@ public class VistaProductos extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 646, Short.MAX_VALUE)
+            .addGap(0, 652, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -245,22 +246,22 @@ public class VistaProductos extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private newscomponents.RSButtonGradientIcon_new btnSeleccionaProductos;
+    private newscomponents.RSButtonGradientIcon_new brnCancelar;
+    private newscomponents.RSButtonGradientIcon_new btnAgregarProducto;
+    private RSMaterialComponent.RSComboBoxMaterial cboCategoriaProducto;
+    private RSMaterialComponent.RSComboBoxMaterial cboMarcaProducto;
+    private RSMaterialComponent.RSTextFieldMaterial idProducto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private newscomponents.RSPanelEffect pnlSlider;
-    private newscomponents.RSButtonGradientIcon_new rSButtonGradientIcon_new4;
-    private newscomponents.RSButtonGradientIcon_new rSButtonGradientIcon_new5;
-    private RSMaterialComponent.RSComboBoxMaterial rSComboBoxMaterial1;
-    private RSMaterialComponent.RSComboBoxMaterial rSComboBoxMaterial2;
+    private rojerusan.RSFotoCircle rSFotoCircle1;
     private RSMaterialComponent.RSPanelMaterialGradient rSPanelMaterialGradient1;
-    private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne2;
     private vista.TabProductos tabProductos1;
-    private RSMaterialComponent.RSTextFieldMaterial txtCorreoProveedor;
-    private RSMaterialComponent.RSTextFieldMaterial txtNombreProveedor;
-    private RSMaterialComponent.RSTextFieldMaterial txtNombreProveedor1;
-    private RSMaterialComponent.RSTextFieldMaterial txtTelefonoProveedor;
+    private RSMaterialComponent.RSTextFieldMaterial txtPrecio;
+    private RSMaterialComponent.RSTextFieldMaterial txtProducto;
+    private RSMaterialComponent.RSTextFieldIconOne txtSearch;
+    private RSMaterialComponent.RSTextFieldMaterial txtStockProducto;
     // End of variables declaration//GEN-END:variables
 }
