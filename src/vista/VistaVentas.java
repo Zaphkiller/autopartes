@@ -10,7 +10,7 @@ import vista.ModalSeleccionarProductos;
  *
  * @author Natsu98fx
  */
-public class VistaVentas extends javax.swing.JPanel {
+public class VistaVentas extends javax.swing.JFrame{
 
     /**
      * Creates new form VistaVentas
@@ -262,9 +262,9 @@ public class VistaVentas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSeleccionProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionProductosActionPerformed
-        new vista.ModalSeleccionarProductos(this, true).setVisible(true);
+        new ModalSeleccionarProductos().setVisible(true); 
     }//GEN-LAST:event_btnSeleccionProductosActionPerformed
-    public static void main(String args[]) {
+     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
