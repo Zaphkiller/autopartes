@@ -475,16 +475,6 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
-                <Component class="vista.VistaCompras" name="pnlCompras">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="pnlCompras" noResource="true"/>
-                  </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card2"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
                 <Component class="vista.VistaProveedores" name="pnlProveedores">
                   <Properties>
                     <Property name="name" type="java.lang.String" value="pnlProveedores" noResource="true"/>

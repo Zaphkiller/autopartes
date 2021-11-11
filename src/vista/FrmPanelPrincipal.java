@@ -42,7 +42,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         btnCerrar = new RSMaterialComponent.RSButtonIconOne();
         pnlPrincipal = new RSMaterialComponent.RSPanelMaterial();
         pnlSlider = new newscomponents.RSPanelEffect();
-        pnlCompras = new vista.VistaCompras();
         pnlProveedores = new vista.VistaProveedores();
         pnlUsuarios = new vista.VistaUsuarios();
         pnlVentas = new vista.VistaVentas();
@@ -313,9 +312,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlCompras.setName("pnlCompras"); // NOI18N
-        pnlSlider.add(pnlCompras, "card2");
-
         pnlProveedores.setName("pnlProveedores"); // NOI18N
         pnlSlider.add(pnlProveedores, "card3");
 
@@ -410,7 +406,7 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);   
             
-            this.pnlSlider.setPanelNormal(pnlCompras);
+            //this.pnlSlider.setPanelNormal(pnlCompras);
             
         }
     }//GEN-LAST:event_btnComprasActionPerformed
@@ -605,7 +601,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private vista.VistaCategorias pnlCategorias;
     private vista.VistaClientes pnlClientes;
-    private vista.VistaCompras pnlCompras;
     private vista.VistaHome pnlHome;
     private vista.VistaMarcas pnlMarcas;
     private RSMaterialComponent.RSPanelMaterial pnlMenu;

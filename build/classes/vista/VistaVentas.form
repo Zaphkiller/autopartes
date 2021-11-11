@@ -189,7 +189,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtTelefonoProveedor1" min="-2" pref="226" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnSeleccionaProveedor" min="-2" pref="216" max="-2" attributes="0"/>
+                              <Component id="btnSeleccionProductos" min="-2" pref="216" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -260,7 +260,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txtTelefonoProveedor1" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="btnSeleccionaProveedor" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnSeleccionProductos" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="tabVentas1" min="-2" pref="275" max="-2" attributes="0"/>
@@ -305,7 +305,7 @@
                         <Property name="placeholder" type="java.lang.String" value="DNI"/>
                       </Properties>
                     </Component>
-                    <Component class="newscomponents.RSButtonGradientIcon_new" name="btnSeleccionaProveedor">
+                    <Component class="newscomponents.RSButtonGradientIcon_new" name="btnSeleccionProductos">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/images/icon-add-user.png"/>
@@ -318,6 +318,9 @@
                           <Value id="SELECT_ALL"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeleccionProductosActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="newscomponents.RSButtonGradientIcon_new" name="rSButtonGradientIcon_new4">
                       <Properties>

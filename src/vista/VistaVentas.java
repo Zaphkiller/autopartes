@@ -4,6 +4,8 @@
  */
 package vista;
 
+import vista.ModalSeleccionarProductos;
+
 /**
  *
  * @author Natsu98fx
@@ -40,7 +42,7 @@ public class VistaVentas extends javax.swing.JPanel {
         txtTelefonoProveedor = new RSMaterialComponent.RSTextFieldMaterial();
         txtNombreProveedor = new RSMaterialComponent.RSTextFieldMaterial();
         txtCorreoProveedor = new RSMaterialComponent.RSTextFieldMaterial();
-        btnSeleccionaProveedor = new newscomponents.RSButtonGradientIcon_new();
+        btnSeleccionProductos = new newscomponents.RSButtonGradientIcon_new();
         rSButtonGradientIcon_new4 = new newscomponents.RSButtonGradientIcon_new();
         rSButtonGradientIcon_new5 = new newscomponents.RSButtonGradientIcon_new();
         txtTelefonoProveedor1 = new RSMaterialComponent.RSTextFieldMaterial();
@@ -103,10 +105,15 @@ public class VistaVentas extends javax.swing.JPanel {
 
         txtCorreoProveedor.setPlaceholder("DNI");
 
-        btnSeleccionaProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-add-user.png"))); // NOI18N
-        btnSeleccionaProveedor.setText("Seleccionar Productos");
-        btnSeleccionaProveedor.setColorSecundarioHover(new java.awt.Color(0, 102, 153));
-        btnSeleccionaProveedor.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SELECT_ALL);
+        btnSeleccionProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-add-user.png"))); // NOI18N
+        btnSeleccionProductos.setText("Seleccionar Productos");
+        btnSeleccionProductos.setColorSecundarioHover(new java.awt.Color(0, 102, 153));
+        btnSeleccionProductos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SELECT_ALL);
+        btnSeleccionProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionProductosActionPerformed(evt);
+            }
+        });
 
         rSButtonGradientIcon_new4.setBackground(new java.awt.Color(0, 255, 51));
         rSButtonGradientIcon_new4.setText("Cancelar");
@@ -136,7 +143,7 @@ public class VistaVentas extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(txtTelefonoProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSeleccionaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSeleccionProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(89, 89, 89))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +197,7 @@ public class VistaVentas extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTelefonoProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSeleccionaProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSeleccionProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(tabVentas1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -254,9 +261,43 @@ public class VistaVentas extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSeleccionProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionProductosActionPerformed
+        new vista.ModalSeleccionarProductos(this, true).setVisible(true);
+    }//GEN-LAST:event_btnSeleccionProductosActionPerformed
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VistaVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VistaVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VistaVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VistaVentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VistaVentas().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private newscomponents.RSButtonGradientIcon_new btnSeleccionaProveedor;
+    private newscomponents.RSButtonGradientIcon_new btnSeleccionProductos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
