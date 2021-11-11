@@ -26,26 +26,11 @@ public class TabUsuarios extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rSTextFieldIconOne1 = new RSMaterialComponent.RSTextFieldIconOne();
-        rSButtonGradientIcon_new1 = new newscomponents.RSButtonGradientIcon_new();
         rSPanelMaterial1 = new RSMaterialComponent.RSPanelMaterial();
         jScrollPane1 = new javax.swing.JScrollPane();
         rSTableMetroCustom1 = new RSMaterialComponent.RSTableMetroCustom();
 
         setBackground(new java.awt.Color(255, 255, 255));
-
-        rSTextFieldIconOne1.setForeground(new java.awt.Color(51, 51, 51));
-        rSTextFieldIconOne1.setBorderColor(new java.awt.Color(204, 204, 204));
-        rSTextFieldIconOne1.setColorIcon(new java.awt.Color(51, 51, 51));
-        rSTextFieldIconOne1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        rSTextFieldIconOne1.setPhColor(new java.awt.Color(102, 102, 102));
-        rSTextFieldIconOne1.setPlaceholder("Buscar");
-        rSTextFieldIconOne1.setSelectionColor(new java.awt.Color(51, 51, 51));
-
-        rSButtonGradientIcon_new1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-add-user.png"))); // NOI18N
-        rSButtonGradientIcon_new1.setText("Nuevo Usuario");
-        rSButtonGradientIcon_new1.setColorSecundarioHover(new java.awt.Color(0, 102, 153));
-        rSButtonGradientIcon_new1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
 
         rSPanelMaterial1.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelMaterial1.setIntensity(5);
@@ -53,13 +38,23 @@ public class TabUsuarios extends javax.swing.JPanel {
 
         rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Código", "Nombres", "Apellidos", "DNI", "E-mail", "Teléfono"
             }
         ));
         jScrollPane1.setViewportView(rSTableMetroCustom1);
@@ -68,17 +63,17 @@ public class TabUsuarios extends javax.swing.JPanel {
         rSPanelMaterial1.setLayout(rSPanelMaterial1Layout);
         rSPanelMaterial1Layout.setHorizontalGroup(
             rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial1Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+            .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         rSPanelMaterial1Layout.setVerticalGroup(
             rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -87,34 +82,22 @@ public class TabUsuarios extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rSButtonGradientIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(rSButtonGradientIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private newscomponents.RSButtonGradientIcon_new rSButtonGradientIcon_new1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSTableMetroCustom rSTableMetroCustom1;
-    private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne1;
     // End of variables declaration//GEN-END:variables
 }

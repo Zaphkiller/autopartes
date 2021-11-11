@@ -38,14 +38,14 @@ public class TabMarcas extends javax.swing.JPanel {
 
         rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Código", "Nombre"
+                "Código", "Nombre", "Descripcion"
             }
         ));
         jScrollPane1.setViewportView(rSTableMetroCustom1);

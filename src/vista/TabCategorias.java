@@ -36,14 +36,14 @@ public class TabCategorias extends javax.swing.JPanel {
 
         rSTableMetroCustom1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Código", "Nombre"
+                "Código", "Nombre", "Descripción"
             }
         ));
         jScrollPane1.setViewportView(rSTableMetroCustom1);

@@ -349,8 +349,8 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPrincipalLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel1.add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 1000, 690));
@@ -546,7 +546,9 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMarcasActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.exit(0);
+        VistaWarningSalir salir = new VistaWarningSalir();
+        salir.titulo.setText("¿ESTAS SEGURO DE SALIR?");
+        salir.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnMarcas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcas1ActionPerformed

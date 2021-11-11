@@ -32,13 +32,13 @@ public class VistaMarcas extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         pnlSlider = new newscomponents.RSPanelEffect();
         jPanel3 = new javax.swing.JPanel();
-        btnSeleccionaProductos = new newscomponents.RSButtonGradientIcon_new();
         txtNombreProveedor = new RSMaterialComponent.RSTextFieldMaterial();
         rSButtonGradientIcon_new4 = new newscomponents.RSButtonGradientIcon_new();
         rSButtonGradientIcon_new5 = new newscomponents.RSButtonGradientIcon_new();
-        txtNombreProveedor1 = new RSMaterialComponent.RSTextFieldMaterial();
         rSTextFieldIconOne2 = new RSMaterialComponent.RSTextFieldIconOne();
         tabMarcas1 = new vista.TabMarcas();
+        txtNombreProveedor2 = new RSMaterialComponent.RSTextFieldMaterial();
+        txtNombreProveedor3 = new RSMaterialComponent.RSTextFieldMaterial();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -91,11 +91,6 @@ public class VistaMarcas extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnSeleccionaProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-add-user.png"))); // NOI18N
-        btnSeleccionaProductos.setText("Agregar Nuevo");
-        btnSeleccionaProductos.setColorSecundarioHover(new java.awt.Color(0, 102, 153));
-        btnSeleccionaProductos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SELECT_ALL);
-
         txtNombreProveedor.setPlaceholder("Id de la marca");
 
         rSButtonGradientIcon_new4.setBackground(new java.awt.Color(0, 255, 51));
@@ -108,15 +103,13 @@ public class VistaMarcas extends javax.swing.JPanel {
         rSButtonGradientIcon_new4.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
 
         rSButtonGradientIcon_new5.setBackground(new java.awt.Color(0, 255, 51));
-        rSButtonGradientIcon_new5.setText("Aplicar cambios");
+        rSButtonGradientIcon_new5.setText("Agregar Nuevo");
         rSButtonGradientIcon_new5.setToolTipText("");
         rSButtonGradientIcon_new5.setColorPrimario(new java.awt.Color(0, 204, 51));
         rSButtonGradientIcon_new5.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
         rSButtonGradientIcon_new5.setColorSecundario(new java.awt.Color(0, 102, 51));
         rSButtonGradientIcon_new5.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
         rSButtonGradientIcon_new5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SHOP);
-
-        txtNombreProveedor1.setPlaceholder("Nombre de la marca");
 
         rSTextFieldIconOne2.setForeground(new java.awt.Color(51, 51, 51));
         rSTextFieldIconOne2.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -125,25 +118,19 @@ public class VistaMarcas extends javax.swing.JPanel {
         rSTextFieldIconOne2.setPhColor(new java.awt.Color(102, 102, 102));
         rSTextFieldIconOne2.setPlaceholder("Buscar");
 
+        txtNombreProveedor2.setPlaceholder("Descripción");
+
+        txtNombreProveedor3.setPlaceholder("Nombre de la marca");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(242, 242, 242)
-                .addComponent(rSButtonGradientIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(rSButtonGradientIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(291, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombreProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombreProveedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSeleccionaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,21 +138,30 @@ public class VistaMarcas extends javax.swing.JPanel {
                                 .addGap(6, 6, 6)
                                 .addComponent(tabMarcas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(rSTextFieldIconOne2, javax.swing.GroupLayout.PREFERRED_SIZE, 948, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 12, Short.MAX_VALUE))))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(242, 242, 242)
+                .addComponent(rSButtonGradientIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonGradientIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtNombreProveedor3, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtNombreProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(267, 267, 267))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txtNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNombreProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(btnSeleccionaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
+                .addComponent(txtNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombreProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreProveedor3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rSTextFieldIconOne2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tabMarcas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,7 +211,6 @@ public class VistaMarcas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private newscomponents.RSButtonGradientIcon_new btnSeleccionaProductos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -227,6 +222,7 @@ public class VistaMarcas extends javax.swing.JPanel {
     private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne2;
     private vista.TabMarcas tabMarcas1;
     private RSMaterialComponent.RSTextFieldMaterial txtNombreProveedor;
-    private RSMaterialComponent.RSTextFieldMaterial txtNombreProveedor1;
+    private RSMaterialComponent.RSTextFieldMaterial txtNombreProveedor2;
+    private RSMaterialComponent.RSTextFieldMaterial txtNombreProveedor3;
     // End of variables declaration//GEN-END:variables
 }

@@ -169,23 +169,22 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rSTextFieldIconOne2" min="-2" pref="948" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtNombreProveedor1" min="-2" pref="334" max="-2" attributes="0"/>
-                                      <Component id="txtNombreProveedor" alignment="1" min="-2" pref="334" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnSeleccionaProductos" min="-2" pref="216" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="rSTextFieldIconOne2" min="-2" pref="948" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtNombreProveedor1" min="-2" pref="334" max="-2" attributes="0"/>
+                                              <Component id="txtNombreProveedor" alignment="1" min="-2" pref="334" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txtNombreProveedor2" min="-2" pref="334" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tabCategorias1" min="-2" max="-2" attributes="0"/>
@@ -204,17 +203,12 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Component id="txtNombreProveedor" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtNombreProveedor1" min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="btnSeleccionaProductos" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="txtNombreProveedor" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNombreProveedor1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtNombreProveedor2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="rSTextFieldIconOne2" min="-2" max="-2" attributes="0"/>
@@ -231,20 +225,6 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="newscomponents.RSButtonGradientIcon_new" name="btnSeleccionaProductos">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/icon-add-user.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Agregar Nuevo"/>
-                    <Property name="colorSecundarioHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="66" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
-                      <Value id="SELECT_ALL"/>
-                    </Property>
-                  </Properties>
-                </Component>
                 <Component class="RSMaterialComponent.RSTextFieldMaterial" name="txtNombreProveedor">
                   <Properties>
                     <Property name="placeholder" type="java.lang.String" value="Id de la categoria"/>
@@ -279,7 +259,7 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="ff" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Aplicar cambios"/>
+                    <Property name="text" type="java.lang.String" value="Agregar Nuevo"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="colorPrimario" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="cc" red="0" type="rgb"/>
@@ -324,6 +304,11 @@
                   </Properties>
                 </Component>
                 <Component class="vista.TabCategorias" name="tabCategorias1">
+                </Component>
+                <Component class="RSMaterialComponent.RSTextFieldMaterial" name="txtNombreProveedor2">
+                  <Properties>
+                    <Property name="placeholder" type="java.lang.String" value="Descripci&#xf3;n"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

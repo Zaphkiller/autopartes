@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="982" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="993" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
           </Group>
@@ -110,11 +110,11 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="982" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="993" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="982" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="993" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -169,46 +169,40 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="txtNombreProveedor1" min="-2" pref="216" max="-2" attributes="0"/>
-                                  <Component id="txtDireccionProveedor" min="-2" pref="468" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtCorreoProveedor" min="-2" pref="224" max="-2" attributes="0"/>
-                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                  <Component id="txtTelefonoProveedor" min="-2" pref="226" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="txtTitular" alignment="0" min="-2" pref="468" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnSeleccionaProductos" min="-2" pref="216" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldIconOne2" min="-2" pref="481" max="-2" attributes="0"/>
-                                  <EmptySpace pref="15" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNombreProveedor" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
-                              <Component id="tabProveedores1" alignment="0" min="-2" pref="967" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
                           <Component id="rSButtonGradientIcon_new5" min="-2" pref="219" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="rSButtonGradientIcon_new4" min="-2" pref="212" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="tabProveedores1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Component id="txtNombreProveedor1" min="-2" pref="216" max="-2" attributes="0"/>
+                                          <Component id="txtDireccionProveedor" min="-2" pref="468" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="txtCorreoProveedor" min="-2" pref="224" max="-2" attributes="0"/>
+                                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                          <Component id="txtTelefonoProveedor" min="-2" pref="226" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="txtTitular" alignment="0" min="-2" pref="468" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="rSTextFieldIconOne2" min="-2" pref="481" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="txtNombreProveedor" min="-2" pref="216" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -221,11 +215,8 @@
                               <Component id="txtNombreProveedor1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtDireccionProveedor" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="btnSeleccionaProductos" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtDireccionProveedor" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="txtTitular" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -235,9 +226,9 @@
                               </Group>
                               <Component id="rSTextFieldIconOne2" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="tabProveedores1" min="-2" pref="244" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Component id="tabProveedores1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="rSButtonGradientIcon_new4" min="-2" max="-2" attributes="0"/>
                               <Component id="rSButtonGradientIcon_new5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -248,20 +239,6 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="newscomponents.RSButtonGradientIcon_new" name="btnSeleccionaProductos">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/icon-add-user.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Agregar Nuevo"/>
-                    <Property name="colorSecundarioHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="66" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
-                      <Value id="SELECT_ALL"/>
-                    </Property>
-                  </Properties>
-                </Component>
                 <Component class="RSMaterialComponent.RSTextFieldMaterial" name="txtDireccionProveedor">
                   <Properties>
                     <Property name="placeholder" type="java.lang.String" value="Direcci&#xf3;n fiscal"/>
@@ -316,7 +293,7 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="ff" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Generar compra"/>
+                    <Property name="text" type="java.lang.String" value="Agregar Nuevo"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="colorPrimario" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="cc" red="0" type="rgb"/>
@@ -361,11 +338,6 @@
                   </Properties>
                 </Component>
                 <Component class="vista.TabProveedores" name="tabProveedores1">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
