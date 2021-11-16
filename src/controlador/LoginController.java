@@ -37,7 +37,7 @@ public class LoginController implements ActionListener{
                String usuario = loginV.txtUsuario.getText();
                String clave = String.valueOf(loginV.txtPassword.getPassword());
                us = usDAO.login(usuario, clave);
-               if(us.getNick_usuario() != null){
+               if(us.getNick_user()!= null){
                    FrmPanelPrincipal admin = new FrmPanelPrincipal();
                    admin.setVisible(true);
                    this.loginV.dispose();

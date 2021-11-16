@@ -1,16 +1,17 @@
-
 package vista;
 
+import controlador.UserController;
 import modelo.Usuario;
 import modelo.UsuarioDAO;
 
-
 public class FrmPanelPrincipal extends javax.swing.JFrame {
+
 
     public FrmPanelPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
         
+
     }
 
     /**
@@ -379,7 +380,7 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-       if(!this.btnHome.isSelected()){
+        if (!this.btnHome.isSelected()) {
             this.btnHome.setSelected(true);
             this.btnCompras.setSelected(false);
             this.btnVentas.setSelected(false);
@@ -389,15 +390,15 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
             this.btnMarcas.setSelected(false);
-            this.btnSalir.setSelected(false); 
-            
+            this.btnSalir.setSelected(false);
+
             this.pnlSlider.setPanelNormal(pnlHome);
-            
+
         }
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprasActionPerformed
-        if(!this.btnCompras.isSelected()){
+        if (!this.btnCompras.isSelected()) {
             this.btnHome.setSelected(false);
             this.btnCompras.setSelected(true);
             this.btnVentas.setSelected(false);
@@ -407,15 +408,14 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
             this.btnMarcas.setSelected(false);
-            this.btnSalir.setSelected(false);   
-            
+            this.btnSalir.setSelected(false);
+
             //this.pnlSlider.setPanelNormal(pnlCompras);
-            
         }
     }//GEN-LAST:event_btnComprasActionPerformed
 
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
-        if(!this.btnVentas.isSelected()){
+        if (!this.btnVentas.isSelected()) {
             this.btnHome.setSelected(false);
             this.btnCompras.setSelected(false);
             this.btnVentas.setSelected(true);
@@ -426,16 +426,14 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnCategorias.setSelected(false);
             this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);
-            
+
             this.pnlSlider.setPanelNormal(pnlVentas);
-            
-            
-            
+
         }
     }//GEN-LAST:event_btnVentasActionPerformed
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
-       if(!this.btnProductos.isSelected()){
+        if (!this.btnProductos.isSelected()) {
             this.btnHome.setSelected(false);
             this.btnCompras.setSelected(false);
             this.btnVentas.setSelected(false);
@@ -445,15 +443,15 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
             this.btnMarcas.setSelected(false);
-            this.btnSalir.setSelected(false); 
-            
+            this.btnSalir.setSelected(false);
+
             this.pnlSlider.setPanelNormal(pnlProductos);
-            
+
         }
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        if(!this.btnClientes.isSelected()){
+        if (!this.btnClientes.isSelected()) {
             this.btnHome.setSelected(false);
             this.btnCompras.setSelected(false);
             this.btnVentas.setSelected(false);
@@ -463,15 +461,15 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
             this.btnMarcas.setSelected(false);
-            this.btnSalir.setSelected(false);   
-            
+            this.btnSalir.setSelected(false);
+
             this.pnlSlider.setPanelNormal(pnlClientes);
-            
+
         }
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
-        if(!this.btnProveedor.isSelected()){
+        if (!this.btnProveedor.isSelected()) {
             this.btnHome.setSelected(false);
             this.btnCompras.setSelected(false);
             this.btnVentas.setSelected(false);
@@ -481,17 +479,15 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
             this.btnMarcas.setSelected(false);
-            this.btnSalir.setSelected(false); 
-            
+            this.btnSalir.setSelected(false);
+
             this.pnlSlider.setPanelNormal(pnlProveedores);
-            
-            
-            
+
         }
     }//GEN-LAST:event_btnProveedorActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
-        if(!this.btnUsuarios.isSelected()){
+        if (!this.btnUsuarios.isSelected()) {
             this.btnHome.setSelected(false);
             this.btnCompras.setSelected(false);
             this.btnVentas.setSelected(false);
@@ -502,15 +498,14 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnCategorias.setSelected(false);
             this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);
-            
+
             this.pnlSlider.setPanelNormal(pnlUsuarios);
-                      
-            
+
         }
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
     private void btnCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriasActionPerformed
-        if(!this.btnCategorias.isSelected()){
+        if (!this.btnCategorias.isSelected()) {
             this.btnHome.setSelected(false);
             this.btnCompras.setSelected(false);
             this.btnVentas.setSelected(false);
@@ -521,14 +516,14 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnCategorias.setSelected(true);
             this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);
-            
+
             this.pnlSlider.setPanelNormal(pnlCategorias);
-            
+
         }
     }//GEN-LAST:event_btnCategoriasActionPerformed
 
     private void btnMarcasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcasActionPerformed
-        if(!this.btnMarcas.isSelected()){
+        if (!this.btnMarcas.isSelected()) {
             this.btnHome.setSelected(false);
             this.btnCompras.setSelected(false);
             this.btnVentas.setSelected(false);
@@ -539,9 +534,9 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnCategorias.setSelected(false);
             this.btnMarcas.setSelected(true);
             this.btnSalir.setSelected(false);
-            
+
             this.pnlSlider.setPanelNormal(pnlMarcas);
-            
+
         }
     }//GEN-LAST:event_btnMarcasActionPerformed
 

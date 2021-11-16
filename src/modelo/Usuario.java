@@ -4,45 +4,55 @@ package modelo;
 
 public class Usuario {
 
-    private int codigo_usuario;
-    private String apellido;
-    private String nombre;
-    private String nick_usuario;
+    private int id_user;
+    private String nick_user;
+    private String name;
+    private String last_name;
+    private String dni;
     private String password;
-    private String rol;
-    private String perfil;
-    private String estado;
+    private String email;
+    private String phone;
+    private String role;
+    private String status;
 
-    public int getCodigo_usuario() {
-        return codigo_usuario;
+    public int getId_user() {
+        return id_user;
     }
 
-    public void setCodigo_usuario(int codigo_usuario) {
-        this.codigo_usuario = codigo_usuario;
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getNick_user() {
+        return nick_user;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setNick_user(String nick_user) {
+        this.nick_user = nick_user;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNick_usuario() {
-        return nick_usuario;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setNick_usuario(String nick_usuario) {
-        this.nick_usuario = nick_usuario;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getPassword() {
@@ -53,32 +63,37 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getRol() {
-        return rol;
+    public String getEmail() {
+        return email;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPerfil() {
-        return perfil;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPerfil(String perfil) {
-        this.perfil = perfil;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getRole() {
+        return role;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    
-    
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
     
     
 }
