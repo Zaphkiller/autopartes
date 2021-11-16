@@ -232,6 +232,8 @@ public class VistaUsuarios extends javax.swing.JPanel {
         });
         tblUsers.setBackgoundHover(new java.awt.Color(102, 255, 255));
         tblUsers.setComponentPopupMenu(PoupMenuUsers);
+        tblUsers.setEditingColumn(0);
+        tblUsers.setEditingRow(0);
         tblUsers.setSelectionBackground(new java.awt.Color(51, 153, 255));
         tblUsers.setWidthBorderRows(0);
         jScrollPane1.setViewportView(tblUsers);

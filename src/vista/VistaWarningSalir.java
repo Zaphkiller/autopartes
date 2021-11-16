@@ -47,6 +47,7 @@ public class VistaWarningSalir extends javax.swing.JDialog {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setRequestFocusEnabled(false);
 
         rSPanelMaterial1.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelMaterial1.setIntensity(5);

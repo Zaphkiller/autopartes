@@ -110,7 +110,7 @@ public class UsuarioDAO {
     }
     
     public boolean modify(Usuario us) {
-        String sql = "UPDATE usuario SET nick_user=?, name=?, last_name=?, dni=?, password=?, email=?,phone=?,role=? where id_user=?";
+        String sql = "UPDATE users SET nick_user=?, name=?, last_name=?, dni=?, password=?, email=?,phone=?,role=? where id_user=?";
         
         try {
             con = cn.getConexion();
