@@ -60,11 +60,11 @@ public class VistaClientes extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
 
         MenuItem_EliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
-        MenuItem_EliminarCliente.setText("jMenuItem1");
+        MenuItem_EliminarCliente.setText("Eliiminar");
         PopupMenuClientes.add(MenuItem_EliminarCliente);
 
         MenuItem_ReingresarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
-        MenuItem_ReingresarCliente.setText("jMenuItem1");
+        MenuItem_ReingresarCliente.setText("Reingresar");
         PopupMenuClientes.add(MenuItem_ReingresarCliente);
 
         setMaximumSize(new java.awt.Dimension(995, 702));

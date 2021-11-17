@@ -12,16 +12,13 @@ import modelo.ProviderDAO;
  *
  * @author Natsu98fx
  */
-public class VistaProveedores extends javax.swing.JPanel {
+public class VistaCompras extends javax.swing.JPanel {
 
-    Provider pro = new Provider();
-    ProviderDAO proDAO = new ProviderDAO();
     
     
-    public VistaProveedores() {
+    public VistaCompras() {
         initComponents();
-        
-        ProviderController prov = new ProviderController(pro,proDAO,this);
+
     }
 
 
@@ -87,7 +84,7 @@ public class VistaProveedores extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Roboto Cn", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Módulo de Proveedores");
+        jLabel1.setText("Módulo de Compras");
 
         javax.swing.GroupLayout rSPanelMaterialGradient1Layout = new javax.swing.GroupLayout(rSPanelMaterialGradient1);
         rSPanelMaterialGradient1.setLayout(rSPanelMaterialGradient1Layout);
