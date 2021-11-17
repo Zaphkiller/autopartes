@@ -43,6 +43,7 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
         this.vista.tblClientes.addMouseListener(this);
         this.vista.txtSearchCliente.addKeyListener(this);
         listarClientes();
+        
 
     }
 
@@ -181,17 +182,20 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
         vista.tblClientes.setDefaultRenderer(vista.tblClientes.getColumnClass(0), color);
         List<Cliente> lista = cliDAO.ListaClientes(vista.txtSearchCliente.getText());
         modelo = (DefaultTableModel) vista.tblClientes.getModel();
+        
         Object[] ob = new Object[7];
         for (int i = 0; i < lista.size(); i++) {
             ob[0] = lista.get(i).getId_cliente();
             ob[1] = lista.get(i).getName_cliente();
             ob[2] = lista.get(i).getLastname_cliente();
             ob[3] = lista.get(i).getDni_cliente();
-            ob[4] = lista.get(i).getAddress_cliente();
-            ob[5] = lista.get(i).getPhone_cliente();
+            ob[4] = lista.get(i).getPhone_cliente();
+            ob[5] = lista.get(i).getAddress_cliente();
             ob[6] = lista.get(i).getStatus_cliente();
+            
             modelo.addRow(ob);
         }
+        
         vista.tblClientes.setModel(modelo);
     }
 

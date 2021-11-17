@@ -37,7 +37,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
         btnUsuarios = new rojerusan.RSButtonIconI();
         btnSalir = new rojerusan.RSButtonIconI();
-        btnMarcas = new rojerusan.RSButtonIconI();
         btnMarcas1 = new rojerusan.RSButtonIconI();
         pnlTopBar = new RSMaterialComponent.RSPanelMaterial();
         rSLabelSombra1 = new rojeru_san.rslabel.RSLabelSombra();
@@ -123,7 +122,7 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         });
 
         btnProveedor.setBackground(new java.awt.Color(102, 102, 102));
-        btnProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-proveedor.png"))); // NOI18N
+        btnProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-provider.png"))); // NOI18N
         btnProveedor.setText("Proveedor");
         btnProveedor.setColorHover(new java.awt.Color(51, 51, 51));
         btnProveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -134,7 +133,7 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         });
 
         btnCategorias.setBackground(new java.awt.Color(102, 102, 102));
-        btnCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
+        btnCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-category.png"))); // NOI18N
         btnCategorias.setText("Categorías");
         btnCategorias.setColorHover(new java.awt.Color(51, 51, 51));
         btnCategorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -155,11 +154,11 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
         rSPanelMaterialImage1Layout.setHorizontalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 132, Short.MAX_VALUE)
+            .addGap(0, 160, Short.MAX_VALUE)
         );
         rSPanelMaterialImage1Layout.setVerticalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 125, Short.MAX_VALUE)
+            .addGap(0, 154, Short.MAX_VALUE)
         );
 
         btnUsuarios.setBackground(new java.awt.Color(102, 102, 102));
@@ -181,17 +180,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
-            }
-        });
-
-        btnMarcas.setBackground(new java.awt.Color(102, 102, 102));
-        btnMarcas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
-        btnMarcas.setText("Marcas");
-        btnMarcas.setColorHover(new java.awt.Color(51, 51, 51));
-        btnMarcas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnMarcas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMarcasActionPerformed(evt);
             }
         });
 
@@ -223,21 +211,20 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                             .addComponent(btnUsuarios, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMarcas, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                     .addComponent(btnMarcas1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMenuLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
         );
         pnlMenuLayout.setVerticalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,13 +240,11 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnMarcas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnMarcas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
 
         jPanel1.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, 260, 710));
@@ -391,7 +376,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnProveedor.setSelected(false);
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
-            this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false); 
             
             this.pnlSlider.setPanelNormal(pnlHome);
@@ -409,7 +393,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnProveedor.setSelected(false);
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
-            this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);   
             
             //this.pnlSlider.setPanelNormal(pnlCompras);
@@ -427,7 +410,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnProveedor.setSelected(false);
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
-            this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);
             
             this.pnlSlider.setPanelNormal(pnlVentas);
@@ -447,7 +429,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnProveedor.setSelected(false);
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
-            this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false); 
             
             this.pnlSlider.setPanelNormal(pnlProductos);
@@ -465,7 +446,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnProveedor.setSelected(false);
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
-            this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);   
             
             this.pnlSlider.setPanelNormal(pnlClientes);
@@ -483,7 +463,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnProveedor.setSelected(true);
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(false);
-            this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false); 
             
             this.pnlSlider.setPanelNormal(pnlProveedores);
@@ -503,7 +482,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnProveedor.setSelected(false);
             this.btnUsuarios.setSelected(true);
             this.btnCategorias.setSelected(false);
-            this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);
             
             this.pnlSlider.setPanelNormal(pnlUsuarios);
@@ -522,31 +500,12 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             this.btnProveedor.setSelected(false);
             this.btnUsuarios.setSelected(false);
             this.btnCategorias.setSelected(true);
-            this.btnMarcas.setSelected(false);
             this.btnSalir.setSelected(false);
             
             this.pnlSlider.setPanelNormal(pnlCategorias);
             
         }
     }//GEN-LAST:event_btnCategoriasActionPerformed
-
-    private void btnMarcasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcasActionPerformed
-        if(!this.btnMarcas.isSelected()){
-            this.btnHome.setSelected(false);
-            this.btnCompras.setSelected(false);
-            this.btnVentas.setSelected(false);
-            this.btnProductos.setSelected(false);
-            this.btnClientes.setSelected(false);
-            this.btnProveedor.setSelected(false);
-            this.btnUsuarios.setSelected(false);
-            this.btnCategorias.setSelected(false);
-            this.btnMarcas.setSelected(true);
-            this.btnSalir.setSelected(false);
-            
-            this.pnlSlider.setPanelNormal(pnlMarcas);
-            
-        }
-    }//GEN-LAST:event_btnMarcasActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         VistaWarningSalir salir = new VistaWarningSalir();
@@ -599,7 +558,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
     private rojerusan.RSButtonIconI btnClientes;
     private rojerusan.RSButtonIconI btnCompras;
     private rojerusan.RSButtonIconI btnHome;
-    private rojerusan.RSButtonIconI btnMarcas;
     private rojerusan.RSButtonIconI btnMarcas1;
     private rojerusan.RSButtonIconI btnProductos;
     private rojerusan.RSButtonIconI btnProveedor;

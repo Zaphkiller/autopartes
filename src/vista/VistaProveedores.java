@@ -27,27 +27,35 @@ public class VistaProveedores extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        pnlGeneral = new javax.swing.JPanel();
+        pnlTitulo = new javax.swing.JPanel();
         rSPanelMaterialGradient1 = new RSMaterialComponent.RSPanelMaterialGradient();
         jLabel1 = new javax.swing.JLabel();
         pnlSlider = new newscomponents.RSPanelEffect();
-        jPanel3 = new javax.swing.JPanel();
-        txtDireccionProveedor = new RSMaterialComponent.RSTextFieldMaterial();
-        txtTitular = new RSMaterialComponent.RSTextFieldMaterial();
-        txtTelefonoProveedor = new RSMaterialComponent.RSTextFieldMaterial();
-        txtNombreProveedor = new RSMaterialComponent.RSTextFieldMaterial();
-        txtCorreoProveedor = new RSMaterialComponent.RSTextFieldMaterial();
-        rSButtonGradientIcon_new4 = new newscomponents.RSButtonGradientIcon_new();
-        rSButtonGradientIcon_new5 = new newscomponents.RSButtonGradientIcon_new();
-        txtNombreProveedor1 = new RSMaterialComponent.RSTextFieldMaterial();
-        rSTextFieldIconOne2 = new RSMaterialComponent.RSTextFieldIconOne();
-        tabProveedores1 = new vista.TabProveedores();
+        txtSearchProvider = new RSMaterialComponent.RSTextFieldIconOne();
+        txRucProvider = new RSMaterialComponent.RSTextFieldOne();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblProviders = new rojerusan.RSTableMetro();
+        btnNeProvider = new newscomponents.RSButtonGradientIcon_new();
+        btnRegisterProvider = new newscomponents.RSButtonGradientIcon_new();
+        btnModifyProvider = new newscomponents.RSButtonGradientIcon_new();
+        txtIdProvider = new RSMaterialComponent.RSTextFieldOne();
+        txtBusinessNameProvider = new RSMaterialComponent.RSTextFieldOne();
+        jLabel4 = new javax.swing.JLabel();
+        txtNameProvider = new RSMaterialComponent.RSTextFieldOne();
+        jLabel5 = new javax.swing.JLabel();
+        txtPhoneProvider = new RSMaterialComponent.RSTextFieldOne();
+        jLabel6 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setMaximumSize(new java.awt.Dimension(995, 702));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(153, 153, 153)));
+        pnlGeneral.setBackground(new java.awt.Color(255, 255, 255));
+        pnlGeneral.setMaximumSize(new java.awt.Dimension(995, 702));
+
+        pnlTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        pnlTitulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(153, 153, 153)));
 
         rSPanelMaterialGradient1.setBgShade(new java.awt.Color(51, 102, 255));
         rSPanelMaterialGradient1.setColorPrimario(new java.awt.Color(0, 102, 255));
@@ -59,191 +67,310 @@ public class VistaProveedores extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Roboto Cn", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Proveedores");
+        jLabel1.setText("Módulo de Proveedores");
 
         javax.swing.GroupLayout rSPanelMaterialGradient1Layout = new javax.swing.GroupLayout(rSPanelMaterialGradient1);
         rSPanelMaterialGradient1.setLayout(rSPanelMaterialGradient1Layout);
         rSPanelMaterialGradient1Layout.setHorizontalGroup(
             rSPanelMaterialGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 993, Short.MAX_VALUE)
-            .addGroup(rSPanelMaterialGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialGradient1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 993, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialGradient1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         rSPanelMaterialGradient1Layout.setVerticalGroup(
             rSPanelMaterialGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 93, Short.MAX_VALUE)
-            .addGroup(rSPanelMaterialGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(rSPanelMaterialGradient1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlTituloLayout = new javax.swing.GroupLayout(pnlTitulo);
+        pnlTitulo.setLayout(pnlTituloLayout);
+        pnlTituloLayout.setHorizontalGroup(
+            pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(rSPanelMaterialGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlTituloLayout.setVerticalGroup(
+            pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(rSPanelMaterialGradient1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        txtSearchProvider.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchProvider.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchProvider.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchProvider.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchProvider.setPlaceholder("Buscar");
 
-        txtDireccionProveedor.setPlaceholder("Dirección fiscal");
+        txRucProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txRucProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txRucProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txRucProvider.setOpaque(false);
+        txRucProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txRucProvider.setPlaceholder("Ingresar RUC...");
+        txRucProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
 
-        txtTitular.setPlaceholder("Titular");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("RUC*");
 
-        txtTelefonoProveedor.setPlaceholder("Teléfono de contacto");
+        tblProviders.setBackground(new java.awt.Color(255, 255, 255));
+        tblProviders.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        txtNombreProveedor.setPlaceholder("Id del proveedor");
+            },
+            new String [] {
+                "Id", "RUC", "Nombre", "Teléfono", "Razón Social", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, true, false, true, true
+            };
 
-        txtCorreoProveedor.setPlaceholder("Correo electrónico");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblProviders.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblProviders.setEditingColumn(0);
+        tblProviders.setEditingRow(0);
+        tblProviders.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblProviders.setWidthBorderRows(0);
+        jScrollPane1.setViewportView(tblProviders);
 
-        rSButtonGradientIcon_new4.setBackground(new java.awt.Color(0, 255, 51));
-        rSButtonGradientIcon_new4.setText("Cancelar");
-        rSButtonGradientIcon_new4.setToolTipText("");
-        rSButtonGradientIcon_new4.setColorPrimario(new java.awt.Color(255, 102, 102));
-        rSButtonGradientIcon_new4.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
-        rSButtonGradientIcon_new4.setColorSecundario(new java.awt.Color(204, 0, 51));
-        rSButtonGradientIcon_new4.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
-        rSButtonGradientIcon_new4.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
+        btnNeProvider.setBackground(new java.awt.Color(0, 255, 51));
+        btnNeProvider.setText("Nuevo");
+        btnNeProvider.setToolTipText("");
+        btnNeProvider.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnNeProvider.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnNeProvider.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnNeProvider.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnNeProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
 
-        rSButtonGradientIcon_new5.setBackground(new java.awt.Color(0, 255, 51));
-        rSButtonGradientIcon_new5.setText("Agregar Nuevo");
-        rSButtonGradientIcon_new5.setToolTipText("");
-        rSButtonGradientIcon_new5.setColorPrimario(new java.awt.Color(0, 204, 51));
-        rSButtonGradientIcon_new5.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
-        rSButtonGradientIcon_new5.setColorSecundario(new java.awt.Color(0, 102, 51));
-        rSButtonGradientIcon_new5.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
-        rSButtonGradientIcon_new5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SHOP);
+        btnRegisterProvider.setBackground(new java.awt.Color(75, 172, 198));
+        btnRegisterProvider.setText("Registrar");
+        btnRegisterProvider.setToolTipText("");
+        btnRegisterProvider.setColorPrimario(new java.awt.Color(75, 172, 198));
+        btnRegisterProvider.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterProvider.setColorSecundario(new java.awt.Color(75, 85, 215));
+        btnRegisterProvider.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
 
-        txtNombreProveedor1.setPlaceholder("Nombre del proveedor");
+        btnModifyProvider.setBackground(new java.awt.Color(0, 255, 51));
+        btnModifyProvider.setText("Modificar");
+        btnModifyProvider.setToolTipText("");
+        btnModifyProvider.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnModifyProvider.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyProvider.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnModifyProvider.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
 
-        rSTextFieldIconOne2.setForeground(new java.awt.Color(51, 51, 51));
-        rSTextFieldIconOne2.setBorderColor(new java.awt.Color(204, 204, 204));
-        rSTextFieldIconOne2.setColorIcon(new java.awt.Color(51, 51, 51));
-        rSTextFieldIconOne2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        rSTextFieldIconOne2.setPhColor(new java.awt.Color(102, 102, 102));
-        rSTextFieldIconOne2.setPlaceholder("Buscar");
+        txtIdProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdProvider.setOpaque(false);
+        txtIdProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtIdProvider.setPlaceholder("Id Proveedor");
+        txtIdProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(221, 221, 221)
-                .addComponent(rSButtonGradientIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButtonGradientIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        txtBusinessNameProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtBusinessNameProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtBusinessNameProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtBusinessNameProvider.setOpaque(false);
+        txtBusinessNameProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtBusinessNameProvider.setPlaceholder("Ingresar Razón Social...");
+        txtBusinessNameProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Razón social*");
+
+        txtNameProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtNameProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtNameProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtNameProvider.setOpaque(false);
+        txtNameProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtNameProvider.setPlaceholder("Ingresar Nombres...");
+        txtNameProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Nombre*");
+
+        txtPhoneProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtPhoneProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPhoneProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPhoneProvider.setOpaque(false);
+        txtPhoneProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPhoneProvider.setPlaceholder("Ingresar Teléfono...");
+        txtPhoneProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Teléfono*");
+
+        javax.swing.GroupLayout pnlSliderLayout = new javax.swing.GroupLayout(pnlSlider);
+        pnlSlider.setLayout(pnlSliderLayout);
+        pnlSliderLayout.setHorizontalGroup(
+            pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSliderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tabProveedores1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtNombreProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtDireccionProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txtCorreoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSTextFieldIconOne2, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSliderLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlSliderLayout.createSequentialGroup()
+                        .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlSliderLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(pnlSliderLayout.createSequentialGroup()
+                                        .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtBusinessNameProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(pnlSliderLayout.createSequentialGroup()
+                                            .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txRucProvider, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtNameProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtPhoneProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlSliderLayout.createSequentialGroup()
+                                        .addGap(138, 138, 138)
+                                        .addComponent(btnNeProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnRegisterProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnModifyProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1))
+                        .addContainerGap(30, Short.MAX_VALUE))))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombreProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        pnlSliderLayout.setVerticalGroup(
+            pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSliderLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlSliderLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txRucProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlSliderLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNameProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlSliderLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPhoneProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(txtDireccionProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(txtTitular, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtCorreoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(rSTextFieldIconOne2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addComponent(tabProveedores1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBusinessNameProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtIdProvider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSButtonGradientIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonGradientIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 50, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnRegisterProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnModifyProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNeProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
-        pnlSlider.add(jPanel3, "card2");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        javax.swing.GroupLayout pnlGeneralLayout = new javax.swing.GroupLayout(pnlGeneral);
+        pnlGeneral.setLayout(pnlGeneralLayout);
+        pnlGeneralLayout.setHorizontalGroup(
+            pnlGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGeneralLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+        pnlGeneralLayout.setVerticalGroup(
+            pnlGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGeneralLayout.createSequentialGroup()
+                .addComponent(pnlTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 998, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 709, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 993, Short.MAX_VALUE)
+            .addGap(0, 998, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 603, Short.MAX_VALUE)
+            .addGap(0, 709, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public newscomponents.RSButtonGradientIcon_new btnModifyProvider;
+    public newscomponents.RSButtonGradientIcon_new btnNeProvider;
+    public newscomponents.RSButtonGradientIcon_new btnRegisterProvider;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel pnlGeneral;
     private newscomponents.RSPanelEffect pnlSlider;
-    private newscomponents.RSButtonGradientIcon_new rSButtonGradientIcon_new4;
-    private newscomponents.RSButtonGradientIcon_new rSButtonGradientIcon_new5;
+    private javax.swing.JPanel pnlTitulo;
     private RSMaterialComponent.RSPanelMaterialGradient rSPanelMaterialGradient1;
-    private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne2;
-    private vista.TabProveedores tabProveedores1;
-    private RSMaterialComponent.RSTextFieldMaterial txtCorreoProveedor;
-    private RSMaterialComponent.RSTextFieldMaterial txtDireccionProveedor;
-    private RSMaterialComponent.RSTextFieldMaterial txtNombreProveedor;
-    private RSMaterialComponent.RSTextFieldMaterial txtNombreProveedor1;
-    private RSMaterialComponent.RSTextFieldMaterial txtTelefonoProveedor;
-    private RSMaterialComponent.RSTextFieldMaterial txtTitular;
+    public rojerusan.RSTableMetro tblProviders;
+    public RSMaterialComponent.RSTextFieldOne txRucProvider;
+    public RSMaterialComponent.RSTextFieldOne txtBusinessNameProvider;
+    public RSMaterialComponent.RSTextFieldOne txtIdProvider;
+    public RSMaterialComponent.RSTextFieldOne txtNameProvider;
+    public RSMaterialComponent.RSTextFieldOne txtPhoneProvider;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider;
     // End of variables declaration//GEN-END:variables
 }

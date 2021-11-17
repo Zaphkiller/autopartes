@@ -43,7 +43,7 @@ public class ClienteDAO {
         List<Cliente> ListaClientes = new ArrayList();
         String sql = "SELECT * FROM cliente ORDER BY status_cliente ASC";
         String search = "SELECT *FROM cliente where name_cliente LIKE '%"
-                + valor + "%' OR lastname_cliente LIKE'%" + valor + "%'";
+                + valor + "%' OR dni_cliente LIKE'%" + valor + "%'";
 
         try {
             con = cn.getConexion();
@@ -63,6 +63,7 @@ public class ClienteDAO {
                 cli.setLastname_cliente(rs.getString("lastname_cliente"));
                 cli.setDni_cliente(rs.getString("dni_cliente"));
                 cli.setPhone_cliente(rs.getString("phone_cliente"));
+                cli.setAddress_cliente(rs.getString("address_cliente"));
                 cli.setStatus_cliente(rs.getString("status_cliente"));
               
                 ListaClientes.add(cli);
