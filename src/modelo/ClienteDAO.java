@@ -18,7 +18,7 @@ public class ClienteDAO {
 
     public boolean register(Cliente cli) {
 
-        String sql = "INSERT INTO cliente(name_cliente,lastname_cliente,dni_cliente,phone_cliente,address_cliente,status_cliente) values (?,?,?,?,?,?)";
+        String sql = "INSERT INTO cliente(name_cliente,lastname_cliente,dni_cliente,phone_cliente,address_cliente) values (?,?,?,?,?)";
 
         try {
             con = cn.getConexion();
@@ -28,7 +28,6 @@ public class ClienteDAO {
             ps.setString(3, cli.getDni_cliente());
             ps.setString(4, cli.getPhone_cliente());
             ps.setString(5, cli.getAddress_cliente());
-            ps.setString(6, cli.getStatus_cliente());
             ps.execute();
             return true;
 
@@ -42,9 +41,9 @@ public class ClienteDAO {
     public List ListaClientes(String valor) {
 
         List<Cliente> ListaClientes = new ArrayList();
-        String sql = "SELECT * FROM users ORDER BY status ASC";
-        String search = "SELECT *FROM users where nick_user LIKE '%"
-                + valor + "%' OR name LIKE'%" + valor + "%'";
+        String sql = "SELECT * FROM cliente ORDER BY status_cliente ASC";
+        String search = "SELECT *FROM cliente where name_cliente LIKE '%"
+                + valor + "%' OR lastname_cliente LIKE'%" + valor + "%'";
 
         try {
             con = cn.getConexion();
@@ -59,7 +58,7 @@ public class ClienteDAO {
 
             while (rs.next()) {
                 Cliente cli = new Cliente();
-                cli.setId_cliente(rs.getInt("id_user"));
+                cli.setId_cliente(rs.getInt("id_cliente"));
                 cli.setName_cliente(rs.getString("name_cliente"));
                 cli.setLastname_cliente(rs.getString("lastname_cliente"));
                 cli.setDni_cliente(rs.getString("dni_cliente"));
@@ -87,7 +86,6 @@ public class ClienteDAO {
             ps.setString(3, cli.getDni_cliente());
             ps.setString(4, cli.getPhone_cliente());
             ps.setString(5, cli.getAddress_cliente());
-            ps.setString(6, cli.getStatus_cliente());
             ps.setInt(7, cli.getId_cliente());
             ps.execute();
             return true;
@@ -99,12 +97,12 @@ public class ClienteDAO {
         
     }
     
-    public boolean accion(String status, int id_cliente) {
-        String sql = "UPDATE users SET status_cliente=? where id_cliente=?";
+    public boolean accion(String status_cliente, int id_cliente) {
+        String sql = "UPDATE cliente SET status_cliente=? where id_cliente=?";
         try {
             con = cn.getConexion();
             ps = con.prepareStatement(sql);
-            ps.setString(1, status);
+            ps.setString(1, status_cliente);
             ps.setInt(2, id_cliente);
             ps.execute();
             return true;

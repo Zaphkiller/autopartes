@@ -1,11 +1,13 @@
 
 package vista;
 
+import controlador.ClienteController;
 import modelo.Usuario;
 import modelo.UsuarioDAO;
 
 
 public class FrmPanelPrincipal extends javax.swing.JFrame {
+
     
 
     public FrmPanelPrincipal() {

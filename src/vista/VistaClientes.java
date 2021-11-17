@@ -20,7 +20,7 @@ public class VistaClientes extends javax.swing.JPanel {
         
         initComponents();
         
-        ClienteController cli = new ClienteController(cli,cliDAO, this);
+        ClienteController client= new ClienteController(cli,cliDAO, this);
         
     }
 

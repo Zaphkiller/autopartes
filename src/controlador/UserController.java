@@ -24,7 +24,6 @@ public class UserController implements ActionListener, MouseListener, KeyListene
     private Usuario us;
     private UsuarioDAO usDAO;
     private VistaUsuarios vista;
-    private FrmPanelPrincipal principal;
 
     DefaultTableModel modelo = new DefaultTableModel();
 
@@ -32,7 +31,6 @@ public class UserController implements ActionListener, MouseListener, KeyListene
         this.us = us;
         this.usDAO = usDAO;
         this.vista = vista;
-        this.principal = principal;
 
         this.vista.btnRegisterUser.addActionListener(this);
         this.vista.btnModifyUser.addActionListener(this);
