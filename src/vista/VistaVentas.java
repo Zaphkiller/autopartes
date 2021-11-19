@@ -87,7 +87,7 @@ import vista.ModalSeleccionarProductos;
         jLabel1.setFont(new java.awt.Font("Roboto Cn", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ventas");
+        jLabel1.setText("Módulo ventas");
 
         javax.swing.GroupLayout rSPanelMaterialGradient1Layout = new javax.swing.GroupLayout(rSPanelMaterialGradient1);
         rSPanelMaterialGradient1.setLayout(rSPanelMaterialGradient1Layout);

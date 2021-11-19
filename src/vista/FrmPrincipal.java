@@ -1,19 +1,24 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package vista;
 
-import controlador.ClienteController;
-import modelo.Usuario;
-import modelo.UsuarioDAO;
+import controlador.SlidingController;
 
+/**
+ *
+ * @author Natsu98fx
+ */
+public class FrmPrincipal extends javax.swing.JFrame {
 
-public class FrmPanelPrincipal extends javax.swing.JFrame {
-
-    
-
-    public FrmPanelPrincipal() {
+    /**
+     * Creates new form FrmPrincipal
+     */
+    public FrmPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+        SlidingController slide = new SlidingController(this);
     }
 
     /**
@@ -37,22 +42,26 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
         btnUsuarios = new rojerusan.RSButtonIconI();
         btnSalir = new rojerusan.RSButtonIconI();
-        btnMarcas1 = new rojerusan.RSButtonIconI();
+        btnReportes = new rojerusan.RSButtonIconI();
         pnlTopBar = new RSMaterialComponent.RSPanelMaterial();
         rSLabelSombra1 = new rojeru_san.rslabel.RSLabelSombra();
         rSLabelImage1 = new rojeru_san.rslabel.RSLabelImage();
         btnCerrar = new RSMaterialComponent.RSButtonIconOne();
         pnlPrincipal = new RSMaterialComponent.RSPanelMaterial();
         pnlSlider = new newscomponents.RSPanelEffect();
-        pnlProveedores = new vista.VistaProveedores();
-        pnlUsuarios = new vista.VistaUsuarios();
+        pnlHome = new vista.VistaHome();
         pnlVentas = new vista.VistaVentas();
         pnlProductos = new vista.VistaProductos();
-        pnlCategorias = new vista.VistaCategorias();
-        pnlMarcas = new vista.VistaMarcas();
         pnlClientes = new vista.VistaClientes();
-        pnlHome = new vista.VistaHome();
+        pnlCategorias = new vista.VistaCategorias();
+        pnlProveedores = new vista.VistaProveedores();
+        pnlUsuarios = new vista.VistaUsuarios();
+        pnlReportes = new vista.VistaReportes();
+        pnlPrueba = new vista.TabMarcas();
         pnlCompras = new vista.VistaCompras();
+        vistaCompras1 = new vista.VistaCompras();
+        vistaProductos1 = new vista.VistaProductos();
+        vistaClientes1 = new vista.VistaClientes();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -72,77 +81,41 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         btnHome.setColorHover(new java.awt.Color(51, 51, 51));
         btnHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnHome.setSelected(true);
-        btnHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHomeActionPerformed(evt);
-            }
-        });
 
         btnCompras.setBackground(new java.awt.Color(102, 102, 102));
         btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-sale.png"))); // NOI18N
         btnCompras.setText("Compras");
         btnCompras.setColorHover(new java.awt.Color(51, 51, 51));
         btnCompras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnCompras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComprasActionPerformed(evt);
-            }
-        });
 
         btnVentas.setBackground(new java.awt.Color(102, 102, 102));
         btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-venta.png"))); // NOI18N
         btnVentas.setText("Ventas");
         btnVentas.setColorHover(new java.awt.Color(51, 51, 51));
         btnVentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnVentas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVentasActionPerformed(evt);
-            }
-        });
 
         btnProductos.setBackground(new java.awt.Color(102, 102, 102));
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-product.png"))); // NOI18N
         btnProductos.setText("Productos");
         btnProductos.setColorHover(new java.awt.Color(51, 51, 51));
         btnProductos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnProductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProductosActionPerformed(evt);
-            }
-        });
 
         btnClientes.setBackground(new java.awt.Color(102, 102, 102));
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-cliente.png"))); // NOI18N
         btnClientes.setText("Clientes");
         btnClientes.setColorHover(new java.awt.Color(51, 51, 51));
         btnClientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClientesActionPerformed(evt);
-            }
-        });
 
         btnProveedor.setBackground(new java.awt.Color(102, 102, 102));
-        btnProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-provider.png"))); // NOI18N
         btnProveedor.setText("Proveedor");
         btnProveedor.setColorHover(new java.awt.Color(51, 51, 51));
         btnProveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnProveedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProveedorActionPerformed(evt);
-            }
-        });
 
         btnCategorias.setBackground(new java.awt.Color(102, 102, 102));
-        btnCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-category.png"))); // NOI18N
+        btnCategorias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
         btnCategorias.setText("Categorías");
         btnCategorias.setColorHover(new java.awt.Color(51, 51, 51));
         btnCategorias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnCategorias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCategoriasActionPerformed(evt);
-            }
-        });
 
         rSPanelMaterialImage1.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelMaterialImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/images/autopartes-logo.png"))); // NOI18N
@@ -155,11 +128,11 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
         rSPanelMaterialImage1Layout.setHorizontalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 184, Short.MAX_VALUE)
         );
         rSPanelMaterialImage1Layout.setVerticalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 154, Short.MAX_VALUE)
+            .addGap(0, 165, Short.MAX_VALUE)
         );
 
         btnUsuarios.setBackground(new java.awt.Color(102, 102, 102));
@@ -167,33 +140,18 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         btnUsuarios.setText("Usuarios");
         btnUsuarios.setColorHover(new java.awt.Color(51, 51, 51));
         btnUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuariosActionPerformed(evt);
-            }
-        });
 
         btnSalir.setBackground(new java.awt.Color(102, 102, 102));
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-exit.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setColorHover(new java.awt.Color(51, 51, 51));
         btnSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
 
-        btnMarcas1.setBackground(new java.awt.Color(102, 102, 102));
-        btnMarcas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
-        btnMarcas1.setText("Reportes");
-        btnMarcas1.setColorHover(new java.awt.Color(51, 51, 51));
-        btnMarcas1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnMarcas1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMarcas1ActionPerformed(evt);
-            }
-        });
+        btnReportes.setBackground(new java.awt.Color(102, 102, 102));
+        btnReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-roles.png"))); // NOI18N
+        btnReportes.setText("Reportes");
+        btnReportes.setColorHover(new java.awt.Color(51, 51, 51));
+        btnReportes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
         pnlMenu.setLayout(pnlMenuLayout);
@@ -201,6 +159,9 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuLayout.createSequentialGroup()
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(btnReportes, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                     .addGroup(pnlMenuLayout.createSequentialGroup()
                         .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnProveedor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
@@ -210,20 +171,17 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                             .addComponent(btnCompras, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnHome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnUsuarios, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(btnCategorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                    .addComponent(btnMarcas1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMenuLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pnlMenuLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMenuLayout.setVerticalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,10 +200,9 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnMarcas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel1.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, 260, 710));
@@ -301,11 +258,8 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlProveedores.setName("pnlProveedores"); // NOI18N
-        pnlSlider.add(pnlProveedores, "card3");
-
-        pnlUsuarios.setName("pnlUsuarios"); // NOI18N
-        pnlSlider.add(pnlUsuarios, "card4");
+        pnlHome.setName("pnlHome"); // NOI18N
+        pnlSlider.add(pnlHome, "card10");
 
         pnlVentas.setName("pnlVentas"); // NOI18N
         pnlSlider.add(pnlVentas, "card5");
@@ -313,18 +267,23 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         pnlProductos.setName("pnlProductos"); // NOI18N
         pnlSlider.add(pnlProductos, "card6");
 
-        pnlCategorias.setName("pnlCategorias"); // NOI18N
-        pnlSlider.add(pnlCategorias, "card7");
-
-        pnlMarcas.setName("pnlMarcas"); // NOI18N
-        pnlSlider.add(pnlMarcas, "card8");
-
         pnlClientes.setName("pnlClientes"); // NOI18N
         pnlSlider.add(pnlClientes, "card9");
 
-        pnlHome.setName("pnlHome"); // NOI18N
-        pnlSlider.add(pnlHome, "card10");
-        pnlSlider.add(pnlCompras, "card10");
+        pnlCategorias.setName("pnlCategorias"); // NOI18N
+        pnlSlider.add(pnlCategorias, "card7");
+
+        pnlProveedores.setName("pnlProveedores"); // NOI18N
+        pnlSlider.add(pnlProveedores, "card3");
+
+        pnlUsuarios.setName("pnlUsuarios"); // NOI18N
+        pnlSlider.add(pnlUsuarios, "card4");
+        pnlSlider.add(pnlReportes, "card10");
+        pnlSlider.add(pnlPrueba, "card11");
+        pnlSlider.add(pnlCompras, "card12");
+        pnlSlider.add(vistaCompras1, "card12");
+        pnlSlider.add(vistaProductos1, "card13");
+        pnlSlider.add(vistaClientes1, "card14");
 
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
@@ -342,6 +301,8 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        System.out.println("soy un pto error >:V");
 
         jPanel1.add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 1000, 690));
 
@@ -368,143 +329,6 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
         salir.setVisible(true);
     }//GEN-LAST:event_btnCerrarActionPerformed
 
-    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-       if(!this.btnHome.isSelected()){
-            this.btnHome.setSelected(true);
-            this.btnCompras.setSelected(false);
-            this.btnVentas.setSelected(false);
-            this.btnProductos.setSelected(false);
-            this.btnClientes.setSelected(false);
-            this.btnProveedor.setSelected(false);
-            this.btnUsuarios.setSelected(false);
-            this.btnCategorias.setSelected(false);
-            this.btnSalir.setSelected(false);  
-            
-            this.pnlSlider.setPanelNormal(pnlHome);
-            
-        }
-    }//GEN-LAST:event_btnHomeActionPerformed
-
-    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
-        if(!this.btnVentas.isSelected()){
-            this.btnHome.setSelected(false);
-            this.btnCompras.setSelected(false);
-            this.btnVentas.setSelected(true);
-            this.btnProductos.setSelected(false);
-            this.btnClientes.setSelected(false);
-            this.btnProveedor.setSelected(false);
-            this.btnUsuarios.setSelected(false);
-            this.btnCategorias.setSelected(false);
-            this.btnSalir.setSelected(false); 
-            
-            this.pnlSlider.setPanelNormal(pnlVentas);
-            
-            
-            
-        }
-    }//GEN-LAST:event_btnVentasActionPerformed
-
-    private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
-       if(!this.btnProductos.isSelected()){
-            this.btnHome.setSelected(true);
-            this.btnCompras.setSelected(false);
-            this.btnVentas.setSelected(false);
-            this.btnProductos.setSelected(true);
-            this.btnClientes.setSelected(false);
-            this.btnProveedor.setSelected(false);
-            this.btnUsuarios.setSelected(false);
-            this.btnCategorias.setSelected(false);
-            this.btnSalir.setSelected(false);  
-            
-            this.pnlSlider.setPanelNormal(pnlProductos);
-            
-        }
-    }//GEN-LAST:event_btnProductosActionPerformed
-
-    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        if(!this.btnClientes.isSelected()){
-            this.btnHome.setSelected(false);
-            this.btnCompras.setSelected(false);
-            this.btnVentas.setSelected(false);
-            this.btnProductos.setSelected(false);
-            this.btnClientes.setSelected(true);
-            this.btnProveedor.setSelected(false);
-            this.btnUsuarios.setSelected(false);
-            this.btnCategorias.setSelected(false);
-            this.btnSalir.setSelected(false);    
-            
-            this.pnlSlider.setPanelNormal(pnlClientes);
-            
-        }
-    }//GEN-LAST:event_btnClientesActionPerformed
-
-    private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
-        if(!this.btnProveedor.isSelected()){
-            this.btnHome.setSelected(false);
-            this.btnCompras.setSelected(false);
-            this.btnVentas.setSelected(false);
-            this.btnProductos.setSelected(false);
-            this.btnClientes.setSelected(false);
-            this.btnProveedor.setSelected(true);
-            this.btnUsuarios.setSelected(false);
-            this.btnCategorias.setSelected(false);
-            this.btnSalir.setSelected(false); 
-            
-            this.pnlSlider.setPanelNormal(pnlProveedores);
-            
-            
-            
-        }
-    }//GEN-LAST:event_btnProveedorActionPerformed
-
-    private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
-        if(!this.btnUsuarios.isSelected()){
-            this.btnHome.setSelected(false);
-            this.btnCompras.setSelected(false);
-            this.btnVentas.setSelected(false);
-            this.btnProductos.setSelected(false);
-            this.btnClientes.setSelected(false);
-            this.btnProveedor.setSelected(false);
-            this.btnUsuarios.setSelected(true);
-            this.btnCategorias.setSelected(false);
-            this.btnSalir.setSelected(false); 
-            
-            this.pnlSlider.setPanelNormal(pnlUsuarios);
-                      
-            
-        }
-    }//GEN-LAST:event_btnUsuariosActionPerformed
-
-    private void btnCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriasActionPerformed
-       
-    }//GEN-LAST:event_btnCategoriasActionPerformed
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        VistaWarningSalir salir = new VistaWarningSalir();
-        salir.titulo.setText("¿ESTAS SEGURO DE SALIR?");
-        salir.setVisible(true);
-    }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void btnMarcas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcas1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMarcas1ActionPerformed
-
-    private void btnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprasActionPerformed
-        if(!this.btnCompras.isSelected()){
-            this.btnHome.setSelected(false);
-            this.btnCompras.setSelected(true);
-            this.btnVentas.setSelected(false);
-            this.btnProductos.setSelected(false);
-            this.btnClientes.setSelected(false);
-            this.btnProveedor.setSelected(false);
-            this.btnUsuarios.setSelected(false);
-            this.btnCategorias.setSelected(false);
-            this.btnSalir.setSelected(false);
-
-            this.pnlSlider.setPanelNormal(pnlCompras);
-        }
-    }//GEN-LAST:event_btnComprasActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -522,52 +346,56 @@ public class FrmPanelPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmPanelPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmPanelPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmPanelPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmPanelPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmPanelPrincipal().setVisible(true);
+                new FrmPrincipal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojerusan.RSButtonIconI btnCategorias;
+    public rojerusan.RSButtonIconI btnCategorias;
     private RSMaterialComponent.RSButtonIconOne btnCerrar;
-    private rojerusan.RSButtonIconI btnClientes;
-    private rojerusan.RSButtonIconI btnCompras;
-    private rojerusan.RSButtonIconI btnHome;
-    private rojerusan.RSButtonIconI btnMarcas1;
-    private rojerusan.RSButtonIconI btnProductos;
-    private rojerusan.RSButtonIconI btnProveedor;
-    private rojerusan.RSButtonIconI btnSalir;
-    private rojerusan.RSButtonIconI btnUsuarios;
-    private rojerusan.RSButtonIconI btnVentas;
+    public rojerusan.RSButtonIconI btnClientes;
+    public rojerusan.RSButtonIconI btnCompras;
+    public rojerusan.RSButtonIconI btnHome;
+    public rojerusan.RSButtonIconI btnProductos;
+    public rojerusan.RSButtonIconI btnProveedor;
+    public rojerusan.RSButtonIconI btnReportes;
+    public rojerusan.RSButtonIconI btnSalir;
+    public rojerusan.RSButtonIconI btnUsuarios;
+    public rojerusan.RSButtonIconI btnVentas;
     private javax.swing.JPanel jPanel1;
-    private vista.VistaCategorias pnlCategorias;
-    private vista.VistaClientes pnlClientes;
-    private vista.VistaCompras pnlCompras;
-    private vista.VistaHome pnlHome;
-    private vista.VistaMarcas pnlMarcas;
+    public vista.VistaCategorias pnlCategorias;
+    public vista.VistaClientes pnlClientes;
+    public vista.VistaCompras pnlCompras;
+    public vista.VistaHome pnlHome;
     private RSMaterialComponent.RSPanelMaterial pnlMenu;
-    private RSMaterialComponent.RSPanelMaterial pnlPrincipal;
-    private vista.VistaProductos pnlProductos;
-    private vista.VistaProveedores pnlProveedores;
-    private newscomponents.RSPanelEffect pnlSlider;
+    public RSMaterialComponent.RSPanelMaterial pnlPrincipal;
+    public vista.VistaProductos pnlProductos;
+    public vista.VistaProveedores pnlProveedores;
+    public vista.TabMarcas pnlPrueba;
+    public vista.VistaReportes pnlReportes;
+    public newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSPanelMaterial pnlTopBar;
-    private vista.VistaUsuarios pnlUsuarios;
-    private vista.VistaVentas pnlVentas;
+    public vista.VistaUsuarios pnlUsuarios;
+    public vista.VistaVentas pnlVentas;
     private rojeru_san.rslabel.RSLabelImage rSLabelImage1;
     private rojeru_san.rslabel.RSLabelSombra rSLabelSombra1;
     private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
+    private vista.VistaClientes vistaClientes1;
+    private vista.VistaCompras vistaCompras1;
+    private vista.VistaProductos vistaProductos1;
     // End of variables declaration//GEN-END:variables
 }

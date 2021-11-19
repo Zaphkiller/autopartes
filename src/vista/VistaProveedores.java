@@ -34,9 +34,9 @@ public class VistaProveedores extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PopupMenuProvider = new rojerusan.RSPopuMenu();
+        PopUpMenuProvider = new rojerusan.RSPopuMenu();
         MenuItemEliminarProveedor = new javax.swing.JMenuItem();
-        MenuItem_ReingresarProveedor = new javax.swing.JMenuItem();
+        MenuItemReingresarProveedor = new javax.swing.JMenuItem();
         jPanel4 = new javax.swing.JPanel();
         pnlGeneral = new javax.swing.JPanel();
         pnlTitulo = new javax.swing.JPanel();
@@ -63,11 +63,12 @@ public class VistaProveedores extends javax.swing.JPanel {
 
         MenuItemEliminarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
         MenuItemEliminarProveedor.setText("Eliminar");
-        PopupMenuProvider.add(MenuItemEliminarProveedor);
+        MenuItemEliminarProveedor.setToolTipText("");
+        PopUpMenuProvider.add(MenuItemEliminarProveedor);
 
-        MenuItem_ReingresarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
-        MenuItem_ReingresarProveedor.setText("Reingresar");
-        PopupMenuProvider.add(MenuItem_ReingresarProveedor);
+        MenuItemReingresarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
+        MenuItemReingresarProveedor.setText("Reingresar");
+        PopUpMenuProvider.add(MenuItemReingresarProveedor);
 
         jPanel4.setMaximumSize(new java.awt.Dimension(995, 702));
 
@@ -152,6 +153,7 @@ public class VistaProveedores extends javax.swing.JPanel {
             }
         });
         tblProviders.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblProviders.setComponentPopupMenu(PopUpMenuProvider);
         tblProviders.setEditingColumn(0);
         tblProviders.setEditingRow(0);
         tblProviders.setSelectionBackground(new java.awt.Color(51, 153, 255));
@@ -389,8 +391,8 @@ public class VistaProveedores extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem MenuItemEliminarProveedor;
-    public javax.swing.JMenuItem MenuItem_ReingresarProveedor;
-    public rojerusan.RSPopuMenu PopupMenuProvider;
+    public javax.swing.JMenuItem MenuItemReingresarProveedor;
+    public rojerusan.RSPopuMenu PopUpMenuProvider;
     public newscomponents.RSButtonGradientIcon_new btnModifyProvider;
     public newscomponents.RSButtonGradientIcon_new btnNewProvider;
     public newscomponents.RSButtonGradientIcon_new btnRegisterProvider;

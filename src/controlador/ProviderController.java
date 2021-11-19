@@ -36,7 +36,7 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
         this.vista.btnNewProvider.addActionListener(this);
         
         this.vista.MenuItemEliminarProveedor.addActionListener(this);
-        this.vista.MenuItem_ReingresarProveedor.addActionListener(this);
+        this.vista.MenuItemReingresarProveedor.addActionListener(this);
         this.vista.tblProviders.addMouseListener(this);
         this.vista.txtSearchProvider.addKeyListener(this);
         listarProveedores();
@@ -133,7 +133,7 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
                 
                 }
             }
-        }else if(e.getSource() == vista.MenuItem_ReingresarProveedor){
+        }else if(e.getSource() == vista.MenuItemReingresarProveedor){
         
             if(vista.txtIdProvider.getText().equals("")){
                 

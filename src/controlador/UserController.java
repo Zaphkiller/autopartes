@@ -12,7 +12,6 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Tables;
 import modelo.Usuario;
 import modelo.UsuarioDAO;
-import vista.FrmPanelPrincipal;
 import vista.VistaUsuarios;
 import vista.VistaInfo;
 import vista.VistaSuccess;

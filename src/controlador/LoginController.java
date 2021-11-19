@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import modelo.Usuario;
 import modelo.UsuarioDAO;
 import vista.FrmLogin;
-import vista.FrmPanelPrincipal;
+import vista.FrmPrincipal;
 
 
 
@@ -38,7 +38,7 @@ public class LoginController implements ActionListener{
                String clave = String.valueOf(loginV.txtPassword.getPassword());
                us = usDAO.login(usuario, clave);
                if(us.getNick_user()!= null){
-                   FrmPanelPrincipal admin = new FrmPanelPrincipal();
+                   FrmPrincipal admin = new FrmPrincipal();
                    admin.setVisible(true);
                    this.loginV.dispose();
                }else{
