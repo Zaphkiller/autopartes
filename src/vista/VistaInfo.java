@@ -224,5 +224,6 @@ public class VistaInfo extends javax.swing.JDialog {
     private void Ubicar(int y) {
         this.setLocation(820, y - -288);
     }
+ 
 
 }

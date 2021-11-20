@@ -71,7 +71,6 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnCategorias" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnSalir" alignment="0" pref="255" max="32767" attributes="0"/>
-                          <Component id="btnReportes" alignment="0" pref="255" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="btnProveedor" alignment="0" pref="255" max="32767" attributes="0"/>
@@ -87,37 +86,35 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="rSPanelMaterialImage1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="rSPanelMaterialImage1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnHome" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnCompras" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnVentas" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnProductos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnClientes" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnProveedor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnUsuarios" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
                       <Component id="btnCategorias" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnReportes" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -220,6 +217,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/icon-provider.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Proveedor"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -236,7 +236,7 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/icon-roles.png"/>
+                  <Image iconType="3" name="/images/icon-category.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Categor&#xed;as"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -265,12 +265,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="184" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="178" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="165" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="175" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -302,24 +302,6 @@
                   <Image iconType="3" name="/images/icon-exit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salir"/>
-                <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="rojerusan.RSButtonIconI" name="btnReportes">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/icon-roles.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Reportes"/>
                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
@@ -457,10 +439,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
-                <Component class="vista.VistaHome" name="pnlHome">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="pnlHome" noResource="true"/>
-                  </Properties>
+                <Component class="vista.VistaCompras" name="pnlCompras">
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -484,15 +463,12 @@
                   </Constraints>
                 </Component>
                 <Component class="vista.VistaProductos" name="pnlProductos">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="pnlProductos" noResource="true"/>
-                  </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card6"/>
+                      <CardConstraints cardName="card11"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -506,19 +482,6 @@
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                       <CardConstraints cardName="card9"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="vista.VistaCategorias" name="pnlCategorias">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="pnlCategorias" noResource="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card7"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -548,7 +511,10 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="vista.VistaReportes" name="pnlReportes">
+                <Component class="vista.VistaCategorias" name="pnlCategorias">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -558,44 +524,16 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="vista.TabMarcas" name="pnlPrueba">
+                <Component class="vista.VistaHome" name="pnlHome">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="pnlHome" noResource="true"/>
+                  </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card11"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="vista.VistaCompras" name="pnlCompras">
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card12"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="vista.VistaCompras" name="vistaCompras1">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card12"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="vista.VistaProductos" name="vistaProductos1">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card13"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="vista.VistaClientes" name="vistaClientes1">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card14"/>
+                      <CardConstraints cardName="card10"/>
                     </Constraint>
                   </Constraints>
                 </Component>

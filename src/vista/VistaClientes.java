@@ -220,11 +220,13 @@ public class VistaClientes extends javax.swing.JPanel {
         btnModifyCliente.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
         btnModifyCliente.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
 
+        txtIdCliente.setEditable(false);
+        txtIdCliente.setBackground(new java.awt.Color(204, 204, 204));
         txtIdCliente.setForeground(new java.awt.Color(0, 102, 255));
         txtIdCliente.setBorderColor(new java.awt.Color(0, 102, 255));
         txtIdCliente.setMargin(new java.awt.Insets(3, 2, 3, 2));
         txtIdCliente.setOpaque(false);
-        txtIdCliente.setPhColor(new java.awt.Color(0, 0, 153));
+        txtIdCliente.setPhColor(new java.awt.Color(0, 0, 0));
         txtIdCliente.setPlaceholder("Id Cliente");
         txtIdCliente.setSelectionColor(new java.awt.Color(51, 51, 51));
 

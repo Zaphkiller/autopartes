@@ -34,7 +34,7 @@ public class FrmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
+        pnlSesion = new RSMaterialComponent.RSPanelMaterialImage();
         rSLabelSombra1 = new rojeru_san.rslabel.RSLabelSombra();
         txtUsuario = new RSMaterialComponent.RSTextFieldMaterialIcon();
         txtPassword = new RSMaterialComponent.RSPasswordMaterialIcon();
@@ -44,15 +44,15 @@ public class FrmLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        rSPanelMaterialImage1.setFocusable(false);
-        rSPanelMaterialImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/images/images.jpg"))); // NOI18N
-        rSPanelMaterialImage1.setMaximumSize(new java.awt.Dimension(471, 519));
-        rSPanelMaterialImage1.setPixels(10);
-        rSPanelMaterialImage1.setShadowBottom(false);
-        rSPanelMaterialImage1.setShadowLeft(false);
-        rSPanelMaterialImage1.setShadowRight(false);
-        rSPanelMaterialImage1.setShadowTop(false);
-        rSPanelMaterialImage1.setShapePanel(null);
+        pnlSesion.setFocusable(false);
+        pnlSesion.setImagen(new javax.swing.ImageIcon(getClass().getResource("/images/images.jpg"))); // NOI18N
+        pnlSesion.setMaximumSize(new java.awt.Dimension(471, 519));
+        pnlSesion.setPixels(10);
+        pnlSesion.setShadowBottom(false);
+        pnlSesion.setShadowLeft(false);
+        pnlSesion.setShadowRight(false);
+        pnlSesion.setShadowTop(false);
+        pnlSesion.setShapePanel(null);
 
         rSLabelSombra1.setForeground(new java.awt.Color(255, 255, 255));
         rSLabelSombra1.setText("Ingreso al Sistema");
@@ -84,69 +84,59 @@ public class FrmLogin extends javax.swing.JFrame {
         btnLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnLogin.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ARROW_FORWARD);
 
-        javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
-        rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
-        rSPanelMaterialImage1Layout.setHorizontalGroup(
-            rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlSesionLayout = new javax.swing.GroupLayout(pnlSesion);
+        pnlSesion.setLayout(pnlSesionLayout);
+        pnlSesionLayout.setHorizontalGroup(
+            pnlSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSesionLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
+                .addGroup(pnlSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSesionLayout.createSequentialGroup()
                         .addComponent(rSLabelSombra1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSesionLayout.createSequentialGroup()
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53))))
-            .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
-                    .addContainerGap(22, Short.MAX_VALUE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(24, 24, 24)))
-            .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
-                    .addGap(43, 43, 43)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(215, Short.MAX_VALUE)))
+            .addGroup(pnlSesionLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 26, Short.MAX_VALUE))
+            .addGroup(pnlSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSesionLayout.createSequentialGroup()
+                    .addContainerGap(42, Short.MAX_VALUE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(30, 30, 30)))
         );
-        rSPanelMaterialImage1Layout.setVerticalGroup(
-            rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
+        pnlSesionLayout.setVerticalGroup(
+            pnlSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSesionLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(rSLabelSombra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 376, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 395, Short.MAX_VALUE)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
-            .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
-                    .addContainerGap(396, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
+                .addGroup(pnlSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61))
+            .addGroup(pnlSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSesionLayout.createSequentialGroup()
+                    .addContainerGap(414, Short.MAX_VALUE)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(208, 208, 208)))
-            .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
-                    .addContainerGap(561, Short.MAX_VALUE)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(45, 45, 45)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pnlSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pnlSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -190,8 +180,8 @@ public class FrmLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public newscomponents.RSButtonIcon_new btnCancelar;
     public newscomponents.RSButtonIcon_new btnLogin;
+    public RSMaterialComponent.RSPanelMaterialImage pnlSesion;
     private rojeru_san.rslabel.RSLabelSombra rSLabelSombra1;
-    private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
     public RSMaterialComponent.RSPasswordMaterialIcon txtPassword;
     public RSMaterialComponent.RSTextFieldMaterialIcon txtUsuario;
     // End of variables declaration//GEN-END:variables

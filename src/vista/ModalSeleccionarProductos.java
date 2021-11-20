@@ -37,130 +37,238 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rSPanelShadow1 = new rojeru_san.rspanel.RSPanelShadow();
-        rSPanelBorder2 = new RSMaterialComponent.RSPanelBorder();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        btnCerrar1 = new RSMaterialComponent.RSButtonIconOne();
+        rSPanelBorder1 = new RSMaterialComponent.RSPanelBorder();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnCerrar = new RSMaterialComponent.RSButtonIconOne();
+        txtSearchProvider = new RSMaterialComponent.RSTextFieldIconOne();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblClientes = new rojerusan.RSTableMetro();
-        txtSearchCliente = new RSMaterialComponent.RSTextFieldIconOne();
+        tblProviders = new rojerusan.RSTableMetro();
+        btnAgregarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
+        btnCancelarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
+        rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        cboRole2 = new rojerusan.RSComboBox();
 
         setUndecorated(true);
-        setSize(new java.awt.Dimension(867, 585));
+        setResizable(false);
+        setSize(new java.awt.Dimension(960, 579));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
 
-        rSPanelShadow1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel1.setMaximumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setName(""); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(960, 585));
+        jPanel1.setRequestFocusEnabled(false);
 
-        rSPanelBorder2.setBackground(new java.awt.Color(255, 255, 255));
-        rSPanelBorder2.setBgBorder(new java.awt.Color(0, 102, 255));
+        rSPanelBorder1.setBackground(new java.awt.Color(255, 255, 255));
+        rSPanelBorder1.setBgBorder(new java.awt.Color(51, 119, 255));
+        rSPanelBorder1.setMaximumSize(new java.awt.Dimension(960, 579));
+        rSPanelBorder1.setMinimumSize(new java.awt.Dimension(855, 567));
+        rSPanelBorder1.setName(""); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(37, 45, 223));
 
-        jLabel2.setFont(new java.awt.Font("Roboto Cn", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Listado de Proveedores disponibles");
+        jLabel1.setFont(new java.awt.Font("Roboto Cn", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Seleccionar Productos");
 
-        btnCerrar1.setBackground(new java.awt.Color(255, 51, 0));
-        btnCerrar1.setBackgroundHover(new java.awt.Color(153, 0, 0));
-        btnCerrar1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CLOSE);
-        btnCerrar1.setRound(10);
-        btnCerrar1.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.setBackground(new java.awt.Color(255, 51, 0));
+        btnCerrar.setBackgroundHover(new java.awt.Color(153, 0, 0));
+        btnCerrar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CLOSE);
+        btnCerrar.setRound(10);
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrar1ActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCerrar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCerrar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
 
-        tblClientes.setBackground(new java.awt.Color(255, 255, 255));
-        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+        txtSearchProvider.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchProvider.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchProvider.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchProvider.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchProvider.setPlaceholder("Buscar");
+
+        tblProviders.setBackground(new java.awt.Color(255, 255, 255));
+        tblProviders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id", "Código", "Nombre", "Teléfono", "Estado"
+                "Id", "RUC", "Nombre", "Estado"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, true, true, false, true
+                true, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        tblClientes.setBackgoundHover(new java.awt.Color(102, 255, 255));
-        tblClientes.setEditingColumn(0);
-        tblClientes.setEditingRow(0);
-        tblClientes.setSelectionBackground(new java.awt.Color(51, 153, 255));
-        tblClientes.setWidthBorderRows(0);
-        jScrollPane1.setViewportView(tblClientes);
+        tblProviders.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblProviders.setEditingColumn(0);
+        tblProviders.setEditingRow(0);
+        tblProviders.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblProviders.setWidthBorderRows(0);
+        jScrollPane1.setViewportView(tblProviders);
 
-        txtSearchCliente.setForeground(new java.awt.Color(51, 51, 51));
-        txtSearchCliente.setBorderColor(new java.awt.Color(204, 204, 204));
-        txtSearchCliente.setColorIcon(new java.awt.Color(51, 51, 51));
-        txtSearchCliente.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        txtSearchCliente.setPhColor(new java.awt.Color(102, 102, 102));
-        txtSearchCliente.setPlaceholder("Buscar");
+        btnAgregarProveedorModal.setBackground(new java.awt.Color(0, 255, 51));
+        btnAgregarProveedorModal.setText("Agregar");
+        btnAgregarProveedorModal.setToolTipText("");
+        btnAgregarProveedorModal.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnAgregarProveedorModal.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProveedorModal.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnAgregarProveedorModal.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProveedorModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
 
-        javax.swing.GroupLayout rSPanelBorder2Layout = new javax.swing.GroupLayout(rSPanelBorder2);
-        rSPanelBorder2.setLayout(rSPanelBorder2Layout);
-        rSPanelBorder2Layout.setHorizontalGroup(
-            rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelBorder2Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtSearchCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 922, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16))
+        btnCancelarProveedorModal.setBackground(new java.awt.Color(0, 255, 51));
+        btnCancelarProveedorModal.setText("Cancelar");
+        btnCancelarProveedorModal.setToolTipText("");
+        btnCancelarProveedorModal.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnCancelarProveedorModal.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnCancelarProveedorModal.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnCancelarProveedorModal.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnCancelarProveedorModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
+
+        javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
+        rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
+        rSPanelMaterialImage1Layout.setHorizontalGroup(
+            rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        rSPanelBorder2Layout.setVerticalGroup(
-            rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rSPanelBorder2Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(txtSearchCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+        rSPanelMaterialImage1Layout.setVerticalGroup(
+            rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 181, Short.MAX_VALUE)
         );
 
-        rSPanelShadow1.add(rSPanelBorder2, java.awt.BorderLayout.CENTER);
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Selccionar proveedor*");
+
+        cboRole2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>", "Administrador", "Empleado" }));
+        cboRole2.setColorArrow(new java.awt.Color(0, 102, 255));
+        cboRole2.setColorBorde(new java.awt.Color(0, 0, 255));
+        cboRole2.setColorFondo(new java.awt.Color(0, 102, 255));
+        cboRole2.setColorSeleccion(new java.awt.Color(0, 102, 255));
+
+        javax.swing.GroupLayout rSPanelBorder1Layout = new javax.swing.GroupLayout(rSPanelBorder1);
+        rSPanelBorder1.setLayout(rSPanelBorder1Layout);
+        rSPanelBorder1Layout.setHorizontalGroup(
+            rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 911, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                                .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cboRole2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addComponent(btnAgregarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                    .addGap(361, 361, 361)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(361, Short.MAX_VALUE)))
+        );
+        rSPanelBorder1Layout.setVerticalGroup(
+            rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboRole2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                    .addGap(251, 251, 251)
+                    .addComponent(jLabel2)
+                    .addContainerGap(316, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSPanelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSPanelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, 867, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelShadow1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -181,29 +289,30 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
         timer.schedule(task, 0, 12);
     }//GEN-LAST:event_formWindowOpened
 
-    private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         setVisible(false);
         dispose();
-    }//GEN-LAST:event_btnCerrar1ActionPerformed
+    }//GEN-LAST:event_btnCerrarActionPerformed
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public newscomponents.RSButtonGradientIcon_new btnAgregarProveedorModal;
+    public newscomponents.RSButtonGradientIcon_new btnCancelarProveedorModal;
     private RSMaterialComponent.RSButtonIconOne btnCerrar;
-    private RSMaterialComponent.RSButtonIconOne btnCerrar1;
+    public rojerusan.RSComboBox cboRole2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private RSMaterialComponent.RSPanelBorder rSPanelBorder1;
-    private RSMaterialComponent.RSPanelBorder rSPanelBorder2;
-    private rojeru_san.rspanel.RSPanelShadow rSPanelShadow1;
-    private rojeru_san.RSPanelShadow rSPanelShadow2;
-    public rojerusan.RSTableMetro tblClientes;
-    public RSMaterialComponent.RSTextFieldIconOne txtSearchCliente;
+    private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
+    public rojerusan.RSTableMetro tblProviders;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider;
     // End of variables declaration//GEN-END:variables
 
 
@@ -212,6 +321,6 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
     }
 
     private void Ubicar(int y) {
-        this.setLocation(660, y - 60);
+        this.setLocation(610, y - 55);
     }
 }

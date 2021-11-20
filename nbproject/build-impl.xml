@@ -1772,7 +1772,7 @@ is divided into following sections:
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.27</version>
+            <version>8.0.26</version>
         </dependency>
     </dependencies>
 </project>

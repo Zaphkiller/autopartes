@@ -592,6 +592,10 @@
             </Component>
             <Component class="RSMaterialComponent.RSTextFieldOne" name="txtIdCliente">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="0" type="rgb"/>
                 </Property>
@@ -603,7 +607,7 @@
                 </Property>
                 <Property name="opaque" type="boolean" value="false"/>
                 <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="0" red="0" type="rgb"/>
+                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="placeholder" type="java.lang.String" value="Id Cliente"/>
                 <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

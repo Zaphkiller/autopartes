@@ -187,11 +187,12 @@ public class VistaProveedores extends javax.swing.JPanel {
         btnModifyProvider.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
         btnModifyProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
 
+        txtIdProvider.setBackground(new java.awt.Color(204, 204, 204));
         txtIdProvider.setForeground(new java.awt.Color(0, 102, 255));
         txtIdProvider.setBorderColor(new java.awt.Color(0, 102, 255));
         txtIdProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
         txtIdProvider.setOpaque(false);
-        txtIdProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtIdProvider.setPhColor(new java.awt.Color(0, 0, 0));
         txtIdProvider.setPlaceholder("Id Proveedor");
         txtIdProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
 

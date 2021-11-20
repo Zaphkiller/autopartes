@@ -265,11 +265,13 @@ public class VistaUsuarios extends javax.swing.JPanel {
         btnModifyUser.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
         btnModifyUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
 
+        txtIduser.setEditable(false);
+        txtIduser.setBackground(new java.awt.Color(204, 204, 204));
         txtIduser.setForeground(new java.awt.Color(0, 102, 255));
         txtIduser.setBorderColor(new java.awt.Color(0, 102, 255));
         txtIduser.setMargin(new java.awt.Insets(3, 2, 3, 2));
         txtIduser.setOpaque(false);
-        txtIduser.setPhColor(new java.awt.Color(0, 0, 153));
+        txtIduser.setPhColor(new java.awt.Color(0, 0, 0));
         txtIduser.setPlaceholder("Id User");
         txtIduser.setSelectionColor(new java.awt.Color(51, 51, 51));
 
