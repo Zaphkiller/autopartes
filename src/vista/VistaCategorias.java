@@ -4,17 +4,22 @@
  */
 package vista;
 
+import controlador.CategoryController;
+import modelo.Category;
+import modelo.CategoryDAO;
+
 /**
  *
  * @author Natsu98fx
  */
 public class VistaCategorias extends javax.swing.JPanel {
 
-    /**
-     * Creates new form VistaProductos
-     */
+    Category cat = new Category();
+    CategoryDAO catDAO = new CategoryDAO();
     public VistaCategorias() {
         initComponents();
+        
+        CategoryController cate = new CategoryController(cat,catDAO,this);
     }
 
     /**
@@ -26,22 +31,33 @@ public class VistaCategorias extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popupMenuCategories = new rojerusan.RSPopuMenu();
+        MenuItem_EliminarCategory = new javax.swing.JMenuItem();
+        MenuItem_ReingresarCategory = new javax.swing.JMenuItem();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         rSPanelMaterialGradient1 = new RSMaterialComponent.RSPanelMaterialGradient();
         jLabel1 = new javax.swing.JLabel();
         pnlSlider = new newscomponents.RSPanelEffect();
-        txtSearchUser = new RSMaterialComponent.RSTextFieldIconOne();
+        txtSearchCategory = new RSMaterialComponent.RSTextFieldIconOne();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblUsers = new rojerusan.RSTableMetro();
-        btnNewUser = new newscomponents.RSButtonGradientIcon_new();
-        btnRegisterUser = new newscomponents.RSButtonGradientIcon_new();
-        btnModifyUser = new newscomponents.RSButtonGradientIcon_new();
-        txtNickname1 = new RSMaterialComponent.RSTextFieldOne();
+        tblCategory = new rojerusan.RSTableMetro();
+        btnNewCategory = new newscomponents.RSButtonGradientIcon_new();
+        btnRegisterCategory = new newscomponents.RSButtonGradientIcon_new();
+        btnModifyCategory = new newscomponents.RSButtonGradientIcon_new();
+        txtNameCategory = new RSMaterialComponent.RSTextFieldOne();
         jLabel4 = new javax.swing.JLabel();
-        txtNickname10 = new RSMaterialComponent.RSTextFieldOne();
-        txtIdProvider = new RSMaterialComponent.RSTextFieldOne();
+        txtCodeCategory = new RSMaterialComponent.RSTextFieldOne();
+        txtIdCategory = new RSMaterialComponent.RSTextFieldOne();
+
+        MenuItem_EliminarCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        MenuItem_EliminarCategory.setText("Eliminar");
+        popupMenuCategories.add(MenuItem_EliminarCategory);
+
+        MenuItem_ReingresarCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
+        MenuItem_ReingresarCategory.setText("Reingresar");
+        popupMenuCategories.add(MenuItem_ReingresarCategory);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(995, 702));
@@ -87,19 +103,19 @@ public class VistaCategorias extends javax.swing.JPanel {
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtSearchUser.setForeground(new java.awt.Color(51, 51, 51));
-        txtSearchUser.setBorderColor(new java.awt.Color(204, 204, 204));
-        txtSearchUser.setColorIcon(new java.awt.Color(51, 51, 51));
-        txtSearchUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        txtSearchUser.setPhColor(new java.awt.Color(102, 102, 102));
-        txtSearchUser.setPlaceholder("Buscar");
+        txtSearchCategory.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchCategory.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchCategory.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchCategory.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchCategory.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchCategory.setPlaceholder("Buscar");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Codigo");
 
-        tblUsers.setBackground(new java.awt.Color(255, 255, 255));
-        tblUsers.setModel(new javax.swing.table.DefaultTableModel(
+        tblCategory.setBackground(new java.awt.Color(255, 255, 255));
+        tblCategory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -115,68 +131,69 @@ public class VistaCategorias extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblUsers.setBackgoundHover(new java.awt.Color(102, 255, 255));
-        tblUsers.setEditingColumn(0);
-        tblUsers.setEditingRow(0);
-        tblUsers.setSelectionBackground(new java.awt.Color(51, 153, 255));
-        tblUsers.setWidthBorderRows(0);
-        jScrollPane1.setViewportView(tblUsers);
+        tblCategory.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblCategory.setComponentPopupMenu(popupMenuCategories);
+        tblCategory.setEditingColumn(0);
+        tblCategory.setEditingRow(0);
+        tblCategory.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblCategory.setWidthBorderRows(0);
+        jScrollPane1.setViewportView(tblCategory);
 
-        btnNewUser.setBackground(new java.awt.Color(0, 255, 51));
-        btnNewUser.setText("Nuevo");
-        btnNewUser.setToolTipText("");
-        btnNewUser.setColorPrimario(new java.awt.Color(0, 204, 51));
-        btnNewUser.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
-        btnNewUser.setColorSecundario(new java.awt.Color(0, 102, 51));
-        btnNewUser.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
-        btnNewUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        btnNewCategory.setBackground(new java.awt.Color(0, 255, 51));
+        btnNewCategory.setText("Nuevo");
+        btnNewCategory.setToolTipText("");
+        btnNewCategory.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnNewCategory.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnNewCategory.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnNewCategory.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnNewCategory.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
 
-        btnRegisterUser.setBackground(new java.awt.Color(75, 172, 198));
-        btnRegisterUser.setText("Registrar");
-        btnRegisterUser.setToolTipText("");
-        btnRegisterUser.setColorPrimario(new java.awt.Color(75, 172, 198));
-        btnRegisterUser.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
-        btnRegisterUser.setColorSecundario(new java.awt.Color(75, 85, 215));
-        btnRegisterUser.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
-        btnRegisterUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+        btnRegisterCategory.setBackground(new java.awt.Color(75, 172, 198));
+        btnRegisterCategory.setText("Registrar");
+        btnRegisterCategory.setToolTipText("");
+        btnRegisterCategory.setColorPrimario(new java.awt.Color(75, 172, 198));
+        btnRegisterCategory.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterCategory.setColorSecundario(new java.awt.Color(75, 85, 215));
+        btnRegisterCategory.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterCategory.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
 
-        btnModifyUser.setBackground(new java.awt.Color(0, 255, 51));
-        btnModifyUser.setText("Modificar");
-        btnModifyUser.setToolTipText("");
-        btnModifyUser.setColorPrimario(new java.awt.Color(255, 102, 102));
-        btnModifyUser.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
-        btnModifyUser.setColorSecundario(new java.awt.Color(204, 0, 51));
-        btnModifyUser.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
-        btnModifyUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+        btnModifyCategory.setBackground(new java.awt.Color(0, 255, 51));
+        btnModifyCategory.setText("Modificar");
+        btnModifyCategory.setToolTipText("");
+        btnModifyCategory.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnModifyCategory.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyCategory.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnModifyCategory.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyCategory.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
 
-        txtNickname1.setForeground(new java.awt.Color(0, 102, 255));
-        txtNickname1.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtNickname1.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtNickname1.setOpaque(false);
-        txtNickname1.setPhColor(new java.awt.Color(0, 0, 153));
-        txtNickname1.setPlaceholder("Nombre de la Categoría...");
-        txtNickname1.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtNameCategory.setForeground(new java.awt.Color(0, 102, 255));
+        txtNameCategory.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtNameCategory.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtNameCategory.setOpaque(false);
+        txtNameCategory.setPhColor(new java.awt.Color(0, 0, 153));
+        txtNameCategory.setPlaceholder("Nombre de la Categoría...");
+        txtNameCategory.setSelectionColor(new java.awt.Color(51, 51, 51));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Nombre de la Categoría");
 
-        txtNickname10.setForeground(new java.awt.Color(0, 102, 255));
-        txtNickname10.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtNickname10.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtNickname10.setOpaque(false);
-        txtNickname10.setPhColor(new java.awt.Color(0, 0, 153));
-        txtNickname10.setPlaceholder("Código...");
-        txtNickname10.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtCodeCategory.setForeground(new java.awt.Color(0, 102, 255));
+        txtCodeCategory.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCodeCategory.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCodeCategory.setOpaque(false);
+        txtCodeCategory.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCodeCategory.setPlaceholder("Código...");
+        txtCodeCategory.setSelectionColor(new java.awt.Color(51, 51, 51));
 
-        txtIdProvider.setBackground(new java.awt.Color(204, 204, 204));
-        txtIdProvider.setForeground(new java.awt.Color(0, 102, 255));
-        txtIdProvider.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtIdProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtIdProvider.setOpaque(false);
-        txtIdProvider.setPhColor(new java.awt.Color(0, 0, 0));
-        txtIdProvider.setPlaceholder("Id Categoria");
-        txtIdProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtIdCategory.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdCategory.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdCategory.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdCategory.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdCategory.setOpaque(false);
+        txtIdCategory.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdCategory.setPlaceholder("Id Categoria");
+        txtIdCategory.setSelectionColor(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout pnlSliderLayout = new javax.swing.GroupLayout(pnlSlider);
         pnlSlider.setLayout(pnlSliderLayout);
@@ -196,23 +213,23 @@ public class VistaCategorias extends javax.swing.JPanel {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlSliderLayout.createSequentialGroup()
                                 .addGap(171, 171, 171)
-                                .addComponent(btnNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnNewCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
-                                .addComponent(btnRegisterUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnRegisterCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
-                                .addComponent(btnModifyUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnModifyCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(pnlSliderLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(pnlSliderLayout.createSequentialGroup()
-                                .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtIdCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtSearchCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlSliderLayout.createSequentialGroup()
-                                .addComponent(txtNickname10, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCodeCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(19, 19, 19)
-                                .addComponent(txtNickname1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtNameCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(36, 36, 36))
         );
         pnlSliderLayout.setVerticalGroup(
@@ -224,19 +241,20 @@ public class VistaCategorias extends javax.swing.JPanel {
                     .addComponent(jLabel4))
                 .addGap(6, 6, 6)
                 .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNickname10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNickname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodeCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNameCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIdProvider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSearchCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdCategory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegisterUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModifyUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnNewCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegisterCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModifyCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -264,7 +282,7 @@ public class VistaCategorias extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 715, Short.MAX_VALUE)
+            .addGap(0, 747, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -272,9 +290,11 @@ public class VistaCategorias extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public newscomponents.RSButtonGradientIcon_new btnModifyUser;
-    public newscomponents.RSButtonGradientIcon_new btnNewUser;
-    public newscomponents.RSButtonGradientIcon_new btnRegisterUser;
+    public javax.swing.JMenuItem MenuItem_EliminarCategory;
+    public javax.swing.JMenuItem MenuItem_ReingresarCategory;
+    public newscomponents.RSButtonGradientIcon_new btnModifyCategory;
+    public newscomponents.RSButtonGradientIcon_new btnNewCategory;
+    public newscomponents.RSButtonGradientIcon_new btnRegisterCategory;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -282,11 +302,12 @@ public class VistaCategorias extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private newscomponents.RSPanelEffect pnlSlider;
+    public rojerusan.RSPopuMenu popupMenuCategories;
     private RSMaterialComponent.RSPanelMaterialGradient rSPanelMaterialGradient1;
-    public rojerusan.RSTableMetro tblUsers;
-    public RSMaterialComponent.RSTextFieldOne txtIdProvider;
-    public RSMaterialComponent.RSTextFieldOne txtNickname1;
-    public RSMaterialComponent.RSTextFieldOne txtNickname10;
-    public RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
+    public rojerusan.RSTableMetro tblCategory;
+    public RSMaterialComponent.RSTextFieldOne txtCodeCategory;
+    public RSMaterialComponent.RSTextFieldOne txtIdCategory;
+    public RSMaterialComponent.RSTextFieldOne txtNameCategory;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchCategory;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Container class="rojerusan.RSPopuMenu" name="popupMenuCategories">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+      <SubComponents>
+        <MenuItem class="javax.swing.JMenuItem" name="MenuItem_EliminarCategory">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/eliminar.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="MenuItem_ReingresarCategory">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/ingresar.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Reingresar"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </MenuItem>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -24,7 +59,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="715" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="747" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
           </Group>
@@ -159,11 +194,11 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="171" pref="171" max="-2" attributes="0"/>
-                                      <Component id="btnNewUser" min="-2" pref="219" max="-2" attributes="0"/>
+                                      <Component id="btnNewCategory" min="-2" pref="219" max="-2" attributes="0"/>
                                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                      <Component id="btnRegisterUser" min="-2" pref="212" max="-2" attributes="0"/>
+                                      <Component id="btnRegisterCategory" min="-2" pref="212" max="-2" attributes="0"/>
                                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                      <Component id="btnModifyUser" min="-2" pref="212" max="-2" attributes="0"/>
+                                      <Component id="btnModifyCategory" min="-2" pref="212" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -172,14 +207,14 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="txtIdProvider" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtIdCategory" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txtSearchUser" min="-2" pref="265" max="-2" attributes="0"/>
+                                      <Component id="txtSearchCategory" min="-2" pref="265" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="txtNickname10" min="-2" pref="402" max="-2" attributes="0"/>
+                                      <Component id="txtCodeCategory" min="-2" pref="402" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                      <Component id="txtNickname1" min="-2" pref="525" max="-2" attributes="0"/>
+                                      <Component id="txtNameCategory" min="-2" pref="525" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -198,28 +233,29 @@
                       </Group>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtNickname10" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNickname1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCodeCategory" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNameCategory" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtSearchUser" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtIdProvider" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSearchCategory" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtIdCategory" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="348" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnNewUser" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnRegisterUser" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnModifyUser" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnNewCategory" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnRegisterCategory" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnModifyCategory" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="RSMaterialComponent.RSTextFieldIconOne" name="txtSearchUser">
+            <Component class="RSMaterialComponent.RSTextFieldIconOne" name="txtSearchCategory">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -260,7 +296,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="rojerusan.RSTableMetro" name="tblUsers">
+                <Component class="rojerusan.RSTableMetro" name="tblCategory">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -276,6 +312,9 @@
                     <Property name="backgoundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="66" type="rgb"/>
                     </Property>
+                    <Property name="componentPopupMenu" type="javax.swing.JPopupMenu" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="popupMenuCategories"/>
+                    </Property>
                     <Property name="editingColumn" type="int" value="0"/>
                     <Property name="editingRow" type="int" value="0"/>
                     <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -289,7 +328,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="newscomponents.RSButtonGradientIcon_new" name="btnNewUser">
+            <Component class="newscomponents.RSButtonGradientIcon_new" name="btnNewCategory">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="ff" red="0" type="rgb"/>
@@ -316,7 +355,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="newscomponents.RSButtonGradientIcon_new" name="btnRegisterUser">
+            <Component class="newscomponents.RSButtonGradientIcon_new" name="btnRegisterCategory">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="c6" green="ac" red="4b" type="rgb"/>
@@ -343,7 +382,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="newscomponents.RSButtonGradientIcon_new" name="btnModifyUser">
+            <Component class="newscomponents.RSButtonGradientIcon_new" name="btnModifyCategory">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="ff" red="0" type="rgb"/>
@@ -370,7 +409,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="RSMaterialComponent.RSTextFieldOne" name="txtNickname1">
+            <Component class="RSMaterialComponent.RSTextFieldOne" name="txtNameCategory">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -405,7 +444,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre de la Categor&#xed;a"/>
               </Properties>
             </Component>
-            <Component class="RSMaterialComponent.RSTextFieldOne" name="txtNickname10">
+            <Component class="RSMaterialComponent.RSTextFieldOne" name="txtCodeCategory">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -429,7 +468,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="RSMaterialComponent.RSTextFieldOne" name="txtIdProvider">
+            <Component class="RSMaterialComponent.RSTextFieldOne" name="txtIdCategory">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>

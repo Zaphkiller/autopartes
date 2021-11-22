@@ -134,7 +134,7 @@ package vista;
         tblUsers.setWidthBorderRows(0);
         jScrollPane1.setViewportView(tblUsers);
 
-        pnlSlider.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 297, 946, 210));
+        pnlSlider.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 297, 946, 290));
 
         btnNewUser.setBackground(new java.awt.Color(0, 255, 51));
         btnNewUser.setText("Generar Venta");
@@ -144,7 +144,7 @@ package vista;
         btnNewUser.setColorSecundario(new java.awt.Color(0, 102, 51));
         btnNewUser.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
         btnNewUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
-        pnlSlider.add(btnNewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 219, -1));
+        pnlSlider.add(btnNewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 600, 219, -1));
 
         btnModifyUser.setBackground(new java.awt.Color(0, 255, 51));
         btnModifyUser.setText("Cancelar");
@@ -154,7 +154,7 @@ package vista;
         btnModifyUser.setColorSecundario(new java.awt.Color(204, 0, 51));
         btnModifyUser.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
         btnModifyUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
-        pnlSlider.add(btnModifyUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 212, -1));
+        pnlSlider.add(btnModifyUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, 212, -1));
 
         txtNickname10.setForeground(new java.awt.Color(0, 102, 255));
         txtNickname10.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -283,27 +283,27 @@ package vista;
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 998, Short.MAX_VALUE)
+            .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE))
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 998, Short.MAX_VALUE)
+            .addGap(0, 968, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 721, Short.MAX_VALUE)
+            .addGap(0, 747, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -311,9 +311,9 @@ package vista;
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private newscomponents.RSButtonGradientIcon_new btnModifyUser;
-    private newscomponents.RSButtonGradientIcon_new btnNewUser;
-    private RSMaterialComponent.RSTextFieldOne idProductoVenta;
+    public newscomponents.RSButtonGradientIcon_new btnModifyUser;
+    public newscomponents.RSButtonGradientIcon_new btnNewUser;
+    public RSMaterialComponent.RSTextFieldOne idProductoVenta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -333,14 +333,14 @@ package vista;
     private rojeru_san.rsbutton.RSButtonRound rSButtonRound2;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private RSMaterialComponent.RSPanelMaterialGradient rSPanelMaterialGradient1;
-    private rojerusan.RSTableMetro tblUsers;
-    private RSMaterialComponent.RSTextFieldOne txtNickname10;
+    public rojerusan.RSTableMetro tblUsers;
+    public RSMaterialComponent.RSTextFieldOne txtNickname10;
     public RSMaterialComponent.RSTextFieldOne txtNickname11;
     public RSMaterialComponent.RSTextFieldOne txtNickname2;
     public RSMaterialComponent.RSTextFieldOne txtNickname4;
     public RSMaterialComponent.RSTextFieldOne txtNickname5;
     public RSMaterialComponent.RSTextFieldOne txtNickname6;
     public RSMaterialComponent.RSTextFieldOne txtNickname9;
-    private RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,6 +26,7 @@ public class SlidingController implements ActionListener {
         this.vista.btnProveedor.addActionListener(this);
         this.vista.btnUsuarios.addActionListener(this);
         this.vista.btnCategorias.addActionListener(this);
+        this.vista.btnEmpresa.addActionListener(this);
         this.vista.btnSalir.addActionListener(this);
     }
 
@@ -43,6 +44,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(false);
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(false);
 
                 this.vista.pnlSlider.setPanelNormal(vista.pnlHome);
@@ -60,6 +62,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(false);
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(false);
 
                 this.vista.pnlSlider.setPanelNormal(vista.pnlCompras);
@@ -77,6 +80,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(false);
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(false);
 
                 this.vista.pnlSlider.setPanelNormal(vista.pnlVentas);
@@ -94,6 +98,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(false);
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(false);
 
                 this.vista.pnlSlider.setPanelNormal(vista.pnlProductos);
@@ -111,6 +116,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(false);
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(false);
 
                 this.vista.pnlSlider.setPanelNormal(vista.pnlClientes);
@@ -128,7 +134,9 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(true);
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(false);
+                
 
                 this.vista.pnlSlider.setPanelNormal(vista.pnlProveedores);
             }
@@ -145,6 +153,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(false);
                 this.vista.btnUsuarios.setSelected(true);
                 this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(false);
 
                 this.vista.pnlSlider.setPanelNormal(vista.pnlUsuarios);
@@ -162,9 +171,28 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(false);
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(true);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(false);
 
                 this.vista.pnlSlider.setPanelNormal(vista.pnlCategorias);
+            }
+
+        }else if (e.getSource() == vista.btnEmpresa) {
+
+            if (!this.vista.btnEmpresa.isSelected()) {
+
+                this.vista.btnHome.setSelected(false);
+                this.vista.btnCompras.setSelected(false);
+                this.vista.btnVentas.setSelected(false);
+                this.vista.btnProductos.setSelected(false);
+                this.vista.btnClientes.setSelected(false);
+                this.vista.btnProveedor.setSelected(false);
+                this.vista.btnUsuarios.setSelected(false);
+                this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(true);
+                this.vista.btnSalir.setSelected(false);
+
+                this.vista.pnlSlider.setPanelNormal(vista.pnlEmpresa);
             }
 
         }else if (e.getSource() == vista.btnSalir) {
@@ -179,6 +207,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnProveedor.setSelected(false);
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
+                this.vista.btnEmpresa.setSelected(false);
                 this.vista.btnSalir.setSelected(true);
 
                 VistaWarningSalir salir = new VistaWarningSalir();
