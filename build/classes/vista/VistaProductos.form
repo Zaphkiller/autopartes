@@ -164,73 +164,70 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                  <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" alignment="0" min="-2" pref="946" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel4" min="-2" pref="396" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel5" min="-2" pref="220" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txtNickname" alignment="0" pref="226" max="32767" attributes="0"/>
-                                          <Component id="txtNickname2" alignment="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="txtNickname4" min="-2" pref="227" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jLabel6" min="-2" pref="220" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                                  <Component id="jLabel9" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="txtIduser" pref="220" max="32767" attributes="0"/>
-                                                      <Component id="txtNickname3" pref="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="cboRole2" max="32767" attributes="0"/>
-                                                      <Component id="txtSearchUser" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                          <Component id="rSButtonRound2" min="-2" pref="94" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="txtNickname1" min="-2" pref="396" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rSFotoSquareResize1" min="-2" pref="172" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" pref="172" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="txtPrecioVenta" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="cboProveedor" min="-2" pref="257" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel7" min="-2" pref="220" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="txtIdProducto" min="-2" pref="226" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel6" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                                  <Component id="jLabel9" min="-2" pref="256" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtNickname4" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabel10" max="32767" attributes="0"/>
+                                      <Component id="cboCategoria" pref="258" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="txtCodigoProducto" alignment="0" pref="226" max="32767" attributes="0"/>
+                                  <Component id="txtPrecioCompra" alignment="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel5" alignment="0" min="-2" pref="184" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel4" alignment="0" min="-2" pref="495" max="-2" attributes="0"/>
+                              <Component id="txtDescripcionProducto" min="-2" pref="495" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="39" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lblFoto" pref="185" max="32767" attributes="0"/>
+                      <Component id="btnBuscarFoto" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
+              <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+              <Component id="txtSearchProductos" alignment="1" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnNewUser" min="-2" pref="219" max="-2" attributes="0"/>
+                  <Component id="btnNewProduct" min="-2" pref="219" max="-2" attributes="0"/>
                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                  <Component id="btnRegisterUser" min="-2" pref="212" max="-2" attributes="0"/>
+                  <Component id="btnRegisterProduct" min="-2" pref="212" max="-2" attributes="0"/>
                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                  <Component id="btnModifyUser" min="-2" pref="212" max="-2" attributes="0"/>
+                  <Component id="btnModifyProduct" min="-2" pref="212" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -238,9 +235,9 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -248,15 +245,12 @@
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtNickname" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSButtonRound2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="txtCodigoProducto" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtNickname1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDescripcionProducto" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -265,36 +259,50 @@
                                   <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtNickname3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtNickname2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtPrecioVenta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtPrecioCompra" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="cboRole2" min="-2" pref="42" max="-2" attributes="0"/>
+                                      <Component id="cboProveedor" min="-2" pref="42" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNickname4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtIduser" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtSearchUser" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="txtNickname4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtIdProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                          <Component id="cboCategoria" min="-2" pref="42" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="rSFotoSquareResize1" min="-2" pref="183" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Component id="lblFoto" min="-2" pref="180" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnBuscarFoto" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <Component id="txtSearchProductos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="337" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="258" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnNewUser" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnRegisterUser" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnModifyUser" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnNewProduct" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnRegisterProduct" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnModifyProduct" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
@@ -302,7 +310,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="RSMaterialComponent.RSTextFieldIconOne" name="txtSearchUser">
+        <Component class="RSMaterialComponent.RSTextFieldIconOne" name="txtSearchProductos">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -332,7 +340,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="rojerusan.RSTableMetro" name="tblUsers">
+            <Component class="rojerusan.RSTableMetro" name="tblProductos">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -365,12 +373,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="rojeru_san.rsbutton.RSButtonRound" name="rSButtonRound2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Buscar"/>
-          </Properties>
-        </Component>
-        <Component class="newscomponents.RSButtonGradientIcon_new" name="btnNewUser">
+        <Component class="newscomponents.RSButtonGradientIcon_new" name="btnNewProduct">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="ff" red="0" type="rgb"/>
@@ -397,7 +400,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="newscomponents.RSButtonGradientIcon_new" name="btnRegisterUser">
+        <Component class="newscomponents.RSButtonGradientIcon_new" name="btnRegisterProduct">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c6" green="ac" red="4b" type="rgb"/>
@@ -424,7 +427,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="newscomponents.RSButtonGradientIcon_new" name="btnModifyUser">
+        <Component class="newscomponents.RSButtonGradientIcon_new" name="btnModifyProduct">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="ff" red="0" type="rgb"/>
@@ -451,7 +454,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtIduser">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtIdProducto">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -479,7 +482,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtNickname">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtCodigoProducto">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -514,7 +517,7 @@
             <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
           </Properties>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtNickname1">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtDescripcionProducto">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -549,7 +552,7 @@
             <Property name="text" type="java.lang.String" value="Descripci&#xf3;n del Producto"/>
           </Properties>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtNickname2">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPrecioCompra">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -584,13 +587,11 @@
             <Property name="text" type="java.lang.String" value="Precio Compra"/>
           </Properties>
         </Component>
-        <Component class="rojerusan.RSComboBox" name="cboRole2">
+        <Component class="rojerusan.RSComboBox" name="cboProveedor">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
+              <StringArray count="1">
                 <StringItem index="0" value="&lt;Seleccionar&gt;"/>
-                <StringItem index="1" value="Administrador"/>
-                <StringItem index="2" value="Empleado"/>
               </StringArray>
             </Property>
             <Property name="colorArrow" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -607,6 +608,7 @@
             </Property>
           </Properties>
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
@@ -618,10 +620,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Seleccionar Categor&#xed;a"/>
+            <Property name="text" type="java.lang.String" value="Seleccionar Proveedor"/>
           </Properties>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtNickname3">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPrecioVenta">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -688,25 +690,67 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Stock"/>
+            <Property name="text" type="java.lang.String" value="Cantidad"/>
           </Properties>
         </Component>
-        <Component class="rojerusan.RSFotoSquareResize" name="rSFotoSquareResize1">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="rojerusan.RSComboBox" name="cboCategoria">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="&lt;Seleccionar&gt;"/>
+              </StringArray>
             </Property>
+            <Property name="colorArrow" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="0" type="rgb"/>
+            </Property>
+            <Property name="colorBorde" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="colorFondo" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="0" type="rgb"/>
+            </Property>
+            <Property name="colorSeleccion" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto Cn" size="18" style="1"/>
+              <Font name="Tahoma" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Subir imagen"/>
+            <Property name="text" type="java.lang.String" value="Seleccionar Categor&#xed;a"/>
           </Properties>
+        </Component>
+        <Component class="rojerusan.RSLabelImage" name="lblFoto">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder thickness="5"/>
+              </Border>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="rojeru_san.RSButtonRiple" name="btnBuscarFoto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Buscar imagen"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarFotoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

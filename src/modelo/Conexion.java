@@ -16,7 +16,7 @@ public class Conexion {
     public Connection getConexion(){
         try{
             String db = "jdbc:mysql://localhost:3306/autopartes";
-            con = DriverManager.getConnection(db, "root", "root");
+            con = DriverManager.getConnection(db, "root", "");
             return con;
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.toString());
