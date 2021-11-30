@@ -1,14 +1,18 @@
 
 package modelo;
 
-public class ComboProveedor {
+public class ComboBox {
     
     private int id;
     private String name;
 
-    public ComboProveedor(int id, String name) {
+    public ComboBox(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public ComboBox() {
+        
     }
 
     public int getId() {
@@ -27,7 +31,7 @@ public class ComboProveedor {
         this.name = name;
     }
     
-    
+
     @Override
     
     public String toString(){

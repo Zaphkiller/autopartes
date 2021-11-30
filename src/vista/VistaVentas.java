@@ -27,14 +27,12 @@ package vista;
         rSPanelMaterialGradient1 = new RSMaterialComponent.RSPanelMaterialGradient();
         jLabel1 = new javax.swing.JLabel();
         pnlSlider = new newscomponents.RSPanelEffect();
-        txtSearchUser = new RSMaterialComponent.RSTextFieldIconOne();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUsers = new rojerusan.RSTableMetro();
         btnNewUser = new newscomponents.RSButtonGradientIcon_new();
         btnModifyUser = new newscomponents.RSButtonGradientIcon_new();
         txtNickname10 = new RSMaterialComponent.RSTextFieldOne();
-        idProductoVenta = new RSMaterialComponent.RSTextFieldOne();
         txtNickname2 = new RSMaterialComponent.RSTextFieldOne();
         jLabel6 = new javax.swing.JLabel();
         txtNickname4 = new RSMaterialComponent.RSTextFieldOne();
@@ -53,6 +51,13 @@ package vista;
         jSpinner1 = new javax.swing.JSpinner();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
         jLabel10 = new javax.swing.JLabel();
+        txtNickname7 = new RSMaterialComponent.RSTextFieldOne();
+        jLabel13 = new javax.swing.JLabel();
+        cboCategoria = new rojerusan.RSComboBox();
+        jLabel15 = new javax.swing.JLabel();
+        txtNickname8 = new RSMaterialComponent.RSTextFieldOne();
+        jLabel16 = new javax.swing.JLabel();
+        rSButtonRound3 = new rojeru_san.rsbutton.RSButtonRound();
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(995, 702));
@@ -97,14 +102,6 @@ package vista;
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
         pnlSlider.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtSearchUser.setForeground(new java.awt.Color(51, 51, 51));
-        txtSearchUser.setBorderColor(new java.awt.Color(204, 204, 204));
-        txtSearchUser.setColorIcon(new java.awt.Color(51, 51, 51));
-        txtSearchUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        txtSearchUser.setPhColor(new java.awt.Color(102, 102, 102));
-        txtSearchUser.setPlaceholder("Buscar");
-        pnlSlider.add(txtSearchUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 265, -1));
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Cod. Cliente");
@@ -134,7 +131,7 @@ package vista;
         tblUsers.setWidthBorderRows(0);
         jScrollPane1.setViewportView(tblUsers);
 
-        pnlSlider.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 297, 946, 290));
+        pnlSlider.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 307, 946, 280));
 
         btnNewUser.setBackground(new java.awt.Color(0, 255, 51));
         btnNewUser.setText("Generar Venta");
@@ -165,16 +162,6 @@ package vista;
         txtNickname10.setSelectionColor(new java.awt.Color(51, 51, 51));
         pnlSlider.add(txtNickname10, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 29, 220, -1));
 
-        idProductoVenta.setBackground(new java.awt.Color(204, 204, 204));
-        idProductoVenta.setForeground(new java.awt.Color(0, 102, 255));
-        idProductoVenta.setBorderColor(new java.awt.Color(0, 102, 255));
-        idProductoVenta.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        idProductoVenta.setOpaque(false);
-        idProductoVenta.setPhColor(new java.awt.Color(0, 0, 0));
-        idProductoVenta.setPlaceholder("Id Producto");
-        idProductoVenta.setSelectionColor(new java.awt.Color(51, 51, 51));
-        pnlSlider.add(idProductoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, -1, -1));
-
         txtNickname2.setForeground(new java.awt.Color(0, 102, 255));
         txtNickname2.setBorderColor(new java.awt.Color(0, 102, 255));
         txtNickname2.setMargin(new java.awt.Insets(3, 2, 3, 2));
@@ -196,12 +183,12 @@ package vista;
         txtNickname4.setPhColor(new java.awt.Color(0, 0, 153));
         txtNickname4.setPlaceholder("Precio...");
         txtNickname4.setSelectionColor(new java.awt.Color(51, 51, 51));
-        pnlSlider.add(txtNickname4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 220, -1));
+        pnlSlider.add(txtNickname4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 140, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Precio");
-        pnlSlider.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 220, -1));
+        pnlSlider.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 140, -1));
 
         rSButtonRound1.setText("Buscar");
         pnlSlider.add(rSButtonRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 90, -1));
@@ -250,12 +237,12 @@ package vista;
         txtNickname9.setPhColor(new java.awt.Color(0, 0, 153));
         txtNickname9.setPlaceholder("Vendedor...");
         txtNickname9.setSelectionColor(new java.awt.Color(51, 51, 51));
-        pnlSlider.add(txtNickname9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 710, -1));
+        pnlSlider.add(txtNickname9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 940, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Vendedor");
-        pnlSlider.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 470, -1));
+        pnlSlider.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 700, -1));
 
         txtNickname11.setForeground(new java.awt.Color(0, 102, 255));
         txtNickname11.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -276,7 +263,50 @@ package vista;
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Cliente");
-        pnlSlider.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 270, -1));
+        pnlSlider.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 350, -1));
+
+        txtNickname7.setForeground(new java.awt.Color(0, 102, 255));
+        txtNickname7.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtNickname7.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtNickname7.setOpaque(false);
+        txtNickname7.setPhColor(new java.awt.Color(0, 0, 153));
+        txtNickname7.setPlaceholder("Precio...");
+        txtNickname7.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(txtNickname7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 220, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Vuelto");
+        pnlSlider.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 220, -1));
+
+        cboCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
+        cboCategoria.setColorArrow(new java.awt.Color(0, 102, 255));
+        cboCategoria.setColorBorde(new java.awt.Color(0, 0, 255));
+        cboCategoria.setColorFondo(new java.awt.Color(0, 102, 255));
+        cboCategoria.setColorSeleccion(new java.awt.Color(0, 102, 255));
+        pnlSlider.add(cboCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, 40));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Tipo de Pago");
+        pnlSlider.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 200, -1));
+
+        txtNickname8.setForeground(new java.awt.Color(0, 102, 255));
+        txtNickname8.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtNickname8.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtNickname8.setOpaque(false);
+        txtNickname8.setPhColor(new java.awt.Color(0, 0, 153));
+        txtNickname8.setPlaceholder("Precio...");
+        txtNickname8.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(txtNickname8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 310, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Total a pagar");
+        pnlSlider.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, 310, -1));
+
+        rSButtonRound3.setText("Buscar");
+        pnlSlider.add(rSButtonRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 90, -1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -313,12 +343,15 @@ package vista;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public newscomponents.RSButtonGradientIcon_new btnModifyUser;
     public newscomponents.RSButtonGradientIcon_new btnNewUser;
-    public RSMaterialComponent.RSTextFieldOne idProductoVenta;
+    public rojerusan.RSComboBox cboCategoria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
@@ -331,6 +364,7 @@ package vista;
     private newscomponents.RSPanelEffect pnlSlider;
     private rojeru_san.rsbutton.RSButtonRound rSButtonRound1;
     private rojeru_san.rsbutton.RSButtonRound rSButtonRound2;
+    private rojeru_san.rsbutton.RSButtonRound rSButtonRound3;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private RSMaterialComponent.RSPanelMaterialGradient rSPanelMaterialGradient1;
     public rojerusan.RSTableMetro tblUsers;
@@ -340,7 +374,8 @@ package vista;
     public RSMaterialComponent.RSTextFieldOne txtNickname4;
     public RSMaterialComponent.RSTextFieldOne txtNickname5;
     public RSMaterialComponent.RSTextFieldOne txtNickname6;
+    public RSMaterialComponent.RSTextFieldOne txtNickname7;
+    public RSMaterialComponent.RSTextFieldOne txtNickname8;
     public RSMaterialComponent.RSTextFieldOne txtNickname9;
-    public RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
     // End of variables declaration//GEN-END:variables
 }

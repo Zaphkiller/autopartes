@@ -1,86 +1,217 @@
- 
+
 package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JOptionPane;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import modelo.ComboProveedor;
-import modelo.Product;
+import modelo.ComboBox;
 import modelo.ProductDAO;
+import modelo.Products;
+import modelo.Tables;
+import modelo.Usuario;
+import vista.VistaError;
+import vista.VistaInfo;
 import vista.VistaProductos;
+import vista.VistaSuccess;
 
-public class ProductController implements ActionListener, MouseListener,KeyListener{
+public class ProductController implements ActionListener{
     
-    private Product prod;
+    private Products prod;
     private ProductDAO prodDAO;
+    private VistaProductos vista;
     
-    private vista.VistaProductos vista;
     DefaultTableModel modelo = new DefaultTableModel();
-    DefaultTableModel temp;
+   
 
-    public ProductController(Product prod, ProductDAO prodDAO, VistaProductos vista) {
+    public ProductController(Products prod, ProductDAO prodDAO, VistaProductos vista) {
         this.prod = prod;
         this.prodDAO = prodDAO;
         this.vista = vista;
         
         this.vista.btnRegisterProduct.addActionListener(this);
         this.vista.btnModifyProduct.addActionListener(this);
-        this.vista.btnNewProduct.addActionListener(this);
-        this.vista.tblProductos.addMouseListener(this);
+        this.vista.btnNewProduct.addActionListener(this);     
+        this.vista.MenuItem_EliminarProducto.addActionListener(this);
+        this.vista.MenuItem_ReingresarProducto.addActionListener(this);
+        listarProductos();
+        
+        
     }
+    
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == vista.btnRegisterProduct){
-            if(vista.txtCodigoProducto.getText().equals("")
-               || vista.txtDescripcionProducto.getText().equals("")
-               || vista.txtPrecioCompra.getText().equals("")
-               || vista.txtPrecioVenta.getText().equals("")){
+        if (e.getSource() == vista.btnRegisterProduct) {
+
+            if (vista.txtCodigoProducto_Producto.getText().equals("")
+                    || vista.txtDescripcionProducto_Producto.getText().equals("")
+                    || vista.txtPrecioCompra_Producto.getText().equals("")
+                    || vista.txtPrecioVenta_Producto.getText().equals("")) {
+
+                VistaInfo info = new VistaInfo();
+                info.titulo.setText("Todos los campos son obligatorios");
+                info.setVisible(true);
+
+            } else {
+
+                prod.setCode_product(vista.txtCodigoProducto_Producto.getText());
+                prod.setDescription_product(vista.txtDescripcionProducto_Producto.getText());
+                prod.setPurchase_price(Double.parseDouble(vista.txtPrecioCompra_Producto.getText()));
+                prod.setSale_price(Double.parseDouble(vista.txtPrecioVenta_Producto.getText()));
+                /*ComboBox itemP = new ComboBox();
+                itemP.setName((String) vista.cboProveedor_Producto.getSelectedItem());
+                ComboBox itemC = new ComboBox();  
+                itemC.setName((String) vista.cboCategoria_Producto.getSelectedItem());*/
                 
-                JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios");
-            }else{
-              
-             
-             
+                ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
+                ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();
+                
+                
+  
+                
+                prod.setId_provider(itemP.getId());
+                prod.setId_category(itemC.getId());
+
+                if (prodDAO.register(prod)) {
+
+                    limpiarTable();
+                    listarProductos();
+                    limpiar();
+                    
+                    VistaSuccess success = new VistaSuccess();
+                    success.titulo.setText("¡Producto registrado!");
+                    success.setVisible(true);
+
+                } else {
+
+                    VistaError error = new VistaError();
+                    error.titulo.setText("¡Error al registrar producto!");
+                    error.setVisible(true);
+
+                }
+
             }
+
+        } else if (e.getSource() == vista.btnModifyProduct) {
+
+            if (vista.txtCodigoProducto_Producto.getText().equals("")
+                    || vista.txtDescripcionProducto_Producto.getText().equals("")
+                    || vista.txtPrecioCompra_Producto.getText().equals("")
+                    || vista.txtPrecioVenta_Producto.getText().equals("")) {
+
+                VistaInfo info = new VistaInfo();
+                info.titulo.setText("Todos los campos son obligatorios");
+                info.setVisible(true);
+
+            } else {
+                prod.setCode_product(vista.txtCodigoProducto_Producto.getText());
+                prod.setDescription_product(vista.txtDescripcionProducto_Producto.getText());
+                prod.setPurchase_price(Double.parseDouble(vista.txtPrecioCompra_Producto.getText()));
+                prod.setSale_price(Double.parseDouble(vista.txtPrecioVenta_Producto.getText()));
+                ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
+                ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();
+                
+                prod.setId_provider(itemP.getId());
+                prod.setId_category(itemC.getId());
+                prod.setId_product(Integer.parseInt(vista.txtIdProducto.getText()));
+
+                if (prodDAO.modify(prod)) {
+                    limpiarTable();
+                    listarProductos();
+                    limpiar();
+                    
+                    VistaSuccess success = new VistaSuccess();
+                    success.titulo.setText("¡Producto modiciado!");
+                    success.setVisible(true);
+
+                } else {
+                    VistaError error = new VistaError();
+                    error.titulo.setText("¡Error al modificar producto!");
+                    error.setVisible(true);
+                }
+            }
+
+        } else if (e.getSource() == vista.MenuItem_EliminarProducto) {
+            if (vista.txtIdProducto.getText().equals("")) {
+                VistaInfo info = new VistaInfo();
+                info.titulo.setText("Seleccione una fila para eliminar");
+                info.setVisible(true);
+            } else {
+                int id = Integer.parseInt(vista.txtIdProducto.getText());
+                if (prodDAO.accion("Inactivo", id)) {
+                    limpiarTable();
+                    listarProductos();
+                    limpiar();
+                    
+                    VistaSuccess success = new VistaSuccess();
+                    success.titulo.setText("¡Producto eliminado!");
+                    success.setVisible(true);
+                } else {
+                    VistaError error = new VistaError();
+                    error.titulo.setText("¡Error al eliminar producto!");
+                    error.setVisible(true);
+                }
+            }
+        } else if (e.getSource() == vista.MenuItem_ReingresarProducto) {
+            if (vista.txtIdProducto.getText().equals("")) {
+                VistaInfo info = new VistaInfo();
+                info.titulo.setText("Seleccione una fila para reingresar");
+                info.setVisible(true);
+            } else {
+                int id = Integer.parseInt(vista.txtIdProducto.getText());
+                if (prodDAO.accion("Activo", id)) {
+                    limpiarTable();
+                    listarProductos();
+                    limpiar();
+                    
+                    VistaSuccess success = new VistaSuccess();
+                    success.titulo.setText("¡Producto reingresado!");
+                    success.setVisible(true);
+                } else {
+                    VistaError error = new VistaError();
+                    error.titulo.setText("¡Error al reingresar producto!");
+                    error.setVisible(true);
+                }
+            }
+        } else {
+            limpiar();
         }
     }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
+    
+    public void listarProductos() {
+        Tables color = new Tables();
+        vista.tblProductos.setDefaultRenderer(vista.tblProductos.getColumnClass(0), color);
+        List<Products> lista = prodDAO.ListaProductos(vista.txtSearchProductos.getText());
+        modelo = (DefaultTableModel) vista.tblProductos.getModel();
+        Object[] ob = new Object[6];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getId_product();
+            ob[1] = lista.get(i).getCode_product();
+            ob[2] = lista.get(i).getDescription_product();
+            ob[3] = lista.get(i).getQuantity();
+            ob[4] = lista.get(i).getSale_price(); 
+            ob[5] = lista.get(i).getStatus_product();
+            modelo.addRow(ob);
+        }
+        vista.tblProductos.setModel(modelo);
     }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
+    public void limpiarTable() {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i = i - 1;
+        }
     }
+    
+    private void limpiar() {
+        vista.txtCodigoProducto_Producto.setText("");
+        vista.txtDescripcionProducto_Producto.setText("");
+        vista.txtPrecioVenta_Producto.setText("");
+        vista.txtPrecioCompra_Producto.setText("");
+        vista.txtDescripcionProducto_Producto.grabFocus();
 
-    @Override
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
     }
     
     

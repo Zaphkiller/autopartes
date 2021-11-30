@@ -2,28 +2,28 @@
 package modelo;
 
 
-public class Product {
+public class Products {
     
     private int id_product;
     private String code_product;
     private String description_product;
-    private Double purchase_price;
-    private Double sale_price;
     private int quantity;
+    private double purchase_price;
+    private double sale_price;
     private int id_provider;
     private int id_category;
     private String status_product;
 
-    public Product() {
+    public Products() {
     }
 
-    public Product(int id_product, String code_product, String description_product, Double purchase_price, Double sale_price, int quantity, int id_provider, int id_category, String status_product) {
+    public Products(int id_product, String code_product, String description_product, int quantity, double purchase_price, double sale_price, int id_provider, int id_category, String status_product) {
         this.id_product = id_product;
         this.code_product = code_product;
         this.description_product = description_product;
+        this.quantity = quantity;
         this.purchase_price = purchase_price;
         this.sale_price = sale_price;
-        this.quantity = quantity;
         this.id_provider = id_provider;
         this.id_category = id_category;
         this.status_product = status_product;
@@ -53,28 +53,28 @@ public class Product {
         this.description_product = description_product;
     }
 
-    public Double getPurchase_price() {
-        return purchase_price;
-    }
-
-    public void setPurchase_price(Double purchase_price) {
-        this.purchase_price = purchase_price;
-    }
-
-    public Double getSale_price() {
-        return sale_price;
-    }
-
-    public void setSale_price(Double sale_price) {
-        this.sale_price = sale_price;
-    }
-
     public int getQuantity() {
         return quantity;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public double getPurchase_price() {
+        return purchase_price;
+    }
+
+    public void setPurchase_price(double purchase_price) {
+        this.purchase_price = purchase_price;
+    }
+
+    public double getSale_price() {
+        return sale_price;
+    }
+
+    public void setSale_price(double sale_price) {
+        this.sale_price = sale_price;
     }
 
     public int getId_provider() {
@@ -102,10 +102,8 @@ public class Product {
     }
     
     
-
- 
-
     
+
     
     
     

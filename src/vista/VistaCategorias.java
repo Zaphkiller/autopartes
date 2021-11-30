@@ -16,10 +16,11 @@ public class VistaCategorias extends javax.swing.JPanel {
 
     Category cat = new Category();
     CategoryDAO catDAO = new CategoryDAO();
+    VistaProductos vistap = new VistaProductos();
     public VistaCategorias() {
         initComponents();
         
-        CategoryController cate = new CategoryController(cat,catDAO,this);
+        CategoryController cate = new CategoryController(cat,catDAO,this, vistap);
     }
 
     /**

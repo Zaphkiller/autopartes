@@ -32,26 +32,23 @@ public class VistaCompras extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         pnlSlider = new newscomponents.RSPanelEffect();
         txtSearchUser = new RSMaterialComponent.RSTextFieldIconOne();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblUsers = new rojerusan.RSTableMetro();
+        tblCompras = new rojerusan.RSTableMetro();
         btnNewUser = new newscomponents.RSButtonGradientIcon_new();
         btnRegisterUser = new newscomponents.RSButtonGradientIcon_new();
         btnModifyUser = new newscomponents.RSButtonGradientIcon_new();
-        jLabel10 = new javax.swing.JLabel();
-        btnSeleccionarProductos = new RSMaterialComponent.RSButtonMaterialIconOne();
-        txtNickname = new RSMaterialComponent.RSTextFieldOne();
+        txtCodigoCompra = new RSMaterialComponent.RSTextFieldOne();
         jLabel3 = new javax.swing.JLabel();
-        txtNickname1 = new RSMaterialComponent.RSTextFieldOne();
+        txtDescripcionProducto_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtNickname7 = new RSMaterialComponent.RSTextFieldOne();
-        txtNickname9 = new RSMaterialComponent.RSTextFieldOne();
-        txtNickname8 = new RSMaterialComponent.RSTextFieldOne();
+        txtPrecioCompra_Compra = new RSMaterialComponent.RSTextFieldOne();
+        txtCantidad_Compra = new RSMaterialComponent.RSTextFieldOne();
+        PrecioVenta_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel9 = new javax.swing.JLabel();
-        txtNickname10 = new RSMaterialComponent.RSTextFieldOne();
         txtIdProvider = new RSMaterialComponent.RSTextFieldOne();
+        btnBuscarProducto_Compras = new rojeru_san.rsbutton.RSButtonRound();
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(995, 702));
@@ -96,6 +93,7 @@ public class VistaCompras extends javax.swing.JPanel {
         );
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSlider.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtSearchUser.setForeground(new java.awt.Color(51, 51, 51));
         txtSearchUser.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -103,13 +101,10 @@ public class VistaCompras extends javax.swing.JPanel {
         txtSearchUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         txtSearchUser.setPhColor(new java.awt.Color(102, 102, 102));
         txtSearchUser.setPlaceholder("Buscar");
+        pnlSlider.add(txtSearchUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(694, 200, 265, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Selelccionar proveedor*");
-
-        tblUsers.setBackground(new java.awt.Color(255, 255, 255));
-        tblUsers.setModel(new javax.swing.table.DefaultTableModel(
+        tblCompras.setBackground(new java.awt.Color(255, 255, 255));
+        tblCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -125,12 +120,14 @@ public class VistaCompras extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblUsers.setBackgoundHover(new java.awt.Color(102, 255, 255));
-        tblUsers.setEditingColumn(0);
-        tblUsers.setEditingRow(0);
-        tblUsers.setSelectionBackground(new java.awt.Color(51, 153, 255));
-        tblUsers.setWidthBorderRows(0);
-        jScrollPane1.setViewportView(tblUsers);
+        tblCompras.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblCompras.setEditingColumn(0);
+        tblCompras.setEditingRow(0);
+        tblCompras.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblCompras.setWidthBorderRows(0);
+        jScrollPane1.setViewportView(tblCompras);
+
+        pnlSlider.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 254, 962, 298));
 
         btnNewUser.setBackground(new java.awt.Color(0, 255, 51));
         btnNewUser.setText("Nuevo");
@@ -140,6 +137,7 @@ public class VistaCompras extends javax.swing.JPanel {
         btnNewUser.setColorSecundario(new java.awt.Color(0, 102, 51));
         btnNewUser.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
         btnNewUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        pnlSlider.add(btnNewUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 570, 219, -1));
 
         btnRegisterUser.setBackground(new java.awt.Color(75, 172, 198));
         btnRegisterUser.setText("Registrar");
@@ -149,6 +147,7 @@ public class VistaCompras extends javax.swing.JPanel {
         btnRegisterUser.setColorSecundario(new java.awt.Color(75, 85, 215));
         btnRegisterUser.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
         btnRegisterUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+        pnlSlider.add(btnRegisterUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 570, 212, -1));
 
         btnModifyUser.setBackground(new java.awt.Color(0, 255, 51));
         btnModifyUser.setText("Modificar");
@@ -158,94 +157,77 @@ public class VistaCompras extends javax.swing.JPanel {
         btnModifyUser.setColorSecundario(new java.awt.Color(204, 0, 51));
         btnModifyUser.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
         btnModifyUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+        pnlSlider.add(btnModifyUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 570, 212, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Selelccionar productos*");
-
-        btnSeleccionarProductos.setBackground(new java.awt.Color(51, 102, 255));
-        btnSeleccionarProductos.setText("Productos");
-        btnSeleccionarProductos.setHideActionText(true);
-        btnSeleccionarProductos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnSeleccionarProductos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnSeleccionarProductos.setIconTextGap(18);
-        btnSeleccionarProductos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.STORE);
-        btnSeleccionarProductos.setInheritsPopupMenu(true);
-        btnSeleccionarProductos.setMargin(new java.awt.Insets(3, 8, 3, 8));
-        btnSeleccionarProductos.setOpaque(true);
-        btnSeleccionarProductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionarProductosActionPerformed(evt);
-            }
-        });
-
-        txtNickname.setForeground(new java.awt.Color(0, 102, 255));
-        txtNickname.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtNickname.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtNickname.setOpaque(false);
-        txtNickname.setPhColor(new java.awt.Color(0, 0, 153));
-        txtNickname.setPlaceholder("Código...");
-        txtNickname.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtCodigoCompra.setForeground(new java.awt.Color(0, 102, 255));
+        txtCodigoCompra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCodigoCompra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCodigoCompra.setOpaque(false);
+        txtCodigoCompra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCodigoCompra.setPlaceholder("Código...");
+        txtCodigoCompra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(txtCodigoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 29, 217, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Código");
+        pnlSlider.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 6, 210, -1));
 
-        txtNickname1.setForeground(new java.awt.Color(0, 102, 255));
-        txtNickname1.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtNickname1.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtNickname1.setOpaque(false);
-        txtNickname1.setPhColor(new java.awt.Color(0, 0, 153));
-        txtNickname1.setPlaceholder("Descripción del producto...");
-        txtNickname1.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtDescripcionProducto_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtDescripcionProducto_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtDescripcionProducto_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtDescripcionProducto_Compra.setOpaque(false);
+        txtDescripcionProducto_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtDescripcionProducto_Compra.setPlaceholder("Descripción del producto...");
+        txtDescripcionProducto_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(txtDescripcionProducto_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 29, 610, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Descripción del Producto");
+        pnlSlider.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 6, 610, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Cantidad");
+        pnlSlider.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 70, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Precio Compra");
+        pnlSlider.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 223, -1));
 
-        txtNickname7.setForeground(new java.awt.Color(0, 102, 255));
-        txtNickname7.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtNickname7.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtNickname7.setOpaque(false);
-        txtNickname7.setPhColor(new java.awt.Color(0, 0, 153));
-        txtNickname7.setPlaceholder("");
-        txtNickname7.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtPrecioCompra_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtPrecioCompra_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPrecioCompra_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPrecioCompra_Compra.setOpaque(false);
+        txtPrecioCompra_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPrecioCompra_Compra.setPlaceholder("");
+        txtPrecioCompra_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(txtPrecioCompra_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 220, -1));
 
-        txtNickname9.setForeground(new java.awt.Color(0, 102, 255));
-        txtNickname9.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtNickname9.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtNickname9.setOpaque(false);
-        txtNickname9.setPhColor(new java.awt.Color(0, 0, 153));
-        txtNickname9.setPlaceholder("");
-        txtNickname9.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtCantidad_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtCantidad_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCantidad_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCantidad_Compra.setOpaque(false);
+        txtCantidad_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCantidad_Compra.setPlaceholder("");
+        txtCantidad_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(txtCantidad_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 220, -1));
 
-        txtNickname8.setForeground(new java.awt.Color(0, 102, 255));
-        txtNickname8.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtNickname8.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtNickname8.setOpaque(false);
-        txtNickname8.setPhColor(new java.awt.Color(0, 0, 153));
-        txtNickname8.setPlaceholder("");
-        txtNickname8.setSelectionColor(new java.awt.Color(51, 51, 51));
+        PrecioVenta_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        PrecioVenta_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        PrecioVenta_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        PrecioVenta_Compra.setOpaque(false);
+        PrecioVenta_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        PrecioVenta_Compra.setPlaceholder("");
+        PrecioVenta_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(PrecioVenta_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 238, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Precio Venta");
-
-        txtNickname10.setForeground(new java.awt.Color(0, 102, 255));
-        txtNickname10.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtNickname10.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtNickname10.setOpaque(false);
-        txtNickname10.setPhColor(new java.awt.Color(0, 0, 153));
-        txtNickname10.setPlaceholder("Nombre del Proveedor...");
-        txtNickname10.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 232, -1));
 
         txtIdProvider.setBackground(new java.awt.Color(204, 204, 204));
         txtIdProvider.setForeground(new java.awt.Color(0, 102, 255));
@@ -255,116 +237,10 @@ public class VistaCompras extends javax.swing.JPanel {
         txtIdProvider.setPhColor(new java.awt.Color(0, 0, 0));
         txtIdProvider.setPlaceholder("Id Producto");
         txtIdProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+        pnlSlider.add(txtIdProvider, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 200, -1, -1));
 
-        javax.swing.GroupLayout pnlSliderLayout = new javax.swing.GroupLayout(pnlSlider);
-        pnlSlider.setLayout(pnlSliderLayout);
-        pnlSliderLayout.setHorizontalGroup(
-            pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlSliderLayout.createSequentialGroup()
-                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSliderLayout.createSequentialGroup()
-                        .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlSliderLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel3)
-                                .addGap(186, 186, 186)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlSliderLayout.createSequentialGroup()
-                                .addGap(432, 432, 432)
-                                .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlSliderLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pnlSliderLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlSliderLayout.createSequentialGroup()
-                                .addComponent(btnSeleccionarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(txtNickname9, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtNickname7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtNickname8, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSliderLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlSliderLayout.createSequentialGroup()
-                                        .addComponent(txtNickname10, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtNickname, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlSliderLayout.createSequentialGroup()
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(jLabel5)))
-                                .addGap(18, 18, 18)
-                                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(pnlSliderLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtNickname1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(36, 36, 36))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSliderLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnRegisterUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnModifyUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164))
-        );
-        pnlSliderLayout.setVerticalGroup(
-            pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlSliderLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(6, 6, 6)
-                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNickname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtNickname10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtNickname1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSliderLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel10))
-                    .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel8)
-                        .addComponent(jLabel9)))
-                .addGap(4, 4, 4)
-                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNickname9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNickname7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSeleccionarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNickname8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSliderLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSliderLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(pnlSliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegisterUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModifyUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
-        );
+        btnBuscarProducto_Compras.setText("Buscar");
+        pnlSlider.add(btnBuscarProducto_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 90, -1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -385,31 +261,22 @@ public class VistaCompras extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 998, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 715, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSeleccionarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarProductosActionPerformed
-        new ModalSeleccionarProductos().setVisible(true);
-    }//GEN-LAST:event_btnSeleccionarProductosActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public RSMaterialComponent.RSTextFieldOne PrecioVenta_Compra;
+    private rojeru_san.rsbutton.RSButtonRound btnBuscarProducto_Compras;
     public newscomponents.RSButtonGradientIcon_new btnModifyUser;
     public newscomponents.RSButtonGradientIcon_new btnNewUser;
     public newscomponents.RSButtonGradientIcon_new btnRegisterUser;
-    private RSMaterialComponent.RSButtonMaterialIconOne btnSeleccionarProductos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -420,14 +287,12 @@ public class VistaCompras extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSPanelMaterialGradient rSPanelMaterialGradient1;
-    public rojerusan.RSTableMetro tblUsers;
+    public rojerusan.RSTableMetro tblCompras;
+    public RSMaterialComponent.RSTextFieldOne txtCantidad_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtCodigoCompra;
+    public RSMaterialComponent.RSTextFieldOne txtDescripcionProducto_Compra;
     public RSMaterialComponent.RSTextFieldOne txtIdProvider;
-    public RSMaterialComponent.RSTextFieldOne txtNickname;
-    public RSMaterialComponent.RSTextFieldOne txtNickname1;
-    public RSMaterialComponent.RSTextFieldOne txtNickname10;
-    public RSMaterialComponent.RSTextFieldOne txtNickname7;
-    public RSMaterialComponent.RSTextFieldOne txtNickname8;
-    public RSMaterialComponent.RSTextFieldOne txtNickname9;
+    public RSMaterialComponent.RSTextFieldOne txtPrecioCompra_Compra;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
     // End of variables declaration//GEN-END:variables
 }

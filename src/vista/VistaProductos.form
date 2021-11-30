@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
-    <Container class="rojerusan.RSPopuMenu" name="PoupMenuUsers">
+    <Container class="rojerusan.RSPopuMenu" name="PoupMenuProducts">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -11,7 +11,7 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
       <SubComponents>
-        <MenuItem class="javax.swing.JMenuItem" name="MenuItem_EliminarUser">
+        <MenuItem class="javax.swing.JMenuItem" name="MenuItem_EliminarProducto">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/eliminar.png"/>
@@ -22,7 +22,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </MenuItem>
-        <MenuItem class="javax.swing.JMenuItem" name="MenuItem_ReingresarUser">
+        <MenuItem class="javax.swing.JMenuItem" name="MenuItem_ReingresarProducto">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/ingresar.png"/>
@@ -33,7 +33,7 @@
             <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
           </AccessibilityProperties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItem_ReingresarUserActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItem_ReingresarProductoActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -165,42 +165,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="txtPrecioVenta" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Component id="cboProveedor" min="-2" pref="257" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel7" min="-2" pref="220" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="txtIdProducto" min="-2" pref="226" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel6" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <EmptySpace pref="20" max="32767" attributes="0"/>
-                                  <Component id="jLabel9" min="-2" pref="256" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtNickname4" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel10" max="32767" attributes="0"/>
-                                      <Component id="cboCategoria" pref="258" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="txtCodigoProducto" alignment="0" pref="226" max="32767" attributes="0"/>
-                                  <Component id="txtPrecioCompra" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="txtCodigoProducto_Producto" alignment="0" pref="226" max="32767" attributes="0"/>
+                                  <Component id="txtPrecioCompra_Producto" alignment="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jLabel5" alignment="0" min="-2" pref="184" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -208,7 +178,32 @@
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" alignment="0" min="-2" pref="495" max="-2" attributes="0"/>
-                              <Component id="txtDescripcionProducto" min="-2" pref="495" max="-2" attributes="0"/>
+                              <Component id="txtDescripcionProducto_Producto" min="-2" pref="495" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="245" pref="245" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtPrecioVenta_Producto" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="cboProveedor_Producto" pref="258" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel6" min="-2" pref="220" max="-2" attributes="0"/>
+                                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                                      <Component id="jLabel9" min="-2" pref="256" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtIdProducto" min="-2" pref="226" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel10" max="32767" attributes="0"/>
+                                          <Component id="cboCategoria_Producto" pref="258" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -220,7 +215,6 @@
                   <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
               <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
-              <Component id="txtSearchProductos" alignment="1" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnNewProduct" min="-2" pref="219" max="-2" attributes="0"/>
@@ -229,6 +223,10 @@
                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                   <Component id="btnModifyProduct" min="-2" pref="212" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="498" max="-2" attributes="0"/>
+                  <Component id="txtSearchProductos" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -245,46 +243,38 @@
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtCodigoProducto" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCodigoProducto_Producto" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtDescripcionProducto" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDescripcionProducto_Producto" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtPrecioVenta" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtPrecioCompra" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="txtPrecioVenta_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtPrecioCompra_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <Component id="cboProveedor" min="-2" pref="42" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="cboProveedor_Producto" min="-2" pref="42" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtNickname4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtIdProducto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                                          <Component id="cboCategoria" min="-2" pref="42" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="cboCategoria_Producto" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="txtIdProducto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -294,9 +284,9 @@
                           <Component id="btnBuscarFoto" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
                   <Component id="txtSearchProductos" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="258" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -346,19 +336,20 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="0">
+                  <Table columnCount="6" rowCount="0">
                     <Column editable="false" title="Id" type="java.lang.Object"/>
                     <Column editable="false" title="C&#xf3;digo" type="java.lang.Object"/>
                     <Column editable="false" title="Descripci&#xf3;n" type="java.lang.Object"/>
+                    <Column editable="true" title="Stock" type="java.lang.Object"/>
                     <Column editable="false" title="Precio" type="java.lang.Object"/>
-                    <Column editable="true" title="Estado" type="java.lang.Object"/>
+                    <Column editable="false" title="Estado" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="backgoundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="66" type="rgb"/>
                 </Property>
                 <Property name="componentPopupMenu" type="javax.swing.JPopupMenu" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="PoupMenuUsers"/>
+                  <ComponentRef name="PoupMenuProducts"/>
                 </Property>
                 <Property name="editingColumn" type="int" value="0"/>
                 <Property name="editingRow" type="int" value="0"/>
@@ -473,7 +464,7 @@
             <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="placeholder" type="java.lang.String" value="Id User"/>
+            <Property name="placeholder" type="java.lang.String" value="Id Producto"/>
             <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
@@ -482,7 +473,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtCodigoProducto">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtCodigoProducto_Producto">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -517,7 +508,7 @@
             <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
           </Properties>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtDescripcionProducto">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtDescripcionProducto_Producto">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -552,7 +543,7 @@
             <Property name="text" type="java.lang.String" value="Descripci&#xf3;n del Producto"/>
           </Properties>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPrecioCompra">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPrecioCompra_Producto">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -587,7 +578,7 @@
             <Property name="text" type="java.lang.String" value="Precio Compra"/>
           </Properties>
         </Component>
-        <Component class="rojerusan.RSComboBox" name="cboProveedor">
+        <Component class="rojerusan.RSComboBox" name="cboProveedor_Producto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">
@@ -623,7 +614,7 @@
             <Property name="text" type="java.lang.String" value="Seleccionar Proveedor"/>
           </Properties>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPrecioVenta">
+        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPrecioVenta_Producto">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -658,42 +649,7 @@
             <Property name="text" type="java.lang.String" value="Precio Venta"/>
           </Properties>
         </Component>
-        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtNickname4">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="66" red="0" type="rgb"/>
-            </Property>
-            <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="66" red="0" type="rgb"/>
-            </Property>
-            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-              <Insets value="[3, 2, 3, 2]"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="false"/>
-            <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="placeholder" type="java.lang.String" value="C&#xf3;digo..."/>
-            <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="33" type="rgb"/>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Cantidad"/>
-          </Properties>
-        </Component>
-        <Component class="rojerusan.RSComboBox" name="cboCategoria">
+        <Component class="rojerusan.RSComboBox" name="cboCategoria_Producto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">

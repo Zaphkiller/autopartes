@@ -113,9 +113,5 @@ public class ProviderDAO {
             JOptionPane.showMessageDialog(null, e.toString());
             return false;
         }
-    }
-    
-    
-    
-    
+    }  
 }

@@ -9,11 +9,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import modelo.ComboBox;
 import modelo.Provider;
 import modelo.ProviderDAO;
 import modelo.Tables;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import vista.VistaError;
 import vista.VistaInfo;
+import vista.VistaProductos;
 import vista.VistaProveedores;
 import vista.VistaSuccess;
 
@@ -23,13 +26,15 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
     private Provider pro;
     private ProviderDAO proDAO;
     private VistaProveedores vista;
+    private VistaProductos vistap;
     
     DefaultTableModel modelo = new DefaultTableModel();
 
-    public ProviderController(Provider pro, ProviderDAO proDAO, VistaProveedores vista) {
+    public ProviderController(Provider pro, ProviderDAO proDAO, VistaProveedores vista, VistaProductos vistap) {
         this.pro = pro;
         this.proDAO = proDAO;
         this.vista = vista;
+        this.vistap = vistap;
         
         this.vista.btnRegisterProvider.addActionListener(this);
         this.vista.btnModifyProvider.addActionListener(this);
@@ -39,9 +44,11 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
         this.vista.MenuItemReingresarProveedor.addActionListener(this);
         this.vista.tblProviders.addMouseListener(this);
         this.vista.txtSearchProvider.addKeyListener(this);
-        listarProveedores();
         
+        listarProveedores();
+        llenarProveedor();
     }
+   
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -202,6 +209,9 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
             
         }
     }
+    
+    
+    
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == vista.tblProviders){
@@ -230,7 +240,7 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
 
     @Override
     public void mouseExited(MouseEvent e) {
-    }
+    } 
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -243,9 +253,22 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
     @Override
     public void keyReleased(KeyEvent e) {
         if(e.getSource() == vista.txtSearchProvider){
+            limpiarTable();
+            listarProveedores();
             
         }
     }
+    
+    private void llenarProveedor(){
+        List<Provider> lista = proDAO.ListaProviders(vista.txtSearchProvider.getText());     
+        for (int i = 0; i < lista.size(); i++) {
+            int id= lista.get(i).getId_provider();
+            String name = lista.get(i).getName_provider();
+            vistap.cboProveedor_Producto.addItem(new ComboBox(id, name));
+                   
+        }
+    }
+    
     
     public void limpiar(){
         vista.txtRucProvider.setText("");

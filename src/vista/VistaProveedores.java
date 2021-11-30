@@ -16,12 +16,13 @@ public class VistaProveedores extends javax.swing.JPanel {
 
     Provider pro = new Provider();
     ProviderDAO proDAO = new ProviderDAO();
+    VistaProductos vistap = new VistaProductos();
     
     
     public VistaProveedores() {
         initComponents();
         
-        ProviderController prov = new ProviderController(pro,proDAO,this);
+        ProviderController provi = new ProviderController(pro,proDAO, this, vistap);
     }
 
 

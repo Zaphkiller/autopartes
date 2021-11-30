@@ -10,10 +10,14 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import modelo.Category;
 import modelo.CategoryDAO;
+import modelo.ComboBox;
+import modelo.Provider;
 import modelo.Tables;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import vista.VistaCategorias;
 import vista.VistaError;
 import vista.VistaInfo;
+import vista.VistaProductos;
 import vista.VistaSuccess;
 
 public class CategoryController implements ActionListener, MouseListener, KeyListener {
@@ -21,13 +25,15 @@ public class CategoryController implements ActionListener, MouseListener, KeyLis
     private Category cat;
     private CategoryDAO catDAO;
     private VistaCategorias vista;
+    private VistaProductos vistap;
 
     DefaultTableModel modelo = new DefaultTableModel();
 
-    public CategoryController(Category cat, CategoryDAO catDAO, VistaCategorias vista) {
+    public CategoryController(Category cat, CategoryDAO catDAO, VistaCategorias vista, VistaProductos vistap) {
         this.cat = cat;
         this.catDAO = catDAO;
         this.vista = vista;
+        this.vistap= vistap;
 
         this.vista.btnRegisterCategory.addActionListener(this);
         this.vista.btnModifyCategory.addActionListener(this);
@@ -37,7 +43,9 @@ public class CategoryController implements ActionListener, MouseListener, KeyLis
         this.vista.MenuItem_ReingresarCategory.addActionListener(this);
         this.vista.tblCategory.addMouseListener(this);
         this.vista.txtSearchCategory.addKeyListener(this);
+        
         listarCategorias();
+        llenarCategoria();
     }
 
     @Override
@@ -221,6 +229,15 @@ public class CategoryController implements ActionListener, MouseListener, KeyLis
 
         }
 
+    }
+    
+     private void llenarCategoria(){
+        List<Category> lista = catDAO.ListaCategories(vista.txtSearchCategory.getText());
+        for (int i = 0; i < lista.size(); i++) {
+            int id = lista.get(i).getId_category();
+            String name = lista.get(i).getName_category();
+            vistap.cboCategoria_Producto.addItem(new ComboBox(id, name));
+        }
     }
 
     public void limpiar() {
