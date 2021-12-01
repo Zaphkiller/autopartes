@@ -17,12 +17,12 @@ public class CategoryDAO {
     
 public boolean register(Category cat) {
 
-        String sql = "INSERT INTO categories(code_category, name_category) values (?,?)";
+        String sql = "INSERT INTO categories(id_category,name_category) values (?,?)";
 
         try {
              con = cn.getConexion();
             ps = con.prepareStatement(sql);
-            ps.setString(1, cat.getCode_category());
+            ps.setInt(1, cat.getId_category());
             ps.setString(2, cat.getName_category());
             ps.execute();
             return true;
@@ -61,7 +61,8 @@ public List ListaCategories(String valor){
                 ListaCategories.add(cat);
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println(e.toString());
         }
 
         return ListaCategories;

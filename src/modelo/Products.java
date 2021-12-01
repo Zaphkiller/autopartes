@@ -13,11 +13,13 @@ public class Products {
     private int id_provider;
     private int id_category;
     private String status_product;
+    private String name_provider;
+    private String name_category;
 
     public Products() {
     }
 
-    public Products(int id_product, String code_product, String description_product, int quantity, double purchase_price, double sale_price, int id_provider, int id_category, String status_product) {
+    public Products(int id_product, String code_product, String description_product, int quantity, double purchase_price, double sale_price, int id_provider, int id_category, String status_product, String name_provider, String name_category) {
         this.id_product = id_product;
         this.code_product = code_product;
         this.description_product = description_product;
@@ -27,6 +29,8 @@ public class Products {
         this.id_provider = id_provider;
         this.id_category = id_category;
         this.status_product = status_product;
+        this.name_provider = name_provider;
+        this.name_category = name_category;
     }
 
     public int getId_product() {
@@ -100,7 +104,24 @@ public class Products {
     public void setStatus_product(String status_product) {
         this.status_product = status_product;
     }
-    
+
+    public String getName_provider() {
+        return name_provider;
+    }
+
+    public void setName_provider(String name_provider) {
+        this.name_provider = name_provider;
+    }
+
+    public String getName_category() {
+        return name_category;
+    }
+
+    public void setName_category(String name_category) {
+        this.name_category = name_category;
+    }
+
+   
     
     
 

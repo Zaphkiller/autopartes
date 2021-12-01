@@ -23,9 +23,9 @@ public class VistaProductos extends javax.swing.JPanel {
     public VistaProductos() {
             
         initComponents();
-        ProductController produ = new ProductController(pro, prodDAO, this);
-        /*prodDAO.ConsultarProveedor(cboProveedor_Producto);
-        prodDAO.ConsultarCategoria(cboCategoria_Producto);*/
+        ProductController produc = new ProductController(pro, prodDAO, this);
+        prodDAO.ConsultarProveedor(cboProveedor_Producto);
+        prodDAO.ConsultarCategoria(cboCategoria_Producto);
         
     }
 
