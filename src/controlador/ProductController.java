@@ -65,14 +65,14 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                 prod.setDescription_product(vista.txtDescripcionProducto_Producto.getText());
                 prod.setPurchase_price(Double.parseDouble(vista.txtPrecioCompra_Producto.getText()));
                 prod.setSale_price(Double.parseDouble(vista.txtPrecioVenta_Producto.getText()));
-                
+                /*prod.setId_provider(Integer.parseInt(vista.cboCategoria_Producto.getSelectedItem().toString()));
+                ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
+                ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();*/
                 ComboBox itemP = new ComboBox();
                 itemP.setName((String) vista.cboProveedor_Producto.getSelectedItem());
                 ComboBox itemC = new ComboBox();  
                 itemC.setName((String) vista.cboCategoria_Producto.getSelectedItem());
                 
-                /*ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
-                ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();*/
   
                 prod.setId_provider(itemP.getId());
                 prod.setId_category(itemC.getId());
@@ -113,10 +113,8 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                 prod.setDescription_product(vista.txtDescripcionProducto_Producto.getText());
                 prod.setPurchase_price(Double.parseDouble(vista.txtPrecioCompra_Producto.getText()));
                 prod.setSale_price(Double.parseDouble(vista.txtPrecioVenta_Producto.getText()));
-                ComboBox itemP = new ComboBox();
-                itemP.setName((String) vista.cboProveedor_Producto.getSelectedItem());
-                ComboBox itemC = new ComboBox();  
-                itemC.setName((String) vista.cboCategoria_Producto.getSelectedItem());
+                ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
+                ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();
                 
                 prod.setId_provider(itemP.getId());
                 prod.setId_category(itemC.getId());

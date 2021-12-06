@@ -12,6 +12,20 @@ public class Provider {
     private String address_provider;
     private String status_provider;
 
+    public Provider() {
+    }
+
+    public Provider(int id_provider, String ruc_provider, String name_provider, String phone_provider, String email_provider, String address_provider, String status_provider) {
+        this.id_provider = id_provider;
+        this.ruc_provider = ruc_provider;
+        this.name_provider = name_provider;
+        this.phone_provider = phone_provider;
+        this.email_provider = email_provider;
+        this.address_provider = address_provider;
+        this.status_provider = status_provider;
+    }
+
+    
     public int getId_provider() {
         return id_provider;
     }

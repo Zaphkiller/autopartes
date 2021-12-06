@@ -4,9 +4,20 @@
  */
 package vista;
 
+import RSMaterialComponent.RSPanelMaterialGradient;
+import RSMaterialComponent.RSTextFieldIconOne;
+import RSMaterialComponent.RSTextFieldOne;
 import controlador.ProviderController;
+import javax.swing.JLabel;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import modelo.Provider;
 import modelo.ProviderDAO;
+import newscomponents.RSButtonGradientIcon_new;
+import newscomponents.RSPanelEffect;
+import rojerusan.RSPopuMenu;
+import rojerusan.RSTableMetro;
 
 /**
  *
@@ -17,12 +28,43 @@ public class VistaProveedores extends javax.swing.JPanel {
     Provider pro = new Provider();
     ProviderDAO proDAO = new ProviderDAO();
     VistaProductos vistap = new VistaProductos();
+
+    public VistaProveedores(JMenuItem MenuItemEliminarProveedor, JMenuItem MenuItemReingresarProveedor, RSPopuMenu PopUpMenuProvider, RSButtonGradientIcon_new btnModifyProvider, RSButtonGradientIcon_new btnNewProvider, RSButtonGradientIcon_new btnRegisterProvider, JLabel jLabel1, JLabel jLabel3, JLabel jLabel4, JLabel jLabel5, JLabel jLabel6, JLabel jLabel7, JPanel jPanel4, JScrollPane jScrollPane1, JPanel pnlGeneral, RSPanelEffect pnlSlider, JPanel pnlTitulo, RSPanelMaterialGradient rSPanelMaterialGradient1, RSTableMetro tblProviders, RSTextFieldOne txtAddressProvider, RSTextFieldOne txtEmailProvider, RSTextFieldOne txtIdProvider, RSTextFieldOne txtNameProvider, RSTextFieldOne txtPhoneProvider, RSTextFieldOne txtRucProvider, RSTextFieldIconOne txtSearchProvider) {
+        this.MenuItemEliminarProveedor = MenuItemEliminarProveedor;
+        this.MenuItemReingresarProveedor = MenuItemReingresarProveedor;
+        this.PopUpMenuProvider = PopUpMenuProvider;
+        this.btnModifyProvider = btnModifyProvider;
+        this.btnNewProvider = btnNewProvider;
+        this.btnRegisterProvider = btnRegisterProvider;
+        this.jLabel1 = jLabel1;
+        this.jLabel3 = jLabel3;
+        this.jLabel4 = jLabel4;
+        this.jLabel5 = jLabel5;
+        this.jLabel6 = jLabel6;
+        this.jLabel7 = jLabel7;
+        this.jPanel4 = jPanel4;
+        this.jScrollPane1 = jScrollPane1;
+        this.pnlGeneral = pnlGeneral;
+        this.pnlSlider = pnlSlider;
+        this.pnlTitulo = pnlTitulo;
+        this.rSPanelMaterialGradient1 = rSPanelMaterialGradient1;
+        this.tblProviders = tblProviders;
+        this.txtAddressProvider = txtAddressProvider;
+        this.txtEmailProvider = txtEmailProvider;
+        this.txtIdProvider = txtIdProvider;
+        this.txtNameProvider = txtNameProvider;
+        this.txtPhoneProvider = txtPhoneProvider;
+        this.txtRucProvider = txtRucProvider;
+        this.txtSearchProvider = txtSearchProvider;
+    }
+    
     
     
     public VistaProveedores() {
         initComponents();
         
         ProviderController provi = new ProviderController(pro,proDAO, this, vistap);
+       
     }
 
 

@@ -76,7 +76,6 @@ public class ProviderDAO {
         
         
     }
-    
     public boolean modify(Provider pro){
         
         String sql = "UPDATE providers SET ruc_provider=?,name_provider=?, phone_provider=?, email_provider=?, address_provider=? where id_provider=?";
