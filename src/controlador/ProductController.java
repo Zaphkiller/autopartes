@@ -1,4 +1,3 @@
-
 package controlador;
 
 import java.awt.event.ActionEvent;
@@ -10,6 +9,7 @@ import java.awt.event.MouseListener;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.ComboBox;
 import modelo.ProductDAO;
@@ -21,36 +21,32 @@ import vista.VistaError;
 import vista.VistaInfo;
 import vista.VistaSuccess;
 
-public class ProductController implements ActionListener, MouseListener, KeyListener{
-    
-    Timer timer=null;
-    TimerTask task;
-    int i =32;
-    
+public class ProductController implements ActionListener, MouseListener, KeyListener {
+
     private Products prod;
     private ProductDAO prodDAO;
     private FrmPrincipal vista;
-    
+
     DefaultTableModel modelo = new DefaultTableModel();
-   
 
     public ProductController(Products prod, ProductDAO prodDAO, FrmPrincipal vista) {
         this.prod = prod;
         this.prodDAO = prodDAO;
         this.vista = vista;
-        
+
         this.vista.btnRegisterProduct.addActionListener(this);
         this.vista.btnModifyProduct.addActionListener(this);
-        this.vista.btnNewProduct.addActionListener(this);     
+        this.vista.btnNewProduct.addActionListener(this);
         this.vista.MenuItem_EliminarProducto.addActionListener(this);
         this.vista.MenuItem_ReingresarProducto.addActionListener(this);
+        this.vista.btnBuscarProducto_Compras.addActionListener(this);
         this.vista.tblProductos.addMouseListener(this);
+        this.vista.tblModalProductos.addMouseListener(this);
         this.vista.txtSearchProductos.addKeyListener(this);
         listarProductos();
         
-        
+
     }
-     
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -71,7 +67,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                 prod.setDescription_product(vista.txtDescripcionProducto_Producto.getText());
                 prod.setPurchase_price(Double.parseDouble(vista.txtPrecioCompra_Producto.getText()));
                 prod.setSale_price(Double.parseDouble(vista.txtPrecioVenta_Producto.getText()));
-                
+
                 ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
                 ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();
                 prod.setId_provider(itemP.getId());
@@ -82,7 +78,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     limpiarTable();
                     listarProductos();
                     limpiar();
-                    
+
                     VistaSuccess success = new VistaSuccess();
                     success.titulo.setText("¡Producto registrado!");
                     success.setVisible(true);
@@ -115,7 +111,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                 prod.setSale_price(Double.parseDouble(vista.txtPrecioVenta_Producto.getText()));
                 ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
                 ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();
-                
+
                 prod.setId_provider(itemP.getId());
                 prod.setId_category(itemC.getId());
                 prod.setId_product(Integer.parseInt(vista.txtIdProducto.getText()));
@@ -124,7 +120,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     limpiarTable();
                     listarProductos();
                     limpiar();
-                    
+
                     VistaSuccess success = new VistaSuccess();
                     success.titulo.setText("¡Producto modificado!");
                     success.setVisible(true);
@@ -147,7 +143,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     limpiarTable();
                     listarProductos();
                     limpiar();
-                    
+
                     VistaSuccess success = new VistaSuccess();
                     success.titulo.setText("¡Producto eliminado!");
                     success.setVisible(true);
@@ -168,7 +164,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     limpiarTable();
                     listarProductos();
                     limpiar();
-                    
+
                     VistaSuccess success = new VistaSuccess();
                     success.titulo.setText("¡Producto reingresado!");
                     success.setVisible(true);
@@ -178,11 +174,16 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     error.setVisible(true);
                 }
             }
-        } else {
+        }else if (e.getSource() == vista.btnBuscarProducto_Compras){
+            
+                JOptionPane.showMessageDialog(null, "esi funciona aquí");
+                listarProductos();
+        
+        }else {
             limpiar();
         }
     }
-    
+
     public void listarProductos() {
         Tables color = new Tables();
         vista.tblProductos.setDefaultRenderer(vista.tblProductos.getColumnClass(0), color);
@@ -194,7 +195,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             ob[1] = lista.get(i).getCode_product();
             ob[2] = lista.get(i).getDescription_product();
             ob[3] = lista.get(i).getQuantity();
-            ob[4] = lista.get(i).getSale_price(); 
+            ob[4] = lista.get(i).getSale_price();
             ob[5] = lista.get(i).getStatus_product();
             modelo.addRow(ob);
         }
@@ -207,7 +208,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             i = i - 1;
         }
     }
-    
+
     private void limpiar() {
         vista.txtCodigoProducto_Producto.setText("");
         vista.txtDescripcionProducto_Producto.setText("");
@@ -219,20 +220,23 @@ public class ProductController implements ActionListener, MouseListener, KeyList
 
     @Override
     public void mouseClicked(MouseEvent e) {
+
             int fila = vista.tblProductos.rowAtPoint(e.getPoint());
             vista.txtIdProducto.setText(vista.tblProductos.getValueAt(fila, 0).toString());
             prod = prodDAO.SearchProduct(Integer.parseInt(vista.txtIdProducto.getText()));
-            vista.txtCodigoProducto_Producto.setText(prod. getCode_product());
+            vista.txtCodigoProducto_Producto.setText(prod.getCode_product());
             vista.txtDescripcionProducto_Producto.setText(prod.getDescription_product());
-            vista.txtPrecioCompra_Producto.setText(""+prod.getPurchase_price());
-            vista.txtPrecioVenta_Producto.setText(""+prod.getSale_price());
+            vista.txtPrecioCompra_Producto.setText("" + prod.getPurchase_price());
+            vista.txtPrecioVenta_Producto.setText("" + prod.getSale_price());
             vista.cboProveedor_Producto.setSelectedItem(new ComboBox(prod.getId_provider(), prod.getName_provider()));
             vista.cboCategoria_Producto.setSelectedItem(new ComboBox(prod.getId_category(), prod.getName_category()));
-            
+
             limpiarTable();
             listarProductos();
-                
+        
+
     }
+
     @Override
     public void mousePressed(MouseEvent e) {
     }
@@ -259,12 +263,10 @@ public class ProductController implements ActionListener, MouseListener, KeyList
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if(e.getSource() == vista.txtSearchProductos){
+        if (e.getSource() == vista.txtSearchProductos) {
             limpiarTable();
             listarProductos();
         }
     }
-    
-    
-    
+
 }

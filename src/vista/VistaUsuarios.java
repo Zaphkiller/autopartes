@@ -8,12 +8,11 @@ import modelo.UsuarioDAO;
 
 public class VistaUsuarios extends javax.swing.JPanel {
 
-     Usuario us = new Usuario();
-     UsuarioDAO usDAO = new UsuarioDAO();
+
     public VistaUsuarios() {
 
         initComponents();
-        UserController user = new UserController(us,usDAO,this);
+        
     }
 
     /**

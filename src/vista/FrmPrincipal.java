@@ -4,7 +4,25 @@
  */
 package vista;
 
+import componente.AWTUtilities;
+import controlador.CategoryController;
+import controlador.ClienteController;
+import controlador.ProductController;
+import controlador.ProviderController;
 import controlador.SlidingController;
+import controlador.UserController;
+import java.util.Timer;
+import java.util.TimerTask;
+import modelo.Category;
+import modelo.CategoryDAO;
+import modelo.Cliente;
+import modelo.ClienteDAO;
+import modelo.ProductDAO;
+import modelo.Products;
+import modelo.Provider;
+import modelo.ProviderDAO;
+import modelo.Usuario;
+import modelo.UsuarioDAO;
 
 /**
  *
@@ -12,19 +30,30 @@ import controlador.SlidingController;
  */
 public class FrmPrincipal extends javax.swing.JFrame {
 
+    Usuario us = new Usuario();
+    UsuarioDAO usDAO = new UsuarioDAO();
+    Cliente cli = new Cliente();
+    ClienteDAO cliDAO = new ClienteDAO();
+    Provider prov = new Provider();
+    ProviderDAO provDAO = new ProviderDAO();
+    Category cat = new Category();
+    CategoryDAO catDAO = new CategoryDAO();
+    Products pro = new Products();
+    ProductDAO prodDAO = new ProductDAO();
+    
+    Timer timer=null;
+    TimerTask task;
+    int i =32;
+
     public FrmPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
         SlidingController slide = new SlidingController(this);
-        pnlHome.setName("home");
-        pnlCompras.setName("compras");
-        pnlVentas.setName("ventas");
-        pnlProductos.setName("productos");
-        pnlClientes.setName("clientes");
-        pnlProveedores.setName("proveedor");
-        pnlUsuarios.setName("usuarios");
-        pnlCategorias.setName("categorias");
-        pnlEmpresa.setName("empresa");
+        UserController user = new UserController(us,usDAO,this);
+        ClienteController clie = new ClienteController(cli, cliDAO, this);
+        ProviderController provi = new ProviderController(prov, provDAO, this);
+        CategoryController categ = new CategoryController(cat, catDAO, this);
+        ProductController prod = new ProductController(pro, prodDAO, this);
 
     }
 
@@ -37,6 +66,30 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PoupMenuProducts = new rojerusan.RSPopuMenu();
+        MenuItem_EliminarProducto = new javax.swing.JMenuItem();
+        MenuItem_ReingresarProducto = new javax.swing.JMenuItem();
+        popupMenuCategories = new rojerusan.RSPopuMenu();
+        MenuItem_EliminarCategory = new javax.swing.JMenuItem();
+        MenuItem_ReingresarCategory = new javax.swing.JMenuItem();
+        PopUpMenuProvider = new rojerusan.RSPopuMenu();
+        MenuItemEliminarProveedor = new javax.swing.JMenuItem();
+        MenuItemReingresarProveedor = new javax.swing.JMenuItem();
+        PopupMenuClientes = new rojerusan.RSPopuMenu();
+        MenuItem_EliminarCliente = new javax.swing.JMenuItem();
+        MenuItem_ReingresarCliente = new javax.swing.JMenuItem();
+        ModalProductos = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        rSPanelBorder1 = new RSMaterialComponent.RSPanelBorder();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        btnCerrar1 = new RSMaterialComponent.RSButtonIconOne();
+        txtSearchProvider1 = new RSMaterialComponent.RSTextFieldIconOne();
+        btnAgregarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
+        btnCancelarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblModalProductos = new rojerusan.RSTableMetro();
         jPanel1 = new javax.swing.JPanel();
         pnlMenu = new RSMaterialComponent.RSPanelMaterial();
         rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
@@ -58,15 +111,345 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnCerrar = new RSMaterialComponent.RSButtonIconOne();
         pnlPrincipal = new RSMaterialComponent.RSPanelMaterial();
         pnlSlider = new newscomponents.RSPanelEffect();
-        pnlClientes = new vista.VistaClientes();
-        pnlProveedores = new vista.VistaProveedores();
-        pnlUsuarios = new vista.VistaUsuarios();
-        pnlHome = new vista.VistaHome();
-        pnlCategorias = new vista.VistaCategorias();
-        pnlEmpresa = new vista.VistaEmpresa();
-        pnlProductos = new vista.VistaProductos();
-        pnlCompras = new vista.VistaCompras();
-        pnlVentas = new vista.VistaVentas();
+        jtabVENTAS = new javax.swing.JTabbedPane();
+        TabUsuarios = new javax.swing.JPanel();
+        txtNickname = new RSMaterialComponent.RSTextFieldOne();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtName = new RSMaterialComponent.RSTextFieldOne();
+        txtLastname = new RSMaterialComponent.RSTextFieldOne();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtDni = new RSMaterialComponent.RSTextFieldOne();
+        cboRole = new rojerusan.RSComboBox();
+        jLabel9 = new javax.swing.JLabel();
+        txtPhone = new RSMaterialComponent.RSTextFieldOne();
+        jLabel8 = new javax.swing.JLabel();
+        txtEmail = new RSMaterialComponent.RSTextFieldOne();
+        jLabel6 = new javax.swing.JLabel();
+        txtPassword = new RSMaterialComponent.RSPasswordOne();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblUsers = new rojerusan.RSTableMetro();
+        txtIduser = new RSMaterialComponent.RSTextFieldOne();
+        txtSearchUser = new RSMaterialComponent.RSTextFieldIconOne();
+        btnModifyUser = new newscomponents.RSButtonGradientIcon_new();
+        btnRegisterUser = new newscomponents.RSButtonGradientIcon_new();
+        btnNewUser = new newscomponents.RSButtonGradientIcon_new();
+        TabClientes = new javax.swing.JPanel();
+        txtNameCliente = new RSMaterialComponent.RSTextFieldOne();
+        jLabel23 = new javax.swing.JLabel();
+        txtLastnameCliente = new RSMaterialComponent.RSTextFieldOne();
+        jLabel24 = new javax.swing.JLabel();
+        txtDniCliente = new RSMaterialComponent.RSTextFieldOne();
+        jLabel25 = new javax.swing.JLabel();
+        txtPhoneCliente = new RSMaterialComponent.RSTextFieldOne();
+        jLabel26 = new javax.swing.JLabel();
+        txtAddressCliente = new RSMaterialComponent.RSTextFieldOne();
+        jLabel27 = new javax.swing.JLabel();
+        txtIdCliente = new RSMaterialComponent.RSTextFieldOne();
+        txtSearchCliente = new RSMaterialComponent.RSTextFieldIconOne();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblClientes = new rojerusan.RSTableMetro();
+        btnNewCliente = new newscomponents.RSButtonGradientIcon_new();
+        btnRegisterCliente = new newscomponents.RSButtonGradientIcon_new();
+        btnModifyCliente = new newscomponents.RSButtonGradientIcon_new();
+        TabProveedor = new javax.swing.JPanel();
+        txtRucProvider = new RSMaterialComponent.RSTextFieldOne();
+        jLabel18 = new javax.swing.JLabel();
+        txtNameProvider = new RSMaterialComponent.RSTextFieldOne();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        txtPhoneProvider = new RSMaterialComponent.RSTextFieldOne();
+        txtAddressProvider = new RSMaterialComponent.RSTextFieldOne();
+        jLabel21 = new javax.swing.JLabel();
+        txtEmailProvider = new RSMaterialComponent.RSTextFieldOne();
+        jLabel22 = new javax.swing.JLabel();
+        txtIdProvider = new RSMaterialComponent.RSTextFieldOne();
+        txtSearchProvider = new RSMaterialComponent.RSTextFieldIconOne();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblProviders = new rojerusan.RSTableMetro();
+        btnNewProvider = new newscomponents.RSButtonGradientIcon_new();
+        btnRegisterProvider = new newscomponents.RSButtonGradientIcon_new();
+        btnModifyProvider = new newscomponents.RSButtonGradientIcon_new();
+        TabCategorias = new javax.swing.JPanel();
+        txtCodeCategory = new RSMaterialComponent.RSTextFieldOne();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtNameCategory = new RSMaterialComponent.RSTextFieldOne();
+        txtIdCategory = new RSMaterialComponent.RSTextFieldOne();
+        txtSearchCategory = new RSMaterialComponent.RSTextFieldIconOne();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblCategory = new rojerusan.RSTableMetro();
+        btnNewCategory = new newscomponents.RSButtonGradientIcon_new();
+        btnRegisterCategory = new newscomponents.RSButtonGradientIcon_new();
+        btnModifyCategory = new newscomponents.RSButtonGradientIcon_new();
+        TabProductos = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblProductos = new rojerusan.RSTableMetro();
+        btnNewProduct = new newscomponents.RSButtonGradientIcon_new();
+        btnRegisterProduct = new newscomponents.RSButtonGradientIcon_new();
+        btnModifyProduct = new newscomponents.RSButtonGradientIcon_new();
+        txtSearchProductos = new RSMaterialComponent.RSTextFieldIconOne();
+        cboCategoria_Producto = new rojerusan.RSComboBox();
+        txtIdProducto = new RSMaterialComponent.RSTextFieldOne();
+        txtPrecioVenta_Producto = new RSMaterialComponent.RSTextFieldOne();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        cboProveedor_Producto = new rojerusan.RSComboBox();
+        jLabel14 = new javax.swing.JLabel();
+        txtPrecioCompra_Producto = new RSMaterialComponent.RSTextFieldOne();
+        jLabel15 = new javax.swing.JLabel();
+        txtCodigoProducto_Producto = new RSMaterialComponent.RSTextFieldOne();
+        jLabel16 = new javax.swing.JLabel();
+        txtDescripcionProducto_Producto = new RSMaterialComponent.RSTextFieldOne();
+        jLabel17 = new javax.swing.JLabel();
+        TabCompras = new javax.swing.JPanel();
+        TabVentas = new javax.swing.JPanel();
+        TabNuevaCompra = new javax.swing.JPanel();
+        txtCodigoCompra = new RSMaterialComponent.RSTextFieldOne();
+        jLabel28 = new javax.swing.JLabel();
+        btnBuscarProducto_Compras = new rojeru_san.rsbutton.RSButtonRound();
+        txtDescripcionProducto_Compra = new RSMaterialComponent.RSTextFieldOne();
+        jLabel29 = new javax.swing.JLabel();
+        txtCantidad_Compra = new RSMaterialComponent.RSTextFieldOne();
+        jLabel30 = new javax.swing.JLabel();
+        txtPrecioCompra_Compra = new RSMaterialComponent.RSTextFieldOne();
+        jLabel31 = new javax.swing.JLabel();
+        PrecioVenta_Compra = new RSMaterialComponent.RSTextFieldOne();
+        jLabel32 = new javax.swing.JLabel();
+        txtIdProvider1 = new RSMaterialComponent.RSTextFieldOne();
+        txtSearchUser1 = new RSMaterialComponent.RSTextFieldIconOne();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblCompras = new rojerusan.RSTableMetro();
+        btnNewUser1 = new newscomponents.RSButtonGradientIcon_new();
+        btnRegisterUser1 = new newscomponents.RSButtonGradientIcon_new();
+        btnModifyUser1 = new newscomponents.RSButtonGradientIcon_new();
+        TabNuevaVenta = new javax.swing.JPanel();
+
+        MenuItem_EliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        MenuItem_EliminarProducto.setText("Eliminar");
+        PoupMenuProducts.add(MenuItem_EliminarProducto);
+
+        MenuItem_ReingresarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
+        MenuItem_ReingresarProducto.setText("Reingresar");
+        MenuItem_ReingresarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItem_ReingresarProductoActionPerformed(evt);
+            }
+        });
+        PoupMenuProducts.add(MenuItem_ReingresarProducto);
+
+        MenuItem_EliminarCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        MenuItem_EliminarCategory.setText("Eliminar");
+        popupMenuCategories.add(MenuItem_EliminarCategory);
+
+        MenuItem_ReingresarCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
+        MenuItem_ReingresarCategory.setText("Reingresar");
+        popupMenuCategories.add(MenuItem_ReingresarCategory);
+
+        MenuItemEliminarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        MenuItemEliminarProveedor.setText("Eliminar");
+        MenuItemEliminarProveedor.setToolTipText("");
+        PopUpMenuProvider.add(MenuItemEliminarProveedor);
+
+        MenuItemReingresarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
+        MenuItemReingresarProveedor.setText("Reingresar");
+        PopUpMenuProvider.add(MenuItemReingresarProveedor);
+
+        MenuItem_EliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        MenuItem_EliminarCliente.setText("Eliiminar");
+        PopupMenuClientes.add(MenuItem_EliminarCliente);
+
+        MenuItem_ReingresarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
+        MenuItem_ReingresarCliente.setText("Reingresar");
+        PopupMenuClientes.add(MenuItem_ReingresarCliente);
+
+        ModalProductos.setUndecorated(true);
+        ModalProductos.setSize(new java.awt.Dimension(960, 619));
+        ModalProductos.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                ModalProductosWindowOpened(evt);
+            }
+        });
+
+        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel2.setMaximumSize(new java.awt.Dimension(0, 0));
+        jPanel2.setName(""); // NOI18N
+        jPanel2.setPreferredSize(new java.awt.Dimension(960, 585));
+        jPanel2.setRequestFocusEnabled(false);
+
+        rSPanelBorder1.setBackground(new java.awt.Color(255, 255, 255));
+        rSPanelBorder1.setBgBorder(new java.awt.Color(51, 119, 255));
+        rSPanelBorder1.setMaximumSize(new java.awt.Dimension(960, 579));
+        rSPanelBorder1.setMinimumSize(new java.awt.Dimension(855, 567));
+        rSPanelBorder1.setName(""); // NOI18N
+
+        jPanel3.setBackground(new java.awt.Color(37, 45, 223));
+
+        jLabel33.setFont(new java.awt.Font("Roboto Cn", 1, 24)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Seleccionar Productos");
+
+        btnCerrar1.setBackground(new java.awt.Color(255, 51, 0));
+        btnCerrar1.setBackgroundHover(new java.awt.Color(153, 0, 0));
+        btnCerrar1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CLOSE);
+        btnCerrar1.setRound(10);
+        btnCerrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrar1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
+                .addComponent(btnCerrar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCerrar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
+        );
+
+        txtSearchProvider1.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchProvider1.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchProvider1.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchProvider1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchProvider1.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchProvider1.setPlaceholder("Buscar");
+
+        btnAgregarProveedorModal.setBackground(new java.awt.Color(0, 255, 51));
+        btnAgregarProveedorModal.setText("Agregar");
+        btnAgregarProveedorModal.setToolTipText("");
+        btnAgregarProveedorModal.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnAgregarProveedorModal.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProveedorModal.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnAgregarProveedorModal.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProveedorModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        btnAgregarProveedorModal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProveedorModalActionPerformed(evt);
+            }
+        });
+
+        btnCancelarProveedorModal.setBackground(new java.awt.Color(0, 255, 51));
+        btnCancelarProveedorModal.setText("Salir");
+        btnCancelarProveedorModal.setToolTipText("");
+        btnCancelarProveedorModal.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnCancelarProveedorModal.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnCancelarProveedorModal.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnCancelarProveedorModal.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnCancelarProveedorModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
+
+        tblModalProductos.setBackground(new java.awt.Color(255, 255, 255));
+        tblModalProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Código", "Descripción", "Stock", "Precio", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblModalProductos.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblModalProductos.setEditingColumn(0);
+        tblModalProductos.setEditingRow(0);
+        tblModalProductos.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblModalProductos.setWidthBorderRows(0);
+        jScrollPane7.setViewportView(tblModalProductos);
+
+        javax.swing.GroupLayout rSPanelBorder1Layout = new javax.swing.GroupLayout(rSPanelBorder1);
+        rSPanelBorder1.setLayout(rSPanelBorder1Layout);
+        rSPanelBorder1Layout.setHorizontalGroup(
+            rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addComponent(btnAgregarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSearchProvider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE))))
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                    .addGap(361, 361, 361)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(361, Short.MAX_VALUE)))
+        );
+        rSPanelBorder1Layout.setVerticalGroup(
+            rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtSearchProvider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
+            .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                    .addGap(251, 251, 251)
+                    .addComponent(jLabel34)
+                    .addContainerGap(316, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSPanelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSPanelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout ModalProductosLayout = new javax.swing.GroupLayout(ModalProductos.getContentPane());
+        ModalProductos.getContentPane().setLayout(ModalProductosLayout);
+        ModalProductosLayout.setHorizontalGroup(
+            ModalProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ModalProductosLayout.setVerticalGroup(
+            ModalProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -269,22 +652,1285 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlClientes.setName("pnlClientes"); // NOI18N
-        pnlSlider.add(pnlClientes, "card9");
+        TabUsuarios.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnlProveedores.setName("pnlProveedores"); // NOI18N
-        pnlSlider.add(pnlProveedores, "card3");
+        txtNickname.setForeground(new java.awt.Color(0, 102, 255));
+        txtNickname.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtNickname.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtNickname.setOpaque(false);
+        txtNickname.setPhColor(new java.awt.Color(0, 0, 153));
+        txtNickname.setPlaceholder("Ingresar nickname...");
+        txtNickname.setSelectionColor(new java.awt.Color(51, 51, 51));
 
-        pnlUsuarios.setName("pnlUsuarios"); // NOI18N
-        pnlSlider.add(pnlUsuarios, "card4");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Nickname*");
 
-        pnlHome.setName("pnlHome"); // NOI18N
-        pnlSlider.add(pnlHome, "card10");
-        pnlSlider.add(pnlCategorias, "card9");
-        pnlSlider.add(pnlEmpresa, "card10");
-        pnlSlider.add(pnlProductos, "card10");
-        pnlSlider.add(pnlCompras, "card10");
-        pnlSlider.add(pnlVentas, "card10");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Nombres*");
+
+        txtName.setForeground(new java.awt.Color(0, 102, 255));
+        txtName.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtName.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtName.setOpaque(false);
+        txtName.setPhColor(new java.awt.Color(0, 0, 153));
+        txtName.setPlaceholder("Ingresar Nombres...");
+        txtName.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        txtLastname.setForeground(new java.awt.Color(0, 102, 255));
+        txtLastname.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtLastname.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtLastname.setOpaque(false);
+        txtLastname.setPhColor(new java.awt.Color(0, 0, 153));
+        txtLastname.setPlaceholder("Ingresar Apellidos...");
+        txtLastname.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Apellidos*");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("DNI*");
+
+        txtDni.setForeground(new java.awt.Color(0, 102, 255));
+        txtDni.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtDni.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtDni.setOpaque(false);
+        txtDni.setPhColor(new java.awt.Color(0, 0, 153));
+        txtDni.setPlaceholder("Ingresar dni...");
+        txtDni.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        cboRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>", "Administrador", "Empleado" }));
+        cboRole.setColorArrow(new java.awt.Color(0, 102, 255));
+        cboRole.setColorBorde(new java.awt.Color(0, 0, 255));
+        cboRole.setColorFondo(new java.awt.Color(0, 102, 255));
+        cboRole.setColorSeleccion(new java.awt.Color(0, 102, 255));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Rol*");
+
+        txtPhone.setForeground(new java.awt.Color(0, 102, 255));
+        txtPhone.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPhone.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPhone.setOpaque(false);
+        txtPhone.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPhone.setPlaceholder("Ingresar Teéfono...");
+        txtPhone.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Teléfono*");
+
+        txtEmail.setForeground(new java.awt.Color(0, 102, 255));
+        txtEmail.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtEmail.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtEmail.setOpaque(false);
+        txtEmail.setPhColor(new java.awt.Color(0, 0, 153));
+        txtEmail.setPlaceholder("Ingresar E-mail...");
+        txtEmail.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("E-mail*");
+
+        txtPassword.setForeground(new java.awt.Color(0, 102, 255));
+        txtPassword.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPassword.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPassword.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPassword.setPlaceholder("Ingresar contraseña...");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Contraseña");
+
+        tblUsers.setBackground(new java.awt.Color(255, 255, 255));
+        tblUsers.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Nickname", "Nombres", "Apellidos", "DNI", "Contraseña", "E-mail", "Teléfono", "Rol", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, true, true, true, true, true, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblUsers.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblUsers.setEditingColumn(0);
+        tblUsers.setEditingRow(0);
+        tblUsers.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblUsers.setWidthBorderRows(0);
+        jScrollPane1.setViewportView(tblUsers);
+
+        txtIduser.setEditable(false);
+        txtIduser.setBackground(new java.awt.Color(204, 204, 204));
+        txtIduser.setForeground(new java.awt.Color(0, 102, 255));
+        txtIduser.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIduser.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIduser.setOpaque(false);
+        txtIduser.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIduser.setPlaceholder("Id User");
+        txtIduser.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        txtSearchUser.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchUser.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchUser.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchUser.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchUser.setPlaceholder("Buscar");
+
+        btnModifyUser.setBackground(new java.awt.Color(0, 255, 51));
+        btnModifyUser.setText("Modificar");
+        btnModifyUser.setToolTipText("");
+        btnModifyUser.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnModifyUser.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyUser.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnModifyUser.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+
+        btnRegisterUser.setBackground(new java.awt.Color(75, 172, 198));
+        btnRegisterUser.setText("Registrar");
+        btnRegisterUser.setToolTipText("");
+        btnRegisterUser.setColorPrimario(new java.awt.Color(75, 172, 198));
+        btnRegisterUser.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterUser.setColorSecundario(new java.awt.Color(75, 85, 215));
+        btnRegisterUser.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+
+        btnNewUser.setBackground(new java.awt.Color(0, 255, 51));
+        btnNewUser.setText("Nuevo");
+        btnNewUser.setToolTipText("");
+        btnNewUser.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnNewUser.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnNewUser.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnNewUser.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnNewUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+
+        javax.swing.GroupLayout TabUsuariosLayout = new javax.swing.GroupLayout(TabUsuarios);
+        TabUsuarios.setLayout(TabUsuariosLayout);
+        TabUsuariosLayout.setHorizontalGroup(
+            TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabUsuariosLayout.createSequentialGroup()
+                .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabUsuariosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabUsuariosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(txtNickname, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(txtLastname, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabUsuariosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabUsuariosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)
+                        .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(cboRole, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabUsuariosLayout.createSequentialGroup()
+                        .addGap(443, 443, 443)
+                        .addComponent(txtIduser, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabUsuariosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabUsuariosLayout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(btnNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(btnRegisterUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(btnModifyUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(15, 15, 15))
+        );
+        TabUsuariosLayout.setVerticalGroup(
+            TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabUsuariosLayout.createSequentialGroup()
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(6, 6, 6)
+                .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNickname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(TabUsuariosLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))))
+                .addGap(6, 6, 6)
+                .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboRole, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIduser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegisterUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModifyUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
+        );
+
+        jtabVENTAS.addTab("Usuarios", TabUsuarios);
+
+        TabClientes.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtNameCliente.setForeground(new java.awt.Color(0, 102, 255));
+        txtNameCliente.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtNameCliente.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtNameCliente.setOpaque(false);
+        txtNameCliente.setPhColor(new java.awt.Color(0, 0, 153));
+        txtNameCliente.setPlaceholder("Ingresar Nombres...");
+        txtNameCliente.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setText("Nombres*");
+
+        txtLastnameCliente.setForeground(new java.awt.Color(0, 102, 255));
+        txtLastnameCliente.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtLastnameCliente.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtLastnameCliente.setOpaque(false);
+        txtLastnameCliente.setPhColor(new java.awt.Color(0, 0, 153));
+        txtLastnameCliente.setPlaceholder("Ingresar Apellidos...");
+        txtLastnameCliente.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("Apellidos*");
+
+        txtDniCliente.setForeground(new java.awt.Color(0, 102, 255));
+        txtDniCliente.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtDniCliente.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtDniCliente.setOpaque(false);
+        txtDniCliente.setPhColor(new java.awt.Color(0, 0, 153));
+        txtDniCliente.setPlaceholder("Ingresar dni...");
+        txtDniCliente.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("DNI*");
+
+        txtPhoneCliente.setForeground(new java.awt.Color(0, 102, 255));
+        txtPhoneCliente.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPhoneCliente.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPhoneCliente.setOpaque(false);
+        txtPhoneCliente.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPhoneCliente.setPlaceholder("Ingresar Teéfono...");
+        txtPhoneCliente.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel26.setText("Teléfono*");
+
+        txtAddressCliente.setForeground(new java.awt.Color(0, 102, 255));
+        txtAddressCliente.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtAddressCliente.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtAddressCliente.setOpaque(false);
+        txtAddressCliente.setPhColor(new java.awt.Color(0, 0, 153));
+        txtAddressCliente.setPlaceholder("Ingresar dirección...");
+        txtAddressCliente.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel27.setText("Dirección*");
+
+        txtIdCliente.setEditable(false);
+        txtIdCliente.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdCliente.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdCliente.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdCliente.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdCliente.setOpaque(false);
+        txtIdCliente.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdCliente.setPlaceholder("Id Cliente");
+        txtIdCliente.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        txtSearchCliente.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchCliente.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchCliente.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchCliente.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchCliente.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchCliente.setPlaceholder("Buscar");
+
+        tblClientes.setBackground(new java.awt.Color(255, 255, 255));
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Nombres", "Apellidos", "DNI", "Dirección", "Teléfono", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, true, true, true, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblClientes.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblClientes.setComponentPopupMenu(PopupMenuClientes);
+        tblClientes.setEditingColumn(0);
+        tblClientes.setEditingRow(0);
+        tblClientes.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblClientes.setWidthBorderRows(0);
+        jScrollPane5.setViewportView(tblClientes);
+
+        btnNewCliente.setBackground(new java.awt.Color(0, 255, 51));
+        btnNewCliente.setText("Nuevo");
+        btnNewCliente.setToolTipText("");
+        btnNewCliente.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnNewCliente.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnNewCliente.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnNewCliente.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnNewCliente.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+
+        btnRegisterCliente.setBackground(new java.awt.Color(75, 172, 198));
+        btnRegisterCliente.setText("Registrar");
+        btnRegisterCliente.setToolTipText("");
+        btnRegisterCliente.setColorPrimario(new java.awt.Color(75, 172, 198));
+        btnRegisterCliente.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterCliente.setColorSecundario(new java.awt.Color(75, 85, 215));
+        btnRegisterCliente.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterCliente.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+
+        btnModifyCliente.setBackground(new java.awt.Color(0, 255, 51));
+        btnModifyCliente.setText("Modificar");
+        btnModifyCliente.setToolTipText("");
+        btnModifyCliente.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnModifyCliente.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyCliente.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnModifyCliente.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyCliente.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+
+        javax.swing.GroupLayout TabClientesLayout = new javax.swing.GroupLayout(TabClientes);
+        TabClientes.setLayout(TabClientesLayout);
+        TabClientesLayout.setHorizontalGroup(
+            TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtAddressCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabClientesLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtSearchCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabClientesLayout.createSequentialGroup()
+                        .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(TabClientesLayout.createSequentialGroup()
+                                .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNameCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtLastnameCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtDniCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtPhoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabClientesLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnNewCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnRegisterCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnModifyCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(115, 115, 115)))
+                .addGap(34, 34, 34))
+        );
+        TabClientesLayout.setVerticalGroup(
+            TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabClientesLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(TabClientesLayout.createSequentialGroup()
+                            .addComponent(jLabel23)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtNameCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(TabClientesLayout.createSequentialGroup()
+                            .addComponent(jLabel24)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtLastnameCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(TabClientesLayout.createSequentialGroup()
+                            .addComponent(jLabel25)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtDniCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(TabClientesLayout.createSequentialGroup()
+                        .addComponent(jLabel26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPhoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAddressCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtIdCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnRegisterCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnModifyCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNewCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jtabVENTAS.addTab("Clientes", TabClientes);
+
+        TabProveedor.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtRucProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtRucProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtRucProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtRucProvider.setOpaque(false);
+        txtRucProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtRucProvider.setPlaceholder("Ingresar RUC...");
+        txtRucProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("RUC*");
+
+        txtNameProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtNameProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtNameProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtNameProvider.setOpaque(false);
+        txtNameProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtNameProvider.setPlaceholder("Ingresar Nombres...");
+        txtNameProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Nombre*");
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Teléfono*");
+
+        txtPhoneProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtPhoneProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPhoneProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPhoneProvider.setOpaque(false);
+        txtPhoneProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPhoneProvider.setPlaceholder("Ingresar Teléfono...");
+        txtPhoneProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        txtAddressProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtAddressProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtAddressProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtAddressProvider.setOpaque(false);
+        txtAddressProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtAddressProvider.setPlaceholder("Ingresar Razón Social...");
+        txtAddressProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("Razón social*");
+
+        txtEmailProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtEmailProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtEmailProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtEmailProvider.setOpaque(false);
+        txtEmailProvider.setPhColor(new java.awt.Color(0, 0, 153));
+        txtEmailProvider.setPlaceholder("Ingresar email...");
+        txtEmailProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setText("Email*");
+
+        txtIdProvider.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdProvider.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdProvider.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdProvider.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdProvider.setOpaque(false);
+        txtIdProvider.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdProvider.setPlaceholder("Id Proveedor");
+        txtIdProvider.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        txtSearchProvider.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchProvider.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchProvider.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchProvider.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchProvider.setPlaceholder("Buscar");
+
+        tblProviders.setBackground(new java.awt.Color(255, 255, 255));
+        tblProviders.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "RUC", "Nombre", "Teléfono", "Email", "Razón Social", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, true, false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblProviders.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblProviders.setComponentPopupMenu(PopUpMenuProvider);
+        tblProviders.setEditingColumn(0);
+        tblProviders.setEditingRow(0);
+        tblProviders.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblProviders.setWidthBorderRows(0);
+        jScrollPane4.setViewportView(tblProviders);
+
+        btnNewProvider.setBackground(new java.awt.Color(0, 255, 51));
+        btnNewProvider.setText("Nuevo");
+        btnNewProvider.setToolTipText("");
+        btnNewProvider.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnNewProvider.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnNewProvider.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnNewProvider.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnNewProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+
+        btnRegisterProvider.setBackground(new java.awt.Color(75, 172, 198));
+        btnRegisterProvider.setText("Registrar");
+        btnRegisterProvider.setToolTipText("");
+        btnRegisterProvider.setColorPrimario(new java.awt.Color(75, 172, 198));
+        btnRegisterProvider.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterProvider.setColorSecundario(new java.awt.Color(75, 85, 215));
+        btnRegisterProvider.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+
+        btnModifyProvider.setBackground(new java.awt.Color(0, 255, 51));
+        btnModifyProvider.setText("Modificar");
+        btnModifyProvider.setToolTipText("");
+        btnModifyProvider.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnModifyProvider.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyProvider.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnModifyProvider.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyProvider.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+
+        javax.swing.GroupLayout TabProveedorLayout = new javax.swing.GroupLayout(TabProveedor);
+        TabProveedor.setLayout(TabProveedorLayout);
+        TabProveedorLayout.setHorizontalGroup(
+            TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabProveedorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabProveedorLayout.createSequentialGroup()
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(TabProveedorLayout.createSequentialGroup()
+                        .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(TabProveedorLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(TabProveedorLayout.createSequentialGroup()
+                                        .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtEmailProvider, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+                                            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtAddressProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(TabProveedorLayout.createSequentialGroup()
+                                        .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtRucProvider, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtNameProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtPhoneProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jScrollPane4))
+                        .addContainerGap(11, Short.MAX_VALUE))))
+            .addGroup(TabProveedorLayout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(btnNewProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRegisterProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnModifyProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 137, Short.MAX_VALUE))
+        );
+        TabProveedorLayout.setVerticalGroup(
+            TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabProveedorLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(TabProveedorLayout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtRucProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabProveedorLayout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNameProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabProveedorLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPhoneProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAddressProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmailProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnRegisterProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnModifyProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNewProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jtabVENTAS.addTab("Proveedor", TabProveedor);
+
+        TabCategorias.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtCodeCategory.setForeground(new java.awt.Color(0, 102, 255));
+        txtCodeCategory.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCodeCategory.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCodeCategory.setOpaque(false);
+        txtCodeCategory.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCodeCategory.setPlaceholder("Código...");
+        txtCodeCategory.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Codigo");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Nombre de la Categoría");
+
+        txtNameCategory.setForeground(new java.awt.Color(0, 102, 255));
+        txtNameCategory.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtNameCategory.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtNameCategory.setOpaque(false);
+        txtNameCategory.setPhColor(new java.awt.Color(0, 0, 153));
+        txtNameCategory.setPlaceholder("Nombre de la Categoría...");
+        txtNameCategory.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        txtIdCategory.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdCategory.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdCategory.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdCategory.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdCategory.setOpaque(false);
+        txtIdCategory.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdCategory.setPlaceholder("Id Categoria");
+        txtIdCategory.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        txtSearchCategory.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchCategory.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchCategory.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchCategory.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchCategory.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchCategory.setPlaceholder("Buscar");
+
+        tblCategory.setBackground(new java.awt.Color(255, 255, 255));
+        tblCategory.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Código", "Nombre", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblCategory.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblCategory.setComponentPopupMenu(popupMenuCategories);
+        tblCategory.setEditingColumn(0);
+        tblCategory.setEditingRow(0);
+        tblCategory.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblCategory.setWidthBorderRows(0);
+        jScrollPane2.setViewportView(tblCategory);
+
+        btnNewCategory.setBackground(new java.awt.Color(0, 255, 51));
+        btnNewCategory.setText("Nuevo");
+        btnNewCategory.setToolTipText("");
+        btnNewCategory.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnNewCategory.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnNewCategory.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnNewCategory.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnNewCategory.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+
+        btnRegisterCategory.setBackground(new java.awt.Color(75, 172, 198));
+        btnRegisterCategory.setText("Registrar");
+        btnRegisterCategory.setToolTipText("");
+        btnRegisterCategory.setColorPrimario(new java.awt.Color(75, 172, 198));
+        btnRegisterCategory.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterCategory.setColorSecundario(new java.awt.Color(75, 85, 215));
+        btnRegisterCategory.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterCategory.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+
+        btnModifyCategory.setBackground(new java.awt.Color(0, 255, 51));
+        btnModifyCategory.setText("Modificar");
+        btnModifyCategory.setToolTipText("");
+        btnModifyCategory.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnModifyCategory.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyCategory.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnModifyCategory.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyCategory.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+
+        javax.swing.GroupLayout TabCategoriasLayout = new javax.swing.GroupLayout(TabCategorias);
+        TabCategorias.setLayout(TabCategoriasLayout);
+        TabCategoriasLayout.setHorizontalGroup(
+            TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabCategoriasLayout.createSequentialGroup()
+                .addGroup(TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(TabCategoriasLayout.createSequentialGroup()
+                        .addComponent(txtIdCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtSearchCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabCategoriasLayout.createSequentialGroup()
+                        .addGroup(TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtCodeCategory, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE))
+                        .addGap(19, 19, 19)
+                        .addGroup(TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNameCategory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(TabCategoriasLayout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(TabCategoriasLayout.createSequentialGroup()
+                            .addGap(171, 171, 171)
+                            .addComponent(btnNewCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12)
+                            .addComponent(btnRegisterCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12)
+                            .addComponent(btnModifyCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        TabCategoriasLayout.setVerticalGroup(
+            TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabCategoriasLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addGroup(TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addGroup(TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCodeCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNameCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSearchCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdCategory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TabCategoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNewCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegisterCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModifyCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
+        );
+
+        jtabVENTAS.addTab("Categorías", TabCategorias);
+
+        TabProductos.setBackground(new java.awt.Color(255, 255, 255));
+        TabProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblProductos.setBackground(new java.awt.Color(255, 255, 255));
+        tblProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Código", "Descripción", "Stock", "Precio", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblProductos.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblProductos.setComponentPopupMenu(PoupMenuProducts);
+        tblProductos.setEditingColumn(0);
+        tblProductos.setEditingRow(0);
+        tblProductos.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblProductos.setWidthBorderRows(0);
+        jScrollPane3.setViewportView(tblProductos);
+
+        TabProductos.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 302, 930, 330));
+
+        btnNewProduct.setBackground(new java.awt.Color(0, 255, 51));
+        btnNewProduct.setText("Nuevo");
+        btnNewProduct.setToolTipText("");
+        btnNewProduct.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnNewProduct.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnNewProduct.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnNewProduct.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnNewProduct.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        TabProductos.add(btnNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 650, 219, -1));
+
+        btnRegisterProduct.setBackground(new java.awt.Color(75, 172, 198));
+        btnRegisterProduct.setText("Registrar");
+        btnRegisterProduct.setToolTipText("");
+        btnRegisterProduct.setColorPrimario(new java.awt.Color(75, 172, 198));
+        btnRegisterProduct.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterProduct.setColorSecundario(new java.awt.Color(75, 85, 215));
+        btnRegisterProduct.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterProduct.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+        TabProductos.add(btnRegisterProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 650, 212, -1));
+
+        btnModifyProduct.setBackground(new java.awt.Color(0, 255, 51));
+        btnModifyProduct.setText("Modificar");
+        btnModifyProduct.setToolTipText("");
+        btnModifyProduct.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnModifyProduct.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyProduct.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnModifyProduct.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyProduct.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+        TabProductos.add(btnModifyProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 650, 212, -1));
+
+        txtSearchProductos.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchProductos.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchProductos.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchProductos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchProductos.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchProductos.setPlaceholder("Buscar");
+        TabProductos.add(txtSearchProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 930, -1));
+
+        cboCategoria_Producto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
+        cboCategoria_Producto.setColorArrow(new java.awt.Color(0, 102, 255));
+        cboCategoria_Producto.setColorBorde(new java.awt.Color(0, 0, 255));
+        cboCategoria_Producto.setColorFondo(new java.awt.Color(0, 102, 255));
+        cboCategoria_Producto.setColorSeleccion(new java.awt.Color(0, 102, 255));
+        TabProductos.add(cboCategoria_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 258, 42));
+
+        txtIdProducto.setEditable(false);
+        txtIdProducto.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdProducto.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdProducto.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdProducto.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdProducto.setOpaque(false);
+        txtIdProducto.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdProducto.setPlaceholder("Id Producto");
+        txtIdProducto.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabProductos.add(txtIdProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 150, 160, -1));
+
+        txtPrecioVenta_Producto.setForeground(new java.awt.Color(0, 102, 255));
+        txtPrecioVenta_Producto.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPrecioVenta_Producto.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPrecioVenta_Producto.setOpaque(false);
+        txtPrecioVenta_Producto.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPrecioVenta_Producto.setPlaceholder("");
+        txtPrecioVenta_Producto.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabProductos.add(txtPrecioVenta_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 160, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Precio Venta");
+        TabProductos.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 220, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Seleccionar Proveedor");
+        TabProductos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 256, -1));
+
+        cboProveedor_Producto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
+        cboProveedor_Producto.setColorArrow(new java.awt.Color(0, 102, 255));
+        cboProveedor_Producto.setColorBorde(new java.awt.Color(0, 0, 255));
+        cboProveedor_Producto.setColorFondo(new java.awt.Color(0, 102, 255));
+        cboProveedor_Producto.setColorSeleccion(new java.awt.Color(0, 102, 255));
+        TabProductos.add(cboProveedor_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 260, 42));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("Seleccionar Categoría");
+        TabProductos.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 258, -1));
+
+        txtPrecioCompra_Producto.setForeground(new java.awt.Color(0, 102, 255));
+        txtPrecioCompra_Producto.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPrecioCompra_Producto.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPrecioCompra_Producto.setOpaque(false);
+        txtPrecioCompra_Producto.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPrecioCompra_Producto.setPlaceholder("");
+        txtPrecioCompra_Producto.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabProductos.add(txtPrecioCompra_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 70, 160, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Precio Compra");
+        TabProductos.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, 160, -1));
+
+        txtCodigoProducto_Producto.setForeground(new java.awt.Color(0, 102, 255));
+        txtCodigoProducto_Producto.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCodigoProducto_Producto.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCodigoProducto_Producto.setOpaque(false);
+        txtCodigoProducto_Producto.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCodigoProducto_Producto.setPlaceholder("Código...");
+        txtCodigoProducto_Producto.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabProductos.add(txtCodigoProducto_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 73, 226, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Código");
+        TabProductos.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 50, -1, -1));
+
+        txtDescripcionProducto_Producto.setForeground(new java.awt.Color(0, 102, 255));
+        txtDescripcionProducto_Producto.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtDescripcionProducto_Producto.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtDescripcionProducto_Producto.setOpaque(false);
+        txtDescripcionProducto_Producto.setPhColor(new java.awt.Color(0, 0, 153));
+        txtDescripcionProducto_Producto.setPlaceholder("Descripción del producto...");
+        txtDescripcionProducto_Producto.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabProductos.add(txtDescripcionProducto_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 73, 490, -1));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Descripción del Producto");
+        TabProductos.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 50, 420, -1));
+
+        jtabVENTAS.addTab("Productos", TabProductos);
+
+        javax.swing.GroupLayout TabComprasLayout = new javax.swing.GroupLayout(TabCompras);
+        TabCompras.setLayout(TabComprasLayout);
+        TabComprasLayout.setHorizontalGroup(
+            TabComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 967, Short.MAX_VALUE)
+        );
+        TabComprasLayout.setVerticalGroup(
+            TabComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        jtabVENTAS.addTab("Compras", TabCompras);
+
+        javax.swing.GroupLayout TabVentasLayout = new javax.swing.GroupLayout(TabVentas);
+        TabVentas.setLayout(TabVentasLayout);
+        TabVentasLayout.setHorizontalGroup(
+            TabVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 967, Short.MAX_VALUE)
+        );
+        TabVentasLayout.setVerticalGroup(
+            TabVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        jtabVENTAS.addTab("Ventas", TabVentas);
+
+        TabNuevaCompra.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtCodigoCompra.setForeground(new java.awt.Color(0, 102, 255));
+        txtCodigoCompra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCodigoCompra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCodigoCompra.setOpaque(false);
+        txtCodigoCompra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCodigoCompra.setPlaceholder("Código...");
+        txtCodigoCompra.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setText("Código");
+
+        btnBuscarProducto_Compras.setText("Buscar");
+        btnBuscarProducto_Compras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarProducto_ComprasActionPerformed(evt);
+            }
+        });
+
+        txtDescripcionProducto_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtDescripcionProducto_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtDescripcionProducto_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtDescripcionProducto_Compra.setOpaque(false);
+        txtDescripcionProducto_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtDescripcionProducto_Compra.setPlaceholder("Descripción del producto...");
+        txtDescripcionProducto_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel29.setText("Descripción del Producto");
+
+        txtCantidad_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtCantidad_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCantidad_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCantidad_Compra.setOpaque(false);
+        txtCantidad_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCantidad_Compra.setPlaceholder("");
+        txtCantidad_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel30.setText("Cantidad");
+
+        txtPrecioCompra_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtPrecioCompra_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPrecioCompra_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPrecioCompra_Compra.setOpaque(false);
+        txtPrecioCompra_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPrecioCompra_Compra.setPlaceholder("");
+        txtPrecioCompra_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel31.setText("Precio Compra");
+
+        PrecioVenta_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        PrecioVenta_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        PrecioVenta_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        PrecioVenta_Compra.setOpaque(false);
+        PrecioVenta_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        PrecioVenta_Compra.setPlaceholder("");
+        PrecioVenta_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel32.setText("Precio Venta");
+
+        txtIdProvider1.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdProvider1.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdProvider1.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdProvider1.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdProvider1.setOpaque(false);
+        txtIdProvider1.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdProvider1.setPlaceholder("Id Producto");
+        txtIdProvider1.setSelectionColor(new java.awt.Color(51, 51, 51));
+
+        txtSearchUser1.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchUser1.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchUser1.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchUser1.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchUser1.setPlaceholder("Buscar");
+
+        tblCompras.setBackground(new java.awt.Color(255, 255, 255));
+        tblCompras.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Código", "Descripción", "Cantidad", "Subtotal", "IGV", "Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblCompras.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblCompras.setEditingColumn(0);
+        tblCompras.setEditingRow(0);
+        tblCompras.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblCompras.setWidthBorderRows(0);
+        jScrollPane6.setViewportView(tblCompras);
+
+        btnNewUser1.setBackground(new java.awt.Color(0, 255, 51));
+        btnNewUser1.setText("Nuevo");
+        btnNewUser1.setToolTipText("");
+        btnNewUser1.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnNewUser1.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnNewUser1.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnNewUser1.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnNewUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+
+        btnRegisterUser1.setBackground(new java.awt.Color(75, 172, 198));
+        btnRegisterUser1.setText("Registrar");
+        btnRegisterUser1.setToolTipText("");
+        btnRegisterUser1.setColorPrimario(new java.awt.Color(75, 172, 198));
+        btnRegisterUser1.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterUser1.setColorSecundario(new java.awt.Color(75, 85, 215));
+        btnRegisterUser1.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
+        btnRegisterUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+
+        btnModifyUser1.setBackground(new java.awt.Color(0, 255, 51));
+        btnModifyUser1.setText("Modificar");
+        btnModifyUser1.setToolTipText("");
+        btnModifyUser1.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnModifyUser1.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyUser1.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnModifyUser1.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnModifyUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+
+        javax.swing.GroupLayout TabNuevaCompraLayout = new javax.swing.GroupLayout(TabNuevaCompra);
+        TabNuevaCompra.setLayout(TabNuevaCompraLayout);
+        TabNuevaCompraLayout.setHorizontalGroup(
+            TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabNuevaCompraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
+                        .addComponent(txtCodigoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(btnBuscarProducto_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtDescripcionProducto_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(txtCantidad_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(txtPrecioCompra_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(PrecioVenta_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
+                        .addGap(416, 416, 416)
+                        .addComponent(txtIdProvider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtSearchUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 962, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabNuevaCompraLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnNewUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(btnRegisterUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(btnModifyUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(142, 142, 142))
+        );
+        TabNuevaCompraLayout.setVerticalGroup(
+            TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabNuevaCompraLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29))
+                .addGap(6, 6, 6)
+                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCodigoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(btnBuscarProducto_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDescripcionProducto_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel32))
+                .addGap(3, 3, 3)
+                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCantidad_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrecioCompra_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PrecioVenta_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtIdProvider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNewUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegisterUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModifyUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
+        );
+
+        jtabVENTAS.addTab("Nueva Compra", TabNuevaCompra);
+
+        javax.swing.GroupLayout TabNuevaVentaLayout = new javax.swing.GroupLayout(TabNuevaVenta);
+        TabNuevaVenta.setLayout(TabNuevaVentaLayout);
+        TabNuevaVentaLayout.setHorizontalGroup(
+            TabNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 967, Short.MAX_VALUE)
+        );
+        TabNuevaVentaLayout.setVerticalGroup(
+            TabNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        jtabVENTAS.addTab("Nueva Venta", TabNuevaVenta);
+
+        pnlSlider.add(jtabVENTAS, "card2");
 
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
@@ -299,8 +1945,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPrincipalLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         System.out.println("soy un pto error >:V");
@@ -327,6 +1973,40 @@ public class FrmPrincipal extends javax.swing.JFrame {
         salir.titulo.setText("¿ESTAS SEGURO DE SALIR?");
         salir.setVisible(true);
     }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void MenuItem_ReingresarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_ReingresarProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuItem_ReingresarProductoActionPerformed
+
+    private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
+        ModalProductos.setVisible(false);
+        ModalProductos.dispose();
+    }//GEN-LAST:event_btnCerrar1ActionPerformed
+
+    private void btnAgregarProveedorModalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProveedorModalActionPerformed
+
+    }//GEN-LAST:event_btnAgregarProveedorModalActionPerformed
+
+    private void btnBuscarProducto_ComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProducto_ComprasActionPerformed
+       ModalProductos.setVisible(true);
+       ModalProductos.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnBuscarProducto_ComprasActionPerformed
+
+    private void ModalProductosWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_ModalProductosWindowOpened
+       task = new TimerTask() {
+            @Override
+            public void run() {
+                if (i == 352) {
+                    timer.cancel();
+                } else {
+                    i += 32;
+                    Trasparencia((float) i / 352);
+                }
+            }
+        };
+        timer = new java.util.Timer();
+        timer.schedule(task, 0, 12);
+    }//GEN-LAST:event_ModalProductosWindowOpened
 
     /**
      * @param args the command line arguments
@@ -364,35 +2044,172 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem MenuItemEliminarProveedor;
+    public javax.swing.JMenuItem MenuItemReingresarProveedor;
+    public javax.swing.JMenuItem MenuItem_EliminarCategory;
+    public javax.swing.JMenuItem MenuItem_EliminarCliente;
+    public javax.swing.JMenuItem MenuItem_EliminarProducto;
+    public javax.swing.JMenuItem MenuItem_ReingresarCategory;
+    public javax.swing.JMenuItem MenuItem_ReingresarCliente;
+    public javax.swing.JMenuItem MenuItem_ReingresarProducto;
+    public javax.swing.JDialog ModalProductos;
+    public rojerusan.RSPopuMenu PopUpMenuProvider;
+    public rojerusan.RSPopuMenu PopupMenuClientes;
+    public rojerusan.RSPopuMenu PoupMenuProducts;
+    public RSMaterialComponent.RSTextFieldOne PrecioVenta_Compra;
+    private javax.swing.JPanel TabCategorias;
+    private javax.swing.JPanel TabClientes;
+    private javax.swing.JPanel TabCompras;
+    private javax.swing.JPanel TabNuevaCompra;
+    private javax.swing.JPanel TabNuevaVenta;
+    private javax.swing.JPanel TabProductos;
+    private javax.swing.JPanel TabProveedor;
+    private javax.swing.JPanel TabUsuarios;
+    private javax.swing.JPanel TabVentas;
+    public newscomponents.RSButtonGradientIcon_new btnAgregarProveedorModal;
+    public rojeru_san.rsbutton.RSButtonRound btnBuscarProducto_Compras;
+    public newscomponents.RSButtonGradientIcon_new btnCancelarProveedorModal;
     public rojerusan.RSButtonIconI btnCategorias;
     private RSMaterialComponent.RSButtonIconOne btnCerrar;
+    private RSMaterialComponent.RSButtonIconOne btnCerrar1;
     public rojerusan.RSButtonIconI btnClientes;
     public rojerusan.RSButtonIconI btnCompras;
     public rojerusan.RSButtonIconI btnHome;
+    public newscomponents.RSButtonGradientIcon_new btnModifyCategory;
+    public newscomponents.RSButtonGradientIcon_new btnModifyCliente;
+    public newscomponents.RSButtonGradientIcon_new btnModifyProduct;
+    public newscomponents.RSButtonGradientIcon_new btnModifyProvider;
+    public newscomponents.RSButtonGradientIcon_new btnModifyUser;
+    public newscomponents.RSButtonGradientIcon_new btnModifyUser1;
+    public newscomponents.RSButtonGradientIcon_new btnNewCategory;
+    public newscomponents.RSButtonGradientIcon_new btnNewCliente;
+    public newscomponents.RSButtonGradientIcon_new btnNewProduct;
+    public newscomponents.RSButtonGradientIcon_new btnNewProvider;
+    public newscomponents.RSButtonGradientIcon_new btnNewUser;
+    public newscomponents.RSButtonGradientIcon_new btnNewUser1;
     public rojerusan.RSButtonIconI btnProductos;
     public rojerusan.RSButtonIconI btnProveedor;
+    public newscomponents.RSButtonGradientIcon_new btnRegisterCategory;
+    public newscomponents.RSButtonGradientIcon_new btnRegisterCliente;
+    public newscomponents.RSButtonGradientIcon_new btnRegisterProduct;
+    public newscomponents.RSButtonGradientIcon_new btnRegisterProvider;
+    public newscomponents.RSButtonGradientIcon_new btnRegisterUser;
+    public newscomponents.RSButtonGradientIcon_new btnRegisterUser1;
     public rojerusan.RSButtonIconI btnUsuarios;
     public rojerusan.RSButtonIconI btnVentas;
+    public rojerusan.RSComboBox cboCategoria_Producto;
+    public rojerusan.RSComboBox cboProveedor_Producto;
+    public rojerusan.RSComboBox cboRole;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    public vista.VistaCategorias pnlCategorias;
-    public vista.VistaClientes pnlClientes;
-    public vista.VistaCompras pnlCompras;
-    public vista.VistaEmpresa pnlEmpresa;
-    public vista.VistaHome pnlHome;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    public javax.swing.JTabbedPane jtabVENTAS;
     private RSMaterialComponent.RSPanelMaterial pnlMenu;
     public RSMaterialComponent.RSPanelMaterial pnlPrincipal;
-    public vista.VistaProductos pnlProductos;
-    public vista.VistaProveedores pnlProveedores;
     public newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSPanelMaterial pnlTopBar;
-    public vista.VistaUsuarios pnlUsuarios;
-    public vista.VistaVentas pnlVentas;
+    public rojerusan.RSPopuMenu popupMenuCategories;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private rojeru_san.rsdate.RSLabelFecha rSLabelFecha1;
     private rojeru_san.rsdate.RSLabelHora rSLabelHora1;
     private rojeru_san.rslabel.RSLabelImage rSLabelImage1;
     private rojeru_san.rslabel.RSLabelSombra rSLabelSombra1;
+    private RSMaterialComponent.RSPanelBorder rSPanelBorder1;
     private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
+    public rojerusan.RSTableMetro tblCategory;
+    public rojerusan.RSTableMetro tblClientes;
+    public rojerusan.RSTableMetro tblCompras;
+    public rojerusan.RSTableMetro tblModalProductos;
+    public rojerusan.RSTableMetro tblProductos;
+    public rojerusan.RSTableMetro tblProviders;
+    public rojerusan.RSTableMetro tblUsers;
+    public RSMaterialComponent.RSTextFieldOne txtAddressCliente;
+    public RSMaterialComponent.RSTextFieldOne txtAddressProvider;
+    public RSMaterialComponent.RSTextFieldOne txtCantidad_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtCodeCategory;
+    public RSMaterialComponent.RSTextFieldOne txtCodigoCompra;
+    public RSMaterialComponent.RSTextFieldOne txtCodigoProducto_Producto;
+    public RSMaterialComponent.RSTextFieldOne txtDescripcionProducto_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtDescripcionProducto_Producto;
+    public RSMaterialComponent.RSTextFieldOne txtDni;
+    public RSMaterialComponent.RSTextFieldOne txtDniCliente;
+    public RSMaterialComponent.RSTextFieldOne txtEmail;
+    public RSMaterialComponent.RSTextFieldOne txtEmailProvider;
+    public RSMaterialComponent.RSTextFieldOne txtIdCategory;
+    public RSMaterialComponent.RSTextFieldOne txtIdCliente;
+    public RSMaterialComponent.RSTextFieldOne txtIdProducto;
+    public RSMaterialComponent.RSTextFieldOne txtIdProvider;
+    public RSMaterialComponent.RSTextFieldOne txtIdProvider1;
+    public RSMaterialComponent.RSTextFieldOne txtIduser;
+    public RSMaterialComponent.RSTextFieldOne txtLastname;
+    public RSMaterialComponent.RSTextFieldOne txtLastnameCliente;
+    public RSMaterialComponent.RSTextFieldOne txtName;
+    public RSMaterialComponent.RSTextFieldOne txtNameCategory;
+    public RSMaterialComponent.RSTextFieldOne txtNameCliente;
+    public RSMaterialComponent.RSTextFieldOne txtNameProvider;
+    public RSMaterialComponent.RSTextFieldOne txtNickname;
+    public RSMaterialComponent.RSPasswordOne txtPassword;
+    public RSMaterialComponent.RSTextFieldOne txtPhone;
+    public RSMaterialComponent.RSTextFieldOne txtPhoneCliente;
+    public RSMaterialComponent.RSTextFieldOne txtPhoneProvider;
+    public RSMaterialComponent.RSTextFieldOne txtPrecioCompra_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtPrecioCompra_Producto;
+    public RSMaterialComponent.RSTextFieldOne txtPrecioVenta_Producto;
+    public RSMaterialComponent.RSTextFieldOne txtRucProvider;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchCategory;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchCliente;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchProductos;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider1;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchUser1;
     // End of variables declaration//GEN-END:variables
+    private void Trasparencia(float trasp) {
+        AWTUtilities.setOpacity(this, trasp);
+    }
+
+    private void Ubicar(int y) {
+        this.setLocation(610, y - 55);
+    }
 }
