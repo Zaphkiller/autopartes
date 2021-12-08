@@ -44,7 +44,6 @@ public class ProductController implements ActionListener, MouseListener, KeyList
         this.vista.tblModalProductos.addMouseListener(this);
         this.vista.txtSearchProductos.addKeyListener(this);
         listarProductos();
-        
 
     }
 
@@ -174,13 +173,12 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     error.setVisible(true);
                 }
             }
-        }else if (e.getSource() == vista.btnBuscarProducto_Compras){
-            
-           if(e.getSource() == vista.txtSearchProductModal){
-               JOptionPane.showMessageDialog(null, "Solucionado");
-           }
-      
-        }else {
+        } else if (e.getSource() == vista.btnBuscarProducto_Compras) {
+             
+                    JOptionPane.showMessageDialog(null, "corregido");
+  
+
+        } else {
             limpiar();
         }
     }
@@ -222,6 +220,8 @@ public class ProductController implements ActionListener, MouseListener, KeyList
     @Override
     public void mouseClicked(MouseEvent e) {
 
+        if (e.getSource() == vista.tblProductos) {
+
             int fila = vista.tblProductos.rowAtPoint(e.getPoint());
             vista.txtIdProducto.setText(vista.tblProductos.getValueAt(fila, 0).toString());
             prod = prodDAO.SearchProduct(Integer.parseInt(vista.txtIdProducto.getText()));
@@ -231,10 +231,11 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             vista.txtPrecioVenta_Producto.setText("" + prod.getSale_price());
             vista.cboProveedor_Producto.setSelectedItem(new ComboBox(prod.getId_provider(), prod.getName_provider()));
             vista.cboCategoria_Producto.setSelectedItem(new ComboBox(prod.getId_category(), prod.getName_category()));
-
+        } else if (e.getSource() == vista.btnProductos) {
+            vista.jtabVENTAS.setSelectedIndex(7);
             limpiarTable();
             listarProductos();
-        
+        }
 
     }
 
