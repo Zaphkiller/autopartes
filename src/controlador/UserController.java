@@ -173,9 +173,9 @@ public class UserController implements ActionListener, MouseListener, KeyListene
             vista.txtName.setText(vista.tblUsers.getValueAt(fila, 2).toString());
             vista.txtLastname.setText(vista.tblUsers.getValueAt(fila, 3).toString());
             vista.txtDni.setText(vista.tblUsers.getValueAt(fila, 4).toString());
-            vista.txtEmail.setText(vista.tblUsers.getValueAt(fila, 5).toString());
-            vista.txtPhone.setText(vista.tblUsers.getValueAt(fila, 6).toString());
-            vista.txtPassword.setText(vista.tblUsers.getValueAt(fila, 7).toString());
+            vista.txtPassword.setText(vista.tblUsers.getValueAt(fila, 5).toString());
+            vista.txtEmail.setText(vista.tblUsers.getValueAt(fila, 6).toString());
+            vista.txtPhone.setText(vista.tblUsers.getValueAt(fila, 7).toString());
             vista.cboRole.setSelectedItem(vista.tblUsers.getValueAt(fila, 8).toString());
         }
     }

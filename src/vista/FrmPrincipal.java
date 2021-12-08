@@ -7,12 +7,16 @@ package vista;
 import componente.AWTUtilities;
 import controlador.CategoryController;
 import controlador.ClienteController;
+import controlador.ModalProductController;
 import controlador.ProductController;
 import controlador.ProviderController;
 import controlador.SlidingController;
 import controlador.UserController;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modelo.Category;
 import modelo.CategoryDAO;
 import modelo.Cliente;
@@ -21,6 +25,7 @@ import modelo.ProductDAO;
 import modelo.Products;
 import modelo.Provider;
 import modelo.ProviderDAO;
+import modelo.Tables;
 import modelo.Usuario;
 import modelo.UsuarioDAO;
 
@@ -40,20 +45,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
     CategoryDAO catDAO = new CategoryDAO();
     Products pro = new Products();
     ProductDAO prodDAO = new ProductDAO();
-    
-    Timer timer=null;
+
+
+    Timer timer = null;
     TimerTask task;
-    int i =32;
+    int i = 32;
 
     public FrmPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
         SlidingController slide = new SlidingController(this);
-        UserController user = new UserController(us,usDAO,this);
+        UserController user = new UserController(us, usDAO, this);
         ClienteController clie = new ClienteController(cli, cliDAO, this);
         ProviderController provi = new ProviderController(prov, provDAO, this);
         CategoryController categ = new CategoryController(cat, catDAO, this);
         ProductController prod = new ProductController(pro, prodDAO, this);
+        ModalProductController modalp = new ModalProductController(pro, prodDAO, this);
 
     }
 
@@ -85,7 +92,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         btnCerrar1 = new RSMaterialComponent.RSButtonIconOne();
         txtSearchProductModal = new RSMaterialComponent.RSTextFieldIconOne();
-        btnAgregarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
+        btnAgregarProductoModal = new newscomponents.RSButtonGradientIcon_new();
         btnCancelarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
         jLabel34 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -207,7 +214,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         TabCompras = new javax.swing.JPanel();
         TabVentas = new javax.swing.JPanel();
         TabNuevaCompra = new javax.swing.JPanel();
-        txtCodigoCompra = new RSMaterialComponent.RSTextFieldOne();
+        txtCodigoProducto_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel28 = new javax.swing.JLabel();
         btnBuscarProducto_Compras = new rojeru_san.rsbutton.RSButtonRound();
         txtDescripcionProducto_Compra = new RSMaterialComponent.RSTextFieldOne();
@@ -218,13 +225,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         PrecioVenta_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel32 = new javax.swing.JLabel();
-        txtIdProvider1 = new RSMaterialComponent.RSTextFieldOne();
+        txtIdCompra = new RSMaterialComponent.RSTextFieldOne();
         txtSearchUser1 = new RSMaterialComponent.RSTextFieldIconOne();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblCompras = new rojerusan.RSTableMetro();
         btnNewUser1 = new newscomponents.RSButtonGradientIcon_new();
-        btnRegisterUser1 = new newscomponents.RSButtonGradientIcon_new();
-        btnModifyUser1 = new newscomponents.RSButtonGradientIcon_new();
+        cboProveedor_Producto1 = new rojerusan.RSComboBox();
+        jLabel35 = new javax.swing.JLabel();
+        PrecioVenta_Compra1 = new RSMaterialComponent.RSTextFieldOne();
+        jLabel36 = new javax.swing.JLabel();
+        PrecioVenta_Compra2 = new RSMaterialComponent.RSTextFieldOne();
+        jLabel37 = new javax.swing.JLabel();
+        rSLabelBorderRound2 = new rojeru_san.rslabel.RSLabelBorderRound();
+        jLabel38 = new javax.swing.JLabel();
+        rSLabelBorderRound3 = new rojeru_san.rslabel.RSLabelBorderRound();
+        jLabel39 = new javax.swing.JLabel();
         TabNuevaVenta = new javax.swing.JPanel();
 
         MenuItem_EliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
@@ -329,17 +344,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtSearchProductModal.setPhColor(new java.awt.Color(102, 102, 102));
         txtSearchProductModal.setPlaceholder("Buscar");
 
-        btnAgregarProveedorModal.setBackground(new java.awt.Color(0, 255, 51));
-        btnAgregarProveedorModal.setText("Agregar");
-        btnAgregarProveedorModal.setToolTipText("");
-        btnAgregarProveedorModal.setColorPrimario(new java.awt.Color(0, 204, 51));
-        btnAgregarProveedorModal.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
-        btnAgregarProveedorModal.setColorSecundario(new java.awt.Color(0, 102, 51));
-        btnAgregarProveedorModal.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
-        btnAgregarProveedorModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
-        btnAgregarProveedorModal.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarProductoModal.setBackground(new java.awt.Color(0, 255, 51));
+        btnAgregarProductoModal.setText("Agregar");
+        btnAgregarProductoModal.setToolTipText("");
+        btnAgregarProductoModal.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnAgregarProductoModal.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProductoModal.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnAgregarProductoModal.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProductoModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        btnAgregarProductoModal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarProveedorModalActionPerformed(evt);
+                btnAgregarProductoModalActionPerformed(evt);
             }
         });
 
@@ -388,7 +403,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                         .addGap(243, 243, 243)
-                        .addComponent(btnAgregarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAgregarProductoModal, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelBorder1Layout.createSequentialGroup()
@@ -414,7 +429,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAgregarProductoModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
             .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(rSPanelBorder1Layout.createSequentialGroup()
@@ -1508,7 +1523,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jtabVENTAS.addTab("Categorías", TabCategorias);
 
         TabProductos.setBackground(new java.awt.Color(255, 255, 255));
-        TabProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblProductos.setBackground(new java.awt.Color(255, 255, 255));
         tblProductos.setModel(new javax.swing.table.DefaultTableModel(
@@ -1535,8 +1549,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         tblProductos.setWidthBorderRows(0);
         jScrollPane3.setViewportView(tblProductos);
 
-        TabProductos.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 302, 930, 330));
-
         btnNewProduct.setBackground(new java.awt.Color(0, 255, 51));
         btnNewProduct.setText("Nuevo");
         btnNewProduct.setToolTipText("");
@@ -1545,7 +1557,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnNewProduct.setColorSecundario(new java.awt.Color(0, 102, 51));
         btnNewProduct.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
         btnNewProduct.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
-        TabProductos.add(btnNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 650, 219, -1));
 
         btnRegisterProduct.setBackground(new java.awt.Color(75, 172, 198));
         btnRegisterProduct.setText("Registrar");
@@ -1555,7 +1566,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnRegisterProduct.setColorSecundario(new java.awt.Color(75, 85, 215));
         btnRegisterProduct.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
         btnRegisterProduct.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
-        TabProductos.add(btnRegisterProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 650, 212, -1));
 
         btnModifyProduct.setBackground(new java.awt.Color(0, 255, 51));
         btnModifyProduct.setText("Modificar");
@@ -1565,7 +1575,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnModifyProduct.setColorSecundario(new java.awt.Color(204, 0, 51));
         btnModifyProduct.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
         btnModifyProduct.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
-        TabProductos.add(btnModifyProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 650, 212, -1));
 
         txtSearchProductos.setForeground(new java.awt.Color(51, 51, 51));
         txtSearchProductos.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -1573,14 +1582,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtSearchProductos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         txtSearchProductos.setPhColor(new java.awt.Color(102, 102, 102));
         txtSearchProductos.setPlaceholder("Buscar");
-        TabProductos.add(txtSearchProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 930, -1));
 
         cboCategoria_Producto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
         cboCategoria_Producto.setColorArrow(new java.awt.Color(0, 102, 255));
         cboCategoria_Producto.setColorBorde(new java.awt.Color(0, 0, 255));
         cboCategoria_Producto.setColorFondo(new java.awt.Color(0, 102, 255));
         cboCategoria_Producto.setColorSeleccion(new java.awt.Color(0, 102, 255));
-        TabProductos.add(cboCategoria_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 258, 42));
 
         txtIdProducto.setEditable(false);
         txtIdProducto.setBackground(new java.awt.Color(204, 204, 204));
@@ -1591,7 +1598,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtIdProducto.setPhColor(new java.awt.Color(0, 0, 0));
         txtIdProducto.setPlaceholder("Id Producto");
         txtIdProducto.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabProductos.add(txtIdProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 150, 160, -1));
 
         txtPrecioVenta_Producto.setForeground(new java.awt.Color(0, 102, 255));
         txtPrecioVenta_Producto.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1600,29 +1606,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtPrecioVenta_Producto.setPhColor(new java.awt.Color(0, 0, 153));
         txtPrecioVenta_Producto.setPlaceholder("");
         txtPrecioVenta_Producto.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabProductos.add(txtPrecioVenta_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 160, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Precio Venta");
-        TabProductos.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 220, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Seleccionar Proveedor");
-        TabProductos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 256, -1));
 
         cboProveedor_Producto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
         cboProveedor_Producto.setColorArrow(new java.awt.Color(0, 102, 255));
         cboProveedor_Producto.setColorBorde(new java.awt.Color(0, 0, 255));
         cboProveedor_Producto.setColorFondo(new java.awt.Color(0, 102, 255));
         cboProveedor_Producto.setColorSeleccion(new java.awt.Color(0, 102, 255));
-        TabProductos.add(cboProveedor_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 260, 42));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Seleccionar Categoría");
-        TabProductos.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 258, -1));
 
         txtPrecioCompra_Producto.setForeground(new java.awt.Color(0, 102, 255));
         txtPrecioCompra_Producto.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1631,12 +1632,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtPrecioCompra_Producto.setPhColor(new java.awt.Color(0, 0, 153));
         txtPrecioCompra_Producto.setPlaceholder("");
         txtPrecioCompra_Producto.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabProductos.add(txtPrecioCompra_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 70, 160, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Precio Compra");
-        TabProductos.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, 160, -1));
 
         txtCodigoProducto_Producto.setForeground(new java.awt.Color(0, 102, 255));
         txtCodigoProducto_Producto.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1645,12 +1644,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtCodigoProducto_Producto.setPhColor(new java.awt.Color(0, 0, 153));
         txtCodigoProducto_Producto.setPlaceholder("Código...");
         txtCodigoProducto_Producto.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabProductos.add(txtCodigoProducto_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 73, 226, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Código");
-        TabProductos.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 50, -1, -1));
 
         txtDescripcionProducto_Producto.setForeground(new java.awt.Color(0, 102, 255));
         txtDescripcionProducto_Producto.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1659,12 +1656,101 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtDescripcionProducto_Producto.setPhColor(new java.awt.Color(0, 0, 153));
         txtDescripcionProducto_Producto.setPlaceholder("Descripción del producto...");
         txtDescripcionProducto_Producto.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabProductos.add(txtDescripcionProducto_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 73, 490, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Descripción del Producto");
-        TabProductos.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 50, 420, -1));
+
+        javax.swing.GroupLayout TabProductosLayout = new javax.swing.GroupLayout(TabProductos);
+        TabProductos.setLayout(TabProductosLayout);
+        TabProductosLayout.setHorizontalGroup(
+            TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabProductosLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel16)
+                .addGap(201, 201, 201)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(99, 99, 99)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(TabProductosLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(txtCodigoProducto_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(txtDescripcionProducto_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(txtPrecioCompra_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(TabProductosLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(TabProductosLayout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(TabProductosLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtPrecioVenta_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(cboProveedor_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(cboCategoria_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(TabProductosLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(txtSearchProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(TabProductosLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(TabProductosLayout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(btnNewProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(btnRegisterProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(btnModifyProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        TabProductosLayout.setVerticalGroup(
+            TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TabProductosLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addGroup(TabProductosLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17))))
+                .addGap(3, 3, 3)
+                .addGroup(TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPrecioCompra_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(TabProductosLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodigoProducto_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDescripcionProducto_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(15, 15, 15)
+                .addGroup(TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addGap(3, 3, 3)
+                .addGroup(TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPrecioVenta_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboProveedor_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboCategoria_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addComponent(txtSearchProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(TabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNewProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegisterProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModifyProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         jtabVENTAS.addTab("Productos", TabProductos);
 
@@ -1695,18 +1781,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jtabVENTAS.addTab("Ventas", TabVentas);
 
         TabNuevaCompra.setBackground(new java.awt.Color(255, 255, 255));
+        TabNuevaCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtCodigoCompra.setForeground(new java.awt.Color(0, 102, 255));
-        txtCodigoCompra.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtCodigoCompra.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtCodigoCompra.setOpaque(false);
-        txtCodigoCompra.setPhColor(new java.awt.Color(0, 0, 153));
-        txtCodigoCompra.setPlaceholder("Código...");
-        txtCodigoCompra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtCodigoProducto_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtCodigoProducto_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCodigoProducto_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCodigoProducto_Compra.setOpaque(false);
+        txtCodigoProducto_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCodigoProducto_Compra.setPlaceholder("Código...");
+        txtCodigoProducto_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtCodigoProducto_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 54, 217, -1));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("Código");
+        TabNuevaCompra.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 31, 210, -1));
 
         btnBuscarProducto_Compras.setText("Buscar");
         btnBuscarProducto_Compras.addActionListener(new java.awt.event.ActionListener() {
@@ -1714,6 +1803,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnBuscarProducto_ComprasActionPerformed(evt);
             }
         });
+        TabNuevaCompra.add(btnBuscarProducto_Compras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 55, 90, -1));
 
         txtDescripcionProducto_Compra.setForeground(new java.awt.Color(0, 102, 255));
         txtDescripcionProducto_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1722,10 +1812,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtDescripcionProducto_Compra.setPhColor(new java.awt.Color(0, 0, 153));
         txtDescripcionProducto_Compra.setPlaceholder("Descripción del producto...");
         txtDescripcionProducto_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtDescripcionProducto_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 54, 610, -1));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Descripción del Producto");
+        TabNuevaCompra.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 31, 610, -1));
 
         txtCantidad_Compra.setForeground(new java.awt.Color(0, 102, 255));
         txtCantidad_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1734,10 +1826,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtCantidad_Compra.setPhColor(new java.awt.Color(0, 0, 153));
         txtCantidad_Compra.setPlaceholder("");
         txtCantidad_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtCantidad_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 135, 220, -1));
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Cantidad");
+        TabNuevaCompra.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 115, 70, -1));
 
         txtPrecioCompra_Compra.setForeground(new java.awt.Color(0, 102, 255));
         txtPrecioCompra_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1746,10 +1840,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtPrecioCompra_Compra.setPhColor(new java.awt.Color(0, 0, 153));
         txtPrecioCompra_Compra.setPlaceholder("");
         txtPrecioCompra_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtPrecioCompra_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 135, 220, -1));
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel31.setText("Precio Compra");
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("Nro. Factura");
+        TabNuevaCompra.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 230, -1));
 
         PrecioVenta_Compra.setForeground(new java.awt.Color(0, 102, 255));
         PrecioVenta_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1758,19 +1855,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
         PrecioVenta_Compra.setPhColor(new java.awt.Color(0, 0, 153));
         PrecioVenta_Compra.setPlaceholder("");
         PrecioVenta_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(PrecioVenta_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 135, 238, -1));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setText("Precio Venta");
+        TabNuevaCompra.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 115, 232, -1));
 
-        txtIdProvider1.setBackground(new java.awt.Color(204, 204, 204));
-        txtIdProvider1.setForeground(new java.awt.Color(0, 102, 255));
-        txtIdProvider1.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtIdProvider1.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtIdProvider1.setOpaque(false);
-        txtIdProvider1.setPhColor(new java.awt.Color(0, 0, 0));
-        txtIdProvider1.setPlaceholder("Id Producto");
-        txtIdProvider1.setSelectionColor(new java.awt.Color(51, 51, 51));
+        txtIdCompra.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdCompra.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdCompra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdCompra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdCompra.setOpaque(false);
+        txtIdCompra.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdCompra.setPlaceholder("Id Compra");
+        txtIdCompra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 135, 200, -1));
 
         txtSearchUser1.setForeground(new java.awt.Color(51, 51, 51));
         txtSearchUser1.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -1778,6 +1878,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtSearchUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         txtSearchUser1.setPhColor(new java.awt.Color(102, 102, 102));
         txtSearchUser1.setPlaceholder("Buscar");
+        TabNuevaCompra.add(txtSearchUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 470, -1));
 
         tblCompras.setBackground(new java.awt.Color(255, 255, 255));
         tblCompras.setModel(new javax.swing.table.DefaultTableModel(
@@ -1803,117 +1904,70 @@ public class FrmPrincipal extends javax.swing.JFrame {
         tblCompras.setWidthBorderRows(0);
         jScrollPane6.setViewportView(tblCompras);
 
+        TabNuevaCompra.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 279, 962, 354));
+
         btnNewUser1.setBackground(new java.awt.Color(0, 255, 51));
-        btnNewUser1.setText("Nuevo");
+        btnNewUser1.setText("Generar Compra");
         btnNewUser1.setToolTipText("");
         btnNewUser1.setColorPrimario(new java.awt.Color(0, 204, 51));
         btnNewUser1.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
         btnNewUser1.setColorSecundario(new java.awt.Color(0, 102, 51));
         btnNewUser1.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
         btnNewUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        TabNuevaCompra.add(btnNewUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 219, -1));
 
-        btnRegisterUser1.setBackground(new java.awt.Color(75, 172, 198));
-        btnRegisterUser1.setText("Registrar");
-        btnRegisterUser1.setToolTipText("");
-        btnRegisterUser1.setColorPrimario(new java.awt.Color(75, 172, 198));
-        btnRegisterUser1.setColorPrimarioHover(new java.awt.Color(0, 255, 255));
-        btnRegisterUser1.setColorSecundario(new java.awt.Color(75, 85, 215));
-        btnRegisterUser1.setColorSecundarioHover(new java.awt.Color(0, 255, 255));
-        btnRegisterUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
+        cboProveedor_Producto1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
+        cboProveedor_Producto1.setColorArrow(new java.awt.Color(0, 102, 255));
+        cboProveedor_Producto1.setColorBorde(new java.awt.Color(0, 0, 255));
+        cboProveedor_Producto1.setColorFondo(new java.awt.Color(0, 102, 255));
+        cboProveedor_Producto1.setColorSeleccion(new java.awt.Color(0, 102, 255));
+        TabNuevaCompra.add(cboProveedor_Producto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 230, 42));
 
-        btnModifyUser1.setBackground(new java.awt.Color(0, 255, 51));
-        btnModifyUser1.setText("Modificar");
-        btnModifyUser1.setToolTipText("");
-        btnModifyUser1.setColorPrimario(new java.awt.Color(255, 102, 102));
-        btnModifyUser1.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
-        btnModifyUser1.setColorSecundario(new java.awt.Color(204, 0, 51));
-        btnModifyUser1.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
-        btnModifyUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel35.setText("Seleccionar Proveedor");
+        TabNuevaCompra.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 230, -1));
 
-        javax.swing.GroupLayout TabNuevaCompraLayout = new javax.swing.GroupLayout(TabNuevaCompra);
-        TabNuevaCompra.setLayout(TabNuevaCompraLayout);
-        TabNuevaCompraLayout.setHorizontalGroup(
-            TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabNuevaCompraLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
-                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
-                        .addComponent(txtCodigoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17)
-                        .addComponent(btnBuscarProducto_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(txtDescripcionProducto_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(txtCantidad_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(txtPrecioCompra_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(PrecioVenta_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
-                        .addGap(416, 416, 416)
-                        .addComponent(txtIdProvider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(txtSearchUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 962, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabNuevaCompraLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnNewUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnRegisterUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnModifyUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(142, 142, 142))
-        );
-        TabNuevaCompraLayout.setVerticalGroup(
-            TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabNuevaCompraLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel29))
-                .addGap(6, 6, 6)
-                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(TabNuevaCompraLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btnBuscarProducto_Compras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtDescripcionProducto_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel30)
-                    .addComponent(jLabel31)
-                    .addComponent(jLabel32))
-                .addGap(3, 3, 3)
-                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCantidad_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPrecioCompra_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PrecioVenta_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtIdProvider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSearchUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(TabNuevaCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNewUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegisterUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModifyUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29))
-        );
+        PrecioVenta_Compra1.setForeground(new java.awt.Color(0, 102, 255));
+        PrecioVenta_Compra1.setBorderColor(new java.awt.Color(0, 102, 255));
+        PrecioVenta_Compra1.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        PrecioVenta_Compra1.setOpaque(false);
+        PrecioVenta_Compra1.setPhColor(new java.awt.Color(0, 0, 153));
+        PrecioVenta_Compra1.setPlaceholder("");
+        PrecioVenta_Compra1.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(PrecioVenta_Compra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 660, 180, -1));
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel36.setText("Pagar con:");
+        TabNuevaCompra.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 640, 180, -1));
+
+        PrecioVenta_Compra2.setForeground(new java.awt.Color(0, 102, 255));
+        PrecioVenta_Compra2.setBorderColor(new java.awt.Color(0, 102, 255));
+        PrecioVenta_Compra2.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        PrecioVenta_Compra2.setOpaque(false);
+        PrecioVenta_Compra2.setPhColor(new java.awt.Color(0, 0, 153));
+        PrecioVenta_Compra2.setPlaceholder("");
+        PrecioVenta_Compra2.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(PrecioVenta_Compra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, 180, -1));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("Total a Pagar:");
+        TabNuevaCompra.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 640, 180, -1));
+        TabNuevaCompra.add(rSLabelBorderRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 220, -1));
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel38.setText("Vuelto:");
+        TabNuevaCompra.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 640, 180, -1));
+        TabNuevaCompra.add(rSLabelBorderRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 660, -1, -1));
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel39.setText("Precio Compra");
+        TabNuevaCompra.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 115, 223, -1));
 
         jtabVENTAS.addTab("Nueva Compra", TabNuevaCompra);
 
@@ -1983,17 +2037,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
         ModalProductos.dispose();
     }//GEN-LAST:event_btnCerrar1ActionPerformed
 
-    private void btnAgregarProveedorModalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProveedorModalActionPerformed
+    private void btnAgregarProductoModalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoModalActionPerformed
+       
 
-    }//GEN-LAST:event_btnAgregarProveedorModalActionPerformed
+
+    }//GEN-LAST:event_btnAgregarProductoModalActionPerformed
 
     private void btnBuscarProducto_ComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProducto_ComprasActionPerformed
-       ModalProductos.setVisible(true);
-       ModalProductos.setLocationRelativeTo(null);
+        ModalProductos.setVisible(true);
+        ModalProductos.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnBuscarProducto_ComprasActionPerformed
 
     private void ModalProductosWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_ModalProductosWindowOpened
-       task = new TimerTask() {
+        task = new TimerTask() {
             @Override
             public void run() {
                 if (i == 352) {
@@ -2057,6 +2113,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public rojerusan.RSPopuMenu PopupMenuClientes;
     public rojerusan.RSPopuMenu PoupMenuProducts;
     public RSMaterialComponent.RSTextFieldOne PrecioVenta_Compra;
+    public RSMaterialComponent.RSTextFieldOne PrecioVenta_Compra1;
+    public RSMaterialComponent.RSTextFieldOne PrecioVenta_Compra2;
     private javax.swing.JPanel TabCategorias;
     private javax.swing.JPanel TabClientes;
     private javax.swing.JPanel TabCompras;
@@ -2066,7 +2124,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel TabProveedor;
     private javax.swing.JPanel TabUsuarios;
     private javax.swing.JPanel TabVentas;
-    public newscomponents.RSButtonGradientIcon_new btnAgregarProveedorModal;
+    public newscomponents.RSButtonGradientIcon_new btnAgregarProductoModal;
     public rojeru_san.rsbutton.RSButtonRound btnBuscarProducto_Compras;
     public newscomponents.RSButtonGradientIcon_new btnCancelarProveedorModal;
     public rojerusan.RSButtonIconI btnCategorias;
@@ -2080,7 +2138,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public newscomponents.RSButtonGradientIcon_new btnModifyProduct;
     public newscomponents.RSButtonGradientIcon_new btnModifyProvider;
     public newscomponents.RSButtonGradientIcon_new btnModifyUser;
-    public newscomponents.RSButtonGradientIcon_new btnModifyUser1;
     public newscomponents.RSButtonGradientIcon_new btnNewCategory;
     public newscomponents.RSButtonGradientIcon_new btnNewCliente;
     public newscomponents.RSButtonGradientIcon_new btnNewProduct;
@@ -2094,11 +2151,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public newscomponents.RSButtonGradientIcon_new btnRegisterProduct;
     public newscomponents.RSButtonGradientIcon_new btnRegisterProvider;
     public newscomponents.RSButtonGradientIcon_new btnRegisterUser;
-    public newscomponents.RSButtonGradientIcon_new btnRegisterUser1;
     public rojerusan.RSButtonIconI btnUsuarios;
     public rojerusan.RSButtonIconI btnVentas;
     public rojerusan.RSComboBox cboCategoria_Producto;
     public rojerusan.RSComboBox cboProveedor_Producto;
+    public rojerusan.RSComboBox cboProveedor_Producto1;
     public rojerusan.RSComboBox cboRole;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2128,6 +2185,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2151,6 +2213,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private RSMaterialComponent.RSPanelMaterial pnlTopBar;
     public rojerusan.RSPopuMenu popupMenuCategories;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
+    private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound2;
+    private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound3;
     private rojeru_san.rsdate.RSLabelFecha rSLabelFecha1;
     private rojeru_san.rsdate.RSLabelHora rSLabelHora1;
     private rojeru_san.rslabel.RSLabelImage rSLabelImage1;
@@ -2168,7 +2232,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldOne txtAddressProvider;
     public RSMaterialComponent.RSTextFieldOne txtCantidad_Compra;
     public RSMaterialComponent.RSTextFieldOne txtCodeCategory;
-    public RSMaterialComponent.RSTextFieldOne txtCodigoCompra;
+    public RSMaterialComponent.RSTextFieldOne txtCodigoProducto_Compra;
     public RSMaterialComponent.RSTextFieldOne txtCodigoProducto_Producto;
     public RSMaterialComponent.RSTextFieldOne txtDescripcionProducto_Compra;
     public RSMaterialComponent.RSTextFieldOne txtDescripcionProducto_Producto;
@@ -2178,9 +2242,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldOne txtEmailProvider;
     public RSMaterialComponent.RSTextFieldOne txtIdCategory;
     public RSMaterialComponent.RSTextFieldOne txtIdCliente;
+    public RSMaterialComponent.RSTextFieldOne txtIdCompra;
     public RSMaterialComponent.RSTextFieldOne txtIdProducto;
     public RSMaterialComponent.RSTextFieldOne txtIdProvider;
-    public RSMaterialComponent.RSTextFieldOne txtIdProvider1;
     public RSMaterialComponent.RSTextFieldOne txtIduser;
     public RSMaterialComponent.RSTextFieldOne txtLastname;
     public RSMaterialComponent.RSTextFieldOne txtLastnameCliente;
@@ -2212,4 +2276,5 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void Ubicar(int y) {
         this.setLocation(610, y - 55);
     }
+
 }

@@ -15,42 +15,6 @@ public class ProductDAO {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-
-    /*public void ConsultarProveedor(JComboBox proveedor) {
-        String sql = "SELECT name_provider FROM providers";
-        try {
-            con = cn.getConexion();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                proveedor.addItem(rs.getString("name_provider"));
-            }
-        } catch (SQLException e) {
-
-            System.out.println(e.toString());
-        }
-
-    }
-
-    public void ConsultarCategoria(JComboBox categoria) {
-        String sql = "SELECT name_category FROM categories";
-
-        try {
-            con = cn.getConexion();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                categoria.addItem(rs.getString("name_category"));
-            }
-        } catch (SQLException e) {
-
-            System.out.println(e.toString());
-        }
-
-    }*/
-
     public boolean register(Products prod) {
 
         String sql = "INSERT INTO products(code_product, description_product, purchase_price, sale_price, id_provider, id_category) values (?,?,?,?,?,?)";
@@ -174,5 +138,82 @@ public class ProductDAO {
         }
         return prod;
     }
-
+    
+    public Products SearchIdProduct(int id){
+        String sql = "SELECT * FROM products WHERE id_product=?";
+        Products prod = new Products();
+        try {
+           con= cn.getConexion();
+           ps=con.prepareStatement(sql);
+           ps.setInt(1, id);
+           rs=ps.executeQuery();
+            if (rs.next()) {
+                prod.setQuantity(rs.getInt("quantity"));              
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return prod;
+    }
+    
+    public Products SearchCode(String code){
+        String sql= "SELECT * FROM products WHERE code_product=?";
+        Products prod = new Products();
+        try {
+            con=cn.getConexion();
+            ps=con.prepareStatement(sql);
+            ps.setString(1, code);
+            rs=ps.executeQuery();
+            
+            if(rs.next()){
+                prod.setId_product(rs.getInt("id_product"));
+                prod.setDescription_product(rs.getString("description_product"));
+                prod.setPurchase_price(rs.getDouble("purchase_price"));
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return prod;
+    }
+    
+    public boolean RegisterPurchase(int code, String total){
+        
+        String sql = "INSERT INTO purchase(id_provider, total) VALUES(?,?)";
+        
+        try {
+            con = cn.getConexion();
+            ps=con.prepareStatement(sql);
+            ps.setInt(1, code);
+            ps.setString(2, total);
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+          
+        
+    }
+    
+    public boolean RegisterPurchaseDetail(int id_purchase, int id_product, double price, int quantity, double igv, double subtotal){
+        
+        String sql= "INSERT INTO purchase_detail (id_purchase,id_product,price, quantity, igv, subtotal) VALUES (?,?,?,?,?,?)";
+        
+        try {
+            con = cn.getConexion();
+            ps=con.prepareStatement(sql);
+            ps.setInt(1, id_purchase);
+            ps.setInt(2, id_product);
+            ps.setDouble(3, price);
+            ps.setInt(4, quantity);
+            ps.setDouble(5, igv);
+            ps.setDouble(6, subtotal);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    
+    }
 }
