@@ -84,7 +84,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         btnCerrar1 = new RSMaterialComponent.RSButtonIconOne();
-        txtSearchProvider1 = new RSMaterialComponent.RSTextFieldIconOne();
+        txtSearchProductModal = new RSMaterialComponent.RSTextFieldIconOne();
         btnAgregarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
         btnCancelarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
         jLabel34 = new javax.swing.JLabel();
@@ -322,12 +322,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        txtSearchProvider1.setForeground(new java.awt.Color(51, 51, 51));
-        txtSearchProvider1.setBorderColor(new java.awt.Color(204, 204, 204));
-        txtSearchProvider1.setColorIcon(new java.awt.Color(51, 51, 51));
-        txtSearchProvider1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        txtSearchProvider1.setPhColor(new java.awt.Color(102, 102, 102));
-        txtSearchProvider1.setPlaceholder("Buscar");
+        txtSearchProductModal.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchProductModal.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchProductModal.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchProductModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchProductModal.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchProductModal.setPlaceholder("Buscar");
 
         btnAgregarProveedorModal.setBackground(new java.awt.Color(0, 255, 51));
         btnAgregarProveedorModal.setText("Agregar");
@@ -394,7 +394,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSearchProvider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtSearchProductModal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE))))
                 .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,7 +408,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtSearchProvider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSearchProductModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
@@ -2199,9 +2199,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldOne txtRucProvider;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchCategory;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchCliente;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchProductModal;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchProductos;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider;
-    public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider1;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchUser1;
     // End of variables declaration//GEN-END:variables

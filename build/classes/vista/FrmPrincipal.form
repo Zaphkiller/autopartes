@@ -233,7 +233,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtSearchProvider1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtSearchProductModal" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jScrollPane7" alignment="0" pref="911" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -254,7 +254,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtSearchProvider1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSearchProductModal" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane7" min="-2" pref="340" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
@@ -338,7 +338,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="RSMaterialComponent.RSTextFieldIconOne" name="txtSearchProvider1">
+                <Component class="RSMaterialComponent.RSTextFieldIconOne" name="txtSearchProductModal">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>

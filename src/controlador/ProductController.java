@@ -176,9 +176,10 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             }
         }else if (e.getSource() == vista.btnBuscarProducto_Compras){
             
-                JOptionPane.showMessageDialog(null, "esi funciona aquí");
-                listarProductos();
-        
+           if(e.getSource() == vista.txtSearchProductModal){
+               JOptionPane.showMessageDialog(null, "Solucionado");
+           }
+      
         }else {
             limpiar();
         }
