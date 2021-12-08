@@ -216,4 +216,65 @@ public class ProductDAO {
         }
     
     }
+    
+    public boolean UpdateStock(int quantity, int code){
+        
+        String sql = "UPDATE products SET quantity=? WHERE id_product=?";
+        
+        try {
+            con=cn.getConexion();
+            ps=con.prepareStatement(sql);
+            ps.setInt(1, quantity);
+            ps.setInt(2, code);
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    
+    }
+    
+    public int CodeProduct(){
+        int code = 0;
+        String sql ="SELECT MAX(id_purchase) as code_product FROM purchase";
+        try {
+            con=cn.getConexion();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            if(rs.next()){
+                code =rs.getInt("code_product");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return code;
+    }
+    
+    public List ListaDetalle(int id_purchase){
+        List<Products> listaProducts = new ArrayList();
+        String sql = "SELECT c.*, dc.*, p.id_product, p.description_product FROM purchase c"
+                + "INNER JOIN purchase_detail dc ON dc.id_purchase=c.id_purchase "
+                + "INNER JOIN products p ON p.id_product = dc.id_product"
+                + "WHERE c.id_purchase=?;";
+        
+        try {
+            con=cn.getConexion();
+            ps=con.prepareStatement(sql);
+            ps.setInt(1, id_purchase);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Products prod = new Products();
+                prod.setQuantity(rs.getInt("quantity"));
+                prod.setDescription_product(rs.getString("description_product"));
+                prod.setPurchase_price(rs.getDouble("purchase_price"));
+                prod.setSale_price(rs.getDouble("sale_price"));
+                listaProducts.add(prod);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return listaProducts;
+    }
 }
+

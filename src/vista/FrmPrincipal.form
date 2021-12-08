@@ -3530,7 +3530,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPrecioCompra_Compra">
+                        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPrecio_Compra">
                           <Properties>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -3576,7 +3576,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="RSMaterialComponent.RSTextFieldOne" name="PrecioVenta_Compra">
+                        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtTotal_Compra">
                           <Properties>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -3613,7 +3613,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Precio Venta"/>
+                            <Property name="text" type="java.lang.String" value="Total"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3621,7 +3621,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtIdCompra">
+                        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtIdProducto_Compra">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -3639,7 +3639,7 @@
                             <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
-                            <Property name="placeholder" type="java.lang.String" value="Id Compra"/>
+                            <Property name="placeholder" type="java.lang.String" value="Id Producto"/>
                             <Property name="selectionColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="33" green="33" red="33" type="rgb"/>
                             </Property>
@@ -3725,7 +3725,7 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="newscomponents.RSButtonGradientIcon_new" name="btnNewUser1">
+                        <Component class="newscomponents.RSButtonGradientIcon_new" name="btnGenerarCompra">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="33" green="ff" red="0" type="rgb"/>
@@ -3803,7 +3803,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="RSMaterialComponent.RSTextFieldOne" name="PrecioVenta_Compra1">
+                        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtPagar_Compra">
                           <Properties>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -3848,7 +3848,7 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="RSMaterialComponent.RSTextFieldOne" name="PrecioVenta_Compra2">
+                        <Component class="RSMaterialComponent.RSTextFieldOne" name="txtVueltoCompra">
                           <Properties>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="66" red="0" type="rgb"/>
@@ -3917,7 +3917,10 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Component class="rojeru_san.rslabel.RSLabelBorderRound" name="rSLabelBorderRound3">
+                        <Component class="rojeru_san.rslabel.RSLabelBorderRound" name="txtTotalPago_Compra">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="760" y="660" width="-1" height="-1"/>
@@ -3932,7 +3935,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Precio Compra"/>
+                            <Property name="text" type="java.lang.String" value="Precio"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

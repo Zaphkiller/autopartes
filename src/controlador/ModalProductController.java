@@ -40,8 +40,6 @@ public class ModalProductController implements ActionListener, MouseListener, Ke
         
     }
 
-    
-    
 
     @Override
     public void actionPerformed(ActionEvent e) {

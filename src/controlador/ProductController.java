@@ -28,6 +28,8 @@ public class ProductController implements ActionListener, MouseListener, KeyList
     private FrmPrincipal vista;
 
     DefaultTableModel modelo = new DefaultTableModel();
+    /*DefaultTableModel temp;*/
+    
 
     public ProductController(Products prod, ProductDAO prodDAO, FrmPrincipal vista) {
         this.prod = prod;
@@ -43,6 +45,10 @@ public class ProductController implements ActionListener, MouseListener, KeyList
         this.vista.tblProductos.addMouseListener(this);
         this.vista.tblModalProductos.addMouseListener(this);
         this.vista.txtSearchProductos.addKeyListener(this);
+        this.vista.txtCodigoProducto_Compra.addKeyListener(this);
+        this.vista.txtCantidad_Compra.addKeyListener(this);
+        this.vista.txtPagar_Compra.addKeyListener(this);
+        this.vista.btnGenerarCompra.addActionListener(this);
         listarProductos();
 
     }
@@ -173,13 +179,8 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     error.setVisible(true);
                 }
             }
-        } else if (e.getSource() == vista.btnBuscarProducto_Compras) {
-             
-                JOptionPane.showMessageDialog(null, "corregido");
-  
-
-        } else {
-            limpiar();
+        } else if (e.getSource() == vista.btnGenerarCompra) {
+ 
         }
     }
 
@@ -207,16 +208,46 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             i = i - 1;
         }
     }
+    
+    /*public void limpiarTableDetalle() {
+        for (int i = 0; i < temp.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i = i - 1;
+        }
+    }*/
 
     private void limpiar() {
         vista.txtCodigoProducto_Producto.setText("");
         vista.txtDescripcionProducto_Producto.setText("");
         vista.txtPrecioVenta_Producto.setText("");
         vista.txtPrecioCompra_Producto.setText("");
-        vista.txtDescripcionProducto_Producto.grabFocus();
+        vista.txtDescripcionProducto_Producto.setText("");
+        vista.txtPrecioVenta_Producto.setText("");
+        vista.txtCodigoProducto_Producto.grabFocus();
 
     }
+    
+    private void limpiarCampos(){
+        vista.txtCodigoProducto_Compra.setText("");
+        vista.txtIdProducto_Compra.setText("");
+        vista.txtDescripcionProducto_Compra.setText("");
+        vista.txtPrecio_Compra.setText("");
+        vista.txtCantidad_Compra.setText("");
+        vista.txtPagar_Compra.setText("");
+        vista.txtCodigoProducto_Compra.grabFocus();
+    
+    }
+    
+    /*private void CalcularTotal(){
+        double total = 0.00;
+        int numfila = vista.tblCompras.getRowCount();
+        for (int i = 0; i < numfila; i++) {
+            total = total + Double.parseDouble(String.valueOf(vista.tblCompras.getValueAt(i, 6)));
+        }
 
+        vista.txtTotalPago_Compra.setText("" + total);
+    }*/
+    
     @Override
     public void mouseClicked(MouseEvent e) {
 

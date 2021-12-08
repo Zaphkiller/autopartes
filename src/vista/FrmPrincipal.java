@@ -221,24 +221,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         txtCantidad_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel30 = new javax.swing.JLabel();
-        txtPrecioCompra_Compra = new RSMaterialComponent.RSTextFieldOne();
+        txtPrecio_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel31 = new javax.swing.JLabel();
-        PrecioVenta_Compra = new RSMaterialComponent.RSTextFieldOne();
+        txtTotal_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel32 = new javax.swing.JLabel();
-        txtIdCompra = new RSMaterialComponent.RSTextFieldOne();
+        txtIdProducto_Compra = new RSMaterialComponent.RSTextFieldOne();
         txtSearchUser1 = new RSMaterialComponent.RSTextFieldIconOne();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblCompras = new rojerusan.RSTableMetro();
-        btnNewUser1 = new newscomponents.RSButtonGradientIcon_new();
+        btnGenerarCompra = new newscomponents.RSButtonGradientIcon_new();
         cboProveedor_Producto1 = new rojerusan.RSComboBox();
         jLabel35 = new javax.swing.JLabel();
-        PrecioVenta_Compra1 = new RSMaterialComponent.RSTextFieldOne();
+        txtPagar_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel36 = new javax.swing.JLabel();
-        PrecioVenta_Compra2 = new RSMaterialComponent.RSTextFieldOne();
+        txtVueltoCompra = new RSMaterialComponent.RSTextFieldOne();
         jLabel37 = new javax.swing.JLabel();
         rSLabelBorderRound2 = new rojeru_san.rslabel.RSLabelBorderRound();
         jLabel38 = new javax.swing.JLabel();
-        rSLabelBorderRound3 = new rojeru_san.rslabel.RSLabelBorderRound();
+        txtTotalPago_Compra = new rojeru_san.rslabel.RSLabelBorderRound();
         jLabel39 = new javax.swing.JLabel();
         TabNuevaVenta = new javax.swing.JPanel();
 
@@ -1833,14 +1833,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel30.setText("Cantidad");
         TabNuevaCompra.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 115, 70, -1));
 
-        txtPrecioCompra_Compra.setForeground(new java.awt.Color(0, 102, 255));
-        txtPrecioCompra_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtPrecioCompra_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtPrecioCompra_Compra.setOpaque(false);
-        txtPrecioCompra_Compra.setPhColor(new java.awt.Color(0, 0, 153));
-        txtPrecioCompra_Compra.setPlaceholder("");
-        txtPrecioCompra_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabNuevaCompra.add(txtPrecioCompra_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 135, 220, -1));
+        txtPrecio_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtPrecio_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPrecio_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPrecio_Compra.setOpaque(false);
+        txtPrecio_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPrecio_Compra.setPlaceholder("");
+        txtPrecio_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtPrecio_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 135, 220, -1));
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
@@ -1848,29 +1848,29 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel31.setText("Nro. Factura");
         TabNuevaCompra.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 230, -1));
 
-        PrecioVenta_Compra.setForeground(new java.awt.Color(0, 102, 255));
-        PrecioVenta_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
-        PrecioVenta_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        PrecioVenta_Compra.setOpaque(false);
-        PrecioVenta_Compra.setPhColor(new java.awt.Color(0, 0, 153));
-        PrecioVenta_Compra.setPlaceholder("");
-        PrecioVenta_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabNuevaCompra.add(PrecioVenta_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 135, 238, -1));
+        txtTotal_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtTotal_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtTotal_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtTotal_Compra.setOpaque(false);
+        txtTotal_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtTotal_Compra.setPlaceholder("");
+        txtTotal_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtTotal_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 135, 238, -1));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel32.setText("Precio Venta");
+        jLabel32.setText("Total");
         TabNuevaCompra.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 115, 232, -1));
 
-        txtIdCompra.setBackground(new java.awt.Color(204, 204, 204));
-        txtIdCompra.setForeground(new java.awt.Color(0, 102, 255));
-        txtIdCompra.setBorderColor(new java.awt.Color(0, 102, 255));
-        txtIdCompra.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        txtIdCompra.setOpaque(false);
-        txtIdCompra.setPhColor(new java.awt.Color(0, 0, 0));
-        txtIdCompra.setPlaceholder("Id Compra");
-        txtIdCompra.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabNuevaCompra.add(txtIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 135, 200, -1));
+        txtIdProducto_Compra.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdProducto_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdProducto_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdProducto_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdProducto_Compra.setOpaque(false);
+        txtIdProducto_Compra.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdProducto_Compra.setPlaceholder("Id Producto");
+        txtIdProducto_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtIdProducto_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 135, 200, -1));
 
         txtSearchUser1.setForeground(new java.awt.Color(51, 51, 51));
         txtSearchUser1.setBorderColor(new java.awt.Color(204, 204, 204));
@@ -1906,15 +1906,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         TabNuevaCompra.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 279, 962, 354));
 
-        btnNewUser1.setBackground(new java.awt.Color(0, 255, 51));
-        btnNewUser1.setText("Generar Compra");
-        btnNewUser1.setToolTipText("");
-        btnNewUser1.setColorPrimario(new java.awt.Color(0, 204, 51));
-        btnNewUser1.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
-        btnNewUser1.setColorSecundario(new java.awt.Color(0, 102, 51));
-        btnNewUser1.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
-        btnNewUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
-        TabNuevaCompra.add(btnNewUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 219, -1));
+        btnGenerarCompra.setBackground(new java.awt.Color(0, 255, 51));
+        btnGenerarCompra.setText("Generar Compra");
+        btnGenerarCompra.setToolTipText("");
+        btnGenerarCompra.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnGenerarCompra.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnGenerarCompra.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnGenerarCompra.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnGenerarCompra.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        TabNuevaCompra.add(btnGenerarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 219, -1));
 
         cboProveedor_Producto1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
         cboProveedor_Producto1.setColorArrow(new java.awt.Color(0, 102, 255));
@@ -1928,28 +1928,28 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel35.setText("Seleccionar Proveedor");
         TabNuevaCompra.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 230, -1));
 
-        PrecioVenta_Compra1.setForeground(new java.awt.Color(0, 102, 255));
-        PrecioVenta_Compra1.setBorderColor(new java.awt.Color(0, 102, 255));
-        PrecioVenta_Compra1.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        PrecioVenta_Compra1.setOpaque(false);
-        PrecioVenta_Compra1.setPhColor(new java.awt.Color(0, 0, 153));
-        PrecioVenta_Compra1.setPlaceholder("");
-        PrecioVenta_Compra1.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabNuevaCompra.add(PrecioVenta_Compra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 660, 180, -1));
+        txtPagar_Compra.setForeground(new java.awt.Color(0, 102, 255));
+        txtPagar_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPagar_Compra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPagar_Compra.setOpaque(false);
+        txtPagar_Compra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPagar_Compra.setPlaceholder("");
+        txtPagar_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtPagar_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 660, 180, -1));
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 0, 0));
         jLabel36.setText("Pagar con:");
         TabNuevaCompra.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 640, 180, -1));
 
-        PrecioVenta_Compra2.setForeground(new java.awt.Color(0, 102, 255));
-        PrecioVenta_Compra2.setBorderColor(new java.awt.Color(0, 102, 255));
-        PrecioVenta_Compra2.setMargin(new java.awt.Insets(3, 2, 3, 2));
-        PrecioVenta_Compra2.setOpaque(false);
-        PrecioVenta_Compra2.setPhColor(new java.awt.Color(0, 0, 153));
-        PrecioVenta_Compra2.setPlaceholder("");
-        PrecioVenta_Compra2.setSelectionColor(new java.awt.Color(51, 51, 51));
-        TabNuevaCompra.add(PrecioVenta_Compra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, 180, -1));
+        txtVueltoCompra.setForeground(new java.awt.Color(0, 102, 255));
+        txtVueltoCompra.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtVueltoCompra.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtVueltoCompra.setOpaque(false);
+        txtVueltoCompra.setPhColor(new java.awt.Color(0, 0, 153));
+        txtVueltoCompra.setPlaceholder("");
+        txtVueltoCompra.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaCompra.add(txtVueltoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, 180, -1));
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 0));
@@ -1962,11 +1962,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
         jLabel38.setText("Vuelto:");
         TabNuevaCompra.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 640, 180, -1));
-        TabNuevaCompra.add(rSLabelBorderRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 660, -1, -1));
+        TabNuevaCompra.add(txtTotalPago_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 660, -1, -1));
 
         jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel39.setText("Precio Compra");
+        jLabel39.setText("Precio");
         TabNuevaCompra.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 115, 223, -1));
 
         jtabVENTAS.addTab("Nueva Compra", TabNuevaCompra);
@@ -2112,9 +2112,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public rojerusan.RSPopuMenu PopUpMenuProvider;
     public rojerusan.RSPopuMenu PopupMenuClientes;
     public rojerusan.RSPopuMenu PoupMenuProducts;
-    public RSMaterialComponent.RSTextFieldOne PrecioVenta_Compra;
-    public RSMaterialComponent.RSTextFieldOne PrecioVenta_Compra1;
-    public RSMaterialComponent.RSTextFieldOne PrecioVenta_Compra2;
     private javax.swing.JPanel TabCategorias;
     private javax.swing.JPanel TabClientes;
     private javax.swing.JPanel TabCompras;
@@ -2132,6 +2129,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private RSMaterialComponent.RSButtonIconOne btnCerrar1;
     public rojerusan.RSButtonIconI btnClientes;
     public rojerusan.RSButtonIconI btnCompras;
+    public newscomponents.RSButtonGradientIcon_new btnGenerarCompra;
     public rojerusan.RSButtonIconI btnHome;
     public newscomponents.RSButtonGradientIcon_new btnModifyCategory;
     public newscomponents.RSButtonGradientIcon_new btnModifyCliente;
@@ -2143,7 +2141,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public newscomponents.RSButtonGradientIcon_new btnNewProduct;
     public newscomponents.RSButtonGradientIcon_new btnNewProvider;
     public newscomponents.RSButtonGradientIcon_new btnNewUser;
-    public newscomponents.RSButtonGradientIcon_new btnNewUser1;
     public rojerusan.RSButtonIconI btnProductos;
     public rojerusan.RSButtonIconI btnProveedor;
     public newscomponents.RSButtonGradientIcon_new btnRegisterCategory;
@@ -2214,7 +2211,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public rojerusan.RSPopuMenu popupMenuCategories;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound2;
-    private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound3;
     private rojeru_san.rsdate.RSLabelFecha rSLabelFecha1;
     private rojeru_san.rsdate.RSLabelHora rSLabelHora1;
     private rojeru_san.rslabel.RSLabelImage rSLabelImage1;
@@ -2242,8 +2238,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldOne txtEmailProvider;
     public RSMaterialComponent.RSTextFieldOne txtIdCategory;
     public RSMaterialComponent.RSTextFieldOne txtIdCliente;
-    public RSMaterialComponent.RSTextFieldOne txtIdCompra;
     public RSMaterialComponent.RSTextFieldOne txtIdProducto;
+    public RSMaterialComponent.RSTextFieldOne txtIdProducto_Compra;
     public RSMaterialComponent.RSTextFieldOne txtIdProvider;
     public RSMaterialComponent.RSTextFieldOne txtIduser;
     public RSMaterialComponent.RSTextFieldOne txtLastname;
@@ -2253,13 +2249,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldOne txtNameCliente;
     public RSMaterialComponent.RSTextFieldOne txtNameProvider;
     public RSMaterialComponent.RSTextFieldOne txtNickname;
+    public RSMaterialComponent.RSTextFieldOne txtPagar_Compra;
     public RSMaterialComponent.RSPasswordOne txtPassword;
     public RSMaterialComponent.RSTextFieldOne txtPhone;
     public RSMaterialComponent.RSTextFieldOne txtPhoneCliente;
     public RSMaterialComponent.RSTextFieldOne txtPhoneProvider;
-    public RSMaterialComponent.RSTextFieldOne txtPrecioCompra_Compra;
     public RSMaterialComponent.RSTextFieldOne txtPrecioCompra_Producto;
     public RSMaterialComponent.RSTextFieldOne txtPrecioVenta_Producto;
+    public RSMaterialComponent.RSTextFieldOne txtPrecio_Compra;
     public RSMaterialComponent.RSTextFieldOne txtRucProvider;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchCategory;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchCliente;
@@ -2268,6 +2265,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchUser1;
+    public rojeru_san.rslabel.RSLabelBorderRound txtTotalPago_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtTotal_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtVueltoCompra;
     // End of variables declaration//GEN-END:variables
     private void Trasparencia(float trasp) {
         AWTUtilities.setOpacity(this, trasp);
