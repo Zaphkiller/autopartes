@@ -7,6 +7,7 @@ import controlador.UserController;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.UIManager;
+import modelo.ComboBox;
 import modelo.ProductDAO;
 import modelo.Products;
 import modelo.Provider;
@@ -18,17 +19,14 @@ public class VistaProductos extends javax.swing.JPanel {
     
   Products pro = new Products();
   ProductDAO prodDAO = new ProductDAO();
-  VistaProveedores vista = new VistaProveedores();
-  
-  
-
+  Provider provi = new Provider();
 
     public VistaProductos() {
             
         initComponents();
-        ProductController produc = new ProductController(pro, prodDAO, this, vista);
-        
-        
+        prodDAO.ConsultarProveedor(cboProveedor_Producto);
+        prodDAO.ConsultarCategoria(cboCategoria_Producto);
+
     }
 
     /**
@@ -133,11 +131,6 @@ public class VistaProductos extends javax.swing.JPanel {
         txtSearchProductos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         txtSearchProductos.setPhColor(new java.awt.Color(102, 102, 102));
         txtSearchProductos.setPlaceholder("Buscar");
-        txtSearchProductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchProductosActionPerformed(evt);
-            }
-        });
 
         tblProductos.setBackground(new java.awt.Color(255, 255, 255));
         tblProductos.setModel(new javax.swing.table.DefaultTableModel(
@@ -413,10 +406,6 @@ public class VistaProductos extends javax.swing.JPanel {
             lblFoto.setIcon(new ImageIcon(jf.getSelectedFile().toString()));
         }
     }//GEN-LAST:event_btnBuscarFotoActionPerformed
-
-    private void txtSearchProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchProductosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchProductosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

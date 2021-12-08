@@ -14,26 +14,23 @@ import modelo.ComboBox;
 import modelo.Provider;
 import modelo.Tables;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-import vista.VistaCategorias;
+import vista.FrmPrincipal;
 import vista.VistaError;
 import vista.VistaInfo;
-import vista.VistaProductos;
 import vista.VistaSuccess;
 
 public class CategoryController implements ActionListener, MouseListener, KeyListener {
 
     private Category cat;
     private CategoryDAO catDAO;
-    private VistaCategorias vista;
-    private VistaProductos vistap;
+    private FrmPrincipal vista;
 
     DefaultTableModel modelo = new DefaultTableModel();
 
-    public CategoryController(Category cat, CategoryDAO catDAO, VistaCategorias vista, VistaProductos vistap) {
+    public CategoryController(Category cat, CategoryDAO catDAO, FrmPrincipal vista) {
         this.cat = cat;
         this.catDAO = catDAO;
         this.vista = vista;
-        this.vistap= vistap;
 
         this.vista.btnRegisterCategory.addActionListener(this);
         this.vista.btnModifyCategory.addActionListener(this);
@@ -43,7 +40,7 @@ public class CategoryController implements ActionListener, MouseListener, KeyLis
         this.vista.MenuItem_ReingresarCategory.addActionListener(this);
         this.vista.tblCategory.addMouseListener(this);
         this.vista.txtSearchCategory.addKeyListener(this);
-        
+
         listarCategorias();
         llenarCategoria();
     }
@@ -64,14 +61,13 @@ public class CategoryController implements ActionListener, MouseListener, KeyLis
 
                 cat.setCode_category(vista.txtCodeCategory.getText());
                 cat.setName_category(vista.txtNameCategory.getText());
-   
 
                 if (catDAO.register(cat)) {
 
                     limpiarTable();
                     listarCategorias();
                     limpiar();
-                    
+
                     VistaSuccess success = new VistaSuccess();
                     success.titulo.setText("¡Categoría registrada!");
                     success.setVisible(true);
@@ -230,13 +226,13 @@ public class CategoryController implements ActionListener, MouseListener, KeyLis
         }
 
     }
-    
-     private void llenarCategoria(){
+
+    private void llenarCategoria() {
         List<Category> lista = catDAO.ListaCategories(vista.txtSearchCategory.getText());
         for (int i = 0; i < lista.size(); i++) {
             int id = lista.get(i).getId_category();
             String name = lista.get(i).getName_category();
-            vistap.cboCategoria_Producto.addItem(new ComboBox(id, name));
+            vista.cboCategoria_Producto.addItem(new ComboBox(id, name));
         }
     }
 

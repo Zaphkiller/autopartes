@@ -16,7 +16,7 @@ public class ProductDAO {
     PreparedStatement ps;
     ResultSet rs;
 
-    public void ConsultarProveedor(JComboBox proveedor) {
+    /*public void ConsultarProveedor(JComboBox proveedor) {
         String sql = "SELECT name_provider FROM providers";
         try {
             con = cn.getConexion();
@@ -49,7 +49,7 @@ public class ProductDAO {
             System.out.println(e.toString());
         }
 
-    }
+    }*/
 
     public boolean register(Products prod) {
 

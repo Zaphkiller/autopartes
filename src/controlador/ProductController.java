@@ -8,27 +8,33 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.table.DefaultTableModel;
 import modelo.ComboBox;
 import modelo.ProductDAO;
 import modelo.Products;
 import modelo.Tables;
 import modelo.Usuario;
+import vista.FrmPrincipal;
 import vista.VistaError;
 import vista.VistaInfo;
-import vista.VistaProductos;
 import vista.VistaSuccess;
 
 public class ProductController implements ActionListener, MouseListener, KeyListener{
     
+    Timer timer=null;
+    TimerTask task;
+    int i =32;
+    
     private Products prod;
     private ProductDAO prodDAO;
-    private VistaProductos vista;
+    private FrmPrincipal vista;
     
     DefaultTableModel modelo = new DefaultTableModel();
    
 
-    public ProductController(Products prod, ProductDAO prodDAO, VistaProductos vista) {
+    public ProductController(Products prod, ProductDAO prodDAO, FrmPrincipal vista) {
         this.prod = prod;
         this.prodDAO = prodDAO;
         this.vista = vista;
@@ -65,15 +71,9 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                 prod.setDescription_product(vista.txtDescripcionProducto_Producto.getText());
                 prod.setPurchase_price(Double.parseDouble(vista.txtPrecioCompra_Producto.getText()));
                 prod.setSale_price(Double.parseDouble(vista.txtPrecioVenta_Producto.getText()));
-                /*prod.setId_provider(Integer.parseInt(vista.cboCategoria_Producto.getSelectedItem().toString()));
-                ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
-                ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();*/
-                ComboBox itemP = new ComboBox();
-                itemP.setName((String) vista.cboProveedor_Producto.getSelectedItem());
-                ComboBox itemC = new ComboBox();  
-                itemC.setName((String) vista.cboCategoria_Producto.getSelectedItem());
                 
-  
+                ComboBox itemP = (ComboBox) vista.cboProveedor_Producto.getSelectedItem();
+                ComboBox itemC = (ComboBox) vista.cboCategoria_Producto.getSelectedItem();
                 prod.setId_provider(itemP.getId());
                 prod.setId_category(itemC.getId());
 
@@ -228,6 +228,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             vista.txtPrecioVenta_Producto.setText(""+prod.getSale_price());
             vista.cboProveedor_Producto.setSelectedItem(new ComboBox(prod.getId_provider(), prod.getName_provider()));
             vista.cboCategoria_Producto.setSelectedItem(new ComboBox(prod.getId_category(), prod.getName_category()));
+            
             limpiarTable();
             listarProductos();
                 

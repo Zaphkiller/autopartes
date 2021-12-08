@@ -6,19 +6,26 @@ package vista;
 
 
 import componente.AWTUtilities;
+import controlador.ProductController;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import modelo.ProductDAO;
+import modelo.Products;
 import rojerusan.RSAnimation;
 
 
 public class ModalSeleccionarProductos extends javax.swing.JDialog {
+    
+    Products prod = new Products();
+    ProductDAO prodDAO = new ProductDAO();
     
     Timer timer=null;
     TimerTask task;
     int i =32;
 
     public ModalSeleccionarProductos() {
-        
         /*RSAnimation.setBajar(-230, 200, 2, 2, this);
         this.setLocationRelativeTo(this);
         this.setModal(true);*/
@@ -43,14 +50,11 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         btnCerrar = new RSMaterialComponent.RSButtonIconOne();
         txtSearchProvider = new RSMaterialComponent.RSTextFieldIconOne();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblProviders = new rojerusan.RSTableMetro();
         btnAgregarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
         btnCancelarProveedorModal = new newscomponents.RSButtonGradientIcon_new();
-        rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        cboRole2 = new rojerusan.RSComboBox();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblProductos = new rojerusan.RSTableMetro();
 
         setUndecorated(true);
         setResizable(false);
@@ -117,30 +121,6 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
         txtSearchProvider.setPhColor(new java.awt.Color(102, 102, 102));
         txtSearchProvider.setPlaceholder("Buscar");
 
-        tblProviders.setBackground(new java.awt.Color(255, 255, 255));
-        tblProviders.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Id", "RUC", "Nombre", "Estado"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, false, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblProviders.setBackgoundHover(new java.awt.Color(102, 255, 255));
-        tblProviders.setEditingColumn(0);
-        tblProviders.setEditingRow(0);
-        tblProviders.setSelectionBackground(new java.awt.Color(51, 153, 255));
-        tblProviders.setWidthBorderRows(0);
-        jScrollPane1.setViewportView(tblProviders);
-
         btnAgregarProveedorModal.setBackground(new java.awt.Color(0, 255, 51));
         btnAgregarProveedorModal.setText("Agregar");
         btnAgregarProveedorModal.setToolTipText("");
@@ -149,9 +129,14 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
         btnAgregarProveedorModal.setColorSecundario(new java.awt.Color(0, 102, 51));
         btnAgregarProveedorModal.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
         btnAgregarProveedorModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        btnAgregarProveedorModal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProveedorModalActionPerformed(evt);
+            }
+        });
 
         btnCancelarProveedorModal.setBackground(new java.awt.Color(0, 255, 51));
-        btnCancelarProveedorModal.setText("Cancelar");
+        btnCancelarProveedorModal.setText("Salir");
         btnCancelarProveedorModal.setToolTipText("");
         btnCancelarProveedorModal.setColorPrimario(new java.awt.Color(255, 102, 102));
         btnCancelarProveedorModal.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
@@ -159,29 +144,32 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
         btnCancelarProveedorModal.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
         btnCancelarProveedorModal.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
 
-        javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
-        rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
-        rSPanelMaterialImage1Layout.setHorizontalGroup(
-            rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        rSPanelMaterialImage1Layout.setVerticalGroup(
-            rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 181, Short.MAX_VALUE)
-        );
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Selccionar proveedor*");
+        tblProductos.setBackground(new java.awt.Color(255, 255, 255));
+        tblProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        cboRole2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>", "Administrador", "Empleado" }));
-        cboRole2.setColorArrow(new java.awt.Color(0, 102, 255));
-        cboRole2.setColorBorde(new java.awt.Color(0, 0, 255));
-        cboRole2.setColorFondo(new java.awt.Color(0, 102, 255));
-        cboRole2.setColorSeleccion(new java.awt.Color(0, 102, 255));
+            },
+            new String [] {
+                "Id", "Código", "Descripción", "Stock", "Precio", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblProductos.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblProductos.setEditingColumn(0);
+        tblProductos.setEditingRow(0);
+        tblProductos.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblProductos.setWidthBorderRows(0);
+        jScrollPane5.setViewportView(tblProductos);
 
         javax.swing.GroupLayout rSPanelBorder1Layout = new javax.swing.GroupLayout(rSPanelBorder1);
         rSPanelBorder1.setLayout(rSPanelBorder1Layout);
@@ -191,22 +179,15 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
             .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                 .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rSPanelBorder1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 911, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(rSPanelBorder1Layout.createSequentialGroup()
-                                .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(cboRole2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                         .addGap(243, 243, 243)
                         .addComponent(btnAgregarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSearchProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE))))
                 .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(rSPanelBorder1Layout.createSequentialGroup()
@@ -218,20 +199,11 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
             rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cboRole2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSPanelMaterialImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(txtSearchProvider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
                 .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -293,6 +265,10 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
         setVisible(false);
         dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void btnAgregarProveedorModalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProveedorModalActionPerformed
+      
+    }//GEN-LAST:event_btnAgregarProveedorModalActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -302,16 +278,13 @@ public class ModalSeleccionarProductos extends javax.swing.JDialog {
     public newscomponents.RSButtonGradientIcon_new btnAgregarProveedorModal;
     public newscomponents.RSButtonGradientIcon_new btnCancelarProveedorModal;
     private RSMaterialComponent.RSButtonIconOne btnCerrar;
-    public rojerusan.RSComboBox cboRole2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane5;
     private RSMaterialComponent.RSPanelBorder rSPanelBorder1;
-    private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
-    public rojerusan.RSTableMetro tblProviders;
+    public rojerusan.RSTableMetro tblProductos;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider;
     // End of variables declaration//GEN-END:variables
 

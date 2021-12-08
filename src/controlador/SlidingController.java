@@ -43,7 +43,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
 
-                this.vista.pnlSlider.setPanelNormal(vista.pnlHome);
+                vista.jtabVENTAS.setSelectedIndex(1);
             }
 
         } else if (e.getSource() == vista.btnCompras) {
@@ -59,7 +59,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
 
-                this.vista.pnlSlider.setPanelNormal(vista.pnlCompras);
+                vista.jtabVENTAS.setSelectedIndex(2);
             }
 
         } else if (e.getSource() == vista.btnVentas) {
@@ -75,7 +75,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
 
-                this.vista.pnlSlider.setPanelNormal(vista.pnlVentas);
+                vista.jtabVENTAS.setSelectedIndex(2);
             }
 
         } else if (e.getSource() == vista.btnProductos) {
@@ -91,7 +91,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
 
-                this.vista.pnlSlider.setPanelNormal(vista.pnlProductos);
+                vista.jtabVENTAS.setSelectedIndex(2);
             }
 
         } else if (e.getSource() == vista.btnClientes) {
@@ -107,7 +107,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(false);
 
-                this.vista.pnlSlider.setPanelNormal(vista.pnlClientes);
+                vista.jtabVENTAS.setSelectedIndex(2);
             }
 
         } else if (e.getSource() == vista.btnProveedor) {
@@ -124,7 +124,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnCategorias.setSelected(false);
                 
 
-                this.vista.pnlSlider.setPanelNormal(vista.pnlProveedores);
+                vista.jtabVENTAS.setSelectedIndex(2);
             }
 
         } else if (e.getSource() == vista.btnUsuarios) {
@@ -140,7 +140,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnUsuarios.setSelected(true);
                 this.vista.btnCategorias.setSelected(false);
 
-                this.vista.pnlSlider.setPanelNormal(vista.pnlUsuarios);
+               vista.jtabVENTAS.setSelectedIndex(2);
             }
 
         } else if (e.getSource() == vista.btnCategorias) {
@@ -156,7 +156,7 @@ public class SlidingController implements ActionListener {
                 this.vista.btnUsuarios.setSelected(false);
                 this.vista.btnCategorias.setSelected(true);
 
-                this.vista.pnlSlider.setPanelNormal(vista.pnlCategorias);
+                vista.jtabVENTAS.setSelectedIndex(2);
             }
 
         }

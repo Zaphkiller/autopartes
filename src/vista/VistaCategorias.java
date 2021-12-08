@@ -20,7 +20,7 @@ public class VistaCategorias extends javax.swing.JPanel {
     public VistaCategorias() {
         initComponents();
         
-        CategoryController cate = new CategoryController(cat,catDAO,this, vistap);
+        CategoryController categ = new CategoryController(cat,catDAO,this, vistap);
     }
 
     /**

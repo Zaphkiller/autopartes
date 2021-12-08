@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Tables;
 import modelo.Usuario;
 import modelo.UsuarioDAO;
-import vista.VistaUsuarios;
+import vista.FrmPrincipal;
 import vista.VistaInfo;
 import vista.VistaSuccess;
 import vista.VistaError;
@@ -22,11 +22,11 @@ public class UserController implements ActionListener, MouseListener, KeyListene
 
     private Usuario us;
     private UsuarioDAO usDAO;
-    private VistaUsuarios vista;
+    private FrmPrincipal vista;
 
     DefaultTableModel modelo = new DefaultTableModel();
 
-    public UserController(Usuario us, UsuarioDAO usDAO, VistaUsuarios vista) {
+    public UserController(Usuario us, UsuarioDAO usDAO, FrmPrincipal vista) {
         this.us = us;
         this.usDAO = usDAO;
         this.vista = vista;
@@ -34,9 +34,9 @@ public class UserController implements ActionListener, MouseListener, KeyListene
         this.vista.btnRegisterUser.addActionListener(this);
         this.vista.btnModifyUser.addActionListener(this);
         this.vista.btnNewUser.addActionListener(this);
-
+/*
         this.vista.MenuItem_EliminarUser.addActionListener(this);
-        this.vista.MenuItem_ReingresarUser.addActionListener(this);
+        this.vista.MenuItem_ReingresarUser.addActionListener(this);*/
         this.vista.tblUsers.addMouseListener(this);
         this.vista.txtSearchUser.addKeyListener(this);
         listarUsuarios();
@@ -130,53 +130,7 @@ public class UserController implements ActionListener, MouseListener, KeyListene
                 }
             }
 
-        } else if (e.getSource() == vista.MenuItem_EliminarUser) {
-            if (vista.txtIduser.getText().equals("")) {
-                /*JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");*/
-                VistaInfo info = new VistaInfo();
-                info.titulo.setText("Seleccione una fila para eliminar");
-                info.setVisible(true);
-            } else {
-                int id = Integer.parseInt(vista.txtIduser.getText());
-                if (usDAO.accion("Inactivo", id)) {
-                    limpiarTable();
-                    listarUsuarios();
-                    limpiar();
-                    /*JOptionPane.showMessageDialog(null, "Usuario eliminado con éxito...");*/
-                    VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario eliminado!");
-                    success.setVisible(true);
-                } else {
-                    /*JOptionPane.showMessageDialog(null, "Error eliminado con éxito...");*/
-                     VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al eliminar usuario!");
-                    error.setVisible(true);
-                }
-            }
-        } else if (e.getSource() == vista.MenuItem_ReingresarUser) {
-            if (vista.txtIduser.getText().equals("")) {
-                /*JOptionPane.showMessageDialog(null, "Seleccione una fila para reingresar");*/
-                VistaInfo info = new VistaInfo();
-                info.titulo.setText("Seleccione una fila para reingresar");
-                info.setVisible(true);
-            } else {
-                int id = Integer.parseInt(vista.txtIduser.getText());
-                if (usDAO.accion("Activo", id)) {
-                    limpiarTable();
-                    listarUsuarios();
-                    limpiar();
-                    /*JOptionPane.showMessageDialog(null, "Usuario reingresado");*/
-                    VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario reingresado!");
-                    success.setVisible(true);
-                } else {
-                    /*JOptionPane.showMessageDialog(null, "Error al reingresar");*/
-                    VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al reingresar usuario!");
-                    error.setVisible(true);
-                }
-            }
-        } else {
+        }  else {
             limpiar();
         }
     }

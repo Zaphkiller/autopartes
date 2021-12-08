@@ -16,7 +16,7 @@ import modelo.Cliente;
 import modelo.ClienteDAO;
 import modelo.Tables;
 import modelo.Usuario;
-import vista.VistaClientes;
+import vista.FrmPrincipal;
 import vista.VistaError;
 import vista.VistaInfo;
 import vista.VistaSuccess;
@@ -25,11 +25,11 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
 
     private Cliente cli;
     private ClienteDAO cliDAO;
-    private VistaClientes vista;
+    private FrmPrincipal vista;
 
     DefaultTableModel modelo = new DefaultTableModel();
 
-    public ClienteController(Cliente cli, ClienteDAO cliDAO, VistaClientes vista) {
+    public ClienteController(Cliente cli, ClienteDAO cliDAO, FrmPrincipal vista) {
         this.cli = cli;
         this.cliDAO = cliDAO;
         this.vista = vista;
