@@ -130,6 +130,52 @@ public class UserController implements ActionListener, MouseListener, KeyListene
                 }
             }
 
+        }else if (e.getSource() == vista.MenuItem_EliminarCliente) {
+            if (vista.txtIdCliente.getText().equals("")) {
+                /*JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");*/
+                VistaInfo info = new VistaInfo();
+                info.titulo.setText("Seleccione una fila para eliminar");
+                info.setVisible(true);
+            } else {
+                int id = Integer.parseInt(vista.txtIdCliente.getText());
+                if (usDAO.accion("Inactivo", id)) {
+                    limpiarTable();
+                    listarUsuarios();
+                    limpiar();
+                    /*JOptionPane.showMessageDialog(null, "Usuario eliminado con éxito...");*/
+                    VistaSuccess success = new VistaSuccess();
+                    success.titulo.setText("¡Usuario eliminado!");
+                    success.setVisible(true);
+                } else {
+                    /*JOptionPane.showMessageDialog(null, "Error eliminado con éxito...");*/
+                     VistaError error = new VistaError();
+                    error.titulo.setText("¡Error al eliminar usuario!");
+                    error.setVisible(true);
+                }
+            }
+        } else if (e.getSource() == vista.MenuItem_ReingresarCliente) {
+            if (vista.txtIdCliente.getText().equals("")) {
+                /*JOptionPane.showMessageDialog(null, "Seleccione una fila para reingresar");*/
+                VistaInfo info = new VistaInfo();
+                info.titulo.setText("Seleccione una fila para reingresar");
+                info.setVisible(true);
+            } else {
+                int id = Integer.parseInt(vista.txtIdCliente.getText());
+                if (usDAO.accion("Activo", id)) {
+                    limpiarTable();
+                    listarUsuarios();
+                    limpiar();
+                    /*JOptionPane.showMessageDialog(null, "Usuario reingresado");*/
+                    VistaSuccess success = new VistaSuccess();
+                    success.titulo.setText("¡Usuario reingresado!");
+                    success.setVisible(true);
+                } else {
+                    /*JOptionPane.showMessageDialog(null, "Error al reingresar");*/
+                    VistaError error = new VistaError();
+                    error.titulo.setText("¡Error al reingresar usuario!");
+                    error.setVisible(true);
+                }
+            }
         }  else {
             limpiar();
         }

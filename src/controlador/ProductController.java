@@ -181,7 +181,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                 }
             }
         } else if (e.getSource() == vista.btnGenerarCompra) {
- 
+            insertarCompra();
         }
     }
 
@@ -367,31 +367,51 @@ public class ProductController implements ActionListener, MouseListener, KeyList
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getSource() == vista.txtCantidad_Compra) {
-            
             int cantidad;
             double precio;
-            
-            if(vista.txtCantidad_Compra.getText().equals("")){
-                cantidad = -1;
+            if (vista.txtCantidad_Compra.getText().equals("")) {
+                cantidad = 1;
                 precio = Double.parseDouble(vista.txtPrecio_Compra.getText());
-                vista.txtPagar_Compra.setText(""+precio);
-            }else{
+                vista.txtPagar_Compra.setText("" + precio);
+            } else {
                 cantidad = Integer.parseInt(vista.txtCantidad_Compra.getText());
                 precio = Double.parseDouble(vista.txtPrecio_Compra.getText());
-                vista.txtPagar_Compra.setText(""+ cantidad* precio);
-                
+                vista.txtPagar_Compra.setText("" + cantidad * precio);
             }
-            
-        }else if(e.getSource() == vista.txtPagar_Compra){
+        } else if (e.getSource() == vista.txtPagar_Compra) {
             int pagar;
-            if(vista.txtPagar_Compra.getText().equals("")){
+            if (vista.txtPagar_Compra.getText().equals("")) {
                 vista.txtVueltoCompra.setText("");
-            }else{
+            } else {
                 pagar = Integer.parseInt(vista.txtPagar_Compra.getText());
-                double total = Double.parseDouble(vista.txtPagar_Compra.getText());
-                vista.txtVueltoCompra.setText(""+ (pagar-total));
+                double total = Double.parseDouble(vista.txtTotalPago_Compra.getText());
+                vista.txtVueltoCompra.setText("" + (pagar - total));
             }
+        } 
+    }
+    
+    public void insertarCompra(){
+        ComboBox id_prov = (ComboBox) vista.cboProveedor_Compra.getSelectedItem();
+        int id_provider = id_prov.getId();
+        String total = vista.txtTotalPago_Compra.getText();
+        int code_purchase = prodDAO.CodePurchase();
+        for (int i = 0; i < vista.tblCompras.getRowCount(); i++) {
+            
+            double precio = Double.parseDouble(vista.tblCompras.getValueAt(i, 3).toString());
+            int cantidad = Integer.parseInt(vista.tblCompras.getValueAt(i, 2).toString());
+            int code = Integer.parseInt(vista.tblCompras.getValueAt(i, 0).toString());
+            double subtotal = precio * cantidad;
+            prodDAO.RegisterPurchaseDetail(code_purchase, id_provider, precio, cantidad, precio, subtotal);
+            prod=prodDAO.SearchIdProduct(code);
+            int StockActual = prod.getQuantity()+cantidad;
+            prodDAO.UpdateStock(StockActual,code);  
         }
+        
+        limpiarTableDetalle();
+        JOptionPane.showMessageDialog(null, "Compra generada conéxito");
+        
+        
+        
     }
 
 }

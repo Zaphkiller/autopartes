@@ -262,6 +262,7 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
             int id = lista.get(i).getId_provider();
             String name = lista.get(i).getName_provider();
             vista.cboProveedor_Producto.addItem(new ComboBox(id, name));
+            vista.cboProveedor_Compra.addItem(new ComboBox(id, name));
                    
         }
     }

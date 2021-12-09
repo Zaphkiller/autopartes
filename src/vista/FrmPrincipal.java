@@ -230,7 +230,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         tblCompras = new rojerusan.RSTableMetro();
         btnGenerarCompra = new newscomponents.RSButtonGradientIcon_new();
-        cboProveedor_Producto1 = new rojerusan.RSComboBox();
+        cboProveedor_Compra = new rojerusan.RSComboBox();
         jLabel35 = new javax.swing.JLabel();
         txtPagar_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel36 = new javax.swing.JLabel();
@@ -1916,12 +1916,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnGenerarCompra.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
         TabNuevaCompra.add(btnGenerarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 219, -1));
 
-        cboProveedor_Producto1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
-        cboProveedor_Producto1.setColorArrow(new java.awt.Color(0, 102, 255));
-        cboProveedor_Producto1.setColorBorde(new java.awt.Color(0, 0, 255));
-        cboProveedor_Producto1.setColorFondo(new java.awt.Color(0, 102, 255));
-        cboProveedor_Producto1.setColorSeleccion(new java.awt.Color(0, 102, 255));
-        TabNuevaCompra.add(cboProveedor_Producto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 230, 42));
+        cboProveedor_Compra.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
+        cboProveedor_Compra.setColorArrow(new java.awt.Color(0, 102, 255));
+        cboProveedor_Compra.setColorBorde(new java.awt.Color(0, 0, 255));
+        cboProveedor_Compra.setColorFondo(new java.awt.Color(0, 102, 255));
+        cboProveedor_Compra.setColorSeleccion(new java.awt.Color(0, 102, 255));
+        TabNuevaCompra.add(cboProveedor_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 230, 42));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
@@ -2153,8 +2153,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public rojerusan.RSButtonIconI btnUsuarios;
     public rojerusan.RSButtonIconI btnVentas;
     public rojerusan.RSComboBox cboCategoria_Producto;
+    public rojerusan.RSComboBox cboProveedor_Compra;
     public rojerusan.RSComboBox cboProveedor_Producto;
-    public rojerusan.RSComboBox cboProveedor_Producto1;
     public rojerusan.RSComboBox cboRole;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

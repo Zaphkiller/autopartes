@@ -250,7 +250,22 @@ public class ProductDAO {
         }
         return code;
     }
-    
+    public int CodePurchase(){
+        int codigo =0;
+        String sql = "SELECT MAX(id_purchase) as codigo FROM purchase";
+        
+        try {
+            con = cn.getConexion();
+            ps= con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            if(rs.next()){
+                codigo=rs.getInt("codigo");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return codigo;
+    }
     public List ListaDetalle(int id_purchase){
         List<Products> listaProducts = new ArrayList();
         String sql = "SELECT c.*, dc.*, p.id_product, p.description_product FROM purchase c"
