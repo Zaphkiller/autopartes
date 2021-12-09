@@ -114,12 +114,12 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
                     limpiar();
 
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Cliente modifiaado!");
+                    success.titulo.setText("¡Cliente modificado!");
                     success.setVisible(true);
 
                 } else {
                     VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al modificar usuario!");
+                    error.titulo.setText("¡Error al modificar cliente!");
                     error.setVisible(true);
                 }
             }
@@ -136,11 +136,11 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
                     listarClientes();
                     limpiar();
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario eliminado!");
+                    success.titulo.setText("¡Cliente eliminado!");
                     success.setVisible(true);
                 } else {
                      VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al eliminar usuario!");
+                    error.titulo.setText("¡Error al eliminar cliente!");
                     error.setVisible(true);
                 }
             }
@@ -156,11 +156,11 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
                     listarClientes();
                     limpiar();
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario reingresado!");
+                    success.titulo.setText("¡Cliente reingresado!");
                     success.setVisible(true);
                 } else {
                     VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al reingresar usuario!");
+                    error.titulo.setText("¡Error al reingresar Cliente!");
                     error.setVisible(true);
                 }
             }

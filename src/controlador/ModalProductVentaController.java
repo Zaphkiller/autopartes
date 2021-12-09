@@ -6,10 +6,6 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -17,71 +13,60 @@ import modelo.ProductDAO;
 import modelo.Products;
 import vista.FrmPrincipal;
 
+/**
+ *
+ * @author Natsu98fx
+ */
+public class ModalProductVentaController implements ActionListener {
 
-public class ModalProductController implements ActionListener{
-    
     private Products prod;
     private ProductDAO prodDAO;
     private FrmPrincipal vista;
 
     DefaultTableModel modelo = new DefaultTableModel();
     DefaultTableModel m;
+    
 
-    public ModalProductController(Products prod, ProductDAO prodDAO, FrmPrincipal vista) {
+    public ModalProductVentaController(Products prod, ProductDAO prodDAO, FrmPrincipal vista) {
         this.prod = prod;
         this.prodDAO = prodDAO;
         this.vista = vista;
-        
-        this.vista.btnAgregarProductoModal.addActionListener(this);
-        this.vista.btnCancelarProveedorModal.addActionListener(this);
-
-        listarProductos();
+        listarProductosVenta();
         
     }
-
-    public ModalProductController(Products prod, ProductDAO prodDAO, FrmPrincipal vista, DefaultTableModel m) {
-        this.prod = prod;
-        this.prodDAO = prodDAO;
-        this.vista = vista;
-        this.m = m;
-    }
+    
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-        if (e.getSource() == vista.btnAgregarProductoModal) {
-            int fselec = vista.tblModalProductos.getSelectedRow();
+        
+        if (e.getSource() == vista.btnAgregarProductoModalVentas) {
+            int fselec = vista.tblModalProductosVentas.getSelectedRow();
 
             try {
                 String id,codigo,descripcion,precio;
                 if (fselec == -1) {
-
                     JOptionPane.showMessageDialog(null, "corregido");
-
                 } else {
                     m = (DefaultTableModel) vista.tblModalProductos.getModel();
                     
-                    id= vista.tblModalProductos.getValueAt(fselec, 0).toString();
-                    codigo = vista.tblModalProductos.getValueAt(fselec, 1).toString();
-                    descripcion = vista.tblModalProductos.getValueAt(fselec, 2).toString();
-                    precio = vista.tblModalProductos.getValueAt(fselec, 4).toString();
-                    
+                    id= vista.tblModalProductosVentas.getValueAt(fselec, 0).toString();
+                    codigo = vista.tblModalProductosVentas.getValueAt(fselec, 1).toString();
+                    descripcion = vista.tblModalProductosVentas.getValueAt(fselec, 2).toString();
+                    precio = vista.tblModalProductosVentas.getValueAt(fselec, 4).toString();
                     vista.txtIdProducto_Compra.setText(id);
                     vista.txtCodigoProducto_Compra.setText(codigo);
                     vista.txtDescripcionProducto_Compra.setText(descripcion);
                     vista.txtPrecio_Compra.setText(""+precio);
-                    
                     
                }
 
             } catch (Exception ex) {
             }
         }
-
     }
-
     
-    public void listarProductos() {
+    public void listarProductosVenta() {
         
         List<Products> lista = prodDAO.ListaProductos(vista.txtSearchProductModal.getText());
         modelo = (DefaultTableModel) vista.tblModalProductos.getModel();
@@ -98,4 +83,5 @@ public class ModalProductController implements ActionListener{
         vista.tblModalProductos.setModel(modelo);
     }
     
+
 }

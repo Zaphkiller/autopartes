@@ -188,8 +188,7 @@ public class ProductDAO {
         }
          return prod; 
     }
-    
-    
+     
     public boolean RegisterPurchase(int code, String total){
         
         String sql = "INSERT INTO purchase(id_provider, total) VALUES(?,?)";
@@ -209,15 +208,15 @@ public class ProductDAO {
         
     }
     
-     public boolean RegisterSale(int codCliente, int codUsuario, String total){
+    public boolean RegisterSale(int codCliente, int codEmpleado, String total){
         
-        String sql = "INSERT INTO comprobante (id_cliente, id_usuario, total) VALUES(?,?,?)";
+        String sql = "INSERT INTO comprobante (id_cliente, id_empleado, total) VALUES(?,?,?)";
         
         try {
             con = cn.getConexion();
             ps=con.prepareStatement(sql);
             ps.setInt(1, codCliente);
-            ps.setInt(2, codUsuario);
+            ps.setInt(2, codEmpleado);
             ps.setString(3, total);
             ps.execute();
             return true;
@@ -291,7 +290,7 @@ public class ProductDAO {
     
     }
     
-     public boolean UpdateStockSale(int quantity, int code) {
+    public boolean UpdateStockSale(int quantity, int code) {
         String sql = "UPDATE products SET quantity=? where id_product=?";
         try {
             con = cn.getConexion();
@@ -305,8 +304,7 @@ public class ProductDAO {
             return false;
         }
     }
-    
-    
+     
     public int CodePurchase(){
         int codigo =0;
         String sql = "SELECT MAX(id_purchase) as code FROM purchase";
@@ -324,7 +322,7 @@ public class ProductDAO {
         return codigo;
     }
     
-     public int CodeSale(){
+    public int CodeSale(){
         int codigo =0;
         String sql = "SELECT MAX(id_comprobante) as code FROM comprobante";
         
@@ -340,8 +338,6 @@ public class ProductDAO {
         }
         return codigo;
     }
-    
-    
     
     public List ListaDetalle(int id_purchase){
         List<Products> listaProducts = new ArrayList();
@@ -368,5 +364,33 @@ public class ProductDAO {
         }
         return listaProducts;
     }
+    
+    public List ListaDetalleVenta(int id_comprobante){
+    
+        List<Products> listaProducts = new ArrayList();
+        String sql = "SELECT c.*, dc.*, p.id_product, p.description_product FROM comprobante c "
+                + "INNER JOIN detalle_comprobante dc ON dc.id_comprobante=c.id_comprobante "
+                + "INNER JOIN product p ON p.id_product =dc.id_product "
+                + "WHERE c.id_comprobante=?;";
+        
+        try {
+            con = cn.getConexion();
+            ps= con.prepareStatement(sql);
+            ps.setInt(1, id_comprobante);
+            while(rs.next()){
+                Products prod = new Products();
+                prod.setQuantity(rs.getInt("quantity"));
+                prod.setDescription_product(rs.getString("description_product"));
+                prod.setPurchase_price(rs.getDouble("purchase_price"));
+                prod.setSale_price(rs.getDouble("sale_price"));
+                listaProducts.add(prod);
+            }
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null, e.toString());
+
+        }
+        return listaProducts;
+    }
+    
 }
 

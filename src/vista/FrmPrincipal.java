@@ -8,6 +8,7 @@ import componente.AWTUtilities;
 import controlador.CategoryController;
 import controlador.ClienteController;
 import controlador.ModalProductController;
+import controlador.ModalProductVentaController;
 import controlador.ProductController;
 import controlador.ProviderController;
 import controlador.SlidingController;
@@ -61,6 +62,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         CategoryController categ = new CategoryController(cat, catDAO, this);
         ProductController prod = new ProductController(pro, prodDAO, this);
         ModalProductController modalp = new ModalProductController(pro, prodDAO, this);
+        ModalProductVentaController modalv = new ModalProductVentaController(pro, prodDAO, this);
 
     }
 
@@ -97,6 +99,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tblModalProductos = new rojerusan.RSTableMetro();
+        ModalProductos_Venta = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        rSPanelBorder2 = new RSMaterialComponent.RSPanelBorder();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        btnCerrarVenta = new RSMaterialComponent.RSButtonIconOne();
+        txtSearchProductModal1 = new RSMaterialComponent.RSTextFieldIconOne();
+        btnAgregarProductoModalVentas = new newscomponents.RSButtonGradientIcon_new();
+        btnCancelarProveedorVenta = new newscomponents.RSButtonGradientIcon_new();
+        jLabel41 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tblModalProductosVentas = new rojerusan.RSTableMetro();
         jPanel1 = new javax.swing.JPanel();
         pnlMenu = new RSMaterialComponent.RSPanelMaterial();
         rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
@@ -138,10 +152,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUsers = new rojerusan.RSTableMetro();
         txtIduser = new RSMaterialComponent.RSTextFieldOne();
-        txtSearchUser = new RSMaterialComponent.RSTextFieldIconOne();
         btnModifyUser = new newscomponents.RSButtonGradientIcon_new();
         btnRegisterUser = new newscomponents.RSButtonGradientIcon_new();
         btnNewUser = new newscomponents.RSButtonGradientIcon_new();
+        txtSearchUser = new RSMaterialComponent.RSTextFieldIconOne();
         TabClientes = new javax.swing.JPanel();
         txtNameCliente = new RSMaterialComponent.RSTextFieldOne();
         jLabel23 = new javax.swing.JLabel();
@@ -223,7 +237,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtTotal_Compra = new RSMaterialComponent.RSTextFieldOne();
         jLabel32 = new javax.swing.JLabel();
         txtIdProducto_Compra = new RSMaterialComponent.RSTextFieldOne();
-        txtSearchUser1 = new RSMaterialComponent.RSTextFieldIconOne();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblCompras = new rojerusan.RSTableMetro();
         btnGenerarCompra = new newscomponents.RSButtonGradientIcon_new();
@@ -238,6 +251,31 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtTotalPago_Compra = new rojeru_san.rslabel.RSLabelBorderRound();
         jLabel39 = new javax.swing.JLabel();
         TabNuevaVenta = new javax.swing.JPanel();
+        txtTotalPago_Venta = new rojeru_san.rslabel.RSLabelBorderRound();
+        jLabel42 = new javax.swing.JLabel();
+        txtVueltoVenta = new RSMaterialComponent.RSTextFieldOne();
+        jLabel43 = new javax.swing.JLabel();
+        txtPagar_Venta = new RSMaterialComponent.RSTextFieldOne();
+        jLabel44 = new javax.swing.JLabel();
+        cboCliente_Venta = new rojerusan.RSComboBox();
+        jLabel45 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblVenta = new rojerusan.RSTableMetro();
+        rSLabelBorderRound3 = new rojeru_san.rslabel.RSLabelBorderRound();
+        jLabel46 = new javax.swing.JLabel();
+        btnGenerarVenta = new newscomponents.RSButtonGradientIcon_new();
+        txtCantidad_Venta = new RSMaterialComponent.RSTextFieldOne();
+        jLabel47 = new javax.swing.JLabel();
+        txtPrecio_Venta = new RSMaterialComponent.RSTextFieldOne();
+        jLabel48 = new javax.swing.JLabel();
+        txtTotal_Venta = new RSMaterialComponent.RSTextFieldOne();
+        jLabel49 = new javax.swing.JLabel();
+        txtIdProducto_Venta = new RSMaterialComponent.RSTextFieldOne();
+        txtDescripcionProducto_Venta = new RSMaterialComponent.RSTextFieldOne();
+        jLabel50 = new javax.swing.JLabel();
+        btnBuscarProducto_Ventas = new rojeru_san.rsbutton.RSButtonRound();
+        txtCodigoProducto_Venta = new RSMaterialComponent.RSTextFieldOne();
+        jLabel51 = new javax.swing.JLabel();
 
         MenuItem_EliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
         MenuItem_EliminarProducto.setText("Eliminar");
@@ -461,6 +499,184 @@ public class FrmPrincipal extends javax.swing.JFrame {
         ModalProductosLayout.setVerticalGroup(
             ModalProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+        );
+
+        jPanel4.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel4.setMaximumSize(new java.awt.Dimension(0, 0));
+        jPanel4.setName(""); // NOI18N
+        jPanel4.setPreferredSize(new java.awt.Dimension(960, 585));
+        jPanel4.setRequestFocusEnabled(false);
+
+        rSPanelBorder2.setBackground(new java.awt.Color(255, 255, 255));
+        rSPanelBorder2.setBgBorder(new java.awt.Color(51, 119, 255));
+        rSPanelBorder2.setMaximumSize(new java.awt.Dimension(960, 579));
+        rSPanelBorder2.setMinimumSize(new java.awt.Dimension(855, 567));
+        rSPanelBorder2.setName(""); // NOI18N
+
+        jPanel5.setBackground(new java.awt.Color(37, 45, 223));
+
+        jLabel40.setFont(new java.awt.Font("Roboto Cn", 1, 24)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setText("Seleccionar Productos Venta");
+
+        btnCerrarVenta.setBackground(new java.awt.Color(255, 51, 0));
+        btnCerrarVenta.setBackgroundHover(new java.awt.Color(153, 0, 0));
+        btnCerrarVenta.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CLOSE);
+        btnCerrarVenta.setRound(10);
+        btnCerrarVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarVentaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
+                .addComponent(btnCerrarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCerrarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
+        );
+
+        txtSearchProductModal1.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchProductModal1.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchProductModal1.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchProductModal1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchProductModal1.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchProductModal1.setPlaceholder("Buscar");
+
+        btnAgregarProductoModalVentas.setBackground(new java.awt.Color(0, 255, 51));
+        btnAgregarProductoModalVentas.setText("Agregar");
+        btnAgregarProductoModalVentas.setToolTipText("");
+        btnAgregarProductoModalVentas.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnAgregarProductoModalVentas.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProductoModalVentas.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnAgregarProductoModalVentas.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnAgregarProductoModalVentas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        btnAgregarProductoModalVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoModalVentasActionPerformed(evt);
+            }
+        });
+
+        btnCancelarProveedorVenta.setBackground(new java.awt.Color(0, 255, 51));
+        btnCancelarProveedorVenta.setText("Salir");
+        btnCancelarProveedorVenta.setToolTipText("");
+        btnCancelarProveedorVenta.setColorPrimario(new java.awt.Color(255, 102, 102));
+        btnCancelarProveedorVenta.setColorPrimarioHover(new java.awt.Color(255, 0, 0));
+        btnCancelarProveedorVenta.setColorSecundario(new java.awt.Color(204, 0, 51));
+        btnCancelarProveedorVenta.setColorSecundarioHover(new java.awt.Color(255, 0, 0));
+        btnCancelarProveedorVenta.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
+
+        tblModalProductosVentas.setBackground(new java.awt.Color(255, 255, 255));
+        tblModalProductosVentas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Código", "Descripción", "Stock", "Precio", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblModalProductosVentas.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblModalProductosVentas.setEditingColumn(0);
+        tblModalProductosVentas.setEditingRow(0);
+        tblModalProductosVentas.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblModalProductosVentas.setWidthBorderRows(0);
+        jScrollPane9.setViewportView(tblModalProductosVentas);
+
+        javax.swing.GroupLayout rSPanelBorder2Layout = new javax.swing.GroupLayout(rSPanelBorder2);
+        rSPanelBorder2.setLayout(rSPanelBorder2Layout);
+        rSPanelBorder2Layout.setHorizontalGroup(
+            rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(rSPanelBorder2Layout.createSequentialGroup()
+                .addGroup(rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rSPanelBorder2Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSearchProductModal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE)))
+                    .addGroup(rSPanelBorder2Layout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(btnAgregarProductoModalVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelarProveedorVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelBorder2Layout.createSequentialGroup()
+                    .addGap(361, 361, 361)
+                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(361, Short.MAX_VALUE)))
+        );
+        rSPanelBorder2Layout.setVerticalGroup(
+            rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelBorder2Layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtSearchProductModal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelarProveedorVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregarProductoModalVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
+            .addGroup(rSPanelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelBorder2Layout.createSequentialGroup()
+                    .addGap(251, 251, 251)
+                    .addComponent(jLabel41)
+                    .addContainerGap(316, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSPanelBorder2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSPanelBorder2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout ModalProductos_VentaLayout = new javax.swing.GroupLayout(ModalProductos_Venta.getContentPane());
+        ModalProductos_Venta.getContentPane().setLayout(ModalProductos_VentaLayout);
+        ModalProductos_VentaLayout.setHorizontalGroup(
+            ModalProductos_VentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ModalProductos_VentaLayout.setVerticalGroup(
+            ModalProductos_VentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -783,13 +999,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtIduser.setPlaceholder("Id User");
         txtIduser.setSelectionColor(new java.awt.Color(51, 51, 51));
 
-        txtSearchUser.setForeground(new java.awt.Color(51, 51, 51));
-        txtSearchUser.setBorderColor(new java.awt.Color(204, 204, 204));
-        txtSearchUser.setColorIcon(new java.awt.Color(51, 51, 51));
-        txtSearchUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        txtSearchUser.setPhColor(new java.awt.Color(102, 102, 102));
-        txtSearchUser.setPlaceholder("Buscar");
-
         btnModifyUser.setBackground(new java.awt.Color(0, 255, 51));
         btnModifyUser.setText("Modificar");
         btnModifyUser.setToolTipText("");
@@ -816,6 +1025,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnNewUser.setColorSecundario(new java.awt.Color(0, 102, 51));
         btnNewUser.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
         btnNewUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+
+        txtSearchUser.setForeground(new java.awt.Color(51, 51, 51));
+        txtSearchUser.setBorderColor(new java.awt.Color(204, 204, 204));
+        txtSearchUser.setColorIcon(new java.awt.Color(51, 51, 51));
+        txtSearchUser.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtSearchUser.setPhColor(new java.awt.Color(102, 102, 102));
+        txtSearchUser.setPlaceholder("Buscar");
 
         javax.swing.GroupLayout TabUsuariosLayout = new javax.swing.GroupLayout(TabUsuarios);
         TabUsuarios.setLayout(TabUsuariosLayout);
@@ -852,20 +1068,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(TabUsuariosLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(cboRole, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TabUsuariosLayout.createSequentialGroup()
-                        .addGap(443, 443, 443)
-                        .addComponent(txtIduser, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TabUsuariosLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(TabUsuariosLayout.createSequentialGroup()
                         .addGap(161, 161, 161)
@@ -873,13 +1075,30 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(btnRegisterUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
-                        .addComponent(btnModifyUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnModifyUser, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabUsuariosLayout.createSequentialGroup()
+                        .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TabUsuariosLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13)
+                                .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabUsuariosLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtIduser, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                            .addComponent(cboRole, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))))
                 .addGap(15, 15, 15))
         );
         TabUsuariosLayout.setVerticalGroup(
             TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TabUsuariosLayout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
@@ -910,7 +1129,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearchUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtIduser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addGroup(TabUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1808,7 +2027,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setText("Nro. Factura");
-        TabNuevaCompra.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 230, -1));
+        TabNuevaCompra.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 230, -1));
 
         txtTotal_Compra.setForeground(new java.awt.Color(0, 102, 255));
         txtTotal_Compra.setBorderColor(new java.awt.Color(0, 102, 255));
@@ -1833,14 +2052,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtIdProducto_Compra.setPlaceholder("Id Producto");
         txtIdProducto_Compra.setSelectionColor(new java.awt.Color(51, 51, 51));
         TabNuevaCompra.add(txtIdProducto_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 135, 200, -1));
-
-        txtSearchUser1.setForeground(new java.awt.Color(51, 51, 51));
-        txtSearchUser1.setBorderColor(new java.awt.Color(204, 204, 204));
-        txtSearchUser1.setColorIcon(new java.awt.Color(51, 51, 51));
-        txtSearchUser1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        txtSearchUser1.setPhColor(new java.awt.Color(102, 102, 102));
-        txtSearchUser1.setPlaceholder("Buscar");
-        TabNuevaCompra.add(txtSearchUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 470, -1));
 
         tblCompras.setBackground(new java.awt.Color(255, 255, 255));
         tblCompras.setModel(new javax.swing.table.DefaultTableModel(
@@ -1876,7 +2087,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnGenerarCompra.setColorSecundario(new java.awt.Color(0, 102, 51));
         btnGenerarCompra.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
         btnGenerarCompra.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
-        TabNuevaCompra.add(btnGenerarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 219, -1));
+        TabNuevaCompra.add(btnGenerarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 219, -1));
 
         cboProveedor_Compra.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
         cboProveedor_Compra.setColorArrow(new java.awt.Color(0, 102, 255));
@@ -1918,7 +2129,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel37.setText("Total a Pagar:");
         TabNuevaCompra.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 640, 180, -1));
-        TabNuevaCompra.add(rSLabelBorderRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 220, -1));
+        TabNuevaCompra.add(rSLabelBorderRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 220, -1));
 
         jLabel38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
@@ -1935,16 +2146,188 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jtabVENTAS.addTab("Nueva Compra", TabNuevaCompra);
 
-        javax.swing.GroupLayout TabNuevaVentaLayout = new javax.swing.GroupLayout(TabNuevaVenta);
-        TabNuevaVenta.setLayout(TabNuevaVentaLayout);
-        TabNuevaVentaLayout.setHorizontalGroup(
-            TabNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 967, Short.MAX_VALUE)
-        );
-        TabNuevaVentaLayout.setVerticalGroup(
-            TabNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
-        );
+        TabNuevaVenta.setBackground(new java.awt.Color(255, 255, 255));
+        TabNuevaVenta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtTotalPago_Venta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TabNuevaVenta.add(txtTotalPago_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 653, -1, -1));
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("Total a Pagar:");
+        TabNuevaVenta.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(766, 633, 180, -1));
+
+        txtVueltoVenta.setForeground(new java.awt.Color(0, 102, 255));
+        txtVueltoVenta.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtVueltoVenta.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtVueltoVenta.setOpaque(false);
+        txtVueltoVenta.setPhColor(new java.awt.Color(0, 0, 153));
+        txtVueltoVenta.setPlaceholder("");
+        txtVueltoVenta.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaVenta.add(txtVueltoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 653, 180, -1));
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel43.setText("Vuelto:");
+        TabNuevaVenta.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 633, 180, -1));
+
+        txtPagar_Venta.setForeground(new java.awt.Color(0, 102, 255));
+        txtPagar_Venta.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPagar_Venta.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPagar_Venta.setOpaque(false);
+        txtPagar_Venta.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPagar_Venta.setPlaceholder("");
+        txtPagar_Venta.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaVenta.add(txtPagar_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 653, 180, -1));
+
+        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel44.setText("Pagar con:");
+        TabNuevaVenta.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 633, 180, -1));
+
+        cboCliente_Venta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccionar>" }));
+        cboCliente_Venta.setColorArrow(new java.awt.Color(0, 102, 255));
+        cboCliente_Venta.setColorBorde(new java.awt.Color(0, 0, 255));
+        cboCliente_Venta.setColorFondo(new java.awt.Color(0, 102, 255));
+        cboCliente_Venta.setColorSeleccion(new java.awt.Color(0, 102, 255));
+        TabNuevaVenta.add(cboCliente_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 653, 230, 42));
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel45.setText("Seleccionar Cliente");
+        TabNuevaVenta.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 633, 230, -1));
+
+        tblVenta.setBackground(new java.awt.Color(255, 255, 255));
+        tblVenta.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Descripción", "Cantidad", "Precio", "Subtotal", "IGV", "Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblVenta.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblVenta.setEditingColumn(0);
+        tblVenta.setEditingRow(0);
+        tblVenta.setSelectionBackground(new java.awt.Color(51, 153, 255));
+        tblVenta.setWidthBorderRows(0);
+        jScrollPane8.setViewportView(tblVenta);
+
+        TabNuevaVenta.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 272, 962, 354));
+        TabNuevaVenta.add(rSLabelBorderRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 220, -1));
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setText("Nro. Factura");
+        TabNuevaVenta.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 230, -1));
+
+        btnGenerarVenta.setBackground(new java.awt.Color(0, 255, 51));
+        btnGenerarVenta.setText("Generar Compra");
+        btnGenerarVenta.setToolTipText("");
+        btnGenerarVenta.setColorPrimario(new java.awt.Color(0, 204, 51));
+        btnGenerarVenta.setColorPrimarioHover(new java.awt.Color(0, 255, 0));
+        btnGenerarVenta.setColorSecundario(new java.awt.Color(0, 102, 51));
+        btnGenerarVenta.setColorSecundarioHover(new java.awt.Color(0, 255, 0));
+        btnGenerarVenta.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD);
+        TabNuevaVenta.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 219, -1));
+
+        txtCantidad_Venta.setForeground(new java.awt.Color(0, 102, 255));
+        txtCantidad_Venta.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCantidad_Venta.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCantidad_Venta.setOpaque(false);
+        txtCantidad_Venta.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCantidad_Venta.setPlaceholder("");
+        txtCantidad_Venta.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaVenta.add(txtCantidad_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 128, 220, -1));
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel47.setText("Cantidad");
+        TabNuevaVenta.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 108, 70, -1));
+
+        txtPrecio_Venta.setForeground(new java.awt.Color(0, 102, 255));
+        txtPrecio_Venta.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtPrecio_Venta.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtPrecio_Venta.setOpaque(false);
+        txtPrecio_Venta.setPhColor(new java.awt.Color(0, 0, 153));
+        txtPrecio_Venta.setPlaceholder("");
+        txtPrecio_Venta.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaVenta.add(txtPrecio_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 128, 220, -1));
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel48.setText("Precio");
+        TabNuevaVenta.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 108, 223, -1));
+
+        txtTotal_Venta.setForeground(new java.awt.Color(0, 102, 255));
+        txtTotal_Venta.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtTotal_Venta.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtTotal_Venta.setOpaque(false);
+        txtTotal_Venta.setPhColor(new java.awt.Color(0, 0, 153));
+        txtTotal_Venta.setPlaceholder("");
+        txtTotal_Venta.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaVenta.add(txtTotal_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 128, 238, -1));
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel49.setText("Total");
+        TabNuevaVenta.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 108, 232, -1));
+
+        txtIdProducto_Venta.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdProducto_Venta.setForeground(new java.awt.Color(0, 102, 255));
+        txtIdProducto_Venta.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtIdProducto_Venta.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtIdProducto_Venta.setOpaque(false);
+        txtIdProducto_Venta.setPhColor(new java.awt.Color(0, 0, 0));
+        txtIdProducto_Venta.setPlaceholder("Id Producto");
+        txtIdProducto_Venta.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaVenta.add(txtIdProducto_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(748, 128, 200, -1));
+
+        txtDescripcionProducto_Venta.setForeground(new java.awt.Color(0, 102, 255));
+        txtDescripcionProducto_Venta.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtDescripcionProducto_Venta.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtDescripcionProducto_Venta.setOpaque(false);
+        txtDescripcionProducto_Venta.setPhColor(new java.awt.Color(0, 0, 153));
+        txtDescripcionProducto_Venta.setPlaceholder("Descripción del producto...");
+        txtDescripcionProducto_Venta.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaVenta.add(txtDescripcionProducto_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 47, 610, -1));
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel50.setText("Descripción del Producto");
+        TabNuevaVenta.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 24, 610, -1));
+
+        btnBuscarProducto_Ventas.setText("Buscar");
+        btnBuscarProducto_Ventas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarProducto_VentasActionPerformed(evt);
+            }
+        });
+        TabNuevaVenta.add(btnBuscarProducto_Ventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 48, 90, -1));
+
+        txtCodigoProducto_Venta.setForeground(new java.awt.Color(0, 102, 255));
+        txtCodigoProducto_Venta.setBorderColor(new java.awt.Color(0, 102, 255));
+        txtCodigoProducto_Venta.setMargin(new java.awt.Insets(3, 2, 3, 2));
+        txtCodigoProducto_Venta.setOpaque(false);
+        txtCodigoProducto_Venta.setPhColor(new java.awt.Color(0, 0, 153));
+        txtCodigoProducto_Venta.setPlaceholder("Código...");
+        txtCodigoProducto_Venta.setSelectionColor(new java.awt.Color(51, 51, 51));
+        TabNuevaVenta.add(txtCodigoProducto_Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 47, 217, -1));
+
+        jLabel51.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel51.setText("Código");
+        TabNuevaVenta.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 24, 210, -1));
 
         jtabVENTAS.addTab("Nueva Venta", TabNuevaVenta);
 
@@ -2028,6 +2411,20 @@ public class FrmPrincipal extends javax.swing.JFrame {
         timer.schedule(task, 0, 12);
     }//GEN-LAST:event_ModalProductosWindowOpened
 
+    private void btnBuscarProducto_VentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProducto_VentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarProducto_VentasActionPerformed
+
+    private void btnCerrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarVentaActionPerformed
+         ModalProductos.setVisible(false);
+        ModalProductos.dispose();
+    }//GEN-LAST:event_btnCerrarVentaActionPerformed
+
+    private void btnAgregarProductoModalVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoModalVentasActionPerformed
+        ModalProductos.setVisible(true);
+        ModalProductos.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnAgregarProductoModalVentasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2073,6 +2470,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem MenuItem_ReingresarCliente;
     public javax.swing.JMenuItem MenuItem_ReingresarProducto;
     public javax.swing.JDialog ModalProductos;
+    private javax.swing.JDialog ModalProductos_Venta;
     public rojerusan.RSPopuMenu PopUpMenuProvider;
     public rojerusan.RSPopuMenu PopupMenuClientes;
     public rojerusan.RSPopuMenu PoupMenuProducts;
@@ -2084,14 +2482,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public javax.swing.JPanel TabProveedor;
     public javax.swing.JPanel TabUsuarios;
     public newscomponents.RSButtonGradientIcon_new btnAgregarProductoModal;
+    public newscomponents.RSButtonGradientIcon_new btnAgregarProductoModalVentas;
     public rojeru_san.rsbutton.RSButtonRound btnBuscarProducto_Compras;
+    public rojeru_san.rsbutton.RSButtonRound btnBuscarProducto_Ventas;
     public newscomponents.RSButtonGradientIcon_new btnCancelarProveedorModal;
+    public newscomponents.RSButtonGradientIcon_new btnCancelarProveedorVenta;
     public rojerusan.RSButtonIconI btnCategorias;
     private RSMaterialComponent.RSButtonIconOne btnCerrar;
     private RSMaterialComponent.RSButtonIconOne btnCerrar1;
+    private RSMaterialComponent.RSButtonIconOne btnCerrarVenta;
     public rojerusan.RSButtonIconI btnClientes;
     public rojerusan.RSButtonIconI btnCompras;
     public newscomponents.RSButtonGradientIcon_new btnGenerarCompra;
+    public newscomponents.RSButtonGradientIcon_new btnGenerarVenta;
     public newscomponents.RSButtonGradientIcon_new btnModifyCategory;
     public newscomponents.RSButtonGradientIcon_new btnModifyCliente;
     public newscomponents.RSButtonGradientIcon_new btnModifyProduct;
@@ -2112,6 +2515,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public rojerusan.RSButtonIconI btnUsuarios;
     public rojerusan.RSButtonIconI btnVentas;
     public rojerusan.RSComboBox cboCategoria_Producto;
+    public rojerusan.RSComboBox cboCliente_Venta;
     public rojerusan.RSComboBox cboProveedor_Compra;
     public rojerusan.RSComboBox cboProveedor_Producto;
     public rojerusan.RSComboBox cboRole;
@@ -2149,7 +2553,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2157,6 +2573,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2164,6 +2582,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     public javax.swing.JTabbedPane jtabVENTAS;
     private RSMaterialComponent.RSPanelMaterial pnlMenu;
     public RSMaterialComponent.RSPanelMaterial pnlPrincipal;
@@ -2172,27 +2592,34 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public rojerusan.RSPopuMenu popupMenuCategories;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound2;
+    private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound3;
     private rojeru_san.rsdate.RSLabelFecha rSLabelFecha1;
     private rojeru_san.rsdate.RSLabelHora rSLabelHora1;
     private rojeru_san.rslabel.RSLabelImage rSLabelImage1;
     private rojeru_san.rslabel.RSLabelSombra rSLabelSombra1;
     private RSMaterialComponent.RSPanelBorder rSPanelBorder1;
+    private RSMaterialComponent.RSPanelBorder rSPanelBorder2;
     private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
     public rojerusan.RSTableMetro tblCategory;
     public rojerusan.RSTableMetro tblClientes;
     public rojerusan.RSTableMetro tblCompras;
     public rojerusan.RSTableMetro tblModalProductos;
+    public rojerusan.RSTableMetro tblModalProductosVentas;
     public rojerusan.RSTableMetro tblProductos;
     public rojerusan.RSTableMetro tblProviders;
     public rojerusan.RSTableMetro tblUsers;
+    public rojerusan.RSTableMetro tblVenta;
     public RSMaterialComponent.RSTextFieldOne txtAddressCliente;
     public RSMaterialComponent.RSTextFieldOne txtAddressProvider;
     public RSMaterialComponent.RSTextFieldOne txtCantidad_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtCantidad_Venta;
     public RSMaterialComponent.RSTextFieldOne txtCodeCategory;
     public RSMaterialComponent.RSTextFieldOne txtCodigoProducto_Compra;
     public RSMaterialComponent.RSTextFieldOne txtCodigoProducto_Producto;
+    public RSMaterialComponent.RSTextFieldOne txtCodigoProducto_Venta;
     public RSMaterialComponent.RSTextFieldOne txtDescripcionProducto_Compra;
     public RSMaterialComponent.RSTextFieldOne txtDescripcionProducto_Producto;
+    public RSMaterialComponent.RSTextFieldOne txtDescripcionProducto_Venta;
     public RSMaterialComponent.RSTextFieldOne txtDni;
     public RSMaterialComponent.RSTextFieldOne txtDniCliente;
     public RSMaterialComponent.RSTextFieldOne txtEmail;
@@ -2201,6 +2628,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldOne txtIdCliente;
     public RSMaterialComponent.RSTextFieldOne txtIdProducto;
     public RSMaterialComponent.RSTextFieldOne txtIdProducto_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtIdProducto_Venta;
     public RSMaterialComponent.RSTextFieldOne txtIdProvider;
     public RSMaterialComponent.RSTextFieldOne txtIduser;
     public RSMaterialComponent.RSTextFieldOne txtLastname;
@@ -2211,6 +2639,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldOne txtNameProvider;
     public RSMaterialComponent.RSTextFieldOne txtNickname;
     public RSMaterialComponent.RSTextFieldOne txtPagar_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtPagar_Venta;
     public RSMaterialComponent.RSPasswordOne txtPassword;
     public RSMaterialComponent.RSTextFieldOne txtPhone;
     public RSMaterialComponent.RSTextFieldOne txtPhoneCliente;
@@ -2218,17 +2647,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public RSMaterialComponent.RSTextFieldOne txtPrecioCompra_Producto;
     public RSMaterialComponent.RSTextFieldOne txtPrecioVenta_Producto;
     public RSMaterialComponent.RSTextFieldOne txtPrecio_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtPrecio_Venta;
     public RSMaterialComponent.RSTextFieldOne txtRucProvider;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchCategory;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchCliente;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchProductModal;
+    public RSMaterialComponent.RSTextFieldIconOne txtSearchProductModal1;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchProductos;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchProvider;
     public RSMaterialComponent.RSTextFieldIconOne txtSearchUser;
-    public RSMaterialComponent.RSTextFieldIconOne txtSearchUser1;
     public rojeru_san.rslabel.RSLabelBorderRound txtTotalPago_Compra;
+    public rojeru_san.rslabel.RSLabelBorderRound txtTotalPago_Venta;
     public RSMaterialComponent.RSTextFieldOne txtTotal_Compra;
+    public RSMaterialComponent.RSTextFieldOne txtTotal_Venta;
     public RSMaterialComponent.RSTextFieldOne txtVueltoCompra;
+    public RSMaterialComponent.RSTextFieldOne txtVueltoVenta;
     // End of variables declaration//GEN-END:variables
     private void Trasparencia(float trasp) {
         AWTUtilities.setOpacity(this, trasp);

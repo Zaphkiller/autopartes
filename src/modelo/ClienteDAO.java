@@ -87,7 +87,7 @@ public class ClienteDAO {
             ps.setString(3, cli.getDni_cliente());
             ps.setString(4, cli.getPhone_cliente());
             ps.setString(5, cli.getAddress_cliente());
-            ps.setInt(7, cli.getId_cliente());
+            ps.setInt(6, cli.getId_cliente());
             ps.execute();
             return true;
         } catch (Exception e) {
