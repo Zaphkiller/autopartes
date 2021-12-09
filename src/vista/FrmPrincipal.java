@@ -402,16 +402,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                 .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rSPanelBorder1Layout.createSequentialGroup()
-                        .addGap(243, 243, 243)
-                        .addComponent(btnAgregarProductoModal, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtSearchProductModal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE)))
+                    .addGroup(rSPanelBorder1Layout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(btnAgregarProductoModal, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                     .addGap(361, 361, 361)
@@ -426,11 +426,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addComponent(txtSearchProductModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelarProveedorModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregarProductoModal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
             .addGroup(rSPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(rSPanelBorder1Layout.createSequentialGroup()
                     .addGap(251, 251, 251)
@@ -1886,11 +1886,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Código", "Descripción", "Cantidad", "Subtotal", "IGV", "Total"
+                "Código", "Descripción", "Cantidad", "Precio", "Subtotal", "IGV", "Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, true, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1962,6 +1962,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
         jLabel38.setText("Vuelto:");
         TabNuevaCompra.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 640, 180, -1));
+
+        txtTotalPago_Compra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TabNuevaCompra.add(txtTotalPago_Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 660, -1, -1));
 
         jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

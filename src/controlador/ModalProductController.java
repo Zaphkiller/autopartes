@@ -48,20 +48,24 @@ public class ModalProductController implements ActionListener, MouseListener, Ke
             int fselec = vista.tblModalProductos.getSelectedRow();
 
             try {
-                String codigo, descripcion;
+                String id,codigo,descripcion,precio;
                 if (fselec == -1) {
 
                     JOptionPane.showMessageDialog(null, "corregido");
 
                 } else {
                     m = (DefaultTableModel) vista.tblModalProductos.getModel();
-
-                    codigo = vista.tblModalProductos.getValueAt(fselec, 0).toString();
-                    descripcion = vista.tblModalProductos.getValueAt(fselec, 1).toString();
                     
+                    id= vista.tblModalProductos.getValueAt(fselec, 0).toString();
+                    codigo = vista.tblModalProductos.getValueAt(fselec, 1).toString();
+                    descripcion = vista.tblModalProductos.getValueAt(fselec, 2).toString();
+                    precio = vista.tblModalProductos.getValueAt(fselec, 4).toString();
+                    
+                    vista.txtIdProducto_Compra.setText(id);
                     vista.txtCodigoProducto_Compra.setText(codigo);
                     vista.txtDescripcionProducto_Compra.setText(descripcion);
-                }
+                    vista.txtPrecio_Compra.setText(""+precio);
+               }
 
             } catch (Exception ex) {
             }

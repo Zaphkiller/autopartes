@@ -120,6 +120,10 @@ public class Products {
         this.name_category = name_category;
     }
 
+    public String getText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
     
     
