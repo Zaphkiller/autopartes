@@ -501,6 +501,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
         );
 
+        ModalProductos_Venta.setUndecorated(true);
+        ModalProductos_Venta.setSize(new java.awt.Dimension(960, 619));
+
         jPanel4.setBackground(new java.awt.Color(0, 51, 204));
         jPanel4.setMaximumSize(new java.awt.Dimension(0, 0));
         jPanel4.setName(""); // NOI18N
@@ -2412,17 +2415,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_ModalProductosWindowOpened
 
     private void btnBuscarProducto_VentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProducto_VentasActionPerformed
-        // TODO add your handling code here:
+        ModalProductos_Venta.setVisible(true);
+        ModalProductos_Venta.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnBuscarProducto_VentasActionPerformed
 
     private void btnCerrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarVentaActionPerformed
-         ModalProductos.setVisible(false);
-        ModalProductos.dispose();
+         ModalProductos_Venta.setVisible(false);
+         ModalProductos_Venta.dispose();
     }//GEN-LAST:event_btnCerrarVentaActionPerformed
 
     private void btnAgregarProductoModalVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoModalVentasActionPerformed
-        ModalProductos.setVisible(true);
-        ModalProductos.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_btnAgregarProductoModalVentasActionPerformed
 
     /**

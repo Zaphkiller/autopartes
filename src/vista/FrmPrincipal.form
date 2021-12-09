@@ -473,6 +473,12 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="ModalProductos_Venta">
+      <Properties>
+        <Property name="undecorated" type="boolean" value="true"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[960, 619]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">

@@ -17,6 +17,7 @@ import modelo.ProductDAO;
 import modelo.Products;
 import modelo.Tables;
 import modelo.Usuario;
+import vista.FrmComprobanteCompra;
 import vista.FrmPrincipal;
 import vista.VistaError;
 import vista.VistaInfo;
@@ -411,6 +412,8 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             VistaSuccess success = new VistaSuccess();
             success.titulo.setText("¡Compra generada con éxito!");
             success.setVisible(true);
+            FrmComprobanteCompra comp = new FrmComprobanteCompra(code_purchase);
+            comp.setVisible(true);
 
         }
 

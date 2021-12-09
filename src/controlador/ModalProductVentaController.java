@@ -24,15 +24,14 @@ public class ModalProductVentaController implements ActionListener {
     private FrmPrincipal vista;
 
     DefaultTableModel modelo = new DefaultTableModel();
-    DefaultTableModel m;
+    DefaultTableModel t;
     
 
     public ModalProductVentaController(Products prod, ProductDAO prodDAO, FrmPrincipal vista) {
         this.prod = prod;
         this.prodDAO = prodDAO;
         this.vista = vista;
-        listarProductosVenta();
-        
+        listarProductosVenta();      
     }
     
     
@@ -48,16 +47,17 @@ public class ModalProductVentaController implements ActionListener {
                 if (fselec == -1) {
                     JOptionPane.showMessageDialog(null, "corregido");
                 } else {
-                    m = (DefaultTableModel) vista.tblModalProductos.getModel();
-                    
-                    id= vista.tblModalProductosVentas.getValueAt(fselec, 0).toString();
+                    t = (DefaultTableModel) vista.tblModalProductosVentas.getModel();
+                    id = vista.tblModalProductosVentas.getValueAt(fselec, 0).toString();
                     codigo = vista.tblModalProductosVentas.getValueAt(fselec, 1).toString();
                     descripcion = vista.tblModalProductosVentas.getValueAt(fselec, 2).toString();
                     precio = vista.tblModalProductosVentas.getValueAt(fselec, 4).toString();
-                    vista.txtIdProducto_Compra.setText(id);
-                    vista.txtCodigoProducto_Compra.setText(codigo);
-                    vista.txtDescripcionProducto_Compra.setText(descripcion);
-                    vista.txtPrecio_Compra.setText(""+precio);
+                    
+                    
+                    vista.txtIdProducto_Venta.setText(id);
+                    vista.txtCodigoProducto_Venta.setText(codigo);
+                    vista.txtDescripcionProducto_Venta.setText(descripcion);
+                    vista.txtPrecio_Venta.setText(""+precio);
                     
                }
 
@@ -67,9 +67,9 @@ public class ModalProductVentaController implements ActionListener {
     }
     
     public void listarProductosVenta() {
-        
-        List<Products> lista = prodDAO.ListaProductos(vista.txtSearchProductModal.getText());
-        modelo = (DefaultTableModel) vista.tblModalProductos.getModel();
+
+        List<Products> lista = prodDAO.ListaProductos(vista.txtSearchProductModal1.getText());
+        modelo = (DefaultTableModel) vista.tblModalProductosVentas.getModel();
         Object[] ob = new Object[6];
         for (int i = 0; i < lista.size(); i++) {
             ob[0] = lista.get(i).getId_product();
@@ -82,6 +82,10 @@ public class ModalProductVentaController implements ActionListener {
         }
         vista.tblModalProductos.setModel(modelo);
     }
+    
+   
+    
+    
     
 
 }

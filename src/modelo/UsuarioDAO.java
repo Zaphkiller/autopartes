@@ -146,5 +146,27 @@ public class UsuarioDAO {
             return false;
         }
     }
+   
+  
+     public DatosGenerales getConfig(){
+    String sql = "Select * from sede";
+        DatosGenerales datos = new DatosGenerales();
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                datos.setCodigo_sede(rs.getInt("id_sede"));
+                datos.setRuc(rs.getString("ruc"));
+                datos.setNombre(rs.getString("nombre"));
+                datos.setTelefono(rs.getString("telefono"));
+                datos.setDireccion(rs.getString("direccion"));
+                datos.setMensaje(rs.getString("mensaje"));
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return datos;
+    }
   
 }

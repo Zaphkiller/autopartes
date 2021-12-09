@@ -4,6 +4,7 @@ package modelo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -113,4 +114,26 @@ public class ProviderDAO {
             return false;
         }
     }  
+    
+      public Provider getData(int id_purchase) {
+        String sql = "Select prov.*, c.id_compra as CodigoCompra, c.id_proveedor as CodigoProveedor "
+                + "from proveedor prov INNER JOIN compra c ON c.id_proveedor= prov.id_proveedor "
+                + "WHERE id_compra=?";
+        Provider prov = new Provider();
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id_purchase);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                prov.setName_provider(rs.getString("nombre_proveedor"));
+                prov.setPhone_provider(rs.getString("telefono"));
+                prov.setAddress_provider(rs.getString("direccion"));
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return prov;
+    }
 }
