@@ -158,10 +158,10 @@ public class UsuarioDAO {
             if (rs.next()) {
                 datos.setCodigo_sede(rs.getInt("id_sede"));
                 datos.setRuc(rs.getString("ruc"));
-                datos.setNombre(rs.getString("nombre"));
-                datos.setTelefono(rs.getString("telefono"));
-                datos.setDireccion(rs.getString("direccion"));
-                datos.setMensaje(rs.getString("mensaje"));
+                datos.setNombre(rs.getString("name_sede"));
+                datos.setTelefono(rs.getString("phone_sede"));
+                datos.setDireccion(rs.getString("address_sede"));
+                datos.setMensaje(rs.getString("message_sede"));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());

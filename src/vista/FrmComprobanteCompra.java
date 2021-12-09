@@ -127,7 +127,7 @@ public class FrmComprobanteCompra extends javax.swing.JFrame {
             tableCOMPROBANTE.getColumnModel().getColumn(3).setPreferredWidth(20);
         }
 
-        panelCOMPROBANTE.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 520, 310));
+        panelCOMPROBANTE.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 520, 340));
 
         lblNOMBRE_EMPRESA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNOMBRE_EMPRESA.setText("Nombre");
@@ -135,7 +135,7 @@ public class FrmComprobanteCompra extends javax.swing.JFrame {
 
         lblTOTAL_COMPROBANTE.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTOTAL_COMPROBANTE.setText("-----");
-        panelCOMPROBANTE.add(lblTOTAL_COMPROBANTE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, -1, -1));
+        panelCOMPROBANTE.add(lblTOTAL_COMPROBANTE, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 570, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 255));
@@ -177,11 +177,11 @@ public class FrmComprobanteCompra extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 255));
         jLabel8.setText("DIRECCIÓN:");
-        panelCOMPROBANTE.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
+        panelCOMPROBANTE.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("TOTAL:");
-        panelCOMPROBANTE.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, -1, -1));
+        panelCOMPROBANTE.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 51, 102));
@@ -199,7 +199,7 @@ public class FrmComprobanteCompra extends javax.swing.JFrame {
 
         lblDIRECCION_PROVEEDOR.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblDIRECCION_PROVEEDOR.setText("Dirección proveedor");
-        panelCOMPROBANTE.add(lblDIRECCION_PROVEEDOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
+        panelCOMPROBANTE.add(lblDIRECCION_PROVEEDOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         lblTELEFONO_PROVEEDOR.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblTELEFONO_PROVEEDOR.setText("Número");

@@ -116,9 +116,7 @@ public class ProviderDAO {
     }  
     
       public Provider getData(int id_purchase) {
-        String sql = "Select prov.*, c.id_compra as CodigoCompra, c.id_proveedor as CodigoProveedor "
-                + "from proveedor prov INNER JOIN compra c ON c.id_proveedor= prov.id_proveedor "
-                + "WHERE id_compra=?";
+        String sql = "Select prov.*, c.id_purchase as CodigoCompra, c.id_provider as CodigoProveedor from providers prov INNER JOIN purchase c ON c.id_provider= prov.id_provider WHERE id_purchase=? ";
         Provider prov = new Provider();
         try {
             con = cn.getConexion();
@@ -126,9 +124,9 @@ public class ProviderDAO {
             ps.setInt(1, id_purchase);
             rs = ps.executeQuery();
             if (rs.next()) {
-                prov.setName_provider(rs.getString("nombre_proveedor"));
-                prov.setPhone_provider(rs.getString("telefono"));
-                prov.setAddress_provider(rs.getString("direccion"));
+                prov.setName_provider(rs.getString("name_provider"));
+                prov.setPhone_provider(rs.getString("phone_provider"));
+                prov.setAddress_provider(rs.getString("address_provider"));
 
             }
         } catch (SQLException e) {
