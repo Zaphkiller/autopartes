@@ -75,7 +75,7 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
                     limpiar();
                     /*JOptionPane.showMessageDialog(null, "Usuario registrado con éxito...");*/
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario registrado!");
+                    success.titulo.setText("¡Cliente registrado!");
                     success.setVisible(true);
 
 
@@ -83,7 +83,7 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
 
                     /*JOptionPane.showMessageDialog(null, "Error al registar el usuario...");*/
                     VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al registrar usuario!");
+                    error.titulo.setText("¡Error al registrar cliente!");
                     error.setVisible(true);
 
                 }
@@ -113,13 +113,11 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
                     listarClientes();
                     limpiar();
 
-                    /*JOptionPane.showMessageDialog(null, "Usuario modificado con éxito...");*/
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario modiciado!");
+                    success.titulo.setText("¡Cliente modifiaado!");
                     success.setVisible(true);
 
                 } else {
-                    /*JOptionPane.showMessageDialog(null, "Error al modificar usuario...");*/
                     VistaError error = new VistaError();
                     error.titulo.setText("¡Error al modificar usuario!");
                     error.setVisible(true);
@@ -128,7 +126,6 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
 
         } else if (e.getSource() == vista.MenuItem_EliminarCliente) {
             if (vista.txtIdCliente.getText().equals("")) {
-                /*JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");*/
                 VistaInfo info = new VistaInfo();
                 info.titulo.setText("Seleccione una fila para eliminar");
                 info.setVisible(true);
@@ -138,12 +135,10 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
                     limpiarTable();
                     listarClientes();
                     limpiar();
-                    /*JOptionPane.showMessageDialog(null, "Usuario eliminado con éxito...");*/
                     VistaSuccess success = new VistaSuccess();
                     success.titulo.setText("¡Usuario eliminado!");
                     success.setVisible(true);
                 } else {
-                    /*JOptionPane.showMessageDialog(null, "Error eliminado con éxito...");*/
                      VistaError error = new VistaError();
                     error.titulo.setText("¡Error al eliminar usuario!");
                     error.setVisible(true);
@@ -151,7 +146,6 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
             }
         } else if (e.getSource() == vista.MenuItem_ReingresarCliente) {
             if (vista.txtIdCliente.getText().equals("")) {
-                /*JOptionPane.showMessageDialog(null, "Seleccione una fila para reingresar");*/
                 VistaInfo info = new VistaInfo();
                 info.titulo.setText("Seleccione una fila para reingresar");
                 info.setVisible(true);
@@ -161,12 +155,10 @@ public class ClienteController implements ActionListener, MouseListener, KeyList
                     limpiarTable();
                     listarClientes();
                     limpiar();
-                    /*JOptionPane.showMessageDialog(null, "Usuario reingresado");*/
                     VistaSuccess success = new VistaSuccess();
                     success.titulo.setText("¡Usuario reingresado!");
                     success.setVisible(true);
                 } else {
-                    /*JOptionPane.showMessageDialog(null, "Error al reingresar");*/
                     VistaError error = new VistaError();
                     error.titulo.setText("¡Error al reingresar usuario!");
                     error.setVisible(true);

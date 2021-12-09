@@ -30,7 +30,6 @@ public class ProductController implements ActionListener, MouseListener, KeyList
 
     DefaultTableModel modelo = new DefaultTableModel();
     DefaultTableModel temp;
-    
 
     public ProductController(Products prod, ProductDAO prodDAO, FrmPrincipal vista) {
         this.prod = prod;
@@ -209,7 +208,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             i = i - 1;
         }
     }
-    
+
     public void limpiarTableDetalle() {
         for (int i = 0; i < temp.getRowCount(); i++) {
             temp.removeRow(i);
@@ -227,8 +226,8 @@ public class ProductController implements ActionListener, MouseListener, KeyList
         vista.txtCodigoProducto_Producto.grabFocus();
 
     }
-    
-    private void limpiarCampos(){
+
+    private void limpiarCampos() {
         vista.txtCodigoProducto_Compra.setText("");
         vista.txtIdProducto_Compra.setText("");
         vista.txtDescripcionProducto_Compra.setText("");
@@ -236,10 +235,10 @@ public class ProductController implements ActionListener, MouseListener, KeyList
         vista.txtCantidad_Compra.setText("");
         vista.txtPagar_Compra.setText("");
         vista.txtCodigoProducto_Compra.grabFocus();
-    
+
     }
-    
-    private void CalcularSubtotal(){
+
+    private void CalcularSubtotal() {
         double subtotal = 0.00;
         int numfila = vista.tblCompras.getRowCount();
         for (int i = 0; i < numfila; i++) {
@@ -247,28 +246,26 @@ public class ProductController implements ActionListener, MouseListener, KeyList
         }
 
     }
-    
-    public void CalcularIGV(){
+
+    public void CalcularIGV() {
         double igv = 0.00;
         int numfila = vista.tblCompras.getRowCount();
         for (int i = 0; i < numfila; i++) {
-            
-            
+
             igv = igv + Double.parseDouble(String.valueOf(vista.tblCompras.getValueAt(i, 5)));
         }
     }
-    
-    public void CalcularTotal(){
+
+    public void CalcularTotal() {
         double total = 0.00;
         int numfila = vista.tblCompras.getRowCount();
         for (int i = 0; i < numfila; i++) {
-            
-            
+
             total = total + Double.parseDouble(String.valueOf(vista.tblCompras.getValueAt(i, 6)));
         }
         vista.txtTotalPago_Compra.setText("" + total);
     }
-    
+
     @Override
     public void mouseClicked(MouseEvent e) {
 
@@ -313,22 +310,23 @@ public class ProductController implements ActionListener, MouseListener, KeyList
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getSource() == vista.txtCantidad_Compra){
-            if(e.getKeyCode() == KeyEvent.VK_ENTER){
+        if (e.getSource() == vista.txtCantidad_Compra) {
+            if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                 double subtotal = 0.0;
-                double igv= 0.0;
+                double igv = 0.0;
                 double total = 0.0;
-                
+
                 int cantidad = Integer.parseInt(vista.txtCantidad_Compra.getText());
                 String descripcion = vista.txtDescripcionProducto_Compra.getText();
                 double precio = Integer.parseInt(vista.txtIdProducto_Compra.getText());
                 int codigo = Integer.parseInt(vista.txtIdProducto_Compra.getText());
-                 
-                subtotal = cantidad*precio;
-                igv = subtotal*0.18;
+
+                subtotal = cantidad * precio;
+                igv = Double.parseDouble(String.format("%2f", subtotal * 0.18));
+                
                 total = subtotal + igv;
 
-                if(cantidad >0){
+                if (cantidad > 0) {
                     temp = (DefaultTableModel) vista.tblCompras.getModel();
                     ArrayList lista = new ArrayList();
                     int elemento = 1;
@@ -340,7 +338,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     lista.add(subtotal);
                     lista.add(igv);
                     lista.add(total);
-                    
+
                     Object[] obj = new Object[7];
                     obj[0] = lista.get(1);
                     obj[1] = lista.get(2);
@@ -349,16 +347,16 @@ public class ProductController implements ActionListener, MouseListener, KeyList
                     obj[4] = lista.get(5);
                     obj[5] = lista.get(6);
                     obj[6] = lista.get(7);
-                    
+
                     temp.addRow(obj);
-                    
+
                     vista.tblCompras.setModel(temp);
                     limpiarCampos();
                     CalcularSubtotal();
                     CalcularIGV();
                     CalcularTotal();
                     vista.txtCodigoProducto_Compra.requestFocus();
-                    
+
                 }
             }
         }
@@ -385,32 +383,34 @@ public class ProductController implements ActionListener, MouseListener, KeyList
             } else {
                 pagar = Integer.parseInt(vista.txtPagar_Compra.getText());
                 double total = Double.parseDouble(vista.txtTotalPago_Compra.getText());
-                vista.txtVueltoCompra.setText("" + (pagar - total));
+                vista.txtVueltoCompra.setText("" + Double.parseDouble(String.format("%2f", (pagar - total))));
+                
             }
-        } 
+        }
     }
-    
+
     public void insertarCompra() {
         ComboBox id_prov = (ComboBox) vista.cboProveedor_Compra.getSelectedItem();
         int id_provider = id_prov.getId();
         String total = vista.txtTotalPago_Compra.getText();
 
         if (prodDAO.RegisterPurchase(id_provider, total)) {
-
             int code_purchase = prodDAO.CodePurchase();
             for (int i = 0; i < vista.tblCompras.getRowCount(); i++) {
                 double precio = Double.parseDouble(vista.tblCompras.getValueAt(i, 3).toString());
                 int cantidad = Integer.parseInt(vista.tblCompras.getValueAt(i, 2).toString());
                 int code = Integer.parseInt(vista.tblCompras.getValueAt(i, 0).toString());
                 double subtotal = precio * cantidad;
-                prodDAO.RegisterPurchaseDetail(code_purchase, id_provider, precio, cantidad, precio, subtotal);
+                prodDAO.RegisterPurchaseDetail(code_purchase, code, precio, cantidad, precio, subtotal);
                 prod = prodDAO.SearchIdProduct(code);
                 int StockActual = prod.getQuantity() + cantidad;
                 prodDAO.UpdateStock(StockActual, code);
             }
 
             limpiarTableDetalle();
-            JOptionPane.showMessageDialog(null, "Compra generada conéxito");
+            VistaSuccess success = new VistaSuccess();
+            success.titulo.setText("¡Compra generada con éxito!");
+            success.setVisible(true);
 
         }
 

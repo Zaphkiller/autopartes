@@ -119,7 +119,7 @@ public class UserController implements ActionListener, MouseListener, KeyListene
 
                     /*JOptionPane.showMessageDialog(null, "Usuario modificado con éxito...");*/
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario modiciado!");
+                    success.titulo.setText("¡Usuario modificado!");
                     success.setVisible(true);
 
                 } else {

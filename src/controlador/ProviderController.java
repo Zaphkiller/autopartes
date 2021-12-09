@@ -70,12 +70,12 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
                     limpiar();
                     
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario registrado!");
+                    success.titulo.setText("¡Proveedor registrado!");
                     success.setVisible(true);
                 }else{
                     
                     VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al registrar usuario!");
+                    error.titulo.setText("¡Error al registrar proveedor!");
                     error.setVisible(true);
                 }
             }
@@ -102,12 +102,12 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
                     limpiar();
                     
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario modiciado!");
+                    success.titulo.setText("¡Proveedor modifiado!");
                     success.setVisible(true);
                     
                 }else{
                     VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al modificar usuario!");
+                    error.titulo.setText("¡Error al modificar proveedor!");
                     error.setVisible(true);
                 }
             
@@ -127,12 +127,12 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
                     limpiar();
                     
                     VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario eliminado!");
+                    success.titulo.setText("¡Proveedor eliminado!");
                     success.setVisible(true);
                 }else{
                     
                     VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al eliminar usuario!");
+                    error.titulo.setText("¡Error al eliminar uproveedor!");
                     error.setVisible(true);
                 
                 }
@@ -154,13 +154,13 @@ public class ProviderController implements ActionListener, MouseListener, KeyLis
                    limpiar();
                    
                    VistaSuccess success = new VistaSuccess();
-                    success.titulo.setText("¡Usuario reingresado!");
+                    success.titulo.setText("¡Proveedor reingresado!");
                     success.setVisible(true);
                 
                 }else{
                     
                     VistaError error = new VistaError();
-                    error.titulo.setText("¡Error al reingresar usuario!");
+                    error.titulo.setText("¡Error al reingresar proveedor!");
                     error.setVisible(true);
                 
                 }

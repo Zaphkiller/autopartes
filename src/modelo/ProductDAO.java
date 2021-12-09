@@ -176,6 +176,20 @@ public class ProductDAO {
         return prod;
     }
     
+    public Products SerachCodeSale(String code){
+         String sql = "SELECT * FROM products WHERE code_product=?";
+         Products prod = new Products();
+         try {
+            con= cn.getConexion();
+            ps=con.prepareStatement(sql);
+            ps.setString(1, code);
+        } catch (SQLException e) {
+             JOptionPane.showMessageDialog(null, e.toString());
+        }
+         return prod; 
+    }
+    
+    
     public boolean RegisterPurchase(int code, String total){
         
         String sql = "INSERT INTO purchase(id_provider, total) VALUES(?,?)";
@@ -187,8 +201,28 @@ public class ProductDAO {
             ps.setString(2, total);
             ps.execute();
             return true;
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            return false;
+        }
+          
+        
+    }
+    
+     public boolean RegisterSale(int codCliente, int codUsuario, String total){
+        
+        String sql = "INSERT INTO comprobante (id_cliente, id_usuario, total) VALUES(?,?,?)";
+        
+        try {
+            con = cn.getConexion();
+            ps=con.prepareStatement(sql);
+            ps.setInt(1, codCliente);
+            ps.setInt(2, codUsuario);
+            ps.setString(3, total);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
             return false;
         }
           
@@ -217,6 +251,28 @@ public class ProductDAO {
     
     }
     
+    public boolean RegisterSaleDetail(int id_comprobante, int id_product, double price,int quantity, double igv, double subtotal){
+        
+        String sql= "INSERT INTO purchase_detail (id_comprobante, id_product, price, quantity, subtotal) VALUES (?,?,?,?,?)";
+        
+        try {
+            con = cn.getConexion();
+            ps=con.prepareStatement(sql);
+            ps.setInt(1, id_comprobante);
+            ps.setInt(2, id_product);
+            ps.setDouble(3, price);
+            ps.setInt(4, quantity);
+            ps.setDouble(5, igv);
+            ps.setDouble(6, subtotal);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    
+    }
+    
     public boolean UpdateStock(int quantity, int code){
         
         String sql = "UPDATE products SET quantity=? WHERE id_product=?";
@@ -228,44 +284,65 @@ public class ProductDAO {
             ps.setInt(2, code);
             ps.execute();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
             return false;
         }
     
     }
     
-    public int CodeProduct(){
-        int code = 0;
-        String sql ="SELECT MAX(id_purchase) as code_product FROM purchase";
+     public boolean UpdateStockSale(int quantity, int code) {
+        String sql = "UPDATE products SET quantity=? where id_product=?";
         try {
-            con=cn.getConexion();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            if(rs.next()){
-                code =rs.getInt("code_product");
-            }
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, quantity);
+            ps.setInt(2, code);
+            ps.execute();
+            return true;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
+            return false;
         }
-        return code;
     }
+    
+    
     public int CodePurchase(){
         int codigo =0;
-        String sql = "SELECT MAX(id_purchase) as codigo FROM purchase";
+        String sql = "SELECT MAX(id_purchase) as code FROM purchase";
         
         try {
             con = cn.getConexion();
             ps= con.prepareStatement(sql);
             rs=ps.executeQuery();
             if(rs.next()){
-                codigo=rs.getInt("codigo");
+                codigo=rs.getInt("code");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
         }
         return codigo;
     }
+    
+     public int CodeSale(){
+        int codigo =0;
+        String sql = "SELECT MAX(id_comprobante) as code FROM comprobante";
+        
+        try {
+            con = cn.getConexion();
+            ps= con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            if(rs.next()){
+                codigo=rs.getInt("code");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return codigo;
+    }
+    
+    
+    
     public List ListaDetalle(int id_purchase){
         List<Products> listaProducts = new ArrayList();
         String sql = "SELECT c.*, dc.*, p.id_product, p.description_product FROM purchase c"
