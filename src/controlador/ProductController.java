@@ -212,7 +212,7 @@ public class ProductController implements ActionListener, MouseListener, KeyList
     
     public void limpiarTableDetalle() {
         for (int i = 0; i < temp.getRowCount(); i++) {
-            modelo.removeRow(i);
+            temp.removeRow(i);
             i = i - 1;
         }
     }
@@ -390,28 +390,30 @@ public class ProductController implements ActionListener, MouseListener, KeyList
         } 
     }
     
-    public void insertarCompra(){
+    public void insertarCompra() {
         ComboBox id_prov = (ComboBox) vista.cboProveedor_Compra.getSelectedItem();
         int id_provider = id_prov.getId();
         String total = vista.txtTotalPago_Compra.getText();
-        int code_purchase = prodDAO.CodePurchase();
-        for (int i = 0; i < vista.tblCompras.getRowCount(); i++) {
-            
-            double precio = Double.parseDouble(vista.tblCompras.getValueAt(i, 3).toString());
-            int cantidad = Integer.parseInt(vista.tblCompras.getValueAt(i, 2).toString());
-            int code = Integer.parseInt(vista.tblCompras.getValueAt(i, 0).toString());
-            double subtotal = precio * cantidad;
-            prodDAO.RegisterPurchaseDetail(code_purchase, id_provider, precio, cantidad, precio, subtotal);
-            prod=prodDAO.SearchIdProduct(code);
-            int StockActual = prod.getQuantity()+cantidad;
-            prodDAO.UpdateStock(StockActual,code);  
+
+        if (prodDAO.RegisterPurchase(id_provider, total)) {
+
+            int code_purchase = prodDAO.CodePurchase();
+            for (int i = 0; i < vista.tblCompras.getRowCount(); i++) {
+                double precio = Double.parseDouble(vista.tblCompras.getValueAt(i, 3).toString());
+                int cantidad = Integer.parseInt(vista.tblCompras.getValueAt(i, 2).toString());
+                int code = Integer.parseInt(vista.tblCompras.getValueAt(i, 0).toString());
+                double subtotal = precio * cantidad;
+                prodDAO.RegisterPurchaseDetail(code_purchase, id_provider, precio, cantidad, precio, subtotal);
+                prod = prodDAO.SearchIdProduct(code);
+                int StockActual = prod.getQuantity() + cantidad;
+                prodDAO.UpdateStock(StockActual, code);
+            }
+
+            limpiarTableDetalle();
+            JOptionPane.showMessageDialog(null, "Compra generada conéxito");
+
         }
-        
-        limpiarTableDetalle();
-        JOptionPane.showMessageDialog(null, "Compra generada conéxito");
-        
-        
-        
+
     }
 
 }
