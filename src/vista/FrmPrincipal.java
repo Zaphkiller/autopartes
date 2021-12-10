@@ -111,6 +111,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         tblModalProductosVentas = new rojerusan.RSTableMetro();
+        PopupMenuUser = new rojerusan.RSPopuMenu();
+        MenuItem_EliminarUser = new javax.swing.JMenuItem();
+        MenuItem_ReingresarUser = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         pnlMenu = new RSMaterialComponent.RSPanelMaterial();
         rSPanelMaterialImage1 = new RSMaterialComponent.RSPanelMaterialImage();
@@ -682,6 +685,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
         );
 
+        MenuItem_EliminarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
+        MenuItem_EliminarUser.setText("Eliminar");
+        PopupMenuUser.add(MenuItem_EliminarUser);
+
+        MenuItem_ReingresarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ingresar.png"))); // NOI18N
+        MenuItem_ReingresarUser.setText("Reingresar");
+        MenuItem_ReingresarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItem_ReingresarUserActionPerformed(evt);
+            }
+        });
+        PopupMenuUser.add(MenuItem_ReingresarUser);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
@@ -986,6 +1002,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         tblUsers.setBackgoundHover(new java.awt.Color(102, 255, 255));
+        tblUsers.setComponentPopupMenu(PopupMenuUser);
         tblUsers.setEditingColumn(0);
         tblUsers.setEditingRow(0);
         tblUsers.setSelectionBackground(new java.awt.Color(51, 153, 255));
@@ -2428,6 +2445,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnAgregarProductoModalVentasActionPerformed
 
+    private void MenuItem_ReingresarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_ReingresarUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuItem_ReingresarUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2469,13 +2490,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem MenuItem_EliminarCategory;
     public javax.swing.JMenuItem MenuItem_EliminarCliente;
     public javax.swing.JMenuItem MenuItem_EliminarProducto;
+    public javax.swing.JMenuItem MenuItem_EliminarUser;
     public javax.swing.JMenuItem MenuItem_ReingresarCategory;
     public javax.swing.JMenuItem MenuItem_ReingresarCliente;
     public javax.swing.JMenuItem MenuItem_ReingresarProducto;
+    public javax.swing.JMenuItem MenuItem_ReingresarUser;
     public javax.swing.JDialog ModalProductos;
     private javax.swing.JDialog ModalProductos_Venta;
     public rojerusan.RSPopuMenu PopUpMenuProvider;
     public rojerusan.RSPopuMenu PopupMenuClientes;
+    public rojerusan.RSPopuMenu PopupMenuUser;
     public rojerusan.RSPopuMenu PoupMenuProducts;
     public javax.swing.JPanel TabCategorias;
     public javax.swing.JPanel TabClientes;

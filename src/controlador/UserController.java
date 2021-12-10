@@ -130,14 +130,14 @@ public class UserController implements ActionListener, MouseListener, KeyListene
                 }
             }
 
-        }else if (e.getSource() == vista.MenuItem_EliminarCliente) {
-            if (vista.txtIdCliente.getText().equals("")) {
+        }else if (e.getSource() == vista.MenuItem_EliminarUser) {
+            if (vista.txtIduser.getText().equals("")) {
                 /*JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");*/
                 VistaInfo info = new VistaInfo();
                 info.titulo.setText("Seleccione una fila para eliminar");
                 info.setVisible(true);
             } else {
-                int id = Integer.parseInt(vista.txtIdCliente.getText());
+                int id = Integer.parseInt(vista.txtIduser.getText());
                 if (usDAO.accion("Inactivo", id)) {
                     limpiarTable();
                     listarUsuarios();
@@ -153,14 +153,14 @@ public class UserController implements ActionListener, MouseListener, KeyListene
                     error.setVisible(true);
                 }
             }
-        } else if (e.getSource() == vista.MenuItem_ReingresarCliente) {
-            if (vista.txtIdCliente.getText().equals("")) {
+        } else if (e.getSource() == vista.MenuItem_ReingresarUser) {
+            if (vista.txtIduser.getText().equals("")) {
                 /*JOptionPane.showMessageDialog(null, "Seleccione una fila para reingresar");*/
                 VistaInfo info = new VistaInfo();
                 info.titulo.setText("Seleccione una fila para reingresar");
                 info.setVisible(true);
             } else {
-                int id = Integer.parseInt(vista.txtIdCliente.getText());
+                int id = Integer.parseInt(vista.txtIduser.getText());
                 if (usDAO.accion("Activo", id)) {
                     limpiarTable();
                     listarUsuarios();
