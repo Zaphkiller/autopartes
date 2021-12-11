@@ -56,7 +56,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         SlidingController slide = new SlidingController(this);
-        UserController user = new UserController(us, usDAO, this);
+        /*UserController user = new UserController(us, usDAO, this);*/
         ClienteController clie = new ClienteController(cli, cliDAO, this);
         ProviderController provi = new ProviderController(prov, provDAO, this);
         CategoryController categ = new CategoryController(cat, catDAO, this);
